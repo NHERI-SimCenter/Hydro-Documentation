@@ -44,7 +44,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="2. User Guide" href="userguide/uguide.html" />
-    <link rel="prev" title="5. Abbreviations" href="../front-matter/abbreviations.html" />
+    <link rel="prev" title="3. Abbreviations" href="../front-matter/abbreviations.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -104,14 +104,23 @@
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../front-matter/about.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../common/front-matter/ack.html">2. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../common/front-matter/license.html">3. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../front-matter/glossary.html">4. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/front-matter/ack.html">1. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../common/front-matter/license.html">2. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../front-matter/glossary.html">2. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../front-matter/abbreviations.html">3. Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User manual</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#download-hydrouq">1.1. Download HydroUQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#windows">1.2. Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#macos">1.3. MacOS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-hydrouq">Install HydroUQ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-hydrouq">Test HydroUQ</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="userguide/uguide.html">2. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="resguide/resguide.html">3. Researcher Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="errors.html">4. Troubleshooting</a></li>
@@ -205,15 +214,44 @@
   <div class="section" id="installation">
 <span id="lbl-install"></span><h1><span class="section-number">1. </span>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <p>All SimCenter applications can be downloaded from the <a class="reference external" href="https://simcenter.designsafe-ci.org/research-tools/overview/">SimCenter Research Tools</a> page. This section walks you through the install process from downloading the application to testing that it has been installed correctly.</p>
-<ol class="arabic simple">
-<li><p>Download the application (Coming soon)</p></li>
-<li><p>Test the installation (Coming soon)</p></li>
-</ol>
-<p>The following videos demonstrate these installation instructions on brand new Windows 10 and MacOS Catalina systems.</p>
-<p><strong>NOTE:</strong> THESE VIDEOS ARE FOR EE-UQ AND NEED TO BE UPDATED FOR HYDRO-UQ</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/fQN1UtjfarY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><iframe width="560" height="315" src="https://www.youtube.com/embed/MjYCiFtdCdw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><div class="admonition note">
+<div class="section" id="download-hydrouq">
+<h2><span class="section-number">1.1. </span>Download HydroUQ<a class="headerlink" href="#download-hydrouq" title="Permalink to this headline">¶</a></h2>
+<p>To download the Hydro app, navigate to the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/HydroUQ">Hydro Download</a> page which should resemble <code class="xref std std-numref docutils literal notranslate"><span class="pre">figDownload-Hydro</span></code>. The download page contains a list of downloadable files and directories.</p>
+<blockquote id="figdownload-hydro">
+<div><div class="align-center figure" id="id2">
+<img alt="../../_images/H20Download.png" src="../../_images/H20Download.png" />
+<p class="caption"><span class="caption-number">Fig. 1.1.1 </span><span class="caption-text">HydroUQ tool download page.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="windows">
+<h2><span class="section-number">1.2. </span>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
+<p>Click on the file with a name ending with <strong>Windows_Download.zip</strong> to download the Hydro app. In the pop-up window, click on the <strong>Download</strong> button in the bottom right corner. After the download completed, extract the zip archive to a location in your filesystem.</p>
+<p>We suggest placing the directory in the <strong>C:\SimCenter</strong> folder. Once here, you can create a shortcut to the application (Hydro app.exe) and move this shortcut to your Desktop.</p>
+<p>Once the installation procedure has been completed, it is a good practice to run some basic checks. Navigate to the location where you placed the application and open it by running the Hydro.exe executable. You should see the user interface shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figUI-Hydro</span></code>. The installation can be tested by running the example problem <span class="xref std std-ref">(Under development)</span> which is provided with the installation.</p>
+<div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The videos demonstrate the instructions for one of our tools, the instructions for the others are exactly the same with the exceptioon that the download tool page will be different as will the testing for the tool.</p>
+<p>SimCenter apps are code-signed and notarized, but because they are not downloaded from the operating system’s app store, they may not be recognized as such. As a consequence, depending on your security settings, when you start a SimCenter app for the first time, your operating system may bring up a dialog box indicating it is unsafe. If this dialog should appear, hit the cancel button. Restart the app by right clicking on it and selecting open.</p>
+</div>
+<blockquote id="figui-hydro">
+<div><div class="align-center figure">
+<img alt="../../_images/H20Download.png" src="../../_images/H20Download.png" />
+</div>
+<p>HydroUQ tool on startup.</p>
+</div></blockquote>
+</div>
+<div class="section" id="macos">
+<h2><span class="section-number">1.3. </span>MacOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="install-hydrouq">
+<h3>Install HydroUQ<a class="headerlink" href="#install-hydrouq" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="test-hydrouq">
+<h3>Test HydroUQ<a class="headerlink" href="#test-hydrouq" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When the Hydro app is running, open the File/Preferences and make sure that python3 appears under <strong>External Applications:Python</strong>. If you used older versions of SimCenter tools this was not the default.</p>
+</div>
+</div>
 </div>
 </div>
 
