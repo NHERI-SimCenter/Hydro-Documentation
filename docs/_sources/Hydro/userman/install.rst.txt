@@ -33,22 +33,19 @@ Once the installation procedure has been completed, it is a good practice to run
 .. _figUI-Hydro:
 
    .. figure:: figures/H20Download.png
-    :align: center
-    :figclass: align-center
+      :align: center
+      :figclass: align-center
 
-   HydroUQ tool on startup.
+      HydroUQ tool on startup.
 
 
 MacOS
 ========
 
 
-Install HydroUQ
-^^^^^^^^^^^^^^^^^^^^^
 
-
-Test HydroUQ
-^^^^^^^^^^^^^^^^^
+Preferences
+===============
 
 .. note::
 
