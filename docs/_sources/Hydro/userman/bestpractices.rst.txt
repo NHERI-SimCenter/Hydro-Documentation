@@ -50,7 +50,7 @@ Turbulence modeling
         .. math::
             \Delta y = L \cdot y^{+} \cdot \sqrt{74} \cdot {Re}_{L}^{-13/14}
 
-    where :math:`L` is the characteristic length scale, :math:`y^{+}` is the desired values, :math:`{Re}_{L}` is the Reynolds number. The non-dimensionalised velocity (:math:`u^{+}`) and distance from the wall (:math:`y^{+}`), the velocity profile of the boundary layers takes on the form, as shown below by the red line in  :numref:`yplusform`.
+where :math:`L` is the characteristic length scale, :math:`y^{+}` is the desired values, :math:`{Re}_{L}` is the Reynolds number. The non-dimensionalised velocity (:math:`u^{+}`) and distance from the wall (:math:`y^{+}`), the velocity profile of the boundary layers takes on the form, as shown below by the red line in  :numref:`yplusform`.
 
     .. _yplusform:
 

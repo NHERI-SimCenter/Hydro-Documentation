@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.8. RES: Results (Coming soon) &mdash; Hydro-UQ  documentation</title>
+  <title>2.8. RES: Results &mdash; Hydro-UQ  documentation</title>
   
 
   
@@ -44,7 +44,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="3. Researcher Guide" href="../resguide/resguide.html" />
-    <link rel="prev" title="2.7. RV: Random Variables (Coming soon)" href="RV.html" />
+    <link rel="prev" title="2.7. RV: Random Variables" href="RV.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -104,23 +104,26 @@
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/about.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../common/front-matter/ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../common/front-matter/license.html">2. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">2. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">3. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../common/front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../common/front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">5. Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../install.html">1. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="uguide.html">2. User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GI.html">2.2. GI: General Information (Coming soon)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SIM.html">2.3. SIM: Structural Model (Coming soon)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GI.html">2.2. GI: General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SIM.html">2.3. SIM: Structural Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EVT.html">2.4. EVT: Hydro Events</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FEM.html">2.5. FEM: Finite Element Method (Coming soon)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FEM.html">2.5. FEM: Finite Element Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EDP.html">2.6. EDP: Demand Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RV.html">2.7. RV: Random Variables (Coming soon)</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.8. RES: Results (Coming soon)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RV.html">2.7. RV: Random Variables</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.8. RES: Results</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#event-results">Event results</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../resguide/resguide.html">3. Researcher Guide</a></li>
@@ -195,7 +198,7 @@
         
           <li><a href="uguide.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
         
-      <li><span class="section-number">2.8. </span>RES: Results (Coming soon)</li>
+      <li><span class="section-number">2.8. </span>RES: Results</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -214,9 +217,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="res-results-coming-soon">
-<span id="lbl-resresults"></span><h1><span class="section-number">2.8. </span>RES: Results (Coming soon)<a class="headerlink" href="#res-results-coming-soon" title="Permalink to this headline">¶</a></h1>
-<p>Coming soon</p>
+  <div class="section" id="res-results">
+<span id="lbl-resresults"></span><h1><span class="section-number">2.8. </span>RES: Results<a class="headerlink" href="#res-results" title="Permalink to this headline">¶</a></h1>
+<p>A successful run or download of a job that ran successfully at <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a> will result in 2 tabbed widgets being displayed in the results panel.  The first tab, as shown in <a class="reference internal" href="#figresultssummary"><span class="std std-numref">Fig. 2.8.1</span></a> shows the summary statistics: <strong>mean</strong>, <strong>stdDev</strong>, and <strong>kurtosis</strong>.</p>
+<div class="align-center figure" id="id1">
+<span id="figresultssummary"></span><img alt="../../../_images/resultsSummary.png" src="../../../_images/resultsSummary.png" />
+<p class="caption"><span class="caption-number">Fig. 2.8.1 </span><span class="caption-text">Results summary.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>The second panel, shown in <a class="reference internal" href="#figresultsdata"><span class="std std-numref">Fig. 2.8.2</span></a> presents the results both graphically and in tabular form. By selecting different columns with left and right mouse buttons in the table below the graphic, the information in the graph is changed. Selecting the left mouse button changes the Y axis, the right mouse changes the X axis. If the same column is selected using both left and right keys, either the CDF and PDF is displayed. If the last mouse press was with the left button, the PDF will be displayed; if the last mouse press was the right one, the CDF will be displayed.</p>
+<p>Regarding the columns in the table below the figure: You will see a column for each random variable the workflow came across and then the columns for the response quantities. There may be more random variables than you specified. This is because certain applications the user selected may introduce additional random variables for the UQ engine to consider.</p>
+<div class="align-center figure" id="id2">
+<span id="figresultsdata"></span><img alt="../../../_images/resultsData.png" src="../../../_images/resultsData.png" />
+<p class="caption"><span class="caption-number">Fig. 2.8.2 </span><span class="caption-text">Results presented both graphically and in tabular form.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="event-results">
+<h2>Event results<a class="headerlink" href="#event-results" title="Permalink to this headline">¶</a></h2>
+<p>In case results from the CFD event are requested as shown in <a class="reference internal" href="#figresultsevent"><span class="std std-numref">Fig. 2.8.3</span></a>, these results will be available for download from the Data Depot in the <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a> portal.</p>
+<div class="align-center figure" id="id3">
+<span id="figresultsevent"></span><img alt="../../../_images/EventResults.png" src="../../../_images/EventResults.png" />
+<p class="caption"><span class="caption-number">Fig. 2.8.3 </span><span class="caption-text">Selection of event results.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you would like to visualize the event results in the <code class="docutils literal notranslate"><span class="pre">RES</span></code> widget, please let us know using the <a class="reference internal" href="../featurereq.html#lbl-featurereq"><span class="std std-ref">Bugs &amp; Feature Requests</span></a>.</p>
+</div>
+</div>
 </div>
 
 

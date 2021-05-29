@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.3. SIM: Structural Model (Coming soon) &mdash; Hydro-UQ  documentation</title>
+  <title>2.3. SIM: Structural Model &mdash; Hydro-UQ  documentation</title>
   
 
   
@@ -37,6 +37,7 @@
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -44,7 +45,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="2.4. EVT: Hydro Events" href="EVT.html" />
-    <link rel="prev" title="2.2. GI: General Information (Coming soon)" href="GI.html" />
+    <link rel="prev" title="2.2. GI: General Information" href="GI.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -104,23 +105,28 @@
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/about.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../common/front-matter/ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../common/front-matter/license.html">2. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">2. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">3. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../common/front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../common/front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">5. Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../install.html">1. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="uguide.html">2. User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GI.html">2.2. GI: General Information (Coming soon)</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.3. SIM: Structural Model (Coming soon)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GI.html">2.2. GI: General Information</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.3. SIM: Structural Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#multiple-degrees-of-freedom-mdof">Multiple Degrees of Freedom (MDOF)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lblopenseessim">OpenSees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#steel-building-model-autosda">Steel Building Model (AutoSDA)</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="EVT.html">2.4. EVT: Hydro Events</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FEM.html">2.5. FEM: Finite Element Method (Coming soon)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FEM.html">2.5. FEM: Finite Element Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EDP.html">2.6. EDP: Demand Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RV.html">2.7. RV: Random Variables (Coming soon)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RES.html">2.8. RES: Results (Coming soon)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RV.html">2.7. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RES.html">2.8. RES: Results</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../resguide/resguide.html">3. Researcher Guide</a></li>
@@ -195,7 +201,7 @@
         
           <li><a href="uguide.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
         
-      <li><span class="section-number">2.3. </span>SIM: Structural Model (Coming soon)</li>
+      <li><span class="section-number">2.3. </span>SIM: Structural Model</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -214,9 +220,53 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="sim-structural-model-coming-soon">
-<span id="lbl-simstruct"></span><h1><span class="section-number">2.3. </span>SIM: Structural Model (Coming soon)<a class="headerlink" href="#sim-structural-model-coming-soon" title="Permalink to this headline">¶</a></h1>
-<p>Coming soon</p>
+  <div class="section" id="sim-structural-model">
+<span id="lbl-simstruct"></span><h1><span class="section-number">2.3. </span>SIM: Structural Model<a class="headerlink" href="#sim-structural-model" title="Permalink to this headline">¶</a></h1>
+<p>The user here defines the structural system of the building. The  structural system is the part of the building provided to resist the gravity loads and those loads arising from the natural hazard. There are a number of backend applications provided for this part of the workflow, each responsible for defining the structural analysis model. The user can select the application to use from the drop-down menu at the top of this panel. As the user switches between applications, the input panel changes to reflect the inputs each particular application requires. At present, there are two backend applications available.</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#multiple-degrees-of-freedom-mdof" id="id4">Multiple Degrees of Freedom (MDOF)</a></p></li>
+<li><p><a class="reference internal" href="#lblopenseessim" id="id5">OpenSees</a></p></li>
+<li><p><a class="reference internal" href="#steel-building-model-autosda" id="id6">Steel Building Model (AutoSDA)</a></p></li>
+</ul>
+</div>
+<div class="section" id="multiple-degrees-of-freedom-mdof">
+<span id="lblmdofsim"></span><h2><a class="toc-backref" href="#id4">Multiple Degrees of Freedom (MDOF)</a><a class="headerlink" href="#multiple-degrees-of-freedom-mdof" title="Permalink to this headline">¶</a></h2>
+<p>This panel is provided for users to quickly create simple shear models of a building. The panel, as shown in <a class="reference internal" href="#fig-mdof"><span class="std std-numref">Fig. 2.3.1</span></a> is divided into 3 frames:</p>
+<ol class="arabic simple">
+<li><p>The top left frame allows the user to specify the number of stories and properties that are constant for every floor and story in the building. The following properties are available: floor weight, story height, torsional stiffness, initial stiffness, yield strength, and hardening ratio for each direction in each story. The user has the option of specifying values for eccentricity of mass in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> directions, and eccentricities for the location of the response quantities. Here, the one and two directions are orthogonal <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> axes in plan view.</p></li>
+<li><p>The lower left frame allows the user to override the structural parameters above for individual floors and stories.</p></li>
+<li><p>The frame on the right is a graphical widget showing the current building. When entering data into the lower left frame, the stories corresponding to the data being modified are highlighted in red.</p></li>
+</ol>
+<div class="align-center figure" id="id2">
+<span id="fig-mdof"></span><img alt="../../../_images/mdof_general.png" src="../../../_images/mdof_general.png" />
+<p class="caption"><span class="caption-number">Fig. 2.3.1 </span><span class="caption-text">Multiple degrees of freedom (MDOF) building model generator.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Random variables can be created by the user if they enter a valid string instead of a number in the entry fields for any entry except for the <em>Number of floors</em>. The variable name entered will appear as a random variable in the <strong>UQ</strong> panel; it is there that the user must specify the distribution associated with the random variable.</p>
+<blockquote>
+<div><blockquote>
+<div></div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="lblopenseessim">
+<span id="id1"></span><h2><a class="toc-backref" href="#id5">OpenSees</a><a class="headerlink" href="#lblopenseessim" title="Permalink to this headline">¶</a></h2>
+<p>This panel is for users who have an existing OpenSees model of a building that performs a gravity analysis and now they wish to subject that building model to one of the <strong>EVT</strong> options provided. The input panel for this option is shown in <a class="reference internal" href="#fig-figure3"><span class="std std-numref">Fig. 2.3.2</span></a>. Users need to provide three pieces of information:</p>
+<ol class="arabic simple">
+<li><p>Main OpenSees Script: The main script that contains the building model. This script should build a model and perform any gravity analysis of the building that is required before the event is applied.</p></li>
+<li><p>Response Nodes: A list of node numbers that define a column line of interest for which the responses will be determined. The column nodes should be in order from ground floor to roof. The <span class="xref std std-ref">EDP</span> workflow application uses this information to determine nodes at which displacement, acceleration, and story drifts are calculated.</p></li>
+<li><p>An entry for the dimension of the model (i.e., 2D or 3D). This information is used when loads are applied.</p></li>
+<li><p>Entry for the number of degrees of freedom at each node in the model.</p></li>
+</ol>
+<div class="align-center figure" id="id3">
+<span id="fig-figure3"></span><img alt="../../../_images/openSees_gen.png" src="../../../_images/openSees_gen.png" />
+<p class="caption"><span class="caption-number">Fig. 2.3.2 </span><span class="caption-text">OpenSees Model.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>In OpenSees there is an option to set variables to have certain values using the <code class="docutils literal notranslate"><span class="pre">pset</span></code> command, e.g <code class="docutils literal notranslate"><span class="pre">pset</span> <span class="pre">a</span> <span class="pre">5.0</span></code> will set the variable a to have a value 5 in the OpenSees script. In Hydro, any variable found in the main script to be set using the <code class="docutils literal notranslate"><span class="pre">pset</span></code> command will be assumed to be a random variable. As such, when a new main script is loaded all variables set with <code class="docutils literal notranslate"><span class="pre">pset</span></code> will appear as random variables in the <strong>UQ</strong> panel.</p>
+</div>
+<div class="section" id="steel-building-model-autosda">
+<h2><a class="toc-backref" href="#id6">Steel Building Model (AutoSDA)</a><a class="headerlink" href="#steel-building-model-autosda" title="Permalink to this headline">¶</a></h2>
+<p>This module should not be used for tsunami / storm surge hazards but only valid for earthquake events.</p>
+</div>
 </div>
 
 
