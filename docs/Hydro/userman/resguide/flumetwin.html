@@ -7,12 +7,15 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.4. Wave Flume: Digital Twin &mdash; Hydro-UQ  documentation</title>
+  <title>3.3. Wave Flume: Digital Twin &mdash; Hydro-UQ  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
@@ -43,8 +46,8 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="4. Troubleshooting" href="../errors.html" />
-    <link rel="prev" title="3.3. CFD Solver" href="cfdsolvers.html" />
+    <link rel="next" title="4. Help videos" href="../helpvideo.html" />
+    <link rel="prev" title="3.2. CFD Solver" href="cfdsolvers.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -114,17 +117,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../install.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../userguide/uguide.html">2. User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="resguide.html">3. Researcher Guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="swsolvers.html">3.1. Shallow Water Solvers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="swcfdinter.html">3.2. SW / CFD Interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cfdsolvers.html">3.3. CFD Solver</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.4. Wave Flume: Digital Twin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swcfdinter.html">3.1. SW / CFD Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cfdsolvers.html">3.2. CFD Solver</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.3. Wave Flume: Digital Twin</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../errors.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">5. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../bestpractices.html">6. Best Practices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">7. Release Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../featurereq.html">8. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../helpvideo.html">4. Help videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">6. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bestpractices.html">7. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">8. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../featurereq.html">9. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical manual</span></p>
 <ul>
@@ -191,7 +194,7 @@
         
           <li><a href="resguide.html"><span class="section-number">3. </span>Researcher Guide</a> &raquo;</li>
         
-      <li><span class="section-number">3.4. </span>Wave Flume: Digital Twin</li>
+      <li><span class="section-number">3.3. </span>Wave Flume: Digital Twin</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -211,8 +214,48 @@
            <div itemprop="articleBody">
             
   <div class="section" id="wave-flume-digital-twin">
-<span id="lbl-flumetwin"></span><h1><span class="section-number">3.4. </span>Wave Flume: Digital Twin<a class="headerlink" href="#wave-flume-digital-twin" title="Permalink to this headline">¶</a></h1>
-<p>Coming soon.</p>
+<span id="lbl-flumetwin"></span><h1><span class="section-number">3.3. </span>Wave Flume: Digital Twin<a class="headerlink" href="#wave-flume-digital-twin" title="Permalink to this headline">¶</a></h1>
+<p>HydroUQ includes a digital twin of the wave flume. This includes definition of the geometry and the boundary condition for the moving wall. This digital twin is of the Large Wave Flume facility at the O.H. Hinsdale Wave Research Laboratory at the Oregon State University. However, this can be adapted for any other wave flume facility as well.</p>
+<p>Below is a template for the user to facilitate use of the user-defined wave flume. Here, user will define a child-class that would take precedence over the default class that uses the <code class="docutils literal notranslate"><span class="pre">OSU</span> <span class="pre">wave</span> <span class="pre">flume</span></code>. If you would like to integrate your solver, please write to us through the <a class="reference external" href="https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=17.0">Message Board</a> for more assistance.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">####################################################################</span>
+<span class="c1"># Import necessary packages for user-flume class</span>
+<span class="c1"># We are creating a child class (i.e. userflume) </span>
+<span class="c1"># of the parent class (i.e. OSUWaveFlume) that is used by default</span>
+<span class="c1">####################################################################</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">from</span> <span class="nn">Flume</span> <span class="kn">import</span> <span class="n">OSUWaveFlume</span> <span class="c1"># Import the parent class</span>
+<span class="kn">from</span> <span class="nn">GenUtilities</span> <span class="kn">import</span> <span class="n">genUtilities</span> <span class="c1"># General utilities</span>
+
+<span class="k">class</span> <span class="nc">userflume</span><span class="p">(</span><span class="n">OSUWaveFlume</span><span class="p">):</span>
+
+    <span class="c1">####################################################################</span>
+    <span class="c1"># Generate the flume geometry</span>
+    <span class="c1">####################################################################</span>
+    <span class="k">def</span> <span class="nf">generateflume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This function is used to create the STL files for the flume geometry&quot;</span><span class="p">)</span>
+        <span class="c1"># Add your method statements here</span>
+        <span class="c1"># If you do not want to create this method use</span>
+        <span class="c1"># parent.generateflume() or super().generateflume() </span>
+
+    <span class="c1">####################################################################</span>
+    <span class="c1"># Create the wavemaker text file</span>
+    <span class="c1">####################################################################</span>
+    <span class="k">def</span> <span class="nf">GENwavemakerfile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">dispfilename</span><span class="p">,</span><span class="n">heightfilename</span><span class="p">):</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This function is used to create the wavemakerMovement.txt file that has information about the wall movement &amp; water height&quot;</span><span class="p">)</span>
+        <span class="c1"># dispfilename: File with moving wall displacement with time</span>
+        <span class="c1"># heightfilename: File with height of water at the moving wall with time</span>
+        <span class="c1"># Add your method statements here</span>
+        <span class="c1"># If you do not want to create this method use</span>
+        <span class="c1"># parent.GENwavemakerfile(data) or</span>
+        <span class="c1"># super().GENwavemakerfile(data)</span>
+
+</pre></div>
+</div>
 </div>
 
 

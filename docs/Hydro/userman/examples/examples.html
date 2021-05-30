@@ -7,12 +7,15 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>5. Examples &mdash; Hydro-UQ  documentation</title>
+  <title>6. Examples &mdash; Hydro-UQ  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
@@ -43,8 +46,8 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="6. Best Practices" href="../bestpractices.html" />
-    <link rel="prev" title="4. Troubleshooting" href="../errors.html" />
+    <link rel="next" title="7. Best Practices" href="../bestpractices.html" />
+    <link rel="prev" title="5. Troubleshooting" href="../errors.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -114,11 +117,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../install.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../userguide/uguide.html">2. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resguide/resguide.html">3. Researcher Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../errors.html">4. Troubleshooting</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../bestpractices.html">6. Best Practices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">7. Release Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../featurereq.html">8. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../helpvideo.html">4. Help videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">5. Troubleshooting</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bestpractices.html">7. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">8. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../featurereq.html">9. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical manual</span></p>
 <ul>
@@ -183,7 +187,7 @@
     
       <li><a href="../../../Hydro.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><span class="section-number">5. </span>Examples</li>
+      <li><span class="section-number">6. </span>Examples</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -203,9 +207,47 @@
            <div itemprop="articleBody">
             
   <div class="section" id="examples">
-<span id="lbl-example"></span><h1><span class="section-number">5. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
-<p>Coming soon.</p>
+<span id="lbl-example"></span><h1><span class="section-number">6. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+<p>Here, we will discuss various examples for the HydroUQ. The examples are based on different tyoes of geometric definitions and boundary conditions.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Wave flume digital twin - 1<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">Click the links to see the documentation built with:</p>
+<ul class="simple">
+<li><p class="card-text"><a class="reference external" href="https://sphinx-panels.readthedocs.io/en/alabaster-theme/">alabaster</a></p></li>
+<li><p class="card-text"><a class="reference external" href="https://sphinx-panels.readthedocs.io">sphinx-rtd-theme</a></p></li>
+<li><p class="card-text"><a class="reference external" href="https://sphinx-panels.readthedocs.io/en/pydata-theme/">sphinx-pydata-theme</a></p></li>
+<li><p class="card-text"><a class="reference external" href="https://sphinx-panels.readthedocs.io/en/sphinx-book-theme/">sphinx-book-theme</a></p></li>
+</ul>
+<div class="align-center figure" id="id6">
+<span id="yplusform2"></span><a class="reference internal image-reference" href="../../../_images/yplus1.png"><img alt="../../../_images/yplus1.png" src="../../../_images/yplus1.png" style="height: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 6.1 </span><span class="caption-text">The variation of non-dimensional velocity and distance</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Shallow-water to CFD coupling<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">Click the links to see the documentation built with:</p>
+<ul class="simple">
+<li><p class="card-text"><a class="reference external" href="https://sphinx-panels.readthedocs.io/en/alabaster-theme/">alabaster</a></p></li>
+<li><p class="card-text"><a class="reference external" href="https://sphinx-panels.readthedocs.io">sphinx-rtd-theme</a></p></li>
+<li><p class="card-text"><a class="reference external" href="https://sphinx-panels.readthedocs.io/en/pydata-theme/">sphinx-pydata-theme</a></p></li>
+<li><p class="card-text"><a class="reference external" href="https://sphinx-panels.readthedocs.io/en/sphinx-book-theme/">sphinx-book-theme</a></p></li>
+</ul>
+<div class="align-center figure" id="id7">
+<span id="id5"></span><a class="reference internal image-reference" href="../../../_images/yplus1.png"><img alt="../../../_images/yplus1.png" src="../../../_images/yplus1.png" style="height: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 6.2 </span><span class="caption-text">The variation of non-dimensional velocity and distance</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</details></div>
 
 
            </div>
