@@ -7,12 +7,15 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.2. SW / CFD Interface &mdash; Hydro-UQ  documentation</title>
+  <title>3.1. SW / CFD Interface &mdash; Hydro-UQ  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
@@ -43,8 +46,8 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="3.3. CFD Solver" href="cfdsolvers.html" />
-    <link rel="prev" title="3.1. Shallow Water Solvers" href="swsolvers.html" />
+    <link rel="next" title="3.2. CFD Solver" href="cfdsolvers.html" />
+    <link rel="prev" title="3. Researcher Guide" href="resguide.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -114,17 +117,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../install.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../userguide/uguide.html">2. User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="resguide.html">3. Researcher Guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="swsolvers.html">3.1. Shallow Water Solvers</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.2. SW / CFD Interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cfdsolvers.html">3.3. CFD Solver</a></li>
-<li class="toctree-l2"><a class="reference internal" href="flumetwin.html">3.4. Wave Flume: Digital Twin</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.1. SW / CFD Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cfdsolvers.html">3.2. CFD Solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flumetwin.html">3.3. Wave Flume: Digital Twin</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../errors.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">5. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../bestpractices.html">6. Best Practices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">7. Release Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../featurereq.html">8. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../helpvideo.html">4. Help videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">6. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bestpractices.html">7. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">8. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../featurereq.html">9. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical manual</span></p>
 <ul>
@@ -191,7 +194,7 @@
         
           <li><a href="resguide.html"><span class="section-number">3. </span>Researcher Guide</a> &raquo;</li>
         
-      <li><span class="section-number">3.2. </span>SW / CFD Interface</li>
+      <li><span class="section-number">3.1. </span>SW / CFD Interface</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -211,8 +214,78 @@
            <div itemprop="articleBody">
             
   <div class="section" id="sw-cfd-interface">
-<span id="lbl-swcfdinter"></span><h1><span class="section-number">3.2. </span>SW / CFD Interface<a class="headerlink" href="#sw-cfd-interface" title="Permalink to this headline">¶</a></h1>
-<p>Coming soon.</p>
+<span id="lbl-swcfdinter"></span><h1><span class="section-number">3.1. </span>SW / CFD Interface<a class="headerlink" href="#sw-cfd-interface" title="Permalink to this headline">¶</a></h1>
+<p>HydroUQ allows an interface between two-dimensional shallow-water solver (presently, GeoClaw) and three-dimensional CFD solver (presently, OpenFOAM). Here, depth-averaged velocities obtained as a solution from the shallow-water solver is provided as initial and boundary condition to the CFD solver. HydroUQ uses an interchangeable workflow.</p>
+<p>This workflow facilitates the users to use the solutions from other user-defined shallow-water solvers instead of those from GeoClaw. Below is a template for the user to facilitate use of the solutions from other user-defined shallow-water solvers. Here, user will define a child-class that would take precedence over the default class that uses the <code class="docutils literal notranslate"><span class="pre">sw-cfd-interface</span></code>. If you would like to integrate your shallow-water solver as input, please write to us through the <a class="reference external" href="https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=17.0">Message Board</a> for more assistance.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">####################################################################</span>
+<span class="c1"># Import necessary packages for user-solver class</span>
+<span class="c1"># We are creating a child class (i.e. usersolver) </span>
+<span class="c1"># of the parent class (i.e. solver) that is used by default</span>
+<span class="c1">####################################################################</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">from</span> <span class="nn">GeoClawOpenFOAM</span> <span class="kn">import</span> <span class="n">swcfdinter</span> <span class="c1"># Import the parent class</span>
+<span class="kn">from</span> <span class="nn">GenUtilities</span> <span class="kn">import</span> <span class="n">genUtilities</span> <span class="c1"># General utilities</span>
+
+<span class="k">class</span> <span class="nc">userswsolver</span><span class="p">(</span><span class="n">swcfdinter</span><span class="p">):</span>
+
+    <span class="c1">####################################################################</span>
+    <span class="c1"># Read the bathymetry files</span>
+    <span class="c1">####################################################################</span>
+    <span class="k">def</span> <span class="nf">readbathymetry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This function is used to read the bathymetry files&quot;</span><span class="p">)</span>
+        <span class="c1"># data: Data from the dakota.json file</span>
+        <span class="c1"># Add your method statements here</span>
+        <span class="c1"># If you do not want to create this method use</span>
+        <span class="c1"># parent.dircreate() or super().dircreate() </span>
+
+    <span class="c1">####################################################################</span>
+    <span class="c1"># Read the sw-cfd interface data</span>
+    <span class="c1">####################################################################</span>
+    <span class="k">def</span> <span class="nf">interface</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This function is used to read the sw-cfd interface data&quot;</span><span class="p">)</span>
+        <span class="c1"># data: Data from the dakota.json file</span>
+        <span class="c1"># Add your method statements here</span>
+        <span class="c1"># If you do not want to create this method use</span>
+        <span class="c1"># parent.geometry(data) or super().geometry(data)</span>
+
+    <span class="c1">####################################################################</span>
+    <span class="c1"># Read solutions</span>
+    <span class="c1">####################################################################</span>
+    <span class="k">def</span> <span class="nf">readsolutions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This function is used to create mesh, if required&quot;</span><span class="p">)</span>
+        <span class="c1"># Add your method statements here</span>
+        <span class="c1"># If you do not want to create this method use</span>
+        <span class="c1"># parent.meshing(data) or super().meshing(data)</span>
+
+    <span class="c1">####################################################################</span>
+    <span class="c1"># Convert SW solutions to boundary condition on the patch</span>
+    <span class="c1">####################################################################</span>
+    <span class="k">def</span> <span class="nf">swtoboundary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This function is used to convert the depth averaged velocity to 3D velocity and set them as boundary condition&quot;</span><span class="p">)</span>
+        <span class="c1"># Add your method statements here</span>
+        <span class="c1"># If you do not want to create this method use</span>
+        <span class="c1"># parent.meshing(data) or super().meshing(data)</span>
+
+    <span class="c1">####################################################################</span>
+    <span class="c1"># Convert SW solutions to initial condition </span>
+    <span class="c1">####################################################################</span>
+    <span class="k">def</span> <span class="nf">swtoinitialalpha</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This function is used to read the water depth and set that as initial condition for the alpha field&quot;</span><span class="p">)</span>
+        <span class="c1"># Add your method statements here</span>
+        <span class="c1"># If you do not want to create this method use</span>
+        <span class="c1"># parent.meshing(data) or super().meshing(data)</span>
+
+    
+</pre></div>
+</div>
 </div>
 
 
