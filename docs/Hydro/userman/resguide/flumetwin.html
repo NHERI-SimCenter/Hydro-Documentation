@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.3. Wave Flume: Digital Twin &mdash; Hydro-UQ  documentation</title>
+  <title>Wave Flume: Digital Twin &mdash; Hydro-UQ  documentation</title>
   
 
   
@@ -49,8 +49,6 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="4. Help videos" href="../helpvideo.html" />
-    <link rel="prev" title="3.2. CFD Solver" href="cfdsolvers.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -115,16 +113,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../common/front-matter/abbreviations.html">4. Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../userguide/uguide.html">2. User Guide</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="resguide.html">3. Researcher Guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="swcfdinter.html">3.1. SW / CFD Interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cfdsolvers.html">3.2. CFD Solver</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.3. Wave Flume: Digital Twin</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../helpvideo.html">4. Help videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resguide.html">3. Researcher Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../helpvideo.html">4. Help Videos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../errors.html">5. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">6. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bestpractices.html">7. Best Practices</a></li>
@@ -133,7 +126,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../techman/hazards/water.html">1. Water-borne Natural Hazards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techman/hazards/water.html">1. Water-borne Hazards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../techman/fvm/fvm.html">2. Finite Volume Method</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../techman/swsolver/swsolver.html">3. Shallow Water Solvers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../techman/cfdsolver/cfdsolver.html">4. CFD Solvers</a></li>
@@ -194,9 +187,7 @@
     
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="resguide.html"><span class="section-number">3. </span>Researcher Guide</a> &raquo;</li>
-        
-      <li><span class="section-number">3.3. </span>Wave Flume: Digital Twin</li>
+      <li>Wave Flume: Digital Twin</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -216,9 +207,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="wave-flume-digital-twin">
-<span id="lbl-flumetwin"></span><h1><span class="section-number">3.3. </span>Wave Flume: Digital Twin<a class="headerlink" href="#wave-flume-digital-twin" title="Permalink to this headline">¶</a></h1>
-<p>HydroUQ includes a digital twin of the wave flume. This includes definition of the geometry and the boundary condition for the moving wall. This digital twin is of the Large Wave Flume facility at the O.H. Hinsdale Wave Research Laboratory at the Oregon State University. However, this can be adapted for any other wave flume facility as well.</p>
-<p>Below is a template for the user to facilitate use of the user-defined wave flume. Here, user will define a child-class that would take precedence over the default class that uses the <code class="docutils literal notranslate"><span class="pre">OSU</span> <span class="pre">wave</span> <span class="pre">flume</span></code>. If you would like to integrate your solver, please write to us through the <a class="reference external" href="https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=17.0">Message Board</a> for more assistance.</p>
+<span id="lbl-flumetwin"></span><h1>Wave Flume: Digital Twin<a class="headerlink" href="#wave-flume-digital-twin" title="Permalink to this headline">¶</a></h1>
+<p>HydroUQ includes a digital twin of the wave flume. This includes a definition of the geometry and the boundary condition for the moving wall. This digital twin is of the Large Wave Flume facility at the O.H. Hinsdale Wave Research Laboratory at the Oregon State University. However, this can be adapted for any other wave flume facility as well.</p>
+<p>Below is a template for the user to facilitate the use of the user-defined wave flume. Here, the user will define a child-class that would take precedence over the default class that uses the <code class="docutils literal notranslate"><span class="pre">OSU</span> <span class="pre">wave</span> <span class="pre">flume</span></code>. If you would like to integrate your solver, please write to us through the <a class="reference external" href="https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=17.0">Message Board</a> for more assistance.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">####################################################################</span>
 <span class="c1"># Import necessary packages for user-flume class</span>
 <span class="c1"># We are creating a child class (i.e. userflume) </span>

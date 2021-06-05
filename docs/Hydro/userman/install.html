@@ -128,7 +128,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="userguide/uguide.html">2. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="resguide/resguide.html">3. Researcher Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="helpvideo.html">4. Help videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helpvideo.html">4. Help Videos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="errors.html">5. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/examples.html">6. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bestpractices.html">7. Best Practices</a></li>
@@ -137,7 +137,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../techman/hazards/water.html">1. Water-borne Natural Hazards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techman/hazards/water.html">1. Water-borne Hazards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../techman/fvm/fvm.html">2. Finite Volume Method</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../techman/swsolver/swsolver.html">3. Shallow Water Solvers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../techman/cfdsolver/cfdsolver.html">4. CFD Solvers</a></li>
@@ -219,7 +219,7 @@
             
   <div class="section" id="installation">
 <span id="lbl-install"></span><h1><span class="section-number">1. </span>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p>All SimCenter applications can be downloaded from the <a class="reference external" href="https://simcenter.designsafe-ci.org/research-tools/overview/">SimCenter Research Tools</a> page. This section walks you through the install process from downloading the application to testing that it has been installed correctly.</p>
+<p>All SimCenter applications can be downloaded from the <a class="reference external" href="https://simcenter.designsafe-ci.org/research-tools/overview/">SimCenter Research Tools</a> page. This section walks you through the install process, from downloading the application to testing that it has been installed correctly.</p>
 <div class="section" id="download-hydrouq">
 <h2><span class="section-number">1.1. </span>Download HydroUQ<a class="headerlink" href="#download-hydrouq" title="Permalink to this headline">¶</a></h2>
 <p>To download the HydroUQ app, navigate to the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/HydroUQ">HydroUQ download page</a> which should resemble <a class="reference internal" href="#figdownload"><span class="std std-numref">Fig. 1.1.1</span></a>. The download page contains a list of downloadable files and directories.</p>
@@ -230,12 +230,12 @@
 </div>
 <div class="section" id="install-on-windows-10">
 <h2><span class="section-number">1.2. </span>Install on Windows 10<a class="headerlink" href="#install-on-windows-10" title="Permalink to this headline">¶</a></h2>
-<p>On the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/HydroUQ">HydroUQ download page</a>, click on the file with a name ending with <strong>Windows_Download.zip</strong> to download the HydroUQ app. In the pop-up window, click on the <strong>Download</strong> button in the bottom right corner. After the download completed, extract the zip archive to a location in your filesystem.</p>
+<p>On the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/HydroUQ">HydroUQ download page</a>, click on the file with a name ending with <strong>Windows_Download.zip</strong> to download the HydroUQ app. In the pop-up window, click on the <strong>Download</strong> button in the bottom right corner. After the download is completed, extract the zip archive to a location in your filesystem.</p>
 <p>We suggest placing the directory in the <strong>C:\SimCenter</strong> folder. Once here, you can create a shortcut to the application (Hydro_UQ.exe) and move this shortcut to your Desktop.</p>
 <p>Once the installation procedure has been completed, it is a good practice to run some basic checks. Navigate to the location where you placed the application and open it by running the Hydro_UQ.exe executable. You should see the user interface shown in <a class="reference internal" href="#figui-hydrowindows"><span class="std std-numref">Fig. 1.2.1</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>SimCenter apps are code-signed and notarized, but because they are not downloaded from the operating system’s app store, they may not be recognized as such. As a consequence, depending on your security settings, when you start a SimCenter app for the first time, your operating system may bring up a dialog box indicating it is unsafe. If this dialog should appear, hit the cancel button. Restart the app by right clicking on it and selecting open.</p>
+<p>SimCenter apps are code-signed and notarized, but because they are not downloaded from the operating system’s app store, they may not be recognized as such. Consequently, depending on your security settings, when you start a SimCenter app for the first time, your operating system may bring up a dialog box indicating it is unsafe. If this dialog should appear, hit the cancel button. Restart the app by right-clicking on it and selecting open.</p>
 </div>
 <div class="figure align-center" id="id4">
 <span id="figui-hydrowindows"></span><img alt="HydroUQ tool on startup in Windows 10" src="../../_images/HydroWin.png" />
@@ -246,44 +246,44 @@
 <h2><span class="section-number">1.3. </span>Install on macOS 10<a class="headerlink" href="#install-on-macos-10" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="install-python-3-8">
 <h3><span class="section-number">1.3.1. </span>Install Python 3.8<a class="headerlink" href="#install-python-3-8" title="Permalink to this headline">¶</a></h3>
-<p>The Mac comes with Python pre-installed, but the default Python is the outdated version 2.7. Since January 1st, 2020 no new bug reports, fixes, or changes have been made to Python 2, and Python 2 is officially no longer supported. SimCenter tools require Python 3.8.</p>
+<p>The Mac comes with Python pre-installed, but the default Python is the outdated version 2.7. Since January 1st, 2020, no new bug reports, fixes, or changes have been made to Python 2, and Python 2 is officially no longer supported. SimCenter tools require Python 3.8.</p>
 <p>If you have not yet installed Python, we recommend installing Python 3.8 from <a class="reference external" href="https://www.python.org/downloads/release/python-386/">Python.org</a>, using the <strong>macOS 64-bit installer</strong>. The installer will place a python3 executable in your <strong>PATH</strong>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The latest version of Python is 3.9.1. Certain Python modules required by SimCenter applications fail under Python 3.9 in the pip install process detailed below. If you already have Python 3.9, we recommend installing a Python 3.8 as well that you will use only for the SimCenter applications.</p>
+<p>The latest version of Python is 3.9.1. Specific Python modules required by SimCenter applications fail under Python 3.9 in the pip install process detailed below. If you already have Python 3.9, we recommend installing a Python 3.8 as well that you will use only for the SimCenter applications.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol class="arabic simple">
-<li><p>We use the python.org installation over others, due to it’s simplicity of installation.</p></li>
-<li><p>The current Python installer leaves two script files in the Python directory at the end of the installation. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal. To execute the files, double click on them. The two files, shown in the image below, are: <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Shell</span> <span class="pre">Profile.command.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">CertificateCommand.sh</span></code>.</p></li>
+<li><p>We use the python.org installation over others due to its simplicity of installation.</p></li>
+<li><p>The current Python installer leaves two script files in the Python directory at the end of the installation. You need to execute both script files to get Python set up correctly to be invoked from the terminal. To run the files, double-click on them. The two files, shown in the image below, are: <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Shell</span> <span class="pre">Profile.command.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">CertificateCommand.sh</span></code>.</p></li>
 </ol>
 <div class="figure align-center" id="id5">
 <img alt="Python: Folder Displayed at Conclusion of Install" src="../../_images/pythonInstallShell.png" />
 <p class="caption"><span class="caption-number">Fig. 1.3.1.1 </span><span class="caption-text">Python: Folder Displayed at Conclusion of Install</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </div>
-<p>Once Python is installed, you need to extend it by installing a few additional packages. To facilitate this phase of the installation, we created a <strong>nheri_simcenter</strong> python package that automatically installs all other dependencies. Start a Terminal window and type the following command:</p>
+<p>Once Python is installed, you need to extend it by installing a few additional packages. We created a <strong>nheri_simcenter</strong> Python package that automatically installs all other dependencies to facilitate this phase of the installation. Start a Terminal window and type the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3 install nheri_simcenter --upgrade
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can use the spotlight app (magnifying glass at the top right corner of the desktop) to start a Terminal window. Start the spotlight app and type in terminal. The Terminal application should appear as the top hit.</p>
+<p>You can use the spotlight app (magnifying glass at the top right corner of the Desktop) to start a Terminal window. Start the spotlight app and type in the terminal. The Terminal application should appear as the top hit.</p>
 </div>
 <p>Make sure you see a message that confirms the successful installation of the nheri-simcenter package before proceeding to the next step.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you forget to invoke the <code class="docutils literal notranslate"><span class="pre">UpdateShellProfile.command.sh</span></code> script at the end of the install, you can always edit the correct shell file later to update the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> variable to point to the Python application.</p>
-<p>On Linux systems, the shell is the program that takes commands from the keyboard that you enter in the terminal window and passes them to the operating system to perform by invoking applications and passing data between applications. In the good old days, it was the only interface available to the user, i.e., there was no such thing as Finder! There are a number of shell programs that can be installed and made available to you. The most popular is the <strong>bash</strong> shell, the up and coming one is the <strong>Z</strong> shell. Power MacOS users will write shell scripts to do many many useful things. By default the applications that the shell program will invoke are limited to applications in a few specific directories that are defined in the users <code class="docutils literal notranslate"><span class="pre">PATH</span></code>. Users can modify this path by editing files that the shell program will read from everytime the program is started.</p>
-<p>When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of  some of the external applications that you have installed as <strong>OpenSees</strong> and <strong>Dakota</strong> do not provide installers that automatically do this when they are installed. Other applications, like <strong>Tcl</strong> provide scripts that you invoke to do it. In short you have to edit the file appropriate to the shell you are using.</p>
+<p>On Linux systems, the shell is the program that takes commands from the keyboard that you enter in the terminal window and passes them to the operating system to perform by invoking applications and passing data between applications. It was the only interface available to the user in the good old days, i.e., there was no such thing as Finder! Several shell programs can be installed and made available to you. The most popular is the <strong>bash</strong> shell. The up-and-coming one is the <strong>Z</strong> shell. Power MacOS users will write shell scripts to do many useful things. By default, the applications that the shell program will invoke are limited to applications in a few specific directories defined in the users <code class="docutils literal notranslate"><span class="pre">PATH</span></code>. Users can modify this path by editing files that the shell program will read from every time the program is started.</p>
+<p>When the front-end application runs the computations, it runs a back-end application using the shell program. As a consequence, the shell program must be made aware of the locations of some of the external applications. These include <strong>OpenSees</strong>, and <strong>Dakota</strong> that you have installed. Other applications, like <strong>Tcl</strong> provide scripts that you invoke to do it. In short, you have to edit the file appropriate to the shell you are using.</p>
 <p>To find which shell program you are using when you issue commands inside the terminal window, type the following:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>env <span class="p">|</span> grep SHELL
 </pre></div>
 </div>
-<p>If the result is <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code> you will need to edit the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file or the <code class="docutils literal notranslate"><span class="pre">bash_profile</span></code> file. If the result is <code class="docutils literal notranslate"><span class="pre">/bin/zsh</span></code> you will need to edit the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> or <code class="docutils literal notranslate"><span class="pre">.zprofile</span></code>. Typically, the <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code> or the <code class="docutils literal notranslate"><span class="pre">.zprofile</span></code> file is the one to edit as by design these will invoke the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> or <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file. If in doubt, look for these files in your home directory and see which of these other installers have modified.</p>
+<p>If the result is <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code>, you will need to edit the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file or the <code class="docutils literal notranslate"><span class="pre">bash_profile</span></code> file. If the result is <code class="docutils literal notranslate"><span class="pre">/bin/zsh</span></code>, you will need to edit the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> or <code class="docutils literal notranslate"><span class="pre">.zprofile</span></code>. Typically, the <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code> or the <code class="docutils literal notranslate"><span class="pre">.zprofile</span></code> file is the one to edit as by design these will invoke the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> or <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file. If in doubt, look for these files in your home directory and see which other installers have modified them.</p>
 </div>
-<p>Click on the file with a name ending with <strong>Mac_Download.dmg</strong> to download the HydroUQ app. In the pop-up window, click on the <strong>Download</strong> button in the bottom right corner. After the download has completed, open the dmg file and copy the Hydro-UQ application to a location in your filesystem.</p>
+<p>Click on the file with a name ending with <strong>Mac_Download.dmg</strong> to download the HydroUQ app. In the pop-up window, click on the <strong>Download</strong> button in the bottom right corner. After the download has been completed, open the .dmg file and copy the Hydro-UQ application to a location in your filesystem.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>We suggest copying the application to your Desktop. After copying the application, you can move the dmg file to the trash or eject it.</p>
@@ -297,10 +297,10 @@
 </div>
 <div class="section" id="testing">
 <h2><span class="section-number">1.4. </span>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
-<p>The installation can be tested by running the test problem which is provided with the installation.</p>
+<p>The installation can be tested by running the test problem, which is provided with the installation.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>When the HydroUQ app is running, open the File/Preferences and make sure that python3 appears under <strong>External Applications:Python</strong>. If you used older versions of SimCenter tools this was not the default.</p>
+<p>When the HydroUQ app is running, open the File/Preferences and ensure that python3 appears under <strong>External Applications:Python</strong>. If you used older versions of SimCenter tools, this was not the default.</p>
 </div>
 </div>
 </div>

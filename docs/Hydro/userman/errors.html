@@ -50,7 +50,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="6. Examples" href="examples/examples.html" />
-    <link rel="prev" title="4. Help videos" href="helpvideo.html" />
+    <link rel="prev" title="4. Help Videos" href="helpvideo.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -119,8 +119,13 @@
 <li class="toctree-l1"><a class="reference internal" href="install.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="userguide/uguide.html">2. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="resguide/resguide.html">3. Researcher Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="helpvideo.html">4. Help videos</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helpvideo.html">4. Help Videos</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#startup-issues">5.1. Startup Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#issues-while-running">5.2. Issues While Running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#other-issues">5.3. Other issues</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="examples/examples.html">6. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bestpractices.html">7. Best Practices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="releasenotes.html">8. Release Notes</a></li>
@@ -128,7 +133,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../techman/hazards/water.html">1. Water-borne Natural Hazards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techman/hazards/water.html">1. Water-borne Hazards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../techman/fvm/fvm.html">2. Finite Volume Method</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../techman/swsolver/swsolver.html">3. Shallow Water Solvers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../techman/cfdsolver/cfdsolver.html">4. CFD Solvers</a></li>
@@ -210,13 +215,51 @@
             
   <div class="section" id="troubleshooting">
 <span id="lbl-errors"></span><h1><span class="section-number">5. </span>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
-<p>Some of the common tips and tricks for troubleshooting include:</p>
+<p>There can be two types of major issues, one during startup and other during the running of the program.</p>
+<div class="section" id="startup-issues">
+<h2><span class="section-number">5.1. </span>Startup Issues<a class="headerlink" href="#startup-issues" title="Permalink to this headline">¶</a></h2>
+<p>On Windows operating systems, if you receive an error when starting the application with the message that MSVCP140.dll is missing. This is caused by a missing Visual C/C++ runtime library. You can fix this error by running the installer for the Visual C/C++ redistributable package <strong>vc_redist.x64.exe</strong>, which is included with the application.</p>
+</div>
+<div class="section" id="issues-while-running">
+<h2><span class="section-number">5.2. </span>Issues While Running<a class="headerlink" href="#issues-while-running" title="Permalink to this headline">¶</a></h2>
+<p>Common causes of failure include incorrect setup, non-functioning or poorly functioning websites, user error, and possible bugs in the software. To discover the errors, it is helpful to understand how the user interface and the backend work when the user submits to run a job. Several things occur when the Submit button is clicked:</p>
+<ol class="arabic simple">
+<li><p>The UI creates a folder in the working dir location specified called <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> and in that folder creates another folder called <code class="docutils literal notranslate"><span class="pre">templatedir</span></code>.</p></li>
+<li><p>The UI then iterates through all the widgets chosen. These widgets place all needed files for the computation into the <code class="docutils literal notranslate"><span class="pre">templatedir</span></code> directory.</p></li>
+<li><p>A Python script is run in this <code class="docutils literal notranslate"><span class="pre">templatedir</span></code> directory that creates the UQ engine’s input file. For example, using Dakota, the input file <code class="docutils literal notranslate"><span class="pre">dakota.in</span></code> is created and placed in the <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> folder.</p></li>
+<li><p>The entire <code class="docutils literal notranslate"><span class="pre">templatedir</span></code> folder is sent to the TACC supercomputer. Here, the input dictionaries related to OpenFOAM are created, and the OpenFOAM event is run.</p></li>
+<li><p>Once the OpenFOAM event has been completed, the resulting forces on the buildings are calculated.</p></li>
+<li><p>The UQ engine is then started and runs using the <code class="docutils literal notranslate"><span class="pre">dakota.in</span></code> input file.</p></li>
+<li><p>As the UQ engine runs, it creates folders in <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code>, one folder for each deterministic run.</p></li>
+<li><p>When completed, the UQ engine leaves the results files in the <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> folder.</p></li>
+<li><p>The results files are then processed by the front-end and presented in the <strong>RES</strong> tab.</p></li>
+</ol>
+<p>The following is a list of things that we have observed go wrong when the user interface informs the user of a failure and steps the user can take to fix the problem:</p>
+<ol class="arabic simple">
+<li><p><strong>Could not create working dir</strong>: The user does not have permission to create the <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> folder in the working dir location. Change the <strong>Local Jobs Directory</strong> and the <strong>Remote Jobs Directory</strong> in the application’s <strong>Preferences</strong> menu option.</p></li>
+<li><p><strong>No Script File</strong>: The user has changed the Local Applications directory location in Preferences, or the applications folder that accompanies the installation has been modified. Either set the correct directory location or re-install the tool.</p></li>
+<li><p><strong>Dakota failed to finish</strong>: This can occur for several reasons. Go to the <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> folder and look for the <code class="docutils literal notranslate"><span class="pre">dakota.err</span></code> file. If no file exists then, Dakota did not start. If the file exists, look at its contents to see if there are any errors.</p>
+<ol class="arabic simple">
+<li><p><strong>No dakota.err file and no dakota.in file</strong>: the Python script in <code class="docutils literal notranslate"><span class="pre">templatedir</span></code> failed to create the necessary files. Have a look at the workflow log file in the <code class="docutils literal notranslate"><span class="pre">templatedir</span></code> folder to see what the error is, as it could indicate an error in your input. If no workflow log file exists, it means Python failed to start. Check the installation of Python.</p></li>
+<li><p><strong>No dakota.err and dakota.in exists</strong>: Dakota failed to run. Check installation of Dakota and Python. NOTE: Sometimes, if Python starts, it is not using the version of Python you specified in the environment variables when setting up Python. This is because many applications install their own version of Python. If Dakota is installed correctly, set the location of the Python executable in Preferences.</p></li>
+<li><p><strong>dakota.err file exists</strong>: Open the file and see what the error is.  For example, if it says <strong>Error: at least one variable must be specified.</strong> This means no random variables have been set. You have only one deterministic event, or you have not set any random variables in the EDP.</p></li>
+<li><p><strong>dakota.err file exists but is empty</strong>: This means that Dakota ran, but there was a problem with the simulation. Go to one of the <code class="docutils literal notranslate"><span class="pre">workdir</span></code> locations. There is a file workflow driver that can be run. Run it and see what the errors are.</p></li>
+<li><p><strong>You ran at DesignSafe and no dakota.out files come back</strong>: Go to your data depot folder at DesignSafe using your browser. Go to archive/jobs and use the job number shown in table that pops up when you ask to get the job from DesignSafe. Study both the <code class="docutils literal notranslate"><span class="pre">.err</span></code> and <code class="docutils literal notranslate"><span class="pre">.out</span></code> files in that directory for a clues to as what went wrong.</p></li>
+</ol>
+</li>
+</ol>
+<p>If problems persists, please post them on the <a class="reference external" href="https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=17.0">Message Board</a></p>
+</div>
+<div class="section" id="other-issues">
+<h2><span class="section-number">5.3. </span>Other issues<a class="headerlink" href="#other-issues" title="Permalink to this headline">¶</a></h2>
+<p>Some of the other common tips and tricks for troubleshooting include:</p>
 <p><strong>Know the objective</strong></p>
-<p>Before starting the simulation, it is essential to understand the intended goal of the project. This will help setup appropriate inputs. <code class="docutils literal notranslate"><span class="pre">Hydro-UQ</span></code> workflows already helps with this to the best extent possible. Yet, user’s understanding of the physics is much necessary.</p>
+<p>Before starting the simulation, it is essential to understand the intended goal of the project. This will help set up appropriate inputs. <code class="docutils literal notranslate"><span class="pre">Hydro-UQ</span></code> workflows already helps with this to the best extent possible. Yet, the user’s understanding of the physics is much necessary.</p>
 <p><strong>Mesh quality</strong></p>
-<p>Most often quality of the mesh can be the reason for the simulation failure. Check the mesh quality. <code class="docutils literal notranslate"><span class="pre">Hydro-UQ</span></code> has an in-built mesher and we continue to optimize its performance. However, this is limited and might not serve the needs of advanced researchers. It is then recommended to use external meshing tools and directly import the mesh. If the tool you used for meshing is not available, please submit a feature request using <span class="xref std std-ref">lbl-featurereq</span>.</p>
+<p>Most often, the quality of the mesh can be the reason for the simulation failure. Check the mesh quality. <code class="docutils literal notranslate"><span class="pre">Hydro-UQ</span></code> has an in-built mesher, and we continue to optimize its performance. However, this is limited and might not serve the needs of advanced researchers. It is then recommended to use external meshing tools and directly import the mesh. If the tool you used for meshing is unavailable, please submit a feature request using <span class="xref std std-ref">lbl-featurereq</span>.</p>
 <p><strong>Units</strong></p>
-<p>Check that the units are consistent. The CFD event, <code class="docutils literal notranslate"><span class="pre">EVT</span></code> does not have specific units but you need to ensure that the units provided need to be consistent.</p>
+<p>Check that the units are consistent. The CFD event, <code class="docutils literal notranslate"><span class="pre">EVT</span></code> does not have specific units, but you need to ensure that the units provided need to be consistent.</p>
+</div>
 </div>
 
 
