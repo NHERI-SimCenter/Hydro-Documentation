@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.3. Wave Flume: Digital Twin &mdash; Hydro-UQ  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="4. Help videos" href="../helpvideo.html" />
+    <link rel="prev" title="3.2. CFD Solver" href="cfdsolvers.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../index.html">
+
+
+
+  
+  <img src="../../../_static/HydroUQ-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../common/front-matter/ack.html">1. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../common/front-matter/license.html">2. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../common/front-matter/glossary.html">3. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../common/front-matter/abbreviations.html">4. Abbreviations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../install.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userguide/uguide.html">2. User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="resguide.html">3. Researcher Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="swcfdinter.html">3.1. SW / CFD Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cfdsolvers.html">3.2. CFD Solver</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.3. Wave Flume: Digital Twin</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../helpvideo.html">4. Help videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">6. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bestpractices.html">7. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">8. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../common/user_manual/bugs.html">9. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../techman/hazards/water.html">1. Water-borne Natural Hazards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techman/fvm/fvm.html">2. Finite Volume Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techman/swsolver/swsolver.html">3. Shallow Water Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techman/cfdsolver/cfdsolver.html">4. CFD Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techman/swcfdcoupling/swcfdcoupling.html">5. SW-CFD Coupling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techman/UQ/uqengine.html">6. Uncertainity quantification</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../common/developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../common/developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../common/developer_manual/verification/desktop/verification.html">3. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../common/developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Hydro-UQ</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="resguide.html"><span class="section-number">3. </span>Researcher Guide</a> &raquo;</li>
+        
+      <li><span class="section-number">3.3. </span>Wave Flume: Digital Twin</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/Hydro/userman/resguide/flumetwin.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="wave-flume-digital-twin">
+<span id="lbl-flumetwin"></span><h1><span class="section-number">3.3. </span>Wave Flume: Digital Twin<a class="headerlink" href="#wave-flume-digital-twin" title="Permalink to this headline">¶</a></h1>
+<p>HydroUQ includes a digital twin of the wave flume. This includes definition of the geometry and the boundary condition for the moving wall. This digital twin is of the Large Wave Flume facility at the O.H. Hinsdale Wave Research Laboratory at the Oregon State University. However, this can be adapted for any other wave flume facility as well.</p>
+<p>Below is a template for the user to facilitate use of the user-defined wave flume. Here, user will define a child-class that would take precedence over the default class that uses the <code class="docutils literal notranslate"><span class="pre">OSU</span> <span class="pre">wave</span> <span class="pre">flume</span></code>. If you would like to integrate your solver, please write to us through the <a class="reference external" href="https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=17.0">Message Board</a> for more assistance.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">####################################################################</span>
+<span class="c1"># Import necessary packages for user-flume class</span>
+<span class="c1"># We are creating a child class (i.e. userflume) </span>
+<span class="c1"># of the parent class (i.e. OSUWaveFlume) that is used by default</span>
+<span class="c1">####################################################################</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">from</span> <span class="nn">Flume</span> <span class="kn">import</span> <span class="n">OSUWaveFlume</span> <span class="c1"># Import the parent class</span>
+<span class="kn">from</span> <span class="nn">GenUtilities</span> <span class="kn">import</span> <span class="n">genUtilities</span> <span class="c1"># General utilities</span>
+
+<span class="k">class</span> <span class="nc">userflume</span><span class="p">(</span><span class="n">OSUWaveFlume</span><span class="p">):</span>
+
+    <span class="c1">####################################################################</span>
+    <span class="c1"># Generate the flume geometry</span>
+    <span class="c1">####################################################################</span>
+    <span class="k">def</span> <span class="nf">generateflume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This function is used to create the STL files for the flume geometry&quot;</span><span class="p">)</span>
+        <span class="c1"># Add your method statements here</span>
+        <span class="c1"># If you do not want to create this method use</span>
+        <span class="c1"># parent.generateflume() or super().generateflume() </span>
+
+    <span class="c1">####################################################################</span>
+    <span class="c1"># Create the wavemaker text file</span>
+    <span class="c1">####################################################################</span>
+    <span class="k">def</span> <span class="nf">GENwavemakerfile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">dispfilename</span><span class="p">,</span><span class="n">heightfilename</span><span class="p">):</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This function is used to create the wavemakerMovement.txt file that has information about the wall movement &amp; water height&quot;</span><span class="p">)</span>
+        <span class="c1"># dispfilename: File with moving wall displacement with time</span>
+        <span class="c1"># heightfilename: File with height of water at the moving wall with time</span>
+        <span class="c1"># Add your method statements here</span>
+        <span class="c1"># If you do not want to create this method use</span>
+        <span class="c1"># parent.GENwavemakerfile(data) or</span>
+        <span class="c1"># super().GENwavemakerfile(data)</span>
+
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '...', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>
