@@ -120,7 +120,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../userman/install.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../userman/userguide/uguide.html">2. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../userman/resguide/resguide.html">3. Researcher Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../userman/helpvideo.html">4. Help videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../userman/helpvideo.html">4. Help Videos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../userman/errors.html">5. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../userman/examples/examples.html">6. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../userman/bestpractices.html">7. Best Practices</a></li>
@@ -129,7 +129,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="water.html">1. Water-borne Natural Hazards</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="water.html">1. Water-borne Hazards</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="water.html#tsunami">1.1. Tsunami</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="tsu-events.html">Tsunami events</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tsu-cause.html">Causes of tsunami</a></li>
@@ -204,7 +204,7 @@
     
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="water.html"><span class="section-number">1. </span>Water-borne Natural Hazards</a> &raquo;</li>
+          <li><a href="water.html"><span class="section-number">1. </span>Water-borne Hazards</a> &raquo;</li>
         
       <li>Tsunami modeling</li>
     
@@ -227,27 +227,27 @@
             
   <div class="section" id="tsunami-modeling">
 <h1>Tsunami modeling<a class="headerlink" href="#tsunami-modeling" title="Permalink to this headline">¶</a></h1>
-<p>The phenomenon of tsunami are modeling using shallow water equations. During a tsunami, the waves have very small amplitude in comparison to the wavelength (typically around 100 km or more ) and the depth of the ocean. However, as they approach the coast/surface, the depth of the ocean reduces and so does the wavelength. These systems can be modeled as a hyperbolic system of partial differential equations.</p>
-<p>The numerical methods require ability to capture shocks. They are based on extensions of the Godunov method and are used to solve Riemann problems at the interfaces between grid cells. The second order corrections terms are defined using limiters to avoid non-physical oscillations. Further on, mass conservation near the shore is hard due to adaptive mesh refinement.</p>
+<p>The phenomenon of a tsunami is often modeled using shallow water equations. During a tsunami, the waves have a very small amplitude compared to the wavelength (typically around 100 km or more ) and the depth of the ocean. However, as they approach the coast/surface, the ocean’s depth reduces, and so does the wavelength. These systems can be modeled as a hyperbolic system of partial differential equations.</p>
+<p>The numerical methods require the ability to capture shocks. They are based on extensions of the Godunov method. They are used to solve Riemann problems at the interfaces between grid cells. The second-order corrections terms are defined using limiters to avoid non-physical oscillations. Further on, mass conservation near the shore is challenging due to adaptive mesh refinement.</p>
 <div class="section" id="modeling-tools-and-features">
 <h2>Modeling tools and features<a class="headerlink" href="#modeling-tools-and-features" title="Permalink to this headline">¶</a></h2>
-<p>There have been several tools that have been used till date. Some of the noteworthy ones being</p>
+<p>There have been several tools that have been used to date. Some of the noteworthy ones being</p>
 <ul class="simple">
-<li><p>GeoClaw is a package available as a part of Clawpack <a class="reference internal" href="#legebe2011" id="id1"><span>[LeGeBe2011]</span></a> , <a class="reference internal" href="#beetal2011" id="id2"><span>[Beetal2011]</span></a> . The primary goal of Clawpack software is to solve hyperbolic PDE’s and has an adaptive mesh refinement strategy encoded. It can be downloaded from <a class="reference external" href="https://depts.washington.edu/clawpack/geoclaw">GeoClaw</a>. In the upcoming sections, we will discuss how to build the software and run related examples.</p></li>
-<li><p>AMROC is another package that is well known for adaptive meshing. It is written in C++ and also incorporates Clawpack. Overall , the software seems to have a better documentation. It can be downloaded from <a class="reference external" href="http://amroc.sourceforge.net/html/intro.htm">AMROC website</a>.</p></li>
+<li><p>GeoClaw is a package available as a part of Clawpack <a class="reference internal" href="#legebe2011" id="id1"><span>[LeGeBe2011]</span></a> , <a class="reference internal" href="#beetal2011" id="id2"><span>[Beetal2011]</span></a> . The primary goal of Clawpack software is to solve hyperbolic PDEs and has an adaptive mesh refinement strategy encoded. It can be downloaded from <a class="reference external" href="https://depts.washington.edu/clawpack/geoclaw">GeoClaw</a>. In the upcoming sections, we will discuss how to build the software and run related examples.</p></li>
+<li><p>AMROC is another package that is well known for adaptive meshing. It is written in C++ and also incorporates Clawpack. Overall, the software seems to have better documentation. It can be downloaded from <a class="reference external" href="http://amroc.sourceforge.net/html/intro.htm">AMROC website</a>.</p></li>
 <li><p>OpenFOAM is an open/source CFD solver that is used extensively. It was also recently used to simulate Tsunami <a class="reference internal" href="#xietal2018" id="id3"><span>[Xietal2018]</span></a>.</p></li>
 <li><p>Chombo is another platform that facilitates automated meshing and can be downloaded from the official <a class="reference external" href="https://commons.lbl.gov/display/chombo/Chombo+-+Software+for+Adaptive+Solutions+of+Partial+Differential+Equations">Chombo website</a>.</p></li>
 <li><p>SAMRAI can be downloaded from the official <a class="reference external" href="https://computing.llnl.gov/projects/samrai/software">website</a>.</p></li>
-<li><p>FLASH was originally developed for simulation of gas dynamics in astrophysics applications. It can be downloaded from the <a class="reference external" href="https://iacs.stonybrook.edu/research/products/software/the-flash-code">Stony Brook university website</a>.</p></li>
+<li><p>FLASH was initially developed for simulation of gas dynamics in astrophysics applications. It can be downloaded from the <a class="reference external" href="https://iacs.stonybrook.edu/research/products/software/the-flash-code">Stony Brook University website</a>.</p></li>
 </ul>
-<p>The simulation of tsunami events require several modeling considerations. To start with, the free boundary problem need to be considered. When the free surface is considered, then the tangential shear vanish.</p>
-<p>During each time step, the location of the wet and dry interfaces need to be computed at each step. This involves moving boundaries. Tracking the moving boundary is difficult and most codes do not account for this. The shoreline topology constantly changes with islands and isolated lakes appearing and disappearing. Most codes consider solid wall boundary to measure depth at that point and convert to inundation distances via empirical measures.</p>
-<p>It is further necessary to capture small perturbations to undisturbed water at rest. Consider here, that the ocean is about 4 kms deep while tsunami wave amplitude is 1m in open ocean and wavelength is about 100 km. Considering this, over 1km, the tsunami varies by less than 1 cm. In addition, the bathymetry may vary by 100’s of meters. Thus, it is required that a stable numerical method is required to maintain steady state of ocean at rest to accurately capture the small perturbations. An example of the same is shown below.</p>
+<p>The simulation of tsunami events requires several modeling considerations. To start with, the free surface flow problem needs to be considered. When the free surface is considered, then the tangential shear vanishes.</p>
+<p>During each time step, the location of the wet and dry interfaces needs to be computed at each step. This involves moving boundaries. Tracking a moving boundary is complex, and most codes do not account for this. The shoreline topology constantly changes with islands and isolated lakes appearing and disappearing. Most codes consider solid wall boundary to measure the depth at that point and convert it to inundation distances via empirical measures.</p>
+<p>It is further necessary to capture small perturbations to the undisturbed water at rest. Consider here that the ocean is about 4 km deep. In comparison, tsunami wave amplitude is 1m in the open sea, and wavelength is about 100 km. Considering this, over 1 km, the tsunami varies by less than 1 cm. In addition, the bathymetry may differ by 100’s of meters. Thus, it is required that a stable numerical method is required to maintain a steady-state of the ocean at rest to accurately capture the small perturbations. An example of the same is shown below.</p>
 <div class="align-center figure" id="id4">
 <a class="reference internal image-reference" href="../../../_images/PacificOcean.png"><img alt="alternate text" src="../../../_images/PacificOcean.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.1.8 </span><span class="caption-text">C/S of Pacific Ocean at 25-deg S. Zoom of surface elevation from -20 to 20 cm showing the small amplitude and long wavelength of tsunami (after 2.5 h of earthquake) (TOP). Full depth of the ocean (BOTTOM)</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.1.8 </span><span class="caption-text">C/S of Pacific Ocean at 25-deg S. Zoom of surface elevation from -20 to 20 cm showing the small amplitude and long wavelength of a tsunami (after 2.5 h of an earthquake) (TOP). Full-depth of the ocean (BOTTOM)</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
-<p>It is necessary to use a “wetting-drying” algorithm. Here, the computational grid covers dry land and ocean. Each grid is allowed to be wet <span class="math notranslate nohighlight">\(\left(h &gt; 0\right)\)</span> or dry <span class="math notranslate nohighlight">\(\left(h = 0\right)\)</span> in the shallow water equations. The state of each cell is updated dynamically as wave advances or retreats. Accurate modeling requires detailed models of local topography and the mesh resolution needs to be of order of 10’s of meters.</p>
+<p>It is necessary to use a “wetting-drying” algorithm. Here, the computational grid covers dry land and the ocean. Each grid is allowed to be wet <span class="math notranslate nohighlight">\(\left(h &gt; 0\right)\)</span> or dry <span class="math notranslate nohighlight">\(\left(h = 0\right)\)</span> in the shallow water equations. The state of each cell is updated dynamically as the wave advances or retreats. Accurate modeling requires detailed models of local topography. The mesh resolution needs to be of the order of 10’s of meters.</p>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>

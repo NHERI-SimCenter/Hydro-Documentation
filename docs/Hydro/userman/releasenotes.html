@@ -119,7 +119,7 @@
 <li class="toctree-l1"><a class="reference internal" href="install.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="userguide/uguide.html">2. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="resguide/resguide.html">3. Researcher Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="helpvideo.html">4. Help videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helpvideo.html">4. Help Videos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="errors.html">5. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/examples.html">6. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bestpractices.html">7. Best Practices</a></li>
@@ -134,7 +134,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../techman/hazards/water.html">1. Water-borne Natural Hazards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techman/hazards/water.html">1. Water-borne Hazards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../techman/fvm/fvm.html">2. Finite Volume Method</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../techman/swsolver/swsolver.html">3. Shallow Water Solvers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../techman/cfdsolver/cfdsolver.html">4. CFD Solvers</a></li>
@@ -220,22 +220,22 @@
 <h2><span class="section-number">8.1. </span>Version 1.0<a class="headerlink" href="#version-1-0" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="version-1-0-0">
 <h3><span class="section-number">8.1.1. </span>Version 1.0.0<a class="headerlink" href="#version-1-0-0" title="Permalink to this headline">¶</a></h3>
-<p><strong>Release date:</strong> Mar 31st, 2021</p>
+<p><strong>Release date:</strong> Apr 30th, 2021</p>
 <ol class="arabic simple">
-<li><p>Supports run on DesignSafe only. Local run on user’s desktop is not supported.</p></li>
+<li><p>Supports run on DesignSafe only. Local run on the user’s desktop is not supported.</p></li>
 <li><p>HydroUQ app <code class="docutils literal notranslate"><span class="pre">v1.0.0</span></code> currently requires the users to ensure that the inputs provided are</p></li>
 <li><p>Supports two-phase isothermal flows only. Water and air are considered as the two primary phases. However, this can be modified in the material properties to accommodate any other alternative two-phases instead.</p></li>
 <li><dl class="simple">
-<dt><strong>Simulation types</strong>:</dt><dd><p>a. CFD to resolve SW (Using SW results), CFD using bathymetry data, CFD of wave flume are supported.
+<dt><strong>Simulation types</strong>:</dt><dd><p>a. CFD to resolve SW (Using SW results), CFD using bathymetry data, CFD of wave flume is supported.
 c. For simulation type with SW-CFD coupling, <code class="docutils literal notranslate"><span class="pre">v1.0.0</span></code> considers one point on the interface. However, if you would like more flexibility, please let us know using the <span class="xref std std-ref">lbl-featurereq</span>.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
 <dt><strong>Geometry</strong>:</dt><dd><ol class="loweralpha simple">
-<li><p>Geometry can be imported as Bathymetry files (GeoClaw format - type 1); STL files or using the Hydro flume digital twin.</p></li>
+<li><p>Geometry can be imported as Bathymetry files (GeoClaw format - type 1), STL files, or the Hydro flume digital twin.</p></li>
 <li><p>Shallow-water to CFD interface can be imported as a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file only.</p></li>
-<li><p>Buildings of cuboid shapes are supported in <code class="docutils literal notranslate"><span class="pre">v1.0.0</span></code>. For additional shapes, the user can upload them as an STL file. The buildings need to be specified in the table or can be generated parametrically. Importing buildings as a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file is not currently supported in <code class="docutils literal notranslate"><span class="pre">v1.0.0</span></code> but can be requested using the <span class="xref std std-ref">lbl-featurereq</span>.</p></li>
+<li><p>Buildings of cuboid shapes are supported in <code class="docutils literal notranslate"><span class="pre">v1.0.0</span></code>. For other shapes, the user can upload them as an STL file. The buildings need to be specified in the table or can be generated parametrically. Importing buildings as a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file is not currently supported in <code class="docutils literal notranslate"><span class="pre">v1.0.0</span></code> but can be requested using the <span class="xref std std-ref">lbl-featurereq</span>.</p></li>
 <li><p>Floating bodies and debris modeling are not supported in <code class="docutils literal notranslate"><span class="pre">v1.0.0</span></code>. Support will be added in upcoming versions. If you are interested in this feature, please write to us at <span class="xref std std-ref">lbl-featurereq</span>.</p></li>
 </ol>
 </dd>
@@ -244,8 +244,8 @@ c. For simulation type with SW-CFD coupling, <code class="docutils literal notra
 <li><dl class="simple">
 <dt><strong>Meshing</strong>:</dt><dd><ol class="loweralpha simple">
 <li><p>Supports blockMesh and snappyHexMesh for internal meshing.</p></li>
-<li><p>Suports import for the following mesh formats: Ansys Fluent (.msh), Ansys I-DEAS (.ans), CFX mesh (.geo), GAMBIT mesh (.neu), Gmsh mesh (.msh).</p></li>
-<li><p>Supports import of OpenFOAM mesh dictionaries, namely the blockMeshDict and snappyHexMeshDict. Additionally surfaceFeatureExtractDict is required if STL files are used to define the geometry.</p></li>
+<li><p>Supports import for the following mesh formats: Ansys Fluent (.msh), Ansys I-DEAS (.ans), CFX mesh (.geo), GAMBIT mesh (.neu), Gmsh mesh (.msh).</p></li>
+<li><p>Supports import of OpenFOAM mesh dictionaries, namely the blockMeshDict and snappyHexMeshDict. Additionally, surfaceFeatureExtractDict is required if STL files are used to define the geometry.</p></li>
 </ol>
 </dd>
 </dl>
@@ -253,7 +253,7 @@ c. For simulation type with SW-CFD coupling, <code class="docutils literal notra
 <li><dl class="simple">
 <dt><strong>Materials</strong>:</dt><dd><ol class="loweralpha simple">
 <li><p>Supports Newtonian materials only.</p></li>
-<li><p>Supports kinematic viscosity and density of the two phases in addition to the surface-tension between the fluids.</p></li>
+<li><p>Supports kinematic viscosity and density of the two phases in addition to the surface tension between the fluids.</p></li>
 </ol>
 </dd>
 </dl>
@@ -269,8 +269,8 @@ c. For simulation type with SW-CFD coupling, <code class="docutils literal notra
 <li><dl class="simple">
 <dt><strong>Boundary conditions</strong>:</dt><dd><ol class="loweralpha simple">
 <li><p>The boundary conditions can be selected based using standard patch names. Here standard patches include entry / exit / inlet / outlet / left / right.</p></li>
-<li><p>Velocity boundary conditions for inlet conditions include shallow-water solutions, moving wall and constant velocity; for outlet conditions include zeroGradient and inletOutlet</p></li>
-<li><p>Pressure boundary conditions include zeroGradient and fixedValue. Alternatively, the user can also leave the default option and an appropriate boundary condition relevant to the velocity boundary will be choosen.</p></li>
+<li><p>Velocity boundary conditions for inlet conditions include shallow-water solutions, moving wall, and constant velocity; for outlet conditions include zeroGradient and inletOutlet</p></li>
+<li><p>Pressure boundary conditions include zeroGradient and fixedValue. Alternatively, the user can also leave the default option. An appropriate boundary condition relevant to the velocity boundary will be chosen.</p></li>
 <li><p>It is recommended to use the wall boundary conditions for walls</p></li>
 </ol>
 </dd>
@@ -288,7 +288,7 @@ c. For simulation type with SW-CFD coupling, <code class="docutils literal notra
 </li>
 <li><dl class="simple">
 <dt><strong>Turbulence</strong>:</dt><dd><ol class="loweralpha simple">
-<li><p>Presently only RANS is supported for turbulence modeling.</p></li>
+<li><p>Presently, only RANS is supported for turbulence modeling.</p></li>
 <li><p>If you would like to use LES, please let us know about it using <span class="xref std std-ref">lbl-featurereq</span>.</p></li>
 </ol>
 </dd>
