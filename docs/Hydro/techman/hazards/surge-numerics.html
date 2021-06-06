@@ -153,7 +153,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../common/developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../common/developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../common/developer_manual/verification/desktop/verification.html">3. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devman/verify.html">3. Verification of Hydro-UQ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../common/developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
 </ul>
 
@@ -226,21 +226,21 @@
             
   <div class="section" id="modeling-storm-surge">
 <h1>Modeling storm surge<a class="headerlink" href="#modeling-storm-surge" title="Permalink to this headline">¶</a></h1>
-<p>Storm surge models are important in predicting and planning for future events. Most storm surge models are two-dimensional, do not resolve the variation with depth but can provide an accurate estimate of the abnormal rise in water level. However, for applications like transportation of pollutants, debris etc., a three-dimensional model is necessary.</p>
-<p>Some of the common recipies for a storm surge model are:</p>
+<p>Storm surge models are essential in predicting and planning for future events. Most storm surge models are two-dimensional, do not resolve the variation with depth, but can accurately estimate the abnormal rise in water level. However, for applications like transportation of pollutants, debris, etc., a three-dimensional model is necessary.</p>
+<p>Some of the typical recipes for a storm surge model are:</p>
 <ul class="simple">
 <li><p>Bathymetry of the area of interest</p></li>
 <li><p>Computational mesh that covers the area of interest</p></li>
-<li><p>Hurrican information including storm track, wind strength, atmospheric pressure</p></li>
+<li><p>Hurrican information including storm tracks, wind strength, atmospheric pressure</p></li>
 <li><p>Tidal information</p></li>
 </ul>
 <div class="section" id="modeling-tools-and-features">
 <h2>Modeling tools and features<a class="headerlink" href="#modeling-tools-and-features" title="Permalink to this headline">¶</a></h2>
 <p>Some of the noteworthy models used in modeling storm surge events are</p>
 <ul class="simple">
-<li><p>SLOSH (Sea, Lake and Overland Surges from Hurricanes) was developed by the National Weather Service in the 1990’s <a class="reference internal" href="#jeetal1992" id="id1"><span>[Jeetal1992]</span></a> and is still widely used by the National Hurrican Center owing to its computational efficiency. The SLOSH model separates the US Atlantic and Gulf of Mexico coastline into 32 basins . These model basins are particularly centered around vulnerable features like inlets, low-lying areas, ports etc. Each mesh resolves the ocean bathymetry and land features but does not extend to the open ocean. SLOSH uses a structured grid and finite difference method. More information can be found on <a class="reference external" href="https://slosh.nws.noaa.gov/slosh/">SLOSH website</a>.</p></li>
-<li><p>AdCirc (Advanced Circulation) was developed at University of North Carolina by Dr. Rick Luettich. It is capable of resolving very detailed bathymetry in the coastal region. It is often used by FEMA to produce flood insurance rate maps (FIRM’s) in several coastal regions. More information can be found on the <a class="reference external" href="https://adcirc.org/">AdCirc website</a>.</p></li>
-<li><p>CH3D-SMSS (Storm Surge Modeling System with Curvilinear-grid Hydrodynamics in 3D) uses a horizontally boundary-fitted curvilinear grid and a vertically sigma grid, and hence is suitable for application to coastal and nearshore waters with complex shoreline and bathymetry. More information can be found on the <a class="reference external" href="https://aces.coastal.ufl.edu/CH3D/">CH3D website</a>.</p></li>
+<li><p>SLOSH (Sea, Lake and Overland Surges from Hurricanes) was developed by the National Weather Service in the 1990s <a class="reference internal" href="#jeetal1992" id="id1"><span>[Jeetal1992]</span></a> and is still widely used by the National Hurrican Center owing to its computational efficiency. The SLOSH model separates the US Atlantic and Gulf of Mexico coastline into 32 basins. These model basins are mainly centered around vulnerable features like inlets, low-lying areas, ports, etc. Each mesh resolves the ocean bathymetry and land features but does not extend to the open ocean. SLOSH uses a structured grid and finite difference method. More information can be found on the <a class="reference external" href="https://slosh.nws.noaa.gov/slosh/">SLOSH website</a>.</p></li>
+<li><p>AdCirc (Advanced Circulation) was developed at the University of North Carolina by Dr. Rick Luettich. It is capable of resolving very detailed bathymetry in the coastal region. It is often used by FEMA to produce flood insurance rate maps (FIRM’s) in several coastal areas. More information can be found on the <a class="reference external" href="https://adcirc.org/">AdCirc website</a>.</p></li>
+<li><p>CH3D-SMSS (Storm Surge Modeling System with Curvilinear-grid Hydrodynamics in 3D) uses a horizontally boundary-fitted curvilinear grid and a vertical sigma grid. It hence is suitable for application to coastal and nearshore waters with complex shoreline and bathymetry. More information can be found on the <a class="reference external" href="https://aces.coastal.ufl.edu/CH3D/">CH3D website</a>.</p></li>
 </ul>
 </div>
 <div class="section" id="references">
