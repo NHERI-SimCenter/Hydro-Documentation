@@ -155,7 +155,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../common/developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../common/developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../common/developer_manual/verification/desktop/verification.html">3. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devman/verify.html">3. Verification of Hydro-UQ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../common/developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
 </ul>
 
@@ -228,7 +228,7 @@
             
   <div class="section" id="sim-structural-model">
 <span id="lbl-simstruct"></span><h1><span class="section-number">2.3. </span>SIM: Structural Model<a class="headerlink" href="#sim-structural-model" title="Permalink to this headline">¶</a></h1>
-<p>The user here defines the structural system of the building. The  structural system is the part of the building provided to resist the gravity loads and those loads arising from the natural hazard. There are a number of backend applications provided for this part of the workflow, each responsible for defining the structural analysis model. The user can select the application to use from the drop-down menu at the top of this panel. As the user switches between applications, the input panel changes to reflect the inputs each particular application requires. At present, there are two backend applications available.</p>
+<p>The user here defines the structural system of the building. The structural system is the part of the building provided to resist the gravity loads and those loads arising from the natural hazard. Several backend applications are provided for this part of the workflow, each responsible for defining the structural analysis model. The user can select the application to use from the drop-down menu at the top of this panel. As the user switches between applications, the input panel changes to reflect the inputs each particular application requires. At present, there are two backend applications available.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#multiple-degrees-of-freedom-mdof" id="id4">Multiple Degrees of Freedom (MDOF)</a></p></li>
@@ -242,13 +242,13 @@
 <ol class="arabic simple">
 <li><p>The top left frame allows the user to specify the number of stories and properties that are constant for every floor and story in the building. The following properties are available: floor weight, story height, torsional stiffness, initial stiffness, yield strength, and hardening ratio for each direction in each story. The user has the option of specifying values for eccentricity of mass in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> directions, and eccentricities for the location of the response quantities. Here, the one and two directions are orthogonal <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> axes in plan view.</p></li>
 <li><p>The lower left frame allows the user to override the structural parameters above for individual floors and stories.</p></li>
-<li><p>The frame on the right is a graphical widget showing the current building. When entering data into the lower left frame, the stories corresponding to the data being modified are highlighted in red.</p></li>
+<li><p>The frame on the right is a graphical widget showing the current building. When entering data into the lower-left frame, the stories corresponding to the modified data are highlighted in red.</p></li>
 </ol>
 <div class="align-center figure" id="id2">
-<span id="fig-mdof"></span><img alt="../../../_images/mdof_general.png" src="../../../_images/mdof_general.png" />
+<span id="fig-mdof"></span><a class="reference internal image-reference" href="../../../_images/mdof_general.png"><img alt="../../../_images/mdof_general.png" src="../../../_images/mdof_general.png" style="height: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.3.1.1 </span><span class="caption-text">Multiple degrees of freedom (MDOF) building model generator.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-<p>Random variables can be created by the user if they enter a valid string instead of a number in the entry fields for any entry except for the <em>Number of floors</em>. The variable name entered will appear as a random variable in the <strong>UQ</strong> panel; it is there that the user must specify the distribution associated with the random variable.</p>
+<p>The user can create random variables if they enter a valid string instead of a number in the entry fields for any entry except for the <em>Number of floors</em>. The variable name entered will appear as a random variable in the <strong>UQ</strong> panel; it is there that the user must specify the distribution associated with the random variable.</p>
 <blockquote>
 <div><blockquote>
 <div></div></blockquote>
@@ -256,10 +256,10 @@
 </div>
 <div class="section" id="lblopenseessim">
 <span id="id1"></span><h2><a class="toc-backref" href="#id5"><span class="section-number">2.3.2. </span>OpenSees</a><a class="headerlink" href="#lblopenseessim" title="Permalink to this headline">¶</a></h2>
-<p>This panel is for users who have an existing OpenSees model of a building that performs a gravity analysis and now they wish to subject that building model to one of the <strong>EVT</strong> options provided. The input panel for this option is shown in <a class="reference internal" href="#fig-figure3"><span class="std std-numref">Fig. 2.3.2.1</span></a>. Users need to provide three pieces of information:</p>
+<p>This panel is for users with an existing OpenSees model of a building that performs a gravity analysis. Now they wish to subject that building model to one of the <strong>EVT</strong> options provided. The input panel for this option is shown in <a class="reference internal" href="#fig-figure3"><span class="std std-numref">Fig. 2.3.2.1</span></a>. Users need to provide three pieces of information:</p>
 <ol class="arabic simple">
-<li><p>Main OpenSees Script: The main script that contains the building model. This script should build a model and perform any gravity analysis of the building that is required before the event is applied.</p></li>
-<li><p>Response Nodes: A list of node numbers that define a column line of interest for which the responses will be determined. The column nodes should be in order from ground floor to roof. The <span class="xref std std-ref">EDP</span> workflow application uses this information to determine nodes at which displacement, acceleration, and story drifts are calculated.</p></li>
+<li><p>Main OpenSees Script: The main script that contains the building model. This script should build a model and perform any gravity analysis of the building required before the event is applied.</p></li>
+<li><p>Response Nodes: A list of node numbers that define a column line of interest for which the responses will be determined. The column nodes should be in order from ground floor to roof. The <span class="xref std std-ref">EDP</span> workflow application uses this information to decide nodes at which displacement, acceleration, and story drifts are calculated.</p></li>
 <li><p>An entry for the dimension of the model (i.e., 2D or 3D). This information is used when loads are applied.</p></li>
 <li><p>Entry for the number of degrees of freedom at each node in the model.</p></li>
 </ol>
@@ -267,11 +267,11 @@
 <span id="fig-figure3"></span><img alt="../../../_images/openSees_gen.png" src="../../../_images/openSees_gen.png" />
 <p class="caption"><span class="caption-number">Fig. 2.3.2.1 </span><span class="caption-text">OpenSees Model.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
-<p>In OpenSees there is an option to set variables to have certain values using the <code class="docutils literal notranslate"><span class="pre">pset</span></code> command, e.g <code class="docutils literal notranslate"><span class="pre">pset</span> <span class="pre">a</span> <span class="pre">5.0</span></code> will set the variable a to have a value 5 in the OpenSees script. In HydroUQ, any variable found in the main script to be set using the <code class="docutils literal notranslate"><span class="pre">pset</span></code> command will be assumed to be a random variable. As such, when a new main script is loaded all variables set with <code class="docutils literal notranslate"><span class="pre">pset</span></code> will appear as random variables in the <strong>UQ</strong> panel.</p>
+<p>In OpenSees, there is an option to set variables to have specific values using the <code class="docutils literal notranslate"><span class="pre">pset</span></code> command, e.g <code class="docutils literal notranslate"><span class="pre">pset</span> <span class="pre">a</span> <span class="pre">5.0</span></code> will set the variable a to have a value 5 in the OpenSees script. In HydroUQ, any variable found in the main script to be set using the <code class="docutils literal notranslate"><span class="pre">pset</span></code> command will be assumed to be a random variable. When a new main script is loaded, all variables set with <code class="docutils literal notranslate"><span class="pre">pset</span></code> will appear as random variables in the <strong>UQ</strong> panel.</p>
 </div>
 <div class="section" id="steel-building-model-autosda">
 <h2><a class="toc-backref" href="#id6"><span class="section-number">2.3.3. </span>Steel Building Model (AutoSDA)</a><a class="headerlink" href="#steel-building-model-autosda" title="Permalink to this headline">¶</a></h2>
-<p>This module should not be used for tsunami / storm surge hazards but only valid for earthquake events.</p>
+<p>This module should not be used for tsunami/storm surge hazards but only valid for earthquake events.</p>
 </div>
 </div>
 
