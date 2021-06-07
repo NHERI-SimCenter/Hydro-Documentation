@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>6. Examples &mdash; Hydro-UQ  documentation</title>
+  <title>Examples &mdash; Hydro-UQ  documentation</title>
   
 
   
@@ -50,8 +50,6 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="7. Best Practices" href="../bestpractices.html" />
-    <link rel="prev" title="5. Troubleshooting" href="../errors.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -116,16 +114,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../common/front-matter/abbreviations.html">4. Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../userguide/uguide.html">2. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resguide/resguide.html">3. Researcher Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../helpvideo.html">4. Help Videos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../errors.html">5. Troubleshooting</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">6. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../bestpractices.html">7. Best Practices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">8. Release Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../common/user_manual/bugs.html">9. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bestpractices.html">6. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../common/user_manual/bugs.html">8. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -133,15 +130,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../techman/fvm/fvm.html">2. Finite Volume Method</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../techman/swsolver/swsolver.html">3. Shallow Water Solvers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../techman/cfdsolver/cfdsolver.html">4. CFD Solvers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../techman/swcfdcoupling/swcfdcoupling.html">5. SW-CFD Coupling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../techman/UQ/uqengine.html">6. Uncertainity quantification</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../common/developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../common/developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../devman/verify.html">3. Verification of Hydro-UQ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../common/developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../common/developer_manual/coding_style/desktop/coding_style.html">3. Coding Style</a></li>
 </ul>
 
             
@@ -190,7 +184,7 @@
     
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><span class="section-number">6. </span>Examples</li>
+      <li>Examples</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -210,7 +204,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="examples">
-<span id="lbl-example"></span><h1><span class="section-number">6. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-example"></span><h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
 <p>Here, we will discuss various examples for the HydroUQ. The examples are based on different tyoes of geometric definitions and boundary conditions.</p>
 <details class="sphinx-bs dropdown card mb-3">
 <summary class="summary-title card-header">
@@ -222,7 +216,7 @@ Wave flume digital twin - 1<div class="summary-down docutils">
 <p class="card-text">Consider the problem of uncertainty quantification in a nine story steel building. The building being modelled is the 9 story LA building presented in the FEMA-355C report. From the description in Appendix B of the FEMA document the building is a <strong>150</strong> ft square building with a height above ground of <strong>120</strong> ft with a weight of approx. <strong>19,800</strong> kips. Eigenvalues are shown in Table 5.1. of the FEMA document to be between <strong>2.3</strong> sec and <strong>2.2</strong> sec depending on connection detals. For this example (and for demonstrative purposes only), this building will be modelled as a shear building with <strong>10</strong> nodes and <strong>9</strong> elements, as shown in following figure. For loading, the Stochastic Wind Generation tool will be used with the gust wind speed being treated as a random variable with a normal distribtion described by a mean <span class="math notranslate nohighlight">\(\mu_{gustWS}=20 \mathrm{mph}\)</span> and standard deviation <span class="math notranslate nohighlight">\(\sigma_{gustWS} =3 \mathrm{mph}\)</span>.</p>
 <div class="align-center figure" id="id2">
 <a class="reference internal image-reference" href="Hydro/userman/examples/figures/9Story.png"><img alt="Hydro/userman/examples/figures/9Story.png" src="Hydro/userman/examples/figures/9Story.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 6.1 </span><span class="caption-text">Nine Story Downtown LA Building from FEMA-355C</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Nine Story Downtown LA Building from FEMA-355C</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p class="card-text">The structure has uncertain properties that all follow normal distribution:</p>
 <ol class="arabic simple">
@@ -329,7 +323,7 @@ Shallow-water to CFD coupling<div class="summary-down docutils">
 <p class="card-text">Consider the problem of uncertainty quantification in a nine story steel building. The building being modelled is the 9 story LA building presented in the FEMA-355C report. From the description in Appendix B of the FEMA document the building is a <strong>150</strong> ft square building with a height above ground of <strong>120</strong> ft with a weight of approx. <strong>19,800</strong> kips. Eigenvalues are shown in Table 5.1. of the FEMA document to be between <strong>2.3</strong> sec and <strong>2.2</strong> sec depending on connection detals. For this example (and for demonstrative purposes only), this building will be modelled as a shear building with <strong>10</strong> nodes and <strong>9</strong> elements, as shown in following figure. For loading, the Stochastic Wind Generation tool will be used with the gust wind speed being treated as a random variable with a normal distribtion described by a mean <span class="math notranslate nohighlight">\(\mu_{gustWS}=20 \mathrm{mph}\)</span> and standard deviation <span class="math notranslate nohighlight">\(\sigma_{gustWS} =3 \mathrm{mph}\)</span>.</p>
 <div class="align-center figure" id="id3">
 <a class="reference internal image-reference" href="Hydro/userman/examples/figures/9Story.png"><img alt="Hydro/userman/examples/figures/9Story.png" src="Hydro/userman/examples/figures/9Story.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 6.2 </span><span class="caption-text">Nine Story Downtown LA Building from FEMA-355C</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Nine Story Downtown LA Building from FEMA-355C</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p class="card-text">The structure has uncertain properties that all follow normal distribution:</p>
 <ol class="arabic simple">
