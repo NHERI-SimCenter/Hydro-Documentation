@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>4.1. Coupled Digital Twin Example - Simple Cantilevered Cylinder Half-Submerged in Crossflow &mdash; Hydro-UQ  documentation</title>
+  <title>4.3. Coupled Digital Twin Example - Simple Cantilevered Cylinder Half-Submerged in Crossflow &mdash; Hydro-UQ  documentation</title>
   
 
   
@@ -16,9 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -40,7 +38,9 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/design-tabs.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="5. Best Practices" href="../../../usage/desktop/hydro/bestpractices.html" />
-    <link rel="prev" title="4. Examples" href="../examples.html" />
+    <link rel="next" title="4.4. Tsunami Debris Motion Through a Scaled Port Setting - WU TWB Digital Twin - MPM" href="../hdro-0004/README.html" />
+    <link rel="prev" title="4.2. Debris Impacts on a Rigid Structure - OSU Large Wave Flume Digital Twin - MPM" href="../hdro-0002/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -109,36 +109,47 @@
             
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">2. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">3. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/releasenotes.html">4. Release Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">5. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">6. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/Hydro/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/hydroCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/hydroPlans.html">6. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/releasenotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/helpvideo.html">3. Help Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/tools.html">3. Tools</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../examples.html">4. Examples</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.1. Coupled Digital Twin Example - Simple Cantilevered Cylinder Half-Submerged in Crossflow</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#outline">4.1.1. Outline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#case-run-time">4.1.2. CASE RUN TIME</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#post-processing">4.1.3. Post Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0001/README.html">4.1. Coupled Digital Twin Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0002/README.html">4.2. Debris Impacts on a Rigid Structure - OSU Large Wave Flume Digital Twin - MPM</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.3. Coupled Digital Twin Example - Simple Cantilevered Cylinder Half-Submerged in Crossflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#outline">4.3.1. Outline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#case-run-time">4.3.2. CASE RUN TIME</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#post-processing">4.3.3. Post Processing</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0004/README.html">4.4. Tsunami Debris Motion Through a Scaled Port Setting - WU TWB Digital Twin - MPM</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/bestpractices.html">5. Best Practices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/bestpractices.html">6. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">7. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/helpvideo.html">9. Video Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/hazards/water.html">1. Water-borne Hazards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/fvm/fvm.html">2. Finite Volume Method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/swsolver.html">3. Shallow Water Solvers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/cfdsolver/cfdsolver.html">4. CFD Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/hazards/water.html">2. Water-borne Hazards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/mpm/mpm.html">3. Material Point Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/fvm/fvm.html">4. Finite Volume Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/swsolver.html">5. Shallow Water Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/cfdsolver/cfdsolver.html">6. CFD Solvers</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -195,7 +206,7 @@
         
           <li><a href="../examples.html"><span class="section-number">4. </span>Examples</a> &raquo;</li>
         
-      <li><span class="section-number">4.1. </span>Coupled Digital Twin Example - Simple Cantilevered Cylinder Half-Submerged in Crossflow</li>
+      <li><span class="section-number">4.3. </span>Coupled Digital Twin Example - Simple Cantilevered Cylinder Half-Submerged in Crossflow</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -215,7 +226,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="coupled-digital-twin-example-simple-cantilevered-cylinder-half-submerged-in-crossflow">
-<span id="hdro-0003"></span><h1><span class="section-number">4.1. </span>Coupled Digital Twin Example - Simple Cantilevered Cylinder Half-Submerged in Crossflow<a class="headerlink" href="#coupled-digital-twin-example-simple-cantilevered-cylinder-half-submerged-in-crossflow" title="Permalink to this headline">¶</a></h1>
+<span id="hdro-0003"></span><h1><span class="section-number">4.3. </span>Coupled Digital Twin Example - Simple Cantilevered Cylinder Half-Submerged in Crossflow<a class="headerlink" href="#coupled-digital-twin-example-simple-cantilevered-cylinder-half-submerged-in-crossflow" title="Permalink to this heading">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 25%" />
@@ -228,7 +239,7 @@
 </tbody>
 </table>
 <div class="section" id="outline">
-<h2><span class="section-number">4.1.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.3.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this heading">¶</a></h2>
 <p>Example to demonstrate how to run a coupled OpenSees-OpenFOAM simulation to determine floor loads on a building and then perform
 an OpenSees simulation of the building assuming uncertainties in the building properties.</p>
 <p>The flume is 1 meter wide (from Y=-0.5m to Y=0.5 m), 1 meter tall (Z=0.0m to Z=1.0m), and 4 meters long (X=0.0m to X=4.0m).</p>
@@ -254,7 +265,7 @@ Results for free surface, velocity, and pressure, as well as interface forces an
 </div>
 </div>
 <div class="section" id="case-run-time">
-<h2><span class="section-number">4.1.2. </span>CASE RUN TIME<a class="headerlink" href="#case-run-time" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.3.2. </span>CASE RUN TIME<a class="headerlink" href="#case-run-time" title="Permalink to this heading">¶</a></h2>
 <p>Simulation Time: 1 second on TACC Frontera, 56 processors, 1 node -&gt; Real Time: 1hr, 20 minutes</p>
 <p>Submitted
 Oct 8, 2023 1:14:37 PM
@@ -267,76 +278,76 @@ Oct 8, 2023 2:34:10 PM</p>
 <p>USE CAUTION WHEN REQUESTING OUTPUT! Only ask for what you need, or you will end up will massive amounts of data.</p>
 </div>
 <div class="section" id="post-processing">
-<h2><span class="section-number">4.1.3. </span>Post Processing<a class="headerlink" href="#post-processing" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.3.3. </span>Post Processing<a class="headerlink" href="#post-processing" title="Permalink to this heading">¶</a></h2>
 <p>Retrieving the results.zip folder from the Tools and Applications Page of Design Safe..</p>
 <div class="align-center locating the job files on designsafe figure">
-<a class="reference internal image-reference" href="../../../../../_images/DSToolsAndAppsJobsStatus.PNG"><img alt="../../../../../_images/DSToolsAndAppsJobsStatus.PNG" src="../../../../../_images/DSToolsAndAppsJobsStatus.PNG" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/DSToolsAndAppsJobsStatus1.PNG"><img alt="../../../../../_images/DSToolsAndAppsJobsStatus1.PNG" src="../../../../../_images/DSToolsAndAppsJobsStatus1.PNG" style="width: 600px;" /></a>
 </div>
 <p>Check if the job has finished. If it has, click ‘More info’.</p>
 <div class="align-center once the job is finished output files should be available in directory which analysis results were sent to figure">
-<a class="reference internal image-reference" href="../../../../../_images/DSToolsAndAppsJobsStatusFinished.PNG"><img alt="../../../../../_images/DSToolsAndAppsJobsStatusFinished.PNG" src="../../../../../_images/DSToolsAndAppsJobsStatusFinished.PNG" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/DSToolsAndAppsJobsStatusFinished1.PNG"><img alt="../../../../../_images/DSToolsAndAppsJobsStatusFinished1.PNG" src="../../../../../_images/DSToolsAndAppsJobsStatusFinished1.PNG" style="width: 600px;" /></a>
 </div>
 <p>Find the files by clicking ‘View’.</p>
 <div class="align-center locating this directory is easy figure">
-<a class="reference internal image-reference" href="../../../../../_images/DSToolsAndAppsJobsStatusViewFiles.PNG"><img alt="../../../../../_images/DSToolsAndAppsJobsStatusViewFiles.PNG" src="../../../../../_images/DSToolsAndAppsJobsStatusViewFiles.PNG" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/DSToolsAndAppsJobsStatusViewFiles1.PNG"><img alt="../../../../../_images/DSToolsAndAppsJobsStatusViewFiles1.PNG" src="../../../../../_images/DSToolsAndAppsJobsStatusViewFiles1.PNG" style="width: 600px;" /></a>
 </div>
 <p>Move the results.zip to somewhere in My Data/. Use the Extractor tool available on DesignSafe.  Unzip the results.zip folder.</p>
 <div class="align-center figure">
-<a class="reference internal image-reference" href="../../../../../_images/extractonDS.PNG"><img alt="../../../../../_images/extractonDS.PNG" src="../../../../../_images/extractonDS.PNG" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/extractonDS1.PNG"><img alt="../../../../../_images/extractonDS1.PNG" src="../../../../../_images/extractonDS1.PNG" style="width: 600px;" /></a>
 </div>
 <p>OR Download the results.zip folder to your PC and unzip to look at the model results.</p>
 <div class="align-center download the results to look at vtk files of analysis this will include openfoam and opensees field data model geometry figure">
-<a class="reference internal image-reference" href="../../../../../_images/downloadResults.PNG"><img alt="../../../../../_images/downloadResults.PNG" src="../../../../../_images/downloadResults.PNG" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/downloadResults1.PNG"><img alt="../../../../../_images/downloadResults1.PNG" src="../../../../../_images/downloadResults1.PNG" style="width: 600px;" /></a>
 </div>
 <p>Extract the Zip folder either on DesignSafe or on your local machine. You will need Paraview to view the model data.</p>
 <div class="align-center locate the zip folder and extract it to somewhere convenient figure">
-<a class="reference internal image-reference" href="../../../../../_images/resultsZip.png"><img alt="../../../../../_images/resultsZip.png" src="../../../../../_images/resultsZip.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/resultsZip1.png"><img alt="../../../../../_images/resultsZip1.png" src="../../../../../_images/resultsZip1.png" style="width: 600px;" /></a>
 </div>
 <p>The results folder should look something like this.</p>
 <div class="align-center this is the output of model figure">
-<a class="reference internal image-reference" href="../../../../../_images/results.png"><img alt="../../../../../_images/results.png" src="../../../../../_images/results.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/results1.png"><img alt="../../../../../_images/results1.png" src="../../../../../_images/results1.png" style="width: 600px;" /></a>
 </div>
 <p>Paraview files have a .PVD extension. Open VTK/Fluid.vtm.series to look at OpenFOAM results.
 Open OpenSeesOutput.pvd to look at OpenSees results.</p>
 <div class="align-center this is the model output data as seen from paraview figure">
-<a class="reference internal image-reference" href="../../../../../_images/Paraview.PNG"><img alt="../../../../../_images/Paraview.PNG" src="../../../../../_images/Paraview.PNG" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/Paraview1.PNG"><img alt="../../../../../_images/Paraview1.PNG" src="../../../../../_images/Paraview1.PNG" style="width: 600px;" /></a>
 </div>
 <p>OpenSees Displacements And Reactions</p>
 <div class="align-center this is the model output data as seen from paraview figure">
-<a class="reference internal image-reference" href="../../../../../_images/TipDisplacement.png"><img alt="../../../../../_images/TipDisplacement.png" src="../../../../../_images/TipDisplacement.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/TipDisplacement1.png"><img alt="../../../../../_images/TipDisplacement1.png" src="../../../../../_images/TipDisplacement1.png" style="width: 600px;" /></a>
 </div>
 <div class="align-center this is the model output data as seen from paraview figure">
-<a class="reference internal image-reference" href="../../../../../_images/ReactionForces.png"><img alt="../../../../../_images/ReactionForces.png" src="../../../../../_images/ReactionForces.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/ReactionForces1.png"><img alt="../../../../../_images/ReactionForces1.png" src="../../../../../_images/ReactionForces1.png" style="width: 600px;" /></a>
 </div>
 <p>OpenFOAM probe and function object output is available in results/postProcessing/.</p>
 <p>OpenFOAM output is messy. An example Matlab script is provided in the /src/ directory to post process the OpenFOAM output for this particular case and output.
 This file can be modified to work for any case. The names of the data folders will need to be changed according to the name of the probe given in HydroUQ.</p>
 <div class="align-center in the src folder hrdo-0003 an example matlab script is provided to look at time history data of output probes figure">
-<a class="reference internal image-reference" href="../../../../../_images/MatlabScriptCopyToLocation.PNG"><img alt="../../../../../_images/MatlabScriptCopyToLocation.PNG" src="../../../../../_images/MatlabScriptCopyToLocation.PNG" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/MatlabScriptCopyToLocation1.PNG"><img alt="../../../../../_images/MatlabScriptCopyToLocation1.PNG" src="../../../../../_images/MatlabScriptCopyToLocation1.PNG" style="width: 600px;" /></a>
 </div>
 <p>OpenFOAM Calculated Story Forces</p>
 <div class="align-center story forces figure">
-<a class="reference internal image-reference" href="../../../../../_images/storyForces.png"><img alt="../../../../../_images/storyForces.png" src="../../../../../_images/storyForces.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/storyForces1.png"><img alt="../../../../../_images/storyForces1.png" src="../../../../../_images/storyForces1.png" style="width: 600px;" /></a>
 </div>
 <p>OpenFOAM Calculated Coupled Interface Forces</p>
 <div class="align-center forces figure">
-<a class="reference internal image-reference" href="../../../../../_images/Forces.png"><img alt="../../../../../_images/Forces.png" src="../../../../../_images/Forces.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/Forces1.png"><img alt="../../../../../_images/Forces1.png" src="../../../../../_images/Forces1.png" style="width: 600px;" /></a>
 </div>
 <p>OpenFOAM Calculated Coupled Interface Moments</p>
 <div class="align-center moments figure">
-<a class="reference internal image-reference" href="../../../../../_images/Moments.png"><img alt="../../../../../_images/Moments.png" src="../../../../../_images/Moments.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/Moments1.png"><img alt="../../../../../_images/Moments1.png" src="../../../../../_images/Moments1.png" style="width: 600px;" /></a>
 </div>
 <p>OpenFOAM Calculated Pressure Probe Values</p>
 <div class="align-center pressures figure">
-<a class="reference internal image-reference" href="../../../../../_images/Pressures.png"><img alt="../../../../../_images/Pressures.png" src="../../../../../_images/Pressures.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/Pressures1.png"><img alt="../../../../../_images/Pressures1.png" src="../../../../../_images/Pressures1.png" style="width: 600px;" /></a>
 </div>
 <p>OpenFOAM Calculated Velocity Probe Values</p>
 <div class="align-center velocities figure">
-<a class="reference internal image-reference" href="../../../../../_images/Velocities.png"><img alt="../../../../../_images/Velocities.png" src="../../../../../_images/Velocities.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/Velocities1.png"><img alt="../../../../../_images/Velocities1.png" src="../../../../../_images/Velocities1.png" style="width: 600px;" /></a>
 </div>
 <p>OpenFOAM Calculated Free Surface Values</p>
 <div class="align-center wave gauges figure">
-<a class="reference internal image-reference" href="../../../../../_images/WaveGauges.png"><img alt="../../../../../_images/WaveGauges.png" src="../../../../../_images/WaveGauges.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/WaveGauges1.png"><img alt="../../../../../_images/WaveGauges1.png" src="../../../../../_images/WaveGauges1.png" style="width: 600px;" /></a>
 </div>
 </div>
 </div>
@@ -351,7 +362,7 @@ This file can be modified to work for any case. The names of the data folders wi
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2024, The Regents of the University of California.
+        &#169; Copyright 2018-2024, The Regents of the University of California.
 
     </p>
   </div>

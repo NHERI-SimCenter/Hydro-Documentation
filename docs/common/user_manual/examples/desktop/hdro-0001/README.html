@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Coupled Digital Twin Example &mdash; Hydro-UQ  documentation</title>
+  <title>4.1. Coupled Digital Twin Example &mdash; Hydro-UQ  documentation</title>
   
 
   
@@ -16,9 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -40,15 +38,20 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/design-tabs.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="4.2. Debris Impacts on a Rigid Structure - OSU Large Wave Flume Digital Twin - MPM" href="../hdro-0002/README.html" />
+    <link rel="prev" title="4. Examples" href="../examples.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -107,28 +110,50 @@
             
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">2. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">3. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/releasenotes.html">4. Release Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">5. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">6. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/Hydro/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/hydroCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/hydroPlans.html">6. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/releasenotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/helpvideo.html">3. Help Videos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/bestpractices.html">5. Best Practices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/tools.html">3. Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">4. Examples</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.1. Coupled Digital Twin Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#outline">4.1.1. Outline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data">4.1.2. Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#model">4.1.3. Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#files-required">4.1.4. Files required</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uq-workflow">4.1.5. UQ workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#files-for-restarting-the-analysis">4.1.6. Files for restarting the analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0002/README.html">4.2. Debris Impacts on a Rigid Structure - OSU Large Wave Flume Digital Twin - MPM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0003/README.html">4.3. Coupled Digital Twin Example - Simple Cantilevered Cylinder Half-Submerged in Crossflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0004/README.html">4.4. Tsunami Debris Motion Through a Scaled Port Setting - WU TWB Digital Twin - MPM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/bestpractices.html">6. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">7. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/helpvideo.html">9. Video Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/hazards/water.html">1. Water-borne Hazards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/fvm/fvm.html">2. Finite Volume Method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/swsolver.html">3. Shallow Water Solvers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/cfdsolver/cfdsolver.html">4. CFD Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/hazards/water.html">2. Water-borne Hazards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/mpm/mpm.html">3. Material Point Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/fvm/fvm.html">4. Finite Volume Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/swsolver.html">5. Shallow Water Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/cfdsolver/cfdsolver.html">6. CFD Solvers</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -183,7 +208,9 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Coupled Digital Twin Example</li>
+          <li><a href="../examples.html"><span class="section-number">4. </span>Examples</a> &raquo;</li>
+        
+      <li><span class="section-number">4.1. </span>Coupled Digital Twin Example</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -203,11 +230,93 @@
            <div itemprop="articleBody">
             
   <div class="section" id="coupled-digital-twin-example">
-<span id="hydro-0001"></span><h1>Coupled Digital Twin Example<a class="headerlink" href="#coupled-digital-twin-example" title="Permalink to this headline">¶</a></h1>
-<p>Example to demonstrate how to run a coupled OpenSees-OpenFOAM simulation to determine floor loads on a building and then perform
-an OpenSees simulation of the building assuming uncertainties in the building properties.</p>
-<div class="align-center figure">
-<a class="reference internal image-reference" href="../../../../../_images/coupled.png"><img alt="../../../../../_images/coupled.png" src="../../../../../_images/coupled.png" style="width: 400px;" /></a>
+<span id="hdro-0001"></span><h1><span class="section-number">4.1. </span>Coupled Digital Twin Example<a class="headerlink" href="#coupled-digital-twin-example" title="Permalink to this heading">¶</a></h1>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Problem files</p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/HydroUQ/tree/master/Examples/hdro-0001/">Github</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="outline">
+<h2><span class="section-number">4.1.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this heading">¶</a></h2>
+<p>This example uses a NHERI wave-flume digital twin, the OSU LWF, to simulate a scaled structure during wave loading in HydroUQ. Two-way coupled OpenFOAM-OpenSees is configured to simulate the scenario.</p>
+<p>You will define a Waterborne Event (EVT) to determine the engineering demand parameters (EDP) on a specified structure, i.e. EVT –&gt; EDP,  with the following steps:</p>
+<ol class="arabic simple">
+<li><p>Configure a FOAMySees simulation. This is a two-way coupling of OpenFOAM Finite Volume Method (FVM) for Computational Fluid Dynamics (CFD) and OpenSees Finite Element Analaysis (FEA) for Computational Structural Dynamics (CSD).</p></li>
+<li><p>Next, the coupled model will determine floor loads on the building, also known as intensity measures (IM) in performance based engineering (PBE).</p></li>
+<li><p>Then, perform an OpenSees finite element analysis (FEA) simulation of the building by taking IMs as inputs.</p></li>
+<li><p>Finally, recieve engineering demand parameters (EDP) of the structural response. Though beyond this example, you can use these EDPs to perform a fragility analysis of the structure.</p></li>
+</ol>
+</div>
+<div class="section" id="data">
+<h2><span class="section-number">4.1.2. </span>Data<a class="headerlink" href="#data" title="Permalink to this heading">¶</a></h2>
+<p>The dataset used presented in this example originates from experimental tests conducted in the Hinsdale Wave Research Laboratory’s Large Wave Flume at Oregon State University (OSU LWF), Corvallis, in 2020. Refer to Lewis 2023 <a class="reference internal" href="#lewis2023" id="id1"><span>[Lewis2023]</span></a> and Bonus 2023 <a class="reference internal" href="#bonus2023" id="id2"><span>[Bonus2023]</span></a> for details.</p>
+<div class="align-center figure" id="id3">
+<span id="figcoupled"></span><a class="reference internal image-reference" href="../../../../../_images/Coupled.png"><img alt="../../../../../_images/Coupled.png" src="../../../../../_images/Coupled.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.1.2.1 </span><span class="caption-text">Coupled Digital Twin Illustration</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="model">
+<h2><span class="section-number">4.1.3. </span>Model<a class="headerlink" href="#model" title="Permalink to this heading">¶</a></h2>
+<p>This model is characterized by the parameters:
+- Youngs modulus <span class="math notranslate nohighlight">\(E_0\)</span> for plastic behavior,</p>
+</div>
+<div class="section" id="files-required">
+<h2><span class="section-number">4.1.4. </span>Files required<a class="headerlink" href="#files-required" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do NOT place the files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like us, your root, Downloads or Documents folders contain a lot of files.</p>
+</div>
+</div>
+<div class="section" id="uq-workflow">
+<h2><span class="section-number">4.1.5. </span>UQ workflow<a class="headerlink" href="#uq-workflow" title="Permalink to this heading">¶</a></h2>
+<p>The inputs needed to run this example can be loaded into the HydroUQ user interface by selecting the <code class="docutils literal notranslate"><span class="pre">Coupled</span> <span class="pre">Digital</span> <span class="pre">Twin</span></code> example from the <code class="docutils literal notranslate"><span class="pre">Examples</span></code> menu.</p>
+<p>The inputs can also be set up manually through the following steps:</p>
+<ol class="arabic simple">
+<li><p>Start the application and the <strong>UQ</strong> panel will be highlighted. In the <strong>UQ Method</strong> drop-down menu, select the <strong>Bayesian Calibration</strong> option. In the <strong>UQ Engine</strong> dropdown menu select <strong>UCSD-UQ</strong> option. In the <strong>Model</strong> dropdown, select the <strong>Hierarchical</strong> option. Enter the values in this panel as shown in the figure below. A brief explanation of the different user input fields can be found in the <a class="reference internal" href="../../../usage/desktop/UCSD_UQ_Hierarchical.html#lblucsdhierarchical"><span class="std std-ref">User Manual</span></a>.</p></li>
+</ol>
+<div class="align-center figure" id="id4">
+<span id="fighbmuq"></span><a class="reference internal image-reference" href="../../../../../_images/UQ.png"><img alt="../../../../../_images/UQ.png" src="../../../../../_images/UQ.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.1.5.1 </span><span class="caption-text">Inputs in the UQ panel</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Next in the <strong>FEM</strong> panel , select <strong>OpenSees</strong> and populate the <strong>Input Script</strong> field by choosing the path to the model file.</p></li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>Select the <strong>RV</strong> tab from the input panel. This panel should be pre-populated with the names of the variables that were defined in the model scripts. If not, press the <strong>Add</strong> button to create a new field to define the input random variable. Enter the same variable name, as required in the model script. For this example, choose the Normal probability distribution for all the random variables and enter the parameter values for each distribution as shown in the figures below:</p></li>
+</ol>
+<div class="align-center figure" id="fighbmrv">
+<a class="reference internal image-reference" href="../../../../../_images/RV.png"><img alt="../../../../../_images/RV.png" src="../../../../../_images/RV.png" style="width: 600px;" /></a>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>In the <strong>EDP</strong> panel create the output quantities corresponding to each of the experiments with a descriptive name, as shown in the figures below:</p></li>
+</ol>
+<ol class="arabic simple" start="5">
+<li><p>Click on the <strong>Run</strong> button. This will create the necessary input files to perform a Bayesian calibration of the hierarchical model, run the analysis, and display the results when the analysis is completed. The results produced are sample values drawn from the distribution that represents the aleatory uncertainty in the estimated material parameters from each of the datasets.</p></li>
+</ol>
+<p>The <strong>Summary</strong> tab shows the mean, standard deviation, and coefficient of variation of each of the seven parameters of the material model that were inferred in this example.</p>
+<p>In the <strong>Data Values</strong> tab of the <strong>RES</strong> panel, a chart and a table with all the sample values are shown. By clicking on the data inside the columns of the chart with the left or right mouse button, different chart types are created and shown in the chart area on the left.</p>
+</div>
+<div class="section" id="files-for-restarting-the-analysis">
+<span id="lblhbmrestart"></span><h2><span class="section-number">4.1.6. </span>Files for restarting the analysis<a class="headerlink" href="#files-for-restarting-the-analysis" title="Permalink to this heading">¶</a></h2>
+<p>In addition to the results displayed in the RES panel in HydroUQ, JSON files with the state of the chain at every step of the sampling algorithm are saved in a directory called <code class="docutils literal notranslate"><span class="pre">sampling_results</span></code> within the <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> directory inside the jobs directory specified in the HydroUQ Preferences menu. Any of these files can be used to resume the sampling, by copying the file to the directory containing the model files and specifying its name in the Restart File Name field in the UQ panel.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> directory is cleared every time the <code class="docutils literal notranslate"><span class="pre">RUN</span></code> button is clicked in HydroUQ. So, if you want to restart the analysis using one of the sampling results files outlined above, make sure to copy the results file to a location outside the <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> directory at the end of the analysis.</p>
+</div>
+<dl class="citation">
+<dt class="label" id="lewis2023"><span class="brackets"><a class="fn-backref" href="#id1">Lewis2023</a></span></dt>
+<dd><p>Lewis, N. (2023). Development of An Open-Source Methodology for Simulation of Civil Engineering Structures Subject to Multi-Hazards. <em>PhD thesis</em>, University of Washington, Seattle, WA. ISBN: 979-8-381408-69-0.</p>
+</dd>
+<dt class="label" id="bonus2023"><span class="brackets"><a class="fn-backref" href="#id2">Bonus2023</a></span></dt>
+<dd><p>Bonus, J. (2023). Evaluation of Fluid-Driven Debris Impacts in a High-Performance Multi-GPU Material Point Method [University of Washington]. In ProQuest Dissertations and Theses. ISBN: 979-8-381406-66-5. <a class="reference external" href="https://www.proquest.com/dissertations-theses/evaluation-fluid-driven-debris-impacts-high/docview/2915819774/se-2?accountid=14784">https://www.proquest.com/dissertations-theses/evaluation-fluid-driven-debris-impacts-high/docview/2915819774/se-2?accountid=14784</a></p>
+</dd>
+</dl>
 </div>
 </div>
 
@@ -221,7 +330,7 @@ an OpenSees simulation of the building assuming uncertainties in the building pr
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2024, The Regents of the University of California.
+        &#169; Copyright 2018-2024, The Regents of the University of California.
 
     </p>
   </div>

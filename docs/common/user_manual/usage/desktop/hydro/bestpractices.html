@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>5. Best Practices &mdash; Hydro-UQ  documentation</title>
+  <title>6. Best Practices &mdash; Hydro-UQ  documentation</title>
   
 
   
@@ -16,9 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -40,7 +38,9 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/design-tabs.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -50,8 +50,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="6. Bugs &amp; Feature Requests" href="../../../bugs.html" />
-    <link rel="prev" title="4.1. Coupled Digital Twin Example - Simple Cantilevered Cylinder Half-Submerged in Crossflow" href="../../../examples/desktop/hdro-0003/README.html" />
+    <link rel="next" title="7. Requirements" href="../../../../reqments/HydroUQ.html" />
+    <link rel="prev" title="5.2. Issues While Running" href="../../../troubleshooting/desktop/troubleshootingRunning.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -110,39 +110,47 @@
             
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">2. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">3. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">4. Release Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">5. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">6. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/Hydro/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/hydroCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/hydroPlans.html">6. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">2. User Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="helpvideo.html">3. Help Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">3. Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Best Practices</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#errors-and-uncertainties">5.1. Errors and uncertainties</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#froude-number">5.2. Froude number</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#spatial-discretization">5.3. Spatial discretization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#temporal-discretization">5.4. Temporal discretization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#boundary-conditions">5.5. Boundary conditions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#sw-cfd-domain-sizes">5.6. SW-CFD domain sizes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#turbulence-modeling">5.7. Turbulence modeling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#user-errors">5.8. User errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#checking-results">5.9. Checking results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6. Best Practices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#errors-and-uncertainties">6.1. Errors and uncertainties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#froude-number">6.2. Froude number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#spatial-discretization">6.3. Spatial discretization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#temporal-discretization">6.4. Temporal discretization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#boundary-conditions">6.5. Boundary conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sw-cfd-domain-sizes">6.6. SW-CFD domain sizes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#turbulence-modeling">6.7. Turbulence modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#user-errors">6.8. User errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#checking-results">6.9. Checking results</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">7. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helpvideo.html">9. Video Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/hazards/water.html">1. Water-borne Hazards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/fvm/fvm.html">2. Finite Volume Method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/swsolver.html">3. Shallow Water Solvers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/cfdsolver/cfdsolver.html">4. CFD Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/hazards/water.html">2. Water-borne Hazards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/mpm/mpm.html">3. Material Point Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/fvm/fvm.html">4. Finite Volume Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/swsolver.html">5. Shallow Water Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/cfdsolver/cfdsolver.html">6. CFD Solvers</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -197,7 +205,7 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><span class="section-number">5. </span>Best Practices</li>
+      <li><span class="section-number">6. </span>Best Practices</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -217,9 +225,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="best-practices">
-<span id="lbl-bestpractices"></span><h1><span class="section-number">5. </span>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-bestpractices"></span><h1><span class="section-number">6. </span>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this heading">¶</a></h1>
 <div class="section" id="errors-and-uncertainties">
-<h2><span class="section-number">5.1. </span>Errors and uncertainties<a class="headerlink" href="#errors-and-uncertainties" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.1. </span>Errors and uncertainties<a class="headerlink" href="#errors-and-uncertainties" title="Permalink to this heading">¶</a></h2>
 <p>There are several sources of errors that are often observed in CFD simulations. These include:</p>
 <ol class="arabic simple">
 <li><p>The model is described by the Navier-Stokes equations. The exact N-S equations are solved when Direct Numerical Simulations (DNS) are employed. However, when the RANS approach is involved, as in HydroUQ, this involves approximations that could lead to errors and uncertainties. Thus, selecting the correct parameters is paramount.</p></li>
@@ -227,7 +235,7 @@
 </ol>
 </div>
 <div class="section" id="froude-number">
-<h2><span class="section-number">5.2. </span>Froude number<a class="headerlink" href="#froude-number" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.2. </span>Froude number<a class="headerlink" href="#froude-number" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>One of the essential non-dimensional numbers that describe different flow regimes for open channel flow. It is a dimensionless quantity that is a ratio of the inertial and gravitational forces as <span class="math notranslate nohighlight">\(Fr = \frac{V}{\sqrt{gD}}\)</span>. Here <code class="docutils literal notranslate"><span class="pre">V</span></code> is the water velocity, <code class="docutils literal notranslate"><span class="pre">D</span></code> is the hydraulic depth across the cross-sectional area of the flow, and <code class="docutils literal notranslate"><span class="pre">g</span></code> is the gravity.</p></li>
 <li><p>It is important to calculate if the flow is sub-critical (Fr &lt; 1) or critical (Fr = 1) or supercritical (Fr &gt; 1). Critical flows are often unstable and set up standing waves between sub and supercritical flows.</p></li>
@@ -235,7 +243,7 @@
 </ol>
 </div>
 <div class="section" id="spatial-discretization">
-<h2><span class="section-number">5.3. </span>Spatial discretization<a class="headerlink" href="#spatial-discretization" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.3. </span>Spatial discretization<a class="headerlink" href="#spatial-discretization" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Mesh checking is always essential. HydroUQ app performs a mesh check, and the log is available for review after the simulation is complete. It is much recommended to review this.</p></li>
 <li><p>Mesh convergence study is critical to ensuring good and reliable results using CFD simulations. Thus, it is strongly recommended to estimate the error by refining the mesh, if possible.</p></li>
@@ -246,7 +254,7 @@
 <p># Avoid highly skewed cells so that the angles between gridlines are orthogonal or near orthogonal. Angles with less than 40-degrees or greater than 140-degrees may lead to numerical instabilities or unsatisfactory results.</p>
 </div>
 <div class="section" id="temporal-discretization">
-<h2><span class="section-number">5.4. </span>Temporal discretization<a class="headerlink" href="#temporal-discretization" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.4. </span>Temporal discretization<a class="headerlink" href="#temporal-discretization" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>It is suggested to take a small timestep to start with so that it can be automatically increased to check the influence of timesteps on the results.</p></li>
 <li><p>The timestep size should be decided based on the <a class="reference external" href="https://en.wikipedia.org/wiki/Courant%E2%80%93Friedrichs%E2%80%93Lewy_condition">Courant-Friedrichs-Lewy (CFL) condition</a> . Yet, it should also be small enough to capture any transient phenomena of interest.</p></li>
@@ -254,7 +262,7 @@
 </ol>
 </div>
 <div class="section" id="boundary-conditions">
-<h2><span class="section-number">5.5. </span>Boundary conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.5. </span>Boundary conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">EVT</span></code> requires one to provide six boundary conditions for the six standard patches <code class="docutils literal notranslate"><span class="pre">Entry</span></code>, <code class="docutils literal notranslate"><span class="pre">Exit</span></code>, <code class="docutils literal notranslate"><span class="pre">Right</span></code>, <code class="docutils literal notranslate"><span class="pre">Left</span></code>, <code class="docutils literal notranslate"><span class="pre">Bottom</span></code> and <code class="docutils literal notranslate"><span class="pre">Top</span></code>.</p></li>
 <li><p>If no boundary condition is specified for a particular patch, it is assumed to be <code class="docutils literal notranslate"><span class="pre">type:</span> <span class="pre">empty</span></code> by default. Presently, HydroUQ app only allows specification of the velocity and pressure boundary conditions. If you would like to specify other parameters, please write to us at <a class="reference internal" href="../../../bugs.html#lblbugs"><span class="std std-ref">Bugs &amp; Feature Requests</span></a>.</p></li>
@@ -264,7 +272,7 @@
 </ol>
 </div>
 <div class="section" id="sw-cfd-domain-sizes">
-<h2><span class="section-number">5.6. </span>SW-CFD domain sizes<a class="headerlink" href="#sw-cfd-domain-sizes" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.6. </span>SW-CFD domain sizes<a class="headerlink" href="#sw-cfd-domain-sizes" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Note that each degree of latitude is approximately 69 miles (111 km apart). At the Equator, the distance is 68.703 miles (110.567 km); at Tropic of Cancer and Capricorn, it is 68.94 miles (110.948 km), and at the poles, it is 69.94 miles (111.699 km).</p></li>
 <li><p>60 minutes = 1 degree</p></li>
@@ -273,49 +281,49 @@
 </ol>
 </div>
 <div class="section" id="turbulence-modeling">
-<h2><span class="section-number">5.7. </span>Turbulence modeling<a class="headerlink" href="#turbulence-modeling" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.7. </span>Turbulence modeling<a class="headerlink" href="#turbulence-modeling" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic">
 <li><p>Compute the Reynolds number to determine if the flow is turbulent. Do not use turbulent models for laminar flows.</p></li>
 <li><p>Estimate the y+ and the thickness of the first cell layer. The ideal distance of the first node from the wall <span class="math notranslate nohighlight">\(\Delta y\)</span> can be estimated to be</p>
 <blockquote>
 <div><div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-hydro-bestpractices-0">
-<span class="eqno">(5.7.1)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-hydro-bestpractices-0" title="Permalink to this equation">¶</a></span>\[\Delta y = L \cdot y^{+} \cdot \sqrt{74} \cdot {Re}_{L}^{-13/14}\]</div>
+<span class="eqno">(6.7.1)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-hydro-bestpractices-0" title="Permalink to this equation">¶</a></span>\[\Delta y = L \cdot y^{+} \cdot \sqrt{74} \cdot {Re}_{L}^{-13/14}\]</div>
 </div></blockquote>
 </li>
 </ol>
-<p>where <span class="math notranslate nohighlight">\(L\)</span> is the characteristic length scale, <span class="math notranslate nohighlight">\(y^{+}\)</span> is the desired values, <span class="math notranslate nohighlight">\({Re}_{L}\)</span> is the Reynolds number. The non-dimensionalized velocity (<span class="math notranslate nohighlight">\(u^{+}\)</span>) and distance from the wall (<span class="math notranslate nohighlight">\(y^{+}\)</span>), the velocity profile of the boundary layers, takes on the form, as shown below by the red line in  <a class="reference internal" href="#yplusform"><span class="std std-numref">Fig. 5.7.1</span></a>.</p>
+<p>where <span class="math notranslate nohighlight">\(L\)</span> is the characteristic length scale, <span class="math notranslate nohighlight">\(y^{+}\)</span> is the desired values, <span class="math notranslate nohighlight">\({Re}_{L}\)</span> is the Reynolds number. The non-dimensionalized velocity (<span class="math notranslate nohighlight">\(u^{+}\)</span>) and distance from the wall (<span class="math notranslate nohighlight">\(y^{+}\)</span>), the velocity profile of the boundary layers, takes on the form, as shown below by the red line in  <a class="reference internal" href="#yplusform"><span class="std std-numref">Fig. 6.7.1</span></a>.</p>
 <blockquote>
 <div><div class="align-center figure" id="id1">
 <span id="yplusform"></span><a class="reference internal image-reference" href="../../../../../_images/yplus.png"><img alt="../../../../../_images/yplus.png" src="../../../../../_images/yplus.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5.7.1 </span><span class="caption-text">The variation of non-dimensional velocity and distance</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 6.7.1 </span><span class="caption-text">The variation of non-dimensional velocity and distance</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 <ol class="arabic">
 <li><p>Various online calculators can be used to calculate the value of <span class="math notranslate nohighlight">\(y^{+}\)</span>. Some examples of apps include: <a class="reference external" href="https://play.google.com/store/apps/details?id=com.pointwise.ypluscalculator">Google Play Store</a> or <a class="reference external" href="https://apps.apple.com/us/app/y-calculator/id650011524">Apple store</a> .</p></li>
-<li><p>If the flow is believed to be viscous, then the viscous sub-layers need to be resolved as shown in <a class="reference internal" href="#viscousyplus"><span class="std std-numref">Fig. 5.7.2</span></a>. When meshed correctly, a value of <span class="math notranslate nohighlight">\(y^{+} \approx 1\)</span> is desired. Alternatively, a wall model can be used bu having the first element in the region <span class="math notranslate nohighlight">\(y^{+} &gt; 30\)</span>. It is a good practice to avoid a <span class="math notranslate nohighlight">\(y^{+}\)</span> value between these values.</p>
+<li><p>If the flow is believed to be viscous, then the viscous sub-layers need to be resolved as shown in <a class="reference internal" href="#viscousyplus"><span class="std std-numref">Fig. 6.7.2</span></a>. When meshed correctly, a value of <span class="math notranslate nohighlight">\(y^{+} \approx 1\)</span> is desired. Alternatively, a wall model can be used bu having the first element in the region <span class="math notranslate nohighlight">\(y^{+} &gt; 30\)</span>. It is a good practice to avoid a <span class="math notranslate nohighlight">\(y^{+}\)</span> value between these values.</p>
 <blockquote>
 <div><div class="align-center figure" id="id2">
 <span id="viscousyplus"></span><a class="reference internal image-reference" href="../../../../../_images/Viscousyplus.png"><img alt="../../../../../_images/Viscousyplus.png" src="../../../../../_images/Viscousyplus.png" style="height: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5.7.2 </span><span class="caption-text">Resolution of the viscous sub-layer</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 6.7.2 </span><span class="caption-text">Resolution of the viscous sub-layer</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 </li>
 <li><p>High Reynolds number flows (like aircraft, ships, etc.) will experience boundary layers that extend to several thousand <span class="math notranslate nohighlight">\(y^{+}\)</span> units. However, for flows with low Reynolds numbers, the upper limit can be as little as 100 <span class="math notranslate nohighlight">\(y^{+}\)</span> units. Thus, it is necessary to ensure that the first node does not fall outside this range.</p></li>
-<li><p>HydroUQ app 3.1 supports <span class="math notranslate nohighlight">\(k-\epsilon\)</span> and <span class="math notranslate nohighlight">\(k-\omega\)</span> SST models. These are both good choices for general applications. The <span class="math notranslate nohighlight">\(k-\epsilon\)</span> model is very reliable and can often be used to get initial values for more sophisticated models.</p></li>
+<li><p>HydroUQ app 3.0 supports <span class="math notranslate nohighlight">\(k-\epsilon\)</span> and <span class="math notranslate nohighlight">\(k-\omega\)</span> SST models. These are both good choices for general applications. The <span class="math notranslate nohighlight">\(k-\epsilon\)</span> model is very reliable and can often be used to get initial values for more sophisticated models.</p></li>
 <li><p>The <span class="math notranslate nohighlight">\(k-\epsilon\)</span> model is inaccurate for flows with adverse pressure gradients. It does not allow integration of the conservation equations through the viscous sublayer where low Reynolds number corrections are recommended.</p></li>
 <li><p>The <span class="math notranslate nohighlight">\(k-\omega\)</span> model is very sensitive to the freestream boundary conditions. However, it performs well for flows with variable pressure gradients.</p></li>
 </ol>
 </div>
 <div class="section" id="user-errors">
-<h2><span class="section-number">5.8. </span>User errors<a class="headerlink" href="#user-errors" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.8. </span>User errors<a class="headerlink" href="#user-errors" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Check for details in the geometry. Do not over-simplify the geometry without an understanding of the given problem.</p></li>
-<li><p>Inaccurate use of boundary conditions, poor-quality grids are commonly observed user errors.</p></li>
+<li><p>Inaccurate use of boundary conditions and / or low-quality grids (e.g., poorly meshed in critical locations, inadaquate resolution for the problem) are commonly observed user errors.</p></li>
 <li><p>Ensure that the timestep sizes provided are reasonable.</p></li>
 </ol>
 </div>
 <div class="section" id="checking-results">
-<h2><span class="section-number">5.9. </span>Checking results<a class="headerlink" href="#checking-results" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.9. </span>Checking results<a class="headerlink" href="#checking-results" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Check the overall mass balance.</p></li>
 <li><p>Check whether the values and distribution of values of velocities, forces, and pressures are realistic.</p></li>
@@ -335,7 +343,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2024, The Regents of the University of California.
+        &#169; Copyright 2018-2024, The Regents of the University of California.
 
     </p>
   </div>
