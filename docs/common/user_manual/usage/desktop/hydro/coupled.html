@@ -1,0 +1,451 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2.4.2. Coupled Digital Twin &mdash; Hydro-UQ  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="2.5. FEM: Finite Element Method" href="../FEM.html" />
+    <link rel="prev" title="2.4.1.6. Solver" href="Solver.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../_static/HydroUQ-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">1. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">2. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">3. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">4. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">5. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">6. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GI.html">2.2. GI: General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.3. SIM: Structural Model</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="EVT.html">2.4. EVT: Hydro Events</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="general.html">2.4.1. General Event Option</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.2. Coupled Digital Twin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#coupled-simulation-settings">2.4.3. <strong>(1) Coupled Simulation Settings</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#specification-of-opensees-model-file-and-external-surface-file-for-structure">2.4.4. <strong>(2) Specification of OpenSees Model File And External Surface File for Structure</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#specification-of-cfd-model-domain-and-initial-conditions">2.4.5. <strong>(3) Specification of CFD model domain and initial conditions.</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#specify-outputs">2.4.6. <strong>(4) Specify Outputs</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#postprocessing">2.4.7. <strong>(5) Postprocessing</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Project.html">2.4.1.1. Project settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Geometry.html">2.4.1.2. Geometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Meshing.html">2.4.1.3. Meshing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Materials.html">2.4.1.4. Materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Initial.html">2.4.1.5. Initial conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Solver.html">2.4.1.6. Solver</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.6. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../response/EDP.html">2.7. EDP: Demand Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resHydro.html">2.8. RES: Results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="helpvideo.html">3. Help Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bestpractices.html">5. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/hazards/water.html">1. Water-borne Hazards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/fvm/fvm.html">2. Finite Volume Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/swsolver.html">3. Shallow Water Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/cfdsolver/cfdsolver.html">4. CFD Solvers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">3. Coding Style</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Hydro-UQ</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../usage.html"><span class="section-number">2. </span>User Interface</a> &raquo;</li>
+        
+          <li><a href="EVT.html"><span class="section-number">2.4. </span>EVT: Hydro Events</a> &raquo;</li>
+        
+      <li><span class="section-number">2.4.2. </span>Coupled Digital Twin</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/common/user_manual/usage/desktop/hydro/coupled.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="coupled-digital-twin">
+<h1><span class="section-number">2.4.2. </span>Coupled Digital Twin<a class="headerlink" href="#coupled-digital-twin" title="Permalink to this headline">¶</a></h1>
+<p>This panel allows users to utilize a coupled OpenFOAM CFD simulation and OpenSeesPy finite element simulation to obtain loads and pressures on the building for subsequent UQ analysis.</p>
+<div class="align-center coupled event panel figure">
+<img alt="../../../../../_images/Coupled.png" src="../../../../../_images/Coupled.png" />
+</div>
+<p>For a coupled event the user is presented with a workflow they must progress through:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Coupled simulation settings</p></li>
+<li><p>OpenSees Model and External Envelope File Upload</p></li>
+<li><p>Specification of CFD domain information and initial conditions</p></li>
+<li><p>Desired data output specification</p></li>
+<li><p>Post processing</p></li>
+</ol>
+</div></blockquote>
+</div>
+<hr class="docutils" />
+<div class="section" id="coupled-simulation-settings">
+<h1><span class="section-number">2.4.3. </span><strong>(1) Coupled Simulation Settings</strong><a class="headerlink" href="#coupled-simulation-settings" title="Permalink to this headline">¶</a></h1>
+<p><strong>(1.1) Simulation Settings</strong></p>
+<p>Time Step: The coupling timestep for the solution. This value should be selected such that CFD model CFL criterion is satisfied, as well as the required minimum timestep for finite element analysis model stability.</p>
+<p>Duration: Coupled simulation duration.</p>
+<p>Preload Structure w/ Gravity: Utilize the nodal masses to create a gravity loading in the -Z direction of the OpenSees model. (optional, this could be handled manually within the OpenSees script itself)</p>
+<p>Run Preliminary Structural Analysis: Utilize the end state of the OpenSees analysis (if defined in the OpenSees script) as the initial state of structure during the coupled analysis.</p>
+<div class="align-center settings figure">
+<img alt="../../../../../_images/Settings.png" src="../../../../../_images/Settings.png" />
+</div>
+<p><strong>(1.2) OpenFOAM Settings</strong></p>
+<p>Adjust Timestep: [Default, No] This setting allows the OpenFOAM analysis to reduce its timestep to a value below that of the coupling timestep. NOT RECOMMENDEDFOR CASES WITH STRUCTURAL DEFORMATION. Subcycling of the CFD model between coupling iterations can result in erroneous force spikes. It is suggested that a constant timestep size is utilized for coupled analyses.</p>
+<p>Turbulence: Allow for calculation of turbulence within the CFD model.</p>
+<p>Number of Processors: The number of processors the OpenFOAM CFD solution will be calculated with.</p>
+<p>Start Event Recording Time: What time the user would like the coupled model to output post-processing data.</p>
+<p><strong>(1.3) OpenCOUPLING Settings</strong></p>
+<p>Coupling Scheme: Implicit/Explicit. Implicit is recommended.</p>
+<p>Coupling Data Acceleration Method: IQN-ILS is recommended.</p>
+<p>Initial Relaxation Factor: The relaxation factor for FSI coupling iterations.</p>
+<p>Maximum Coupling Iterations: Default, 100. Keep at a large value, should converge before reaching maximum iterations.</p>
+<p>Coupling Iteration Convergence Tolerance: This is a relative convergence measure of the coupling data passed between participants within each coupling timestep. This value should be below 5e-3, but not too small. This is a measure of how much the coupling residuals change from coupling iteration to coupling iteration. Once the values have nearly approached their desired values from the interface acceleration techniques, the coupling convergence tolerance is satisfied.</p>
+<p>Data Mapping Scheme: Nearest Neighbor is recommended. Radial-basis-function mapping is available, but is less stable and slower than nearest neighbor.</p>
+<p>Output Data from Coupling Iterations: Not recommended. Intended for debugging of coupling iterations for models which are not converging.</p>
+<p>Coupling Iteration Output Data Frequency: A large value is recommended.</p>
+</div>
+<div class="section" id="specification-of-opensees-model-file-and-external-surface-file-for-structure">
+<h1><span class="section-number">2.4.4. </span><strong>(2) Specification of OpenSees Model File And External Surface File for Structure</strong><a class="headerlink" href="#specification-of-opensees-model-file-and-external-surface-file-for-structure" title="Permalink to this headline">¶</a></h1>
+<p>OpenSees File must be an OpenSeesPy script</p>
+<p>External surface file  - Must be a STL file, this is the boundary which will represent the structure within a three-dimensional CFD simulation, which will be coupled to the FEA model)</p>
+<p><strong>(2.1) OpenSees Model</strong></p>
+<div class="align-center opensees figure">
+<img alt="../../../../../_images/OpenSees.png" src="../../../../../_images/OpenSees.png" />
+</div>
+</div>
+<div class="section" id="specification-of-cfd-model-domain-and-initial-conditions">
+<h1><span class="section-number">2.4.5. </span><strong>(3) Specification of CFD model domain and initial conditions.</strong><a class="headerlink" href="#specification-of-cfd-model-domain-and-initial-conditions" title="Permalink to this headline">¶</a></h1>
+<p><strong>(3.1) OpenFOAM Model</strong></p>
+<p>Select a NHERI flume facility or specify the flume geometry within the text field boxes provided.</p>
+<p>Specify a flume cell size (this is the approximate edge length size of the volumes within the CFD domain for the largest cells). The minimum flume cell size could tentatively be 8 times smaller than this value, due to mesh castellation during automatic meshing routines. Use caution when specifying this value. CFD mesh resolution is increased in the structural near field.</p>
+<p>s</p>
+<div class="align-center openfoam figure">
+<img alt="../../../../../_images/OpenFOAM.png" src="../../../../../_images/OpenFOAM.png" />
+</div>
+<p><strong>(3.2) Specify the flume bathymetry (STL file, or point list of x position, elevation of flume floor at x position).</strong></p>
+<p>If there is no bathymetry, please provide points within the point list which are outside of the boundary of the flume, or specify the bottom of the flume as a two point list with your start x location and end x location as the start and end of the flume and the flume elevation at both points as 0.</p>
+<div class="align-center bathymetry figure">
+<img alt="../../../../../_images/bathymetryOF.png" src="../../../../../_images/bathymetryOF.png" />
+</div>
+<p><strong>(3.3) Specify the initial conditions of the OpenFOAM model, including the still water level, the initial fluid velocity, and the fluid reference pressure [default, 0 Pa]. If a velocity time history is desired as an inlet boundary condition, upload a CSV file containing the times and velocities desired at the inlet at those times.</strong></p>
+<div class="align-center initial conditions figure">
+<img alt="../../../../../_images/initialOF.png" src="../../../../../_images/initialOF.png" />
+</div>
+<p><strong>(3.4) Specify the turbulence initial conditions. The reference length, turbulence intensity, and the reference velocity of the turbulence.</strong></p>
+<div class="align-center turbulence figure">
+<img alt="../../../../../_images/turbulanceOF.png" src="../../../../../_images/turbulanceOF.png" />
+</div>
+<p><strong>(3.5) Specify the wave generation techniques for the CFD model, if waves are desired.</strong></p>
+<p>Paddle Generated Waves: Upload a CSV of times, displacements of the paddle at the inlet. This will create a paddle generated wave through motion of the CFD boundary at the minimum X boundary of the model.</p>
+<p>Periodic Waves: Specify the wave properties to apply a periodic wave inlet boundary condition to the CFD model.</p>
+<p>No Waves: Steady state flow or flows without waves.</p>
+<div class="align-center wave generation figure">
+<img alt="../../../../../_images/waveOF.png" src="../../../../../_images/waveOF.png" />
+</div>
+</div>
+<div class="section" id="specify-outputs">
+<h1><span class="section-number">2.4.6. </span><strong>(4) Specify Outputs</strong><a class="headerlink" href="#specify-outputs" title="Permalink to this headline">¶</a></h1>
+<p>A variety of outputs from the coupled model can be obtained through specification of the output settings.</p>
+<ul class="simple">
+<li><p>Output VTK - Output a VTK file of the OpenSees and OpenFOAM models at the specified time interval.</p></li>
+<li><p>Free surface probes - function as wave gauges within the CFD model</p></li>
+<li><p>Field Probes - sample various fields from the CFD model for postprocessing (pressure, velocity, phase fraction)</p></li>
+<li><p>Section cuts - sample various fields as a section cut of the CFD model - specify origin point and normal of the section cut, as well as the fields of interest</p></li>
+</ul>
+<div class="align-center outputs figure">
+<img alt="../../../../../_images/Outputs.png" src="../../../../../_images/Outputs.png" />
+</div>
+<p>Field Probes</p>
+<div class="align-center field probes figure">
+<img alt="../../../../../_images/OutputFieldProbes.png" src="../../../../../_images/OutputFieldProbes.png" />
+</div>
+<p>Surface Probes</p>
+<div class="align-center surface probes figure">
+<img alt="../../../../../_images/OutputSuraceProbes.png" src="../../../../../_images/OutputSuraceProbes.png" />
+</div>
+<p>Section Cuts</p>
+<div class="align-center section cuts figure">
+<img alt="../../../../../_images/OutputCuts.png" src="../../../../../_images/OutputCuts.png" />
+</div>
+</div>
+<div class="section" id="postprocessing">
+<h1><span class="section-number">2.4.7. </span><strong>(5) Postprocessing</strong><a class="headerlink" href="#postprocessing" title="Permalink to this headline">¶</a></h1>
+<p>Data from the coupled analysis will be available in the DesignSafe Data Depot under your My Data/Hydro-UQ/ folder. Each analysis will have a temporary directory associated with it. Within this directory, there is a results.zip file which contains the OpenFOAM postProcessing folder, as well as VTK output from OpenSees. This zip folder can be extracted and results can be viewed with ParaView.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2024, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '...', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>
