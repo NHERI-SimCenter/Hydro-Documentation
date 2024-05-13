@@ -113,8 +113,8 @@
 <li class="toctree-l1"><a class="reference internal" href="common/front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/front-matter/cite.html">4. How To Cite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/user_manual/releases/hydroCapabilities.html">5. Capabilities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/user_manual/releases/hydroPlans.html">6. Release Plans</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/user_manual/usage/desktop/hydro/releasenotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/user_manual/usage/desktop/hydro/releasenotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/user_manual/releases/hydroPlans.html">7. Release Plans</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/front-matter/glossary.html">8. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
@@ -124,20 +124,21 @@
 <li class="toctree-l1"><a class="reference internal" href="common/user_manual/usage/desktop/usage.html">2. User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/user_manual/usage/desktop/hydro/tools.html">3. Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/user_manual/examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/user_manual/troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/user_manual/usage/desktop/hydro/bestpractices.html">6. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/user_manual/usage/desktop/hydro/bestpractices.html">5. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/user_manual/troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/reqments/HydroUQ.html">7. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/user_manual/bugs.html">8. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/user_manual/usage/desktop/hydro/helpvideo.html">9. Video Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/hydro/hazards/water.html">2. Water-borne Hazards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/hydro/mpm/mpm.html">3. Material Point Method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/hydro/fvm/fvm.html">4. Finite Volume Method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/hydro/swsolver/swsolver.html">5. Shallow Water Solvers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/hydro/cfdsolver/cfdsolver.html">6. CFD Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/hydro/hazards/water.html">3. Water-borne Hazards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/hydro/swsolver/swsolver.html">4. Shallow Water Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/hydro/cfdsolver/cfdsolver.html">5. CFD Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/hydro/fvm/fvm.html">6. Finite Volume Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/hydro/mpm/mpm.html">7. Material Point Method</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -215,7 +216,7 @@
 <h1>Water-borne Hazards Engineering with Uncertainty Quantification<a class="headerlink" href="#full-tool-name" title="Permalink to this heading">¶</a></h1>
 <p><strong>Justin Bonus</strong> , <strong>Ajay B Harish</strong> , <strong>Frank McKenna</strong></p>
 <p>The Water-borne Hazards Engineering with Uncertainty Quantification (HydroUQ app) is an open-source research application for predicting the response of a building in a community subjected to water-borne events, namely tsunamis and storm surges. The application is focused on quantifying the uncertainties in the predicted structural response, given the uncertainties in models, loads, and analysis. The computations are performed in a workflow application that will run on a high-performance computer made available by <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a>.</p>
-<p>This document covers the features and capabilities of Version 3.0 of the tool. Users are encouraged to comment on what additional features and capabilities they would like to see in future versions of the application through the <a class="reference external" href="https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=17.0">Message Board</a>.</p>
+<p>This document covers the features and capabilities of Version 3.1.0 of the tool. Users are encouraged to comment on what additional features and capabilities they would like to see in future versions of the application through the <a class="reference external" href="https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=17.0">Message Board</a>.</p>
 <div class="toctree-wrapper compound" id="lbl-front-matter">
 <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
@@ -224,8 +225,8 @@
 <li class="toctree-l1"><a class="reference internal" href="common/front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/front-matter/cite.html">4. How To Cite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/user_manual/releases/hydroCapabilities.html">5. Capabilities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/user_manual/releases/hydroPlans.html">6. Release Plans</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/user_manual/usage/desktop/hydro/releasenotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/user_manual/usage/desktop/hydro/releasenotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/user_manual/releases/hydroPlans.html">7. Release Plans</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/front-matter/glossary.html">8. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
@@ -237,8 +238,8 @@
 <li class="toctree-l1"><a class="reference internal" href="common/user_manual/usage/desktop/usage.html">2. User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/user_manual/usage/desktop/hydro/tools.html">3. Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/user_manual/examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/user_manual/troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/user_manual/usage/desktop/hydro/bestpractices.html">6. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/user_manual/usage/desktop/hydro/bestpractices.html">5. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/user_manual/troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/reqments/HydroUQ.html">7. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/user_manual/bugs.html">8. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/user_manual/usage/desktop/hydro/helpvideo.html">9. Video Overview</a></li>
@@ -251,12 +252,13 @@
 <div class="toctree-wrapper compound" id="lbl-technical-manual">
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/hydro/hazards/water.html">2. Water-borne Hazards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/hydro/mpm/mpm.html">3. Material Point Method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/hydro/fvm/fvm.html">4. Finite Volume Method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/hydro/swsolver/swsolver.html">5. Shallow Water Solvers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/hydro/cfdsolver/cfdsolver.html">6. CFD Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/hydro/hazards/water.html">3. Water-borne Hazards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/hydro/swsolver/swsolver.html">4. Shallow Water Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/hydro/cfdsolver/cfdsolver.html">5. CFD Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/hydro/fvm/fvm.html">6. Finite Volume Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/hydro/mpm/mpm.html">7. Material Point Method</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound" id="lbl-developer-manual">
@@ -270,7 +272,7 @@
 </div>
 <div class="section" id="contact">
 <h1>Contact<a class="headerlink" href="#contact" title="Permalink to this heading">¶</a></h1>
-<p>Justin Bonus (<a class="reference external" href="mailto:bonus&#37;&#52;&#48;berkeley&#46;edu">bonus<span>&#64;</span>berkeley<span>&#46;</span>edu</a>), Ajay B Harish (<a class="reference external" href="mailto:ajaybh&#37;&#52;&#48;berkeley&#46;edu">ajaybh<span>&#64;</span>berkeley<span>&#46;</span>edu</a>), Frank Mckenna (<a class="reference external" href="mailto:fmk&#37;&#52;&#48;berkeley&#46;edu">fmk<span>&#64;</span>berkeley<span>&#46;</span>edu</a>), NHERI SimCenter, University of California Berkeley</p>
+<p>Justin Bonus (<a class="reference external" href="mailto:bonus&#37;&#52;&#48;berkeley&#46;edu">bonus<span>&#64;</span>berkeley<span>&#46;</span>edu</a>), Ajay B Harish (<a class="reference external" href="mailto:ajay&#46;harish&#37;&#52;&#48;manchester&#46;uk&#46;edu">ajay<span>&#46;</span>harish<span>&#64;</span>manchester<span>&#46;</span>uk<span>&#46;</span>edu</a>), Frank Mckenna (<a class="reference external" href="mailto:fmk&#37;&#52;&#48;berkeley&#46;edu">fmk<span>&#64;</span>berkeley<span>&#46;</span>edu</a>), NHERI SimCenter, University of California Berkeley</p>
 </div>
 <div class="section" id="references">
 <h1>References<a class="headerlink" href="#references" title="Permalink to this heading">¶</a></h1>

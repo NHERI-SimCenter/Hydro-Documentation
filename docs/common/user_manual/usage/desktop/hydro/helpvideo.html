@@ -49,7 +49,7 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="1. Technical Manual" href="../../../../technical_manual/desktop/technical_manual.html" />
+    <link rel="next" title="&lt;no title&gt;" href="../../../../technical_manual/desktop/technical_manual.html" />
     <link rel="prev" title="8. Bugs &amp; Feature Requests" href="../../../bugs.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -114,8 +114,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../releases/hydroCapabilities.html">5. Capabilities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../releases/hydroPlans.html">6. Release Plans</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/hydroPlans.html">7. Release Plans</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
@@ -125,23 +125,24 @@
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">2. User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">3. Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bestpractices.html">6. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bestpractices.html">5. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">7. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">9. Video Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#fluid-structure-interaction-with-openfoam-and-opensees-with-hydro-uq">9.1. Fluid-Structure Interaction with OpenFOAM and OpenSees with Hydro-UQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#live-expert-tips">9.1. Live Expert Tips</a></li>
 </ul>
 </li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/hazards/water.html">2. Water-borne Hazards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/mpm/mpm.html">3. Material Point Method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/fvm/fvm.html">4. Finite Volume Method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/swsolver.html">5. Shallow Water Solvers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/cfdsolver/cfdsolver.html">6. CFD Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/hazards/water.html">3. Water-borne Hazards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/swsolver.html">4. Shallow Water Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/cfdsolver/cfdsolver.html">5. CFD Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/fvm/fvm.html">6. Finite Volume Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/mpm/mpm.html">7. Material Point Method</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -217,13 +218,30 @@
             
   <div class="section" id="video-overview">
 <span id="lbl-helpvideos"></span><h1><span class="section-number">9. </span>Video Overview<a class="headerlink" href="#video-overview" title="Permalink to this heading">¶</a></h1>
-<p>Walk-through videos of the <code class="docutils literal notranslate"><span class="pre">HydroUQ</span></code> desktop application are provided below:</p>
-<div class="section" id="fluid-structure-interaction-with-openfoam-and-opensees-with-hydro-uq">
-<h2><span class="section-number">9.1. </span>Fluid-Structure Interaction with OpenFOAM and OpenSees with Hydro-UQ<a class="headerlink" href="#fluid-structure-interaction-with-openfoam-and-opensees-with-hydro-uq" title="Permalink to this heading">¶</a></h2>
-<p>A walk-through video of the <code class="docutils literal notranslate"><span class="pre">Hydro</span> <span class="pre">EVT</span></code> water-borne event panel is provided below:</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/b3ZXjlAoQbk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>A walk-through video of the <code class="docutils literal notranslate"><span class="pre">Hydro</span> <span class="pre">EVT</span></code> water-borne event panel is provided below:</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/b3ZXjlAoQbk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>If you would like additional walk-through videos on any particular topic, please write to us through the <a class="reference external" href="https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=17.0">Message Board</a>.</p>
-</div>
+<p>Walk-throughs, expert tips, and use-case videos for the <code class="docutils literal notranslate"><span class="pre">HydroUQ</span></code> desktop application are provided below:</p>
+<div class="section" id="live-expert-tips">
+<span id="lbl-liveexperttipshydrouq"></span><h2><span class="section-number">9.1. </span>Live Expert Tips<a class="headerlink" href="#live-expert-tips" title="Permalink to this heading">¶</a></h2>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Fluid-Structure Interaction with OpenFOAM and OpenSees<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div style="text-align: center;">
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/j5R_bsVq6IU"  width="560" height="315" title="Fluid-Structure Interaction with OpenFOAM and OpenSees with Hydro-UQ"  frameborder="5" allowfullscreen="allowfullscreen"></iframe>
+</div></div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Coupling Regional Tsunami and Storm-Surge Simulation with Local-Scale Structural Response<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div style="text-align: center;">
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/yOb6k_L9V7Q?si=E26vX6EyI89MbUK3"  width="560" height="315" title="Fluid-Structure Interaction with OpenFOAM and OpenSees with Hydro-UQ"  frameborder="5" allowfullscreen="allowfullscreen"></iframe>
+</div></div>
+</details></div>
 </div>
 
 

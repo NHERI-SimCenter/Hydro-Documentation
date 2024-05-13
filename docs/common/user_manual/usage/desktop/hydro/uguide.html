@@ -112,8 +112,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../releases/hydroCapabilities.html">5. Capabilities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../releases/hydroPlans.html">6. Release Plans</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/hydroPlans.html">7. Release Plans</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
@@ -123,20 +123,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">2. User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">3. Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bestpractices.html">6. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bestpractices.html">5. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">7. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="helpvideo.html">9. Video Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/hazards/water.html">2. Water-borne Hazards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/mpm/mpm.html">3. Material Point Method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/fvm/fvm.html">4. Finite Volume Method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/swsolver.html">5. Shallow Water Solvers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/cfdsolver/cfdsolver.html">6. CFD Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/hazards/water.html">3. Water-borne Hazards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/swsolver.html">4. Shallow Water Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/cfdsolver/cfdsolver.html">5. CFD Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/fvm/fvm.html">6. Finite Volume Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/mpm/mpm.html">7. Material Point Method</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -214,8 +215,12 @@
 <span id="lbl-uguide"></span><h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this heading">¶</a></h1>
 <p>The HydroUQ app, as will be discussed in <a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html#lblarchitecture"><span class="std std-ref">Software Architecture</span></a>, is a hazard event application. In addition to the hazard event, the workflow also includes other aspects, like UQ and FEM engine. Each of these workflow elements can involve multiple different backend applications. Once the Hydro-UQ app is started, the user is presented with the user interface shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">primaryGUI</span></code>. In this UI, the user selects the applications to run in a workflow, inputs the necessary parameters for each of these applications, starts the workflow either locally or remotely, and finally views the simulation results. The main window of the UI is divided into several separate areas. Each of these areas is discussed in the upcoming sections.</p>
 <div class="align-center figure" id="id1">
-<span id="primarygui"></span><img alt="../../../../../_images/EVT_Tab_MPM.png" src="../../../../../_images/EVT_Tab_MPM.png" />
-<p class="caption"><span class="caption-text">The Hydro-UQ app user interface</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<span id="primarygui"></span><img alt="../../../../../_images/HydroUQ_MPM_3DViewPort_OSULWF_2024.04.252.gif" src="../../../../../_images/HydroUQ_MPM_3DViewPort_OSULWF_2024.04.252.gif" />
+<p class="caption"><span class="caption-text">The Hydro-UQ app user interface, with the EVT panel selected and the lnew HydroUQ v3.0 GUI. Numerical solver shown is the MPM solver, which is only available as a standalone pop-out Tool in the current app release, with integration in the next release.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id2">
+<span id="legacygui"></span><img alt="common/user_manual/usage/desktop/hydro/figures/HydroPanel.png" src="common/user_manual/usage/desktop/hydro/figures/HydroPanel.png" />
+<p class="caption"><span class="caption-text">The Hydro-UQ app user interface, with the EVT panel selected and the legacy HydroUQ v1.0 GUi</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>1. Login button:</strong></p>
 <p>The <strong>Login</strong> button is at the top right of the user interface. Before the user can launch any jobs on DesignSafe, they must first log in to DesignSafe using their DesignSafe login and password. Pressing the login button will open up the login window for users to enter this information. Users can register for an account on the <a class="reference external" href="https://www.designsafe-ci.org/account/register">DesignSafe-CI</a> website.</p>
@@ -230,22 +235,52 @@
 </ol>
 </div></blockquote>
 <p><strong>3. Input panel selection:</strong></p>
-<p>The ribbon on the left side provides the user with a selection of buttons to choose from (e.g., <strong>UQ</strong>, <strong>EVT</strong>, <strong>RV</strong>, <strong>FEM</strong>, <strong>RES</strong>). Selecting any of these buttons will change what is displayed in the central input panel. Except for the <strong>RV</strong> panel, each panel will present the user with an option for which application to choose for that part of the workflow and then present the users for inputs for that application. Of particular interest here is the <strong>EVT</strong>, where all flow parameters are assigned. At present, the other inputs have not been integrated into the Hydro-UQ application. More information will be provided as and when the other inputs are integrated.</p>
+<p>The ribbon on the left side provides the user with a selection of buttons to choose from (e.g., <strong>UQ</strong>, <strong>GI</strong>, <strong>SIM</strong>, <strong>EVT</strong>, <strong>RV</strong>, <strong>FEM</strong>, <strong>EDP</strong>, <strong>RES</strong>). Selecting any of these buttons will change what is displayed in the central input panel. Except for the <strong>RV</strong> panel, each panel will present the user with an option for which application to choose for that part of the workflow and then present the users for inputs for that application. Of particular interest here is the <strong>EVT</strong>, where all flow parameters are assigned. At present, the other inputs have not been integrated into the Hydro-UQ application. More information will be provided as and when the other inputs are integrated.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="EVT.html">2.4. EVT: Hydro Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EVT.html">2.4. EVT: Hydro Events</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="general.html">2.4.1. General Event (Legacy)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Project.html">2.4.1.1. Project Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Geometry.html">2.4.1.2. Geometry</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Geometry.html#bathymetry">Bathymetry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Geometry.html#shallow-water-to-cfd-interface">Shallow Water to CFD Interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Geometry.html#buildings-and-scaled-specimens">Buildings and Scaled Specimens</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Geometry.html#debris-and-floating-bodies">Debris and Floating Bodies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Meshing.html">2.4.1.3. Meshing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Materials.html">2.4.1.4. Materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Initial.html">2.4.1.5. Initial conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Solver.html">2.4.1.6. Solver</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="coupled.html">2.4.2. Coupled Digital Twin</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="coupled.html#coupled-simulation-settings">2.4.2.1. Coupled Simulation Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="coupled.html#specificy-opensees-structural-model-and-an-external-surface-file">2.4.2.2. Specificy OpenSees Structural Model and an External Surface File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="coupled.html#specificy-openfoam-cfd-model-and-initial-conditions">2.4.2.3. Specificy OpenFOAM CFD Model and Initial Conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="coupled.html#specify-outputs">2.4.2.4. Specify Outputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="coupled.html#postprocessing">2.4.2.5. Postprocessing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="MPM.html">2.4.3. Material Point Method</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="SettingsMPM.html">2.4.3.1. Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BodiesMPM.html">2.4.3.2. Bodies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="BodiesMPM.html#material">Material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BodiesMPM.html#geometries">Geometries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BodiesMPM.html#algorithm">Algorithm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BodiesMPM.html#partitions">Partitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BodiesMPM.html#debris">Debris</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="BoundariesMPM.html">2.4.3.3. Boundaries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SensorsMPM.html">2.4.3.4. Sensors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OutputsMPM.html">2.4.3.5. Outputs</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="FEM.html">FEM: Finite Element Method</a></li>
 </ul>
-</div>
-<p><strong>4. Event type selection panel:</strong></p>
-<p>This allows the user to select different types of events. At the moment, only the <code class="docutils literal notranslate"><span class="pre">General</span></code> event type is available from where all possible simulations related to the <code class="docutils literal notranslate"><span class="pre">EVT</span></code> can be selected.</p>
-<p><strong>4. Event simulation panel:</strong></p>
-<p>This allows the user to select the different components necessary for the <code class="docutils literal notranslate"><span class="pre">EVT</span></code>. This includes the definition of geometry, meshing, initial and boundary conditions, solver settings, and so on.</p>
-<p><strong>4. Event simulation parameter panel:</strong></p>
-<p>All the parameters related to the simulation for the <code class="docutils literal notranslate"><span class="pre">EVT</span></code> are provided by the user in this panel.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For other tabs, other than the <code class="docutils literal notranslate"><span class="pre">EVT</span></code>, the event simulation and event simulation parameter panels are merged into one large central area. This central area of the UI is where the user provides input for the other tabs and views the results. For example, suppose the user had selected <strong>RV</strong> in the input panel selection. In that case, it is in this panel that the user would provide details on the distributions associated with each random variable. In the following sections, each of the panels is presented to the user when the buttons in the input panel selection are reviewed</p>
 </div>
 </div>
 

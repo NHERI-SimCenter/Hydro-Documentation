@@ -112,8 +112,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../releases/hydroCapabilities.html">5. Capabilities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../releases/hydroPlans.html">6. Release Plans</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../hydro/releasenotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hydro/releasenotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/hydroPlans.html">7. Release Plans</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
@@ -123,20 +123,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">2. User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../hydro/tools.html">3. Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../hydro/bestpractices.html">6. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hydro/bestpractices.html">5. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">7. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../hydro/helpvideo.html">9. Video Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/hazards/water.html">2. Water-borne Hazards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/mpm/mpm.html">3. Material Point Method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/fvm/fvm.html">4. Finite Volume Method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/swsolver.html">5. Shallow Water Solvers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/cfdsolver/cfdsolver.html">6. CFD Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/hazards/water.html">3. Water-borne Hazards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/swsolver.html">4. Shallow Water Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/cfdsolver/cfdsolver.html">5. CFD Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/fvm/fvm.html">6. Finite Volume Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/mpm/mpm.html">7. Material Point Method</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -212,7 +213,7 @@
             
   <div class="section" id="res-results">
 <span id="lblgi"></span><h1>RES: Results<a class="headerlink" href="#res-results" title="Permalink to this heading">¶</a></h1>
-<p>A successful run or download of a job that ran successfully at <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a> will result in 2 tabbed widgets being displayed in the results panel.  The first tab, as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figResultsSummary</span></code> shows the summary statistics: <strong>mean</strong>, <strong>stdDev</strong>, and <strong>kurtosis</strong>.</p>
+<p>A successful run or download of a job that ran successfully at <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a> will result in 2 tabbed widgets being displayed in the results panel.  The first tab, as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figResultsSummary</span></code> shows the summary statistics, e.g. <strong>mean</strong> and <strong>stdDev</strong>.</p>
 <div class="align-center figure" id="id1">
 <span id="figresultssummary"></span><img alt="../../../../../_images/resultsSummary1.png" src="../../../../../_images/resultsSummary1.png" />
 <p class="caption"><span class="caption-text">Results summary.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
@@ -223,10 +224,13 @@ columns with left and right mouse buttons in the table below the
 graphic, the information in the graph is changed. Selecting the left
 mouse button changes the Y axis, the right mouse changes the X
 axis. If the same column is selected using both left and right keys,
-either the CDF and PDF is displayed. If the last mouse press was with the left
+either the cumulative density function (CDF) and probability density function (PDF) is displayed. If the last mouse press was with the left
 button, the PDF will be displayed; if the last mouse press was the right one, the CDF
 will be displayed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Regarding the columns in the table below the figure: You will see a column for each random variable the workflow came across and then the columns for the response quantities. There may be more random variables than you specified. This is because certain applications the user selected may introduce additional random variables for the UQ engine to consider.</p>
+</div>
 <div class="align-center figure" id="id2">
 <span id="figresultsdata"></span><img alt="../../../../../_images/resultsData1.png" src="../../../../../_images/resultsData1.png" />
 <p class="caption"><span class="caption-text">Results presented both graphically and in tabular form.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>

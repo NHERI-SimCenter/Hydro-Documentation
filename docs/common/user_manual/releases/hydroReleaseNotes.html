@@ -112,8 +112,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/cite.html">4. How To Cite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hydroCapabilities.html">5. Capabilities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hydroPlans.html">6. Release Plans</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/hydro/releasenotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/hydro/releasenotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hydroPlans.html">7. Release Plans</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">8. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
@@ -123,20 +123,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../usage/desktop/usage.html">2. User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage/desktop/hydro/tools.html">3. Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/hydro/bestpractices.html">6. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/hydro/bestpractices.html">5. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reqments/HydroUQ.html">7. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bugs.html">8. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage/desktop/hydro/helpvideo.html">9. Video Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/hydro/hazards/water.html">2. Water-borne Hazards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/hydro/mpm/mpm.html">3. Material Point Method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/hydro/fvm/fvm.html">4. Finite Volume Method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/hydro/swsolver/swsolver.html">5. Shallow Water Solvers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/hydro/cfdsolver/cfdsolver.html">6. CFD Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/hydro/hazards/water.html">3. Water-borne Hazards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/hydro/swsolver/swsolver.html">4. Shallow Water Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/hydro/cfdsolver/cfdsolver.html">5. CFD Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/hydro/fvm/fvm.html">6. Finite Volume Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/hydro/mpm/mpm.html">7. Material Point Method</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -212,19 +213,20 @@
             
   <div class="section" id="release-notes">
 <span id="lbl-release-hydrouq"></span><h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this heading">¶</a></h1>
-<div class="section" id="version-3">
-<h2>Version 3<a class="headerlink" href="#version-3" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="version-3-1">
+<h2>Version 3.1<a class="headerlink" href="#version-3-1" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
-Version 3.0.0 (<span class="blue">Current</span>)<div class="sd-summary-down docutils">
+Version 3.1.0 (<span class="blue">Current</span>)<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text"><strong>Release date:</strong> March 20th, 2024</p>
-<dl>
-<dt><strong>Highlights</strong></dt><dd><ol class="arabic">
+<p class="sd-card-text"><strong>Release date:</strong> April 1st, 2024</p>
+<p class="sd-card-text"><strong>Highlights</strong></p>
+<blockquote>
+<div><ol class="arabic">
 <li><p class="sd-card-text"><strong>Simulation types</strong>:</p>
 <blockquote>
 <div><ol class="loweralpha simple">
@@ -246,8 +248,25 @@ Version 3.0.0 (<span class="blue">Current</span>)<div class="sd-summary-down doc
 <li><p class="sd-card-text"><strong>Materials</strong>:</p>
 <blockquote>
 <div><ol class="loweralpha simple">
-<li><p class="sd-card-text">Supports elastic, plastic, hyperelastic, and elasto-plastic materials.</p></li>
-<li><p class="sd-card-text">Supports kinematic viscosity and density of the two phases in addition to the surface tension between the fluids.</p></li>
+<li><p class="sd-card-text">Supports elastic, plastic, hyperelastic, and elasto-plastic materials in MPM.</p></li>
+<li><p class="sd-card-text">Supports kinematic viscosity and density of the two phases in addition to the surface tension between the fluids in OpenFOAM.</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p class="sd-card-text"><strong>Tools</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p class="sd-card-text">Certain Events (EVT) may now run as standalone tools (i.e. does not require a SimCenter workflow for UQ, etc.). Simplifies implementation of new modules.</p></li>
+<li><p class="sd-card-text">Added Tapis API support for running Tools remotely, allowing for specialized Tapis applications and system/queue selection</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p class="sd-card-text"><strong>Digital Twins</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p class="sd-card-text">Digital twins now allow for debris and floating bodies.</p></li>
+<li><p class="sd-card-text">Added Oregon State University’s Large Wave Flume (OSU LWF) as a digital twin for MPM and FOAMySees.</p></li>
+<li><p class="sd-card-text">Added Waseda University’s Tsunami Wave Basin (WU TWB) as a digital twin for MPM.</p></li>
 </ol>
 </div></blockquote>
 </li>
@@ -267,8 +286,8 @@ Version 3.0.0 (<span class="blue">Current</span>)<div class="sd-summary-down doc
 <li><p class="sd-card-text">Added support for the TACC Lonestar6 supercomputer.</p>
 <blockquote>
 <div><ul class="simple">
-<li><p class="sd-card-text">Access the ‘gpu-h100’ queue. Includes 2 NVIDIA H100 GPUs (80GB memory each).</p></li>
 <li><p class="sd-card-text">Access the ‘gpu-a100’ queue. Includes 3 NVIDIA A100 GPUs (40GB memory each).</p></li>
+<li><p class="sd-card-text">Access the ‘gpu-h100’ queue. Includes 2 NVIDIA H100 GPUs (80GB memory each).</p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -276,27 +295,8 @@ Version 3.0.0 (<span class="blue">Current</span>)<div class="sd-summary-down doc
 </ol>
 </div></blockquote>
 </li>
-<li><p class="sd-card-text"><strong>Tools</strong></p>
-<blockquote>
-<div><ol class="loweralpha simple">
-<li><p class="sd-card-text">Events (EVT) may now run as standalone tools (i.e. does not require a SimCenter workflow for UQ, etc.)</p></li>
-<li><p class="sd-card-text">Added Tapis API support for running Tools remotely, allowing for specialized Tapis applications and system/queue selection</p></li>
 </ol>
 </div></blockquote>
-</li>
-<li><p class="sd-card-text"><strong>Digital Twins</strong></p>
-<blockquote>
-<div><ol class="loweralpha simple">
-<li><p class="sd-card-text">Digital twins now allow for debris and floating bodies.</p></li>
-<li><p class="sd-card-text">Added Oregon State University’s Large Wave Flume (OSU LWF) as a digital twin for MPM.</p></li>
-<li><p class="sd-card-text">Added Oregon State University’s Directional Wave Basin (OSU DWB) as a digital twin for MPM.</p></li>
-<li><p class="sd-card-text">Added Waseda University’s Tsunami Wave Basin (WU TWB) as a digital twin for MPM.</p></li>
-</ol>
-</div></blockquote>
-</li>
-</ol>
-</dd>
-</dl>
 </div>
 </details></div></blockquote>
 </div>
@@ -310,8 +310,9 @@ Version 2.0.0<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<dl>
-<dt><strong>Release date:</strong>  November 30th, 2023</dt><dd><ol class="arabic">
+<p class="sd-card-text"><strong>Release date:</strong>  November 30th, 2023</p>
+<blockquote>
+<div><ol class="arabic">
 <li><p class="sd-card-text"><strong>Simulation types</strong>:</p>
 <blockquote>
 <div><ol class="loweralpha simple">
@@ -328,8 +329,7 @@ Version 2.0.0<div class="sd-summary-down docutils">
 </li>
 <li><p class="sd-card-text"><strong>New multi-model and multi-fidelity modeling options</strong></p></li>
 </ol>
-</dd>
-</dl>
+</div></blockquote>
 </div>
 </details></div></blockquote>
 </div>
@@ -344,80 +344,80 @@ Version 1.0.0<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text"><strong>Release date:</strong> Apr 30th, 2021</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p class="sd-card-text">Supports run on DesignSafe only. Local run on the user’s desktop is not supported.</p></li>
 <li><p class="sd-card-text">HydroUQ app <code class="docutils literal notranslate"><span class="pre">v1.0.0</span></code> currently requires the users to ensure that the inputs provided are</p></li>
 <li><p class="sd-card-text">Supports two-phase isothermal flows only. Water and air are considered as the two primary phases. However, this can be modified in the material properties to accommodate any other alternative two-phases instead.</p></li>
-<li><dl class="simple">
-<dt><strong>Simulation types</strong>:</dt><dd><ol class="loweralpha simple">
+<li><p class="sd-card-text"><strong>Simulation types</strong>:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
 <li><p class="sd-card-text">CFD to resolve SW (Using SW results), CFD using bathymetry data, CFD of wave flume is supported.</p></li>
-<li><p class="sd-card-text">For simulation type with SW-CFD coupling, <code class="docutils literal notranslate"><span class="pre">v1.0.0</span></code> considers one point on the interface. However, if you would like more flexibility, please let us know using the <a class="reference internal" href="../bugs.html#lblbugs"><span class="std std-ref">Bugs &amp; Feature Requests</span></a>.</p></li>
+<li><p class="sd-card-text">For simulation type with SW-CFD coupling, <code class="docutils literal notranslate"><span class="pre">v1.0.0</span></code> considers one point on the interface. However, if you would like more flexibility, please let us know using the <span class="xref std std-ref">lblBugs</span>.</p></li>
 </ol>
-</dd>
-</dl>
+</div></blockquote>
 </li>
-<li><dl class="simple">
-<dt><strong>Geometry</strong>:</dt><dd><ol class="loweralpha simple">
+<li><p class="sd-card-text"><strong>Geometry</strong>:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
 <li><p class="sd-card-text">Geometry can be imported as Bathymetry files (GeoClaw format - type 1), STL files, or the Hydro flume digital twin.</p></li>
 <li><p class="sd-card-text">Shallow-water to CFD interface can be imported as a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file only.</p></li>
-<li><p class="sd-card-text">Buildings of cuboid shapes are supported in <code class="docutils literal notranslate"><span class="pre">v1.0.0</span></code>. For other shapes, the user can upload them as an STL file. The buildings need to be specified in the table or can be generated parametrically. Importing buildings as a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file is not currently supported in <code class="docutils literal notranslate"><span class="pre">v1.0.0</span></code> but can be requested using the <a class="reference internal" href="../bugs.html#lblbugs"><span class="std std-ref">Bugs &amp; Feature Requests</span></a>.</p></li>
-<li><p class="sd-card-text">Floating bodies and debris modeling are not supported in <code class="docutils literal notranslate"><span class="pre">v1.0.0</span></code>. Support will be added in upcoming versions. If you are interested in this feature, please write to us at <a class="reference internal" href="../bugs.html#lblbugs"><span class="std std-ref">Bugs &amp; Feature Requests</span></a>.</p></li>
+<li><p class="sd-card-text">Buildings of cuboid shapes are supported in <code class="docutils literal notranslate"><span class="pre">v1.0.0</span></code>. For other shapes, the user can upload them as an STL file. The buildings need to be specified in the table or can be generated parametrically. Importing buildings as a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file is not currently supported in <code class="docutils literal notranslate"><span class="pre">v1.0.0</span></code> but can be requested using the <span class="xref std std-ref">lblBugs</span>.</p></li>
+<li><p class="sd-card-text">Floating bodies and debris modeling are not supported in <code class="docutils literal notranslate"><span class="pre">v1.0.0</span></code>. Support will be added in upcoming versions. If you are interested in this feature, please write to us at <span class="xref std std-ref">lblBugs</span>.</p></li>
 </ol>
-</dd>
-</dl>
+</div></blockquote>
 </li>
-<li><dl class="simple">
-<dt><strong>Meshing</strong>:</dt><dd><ol class="loweralpha simple">
+<li><p class="sd-card-text"><strong>Meshing</strong>:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
 <li><p class="sd-card-text">Supports blockMesh and snappyHexMesh for internal meshing.</p></li>
 <li><p class="sd-card-text">Supports import for the following mesh formats: Ansys Fluent (.msh), Ansys I-DEAS (.ans), CFX mesh (.geo), GAMBIT mesh (.neu), Gmsh mesh (.msh).</p></li>
 <li><p class="sd-card-text">Supports import of OpenFOAM mesh dictionaries, namely the blockMeshDict and snappyHexMeshDict. Additionally, surfaceFeatureExtractDict is required if STL files are used to define the geometry.</p></li>
 </ol>
-</dd>
-</dl>
+</div></blockquote>
 </li>
-<li><dl class="simple">
-<dt><strong>Materials</strong>:</dt><dd><ol class="loweralpha simple">
+<li><p class="sd-card-text"><strong>Materials</strong>:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
 <li><p class="sd-card-text">Supports Newtonian materials only.</p></li>
 <li><p class="sd-card-text">Supports kinematic viscosity and density of the two phases in addition to the surface tension between the fluids.</p></li>
 </ol>
-</dd>
-</dl>
+</div></blockquote>
 </li>
-<li><dl class="simple">
-<dt><strong>Initial conditions</strong>:</dt><dd><ol class="loweralpha simple">
+<li><p class="sd-card-text"><strong>Initial conditions</strong>:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
 <li><p class="sd-card-text">For CFD simulations that resolve the shallow-water solutions, the initial conditions are derived from the shallow-water solutions.</p></li>
 <li><p class="sd-card-text">For all other simulation types, the user-specified initial conditions include phase only.</p></li>
 </ol>
-</dd>
-</dl>
+</div></blockquote>
 </li>
-<li><dl class="simple">
-<dt><strong>Boundary conditions</strong>:</dt><dd><ol class="loweralpha simple">
+<li><p class="sd-card-text"><strong>Boundary conditions</strong>:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
 <li><p class="sd-card-text">The boundary conditions can be selected based using standard patch names. Here standard patches include entry / exit / inlet / outlet / left / right.</p></li>
 <li><p class="sd-card-text">Velocity boundary conditions for inlet conditions include shallow-water solutions, moving wall, and constant velocity; for outlet conditions include zeroGradient and inletOutlet</p></li>
 <li><p class="sd-card-text">Pressure boundary conditions include zeroGradient and fixedValue. Alternatively, the user can also leave the default option. An appropriate boundary condition relevant to the velocity boundary will be chosen.</p></li>
 <li><p class="sd-card-text">It is recommended to use the wall boundary conditions for walls</p></li>
 </ol>
-</dd>
-</dl>
+</div></blockquote>
 </li>
-<li><dl class="simple">
-<dt><strong>Domain decomposition and solver</strong>:</dt><dd><ol class="loweralpha simple">
+<li><p class="sd-card-text"><strong>Domain decomposition and solver</strong>:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
 <li><p class="sd-card-text">Allows simple decomposition techniques from OpenFOAM.</p></li>
 <li><p class="sd-card-text">Can set start and end times for simulation</p></li>
 <li><p class="sd-card-text">Can set time interval and the write intervals</p></li>
 <li><p class="sd-card-text">Restarting facility is supported</p></li>
 </ol>
-</dd>
-</dl>
+</div></blockquote>
 </li>
-<li><dl class="simple">
-<dt><strong>Turbulence</strong>:</dt><dd><ol class="loweralpha simple">
+<li><p class="sd-card-text"><strong>Turbulence</strong>:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
 <li><p class="sd-card-text">Presently, only RANS is supported for turbulence modeling.</p></li>
-<li><p class="sd-card-text">If you would like to use LES, please let us know about it using <a class="reference internal" href="../bugs.html#lblbugs"><span class="std std-ref">Bugs &amp; Feature Requests</span></a>.</p></li>
+<li><p class="sd-card-text">If you would like to use LES, please let us know about it using <span class="xref std std-ref">lblBugs</span>.</p></li>
 </ol>
-</dd>
-</dl>
+</div></blockquote>
 </li>
 </ol>
 </div>

@@ -50,7 +50,7 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="1. How to Build" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html" />
+    <link rel="next" title="6. Finite Volume Method" href="../fvm/fvm.html" />
     <link rel="prev" title="k-Epsilon model" href="kepsilon.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -115,8 +115,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/releases/hydroCapabilities.html">5. Capabilities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/releases/hydroPlans.html">6. Release Plans</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/usage/desktop/hydro/releasenotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/usage/desktop/hydro/releasenotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/releases/hydroPlans.html">7. Release Plans</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
@@ -126,21 +126,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/usage/desktop/usage.html">2. User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/usage/desktop/hydro/tools.html">3. Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/usage/desktop/hydro/bestpractices.html">6. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/usage/desktop/hydro/bestpractices.html">5. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">7. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/bugs.html">8. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/usage/desktop/hydro/helpvideo.html">9. Video Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../technical_manual.html">1. Technical Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../hazards/water.html">2. Water-borne Hazards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mpm/mpm.html">3. Material Point Method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../fvm/fvm.html">4. Finite Volume Method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../swsolver/swsolver.html">5. Shallow Water Solvers</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="cfdsolver.html">6. CFD Solvers</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="cfdsolver.html#turbulence-models">6.1. Turbulence models</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hazards/water.html">3. Water-borne Hazards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../swsolver/swsolver.html">4. Shallow Water Solvers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cfdsolver.html">5. CFD Solvers</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="cfdsolver.html#turbulence-models">5.1. Turbulence models</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="kepsilon.html">k-Epsilon model</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">k-Omega SST model</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#references">References</a></li>
@@ -148,9 +147,11 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="cfdsolver.html#input-file-formats">6.2. Input file formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cfdsolver.html#input-file-formats">5.2. Input file formats</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../fvm/fvm.html">6. Finite Volume Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mpm/mpm.html">7. Material Point Method</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -205,7 +206,9 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="cfdsolver.html"><span class="section-number">6. </span>CFD Solvers</a> &raquo;</li>
+          <li><a href="../../technical_manual.html">&lt;no title&gt;</a> &raquo;</li>
+        
+          <li><a href="cfdsolver.html"><span class="section-number">5. </span>CFD Solvers</a> &raquo;</li>
         
       <li>k-Omega SST model</li>
     
@@ -236,19 +239,19 @@
 <li><p>For turbulence kinetic energy <span class="math notranslate nohighlight">\((k)\)</span></p>
 <blockquote>
 <div><div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-hydro-cfdsolver-komegasst-0">
-<span class="eqno">(6.1.3)<a class="headerlink" href="#equation-common-technical-manual-desktop-hydro-cfdsolver-komegasst-0" title="Permalink to this equation">¶</a></span>\[\frac{D}{Dt} \left(\rho k\right) = \nabla \cdot \left( \rho D_k \nabla k \right) + \rho G - \frac{2}{3} \rho k \left(\nabla \cdot \mathbf{u}\right) - \rho \beta^{*} \omega k + S_k\]</div>
+<span class="eqno">(5.1.3)<a class="headerlink" href="#equation-common-technical-manual-desktop-hydro-cfdsolver-komegasst-0" title="Permalink to this equation">¶</a></span>\[\frac{D}{Dt} \left(\rho k\right) = \nabla \cdot \left( \rho D_k \nabla k \right) + \rho G - \frac{2}{3} \rho k \left(\nabla \cdot \mathbf{u}\right) - \rho \beta^{*} \omega k + S_k\]</div>
 </div></blockquote>
 </li>
 <li><p>For turbulence specific dissipation rate <span class="math notranslate nohighlight">\((\omega)\)</span></p>
 <blockquote>
 <div><div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-hydro-cfdsolver-komegasst-1">
-<span class="eqno">(6.1.4)<a class="headerlink" href="#equation-common-technical-manual-desktop-hydro-cfdsolver-komegasst-1" title="Permalink to this equation">¶</a></span>\[\frac{D}{Dt} \left(\rho \omega\right) = \nabla \cdot \left( \rho D_k \nabla \omega \right) + \frac{\rho \gamma G}{\nu} - \frac{2}{3} \rho \gamma \omega \left(\nabla \cdot \mathbf{u}\right) - \rho \beta \omega^2 - \rho \left(F_1 - 1 \right) CD_{k\omega} + S_{\omega}\]</div>
+<span class="eqno">(5.1.4)<a class="headerlink" href="#equation-common-technical-manual-desktop-hydro-cfdsolver-komegasst-1" title="Permalink to this equation">¶</a></span>\[\frac{D}{Dt} \left(\rho \omega\right) = \nabla \cdot \left( \rho D_k \nabla \omega \right) + \frac{\rho \gamma G}{\nu} - \frac{2}{3} \rho \gamma \omega \left(\nabla \cdot \mathbf{u}\right) - \rho \beta \omega^2 - \rho \left(F_1 - 1 \right) CD_{k\omega} + S_{\omega}\]</div>
 </div></blockquote>
 </li>
 </ul>
 <p>The turbulence viscosity is obtained as</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-hydro-cfdsolver-komegasst-2">
-<span class="eqno">(6.1.5)<a class="headerlink" href="#equation-common-technical-manual-desktop-hydro-cfdsolver-komegasst-2" title="Permalink to this equation">¶</a></span>\[\nu_t = a_1 \frac{k}{\text{max} \left( a_1, \omega, b_1, F_{23} \right)}\]</div>
+<span class="eqno">(5.1.5)<a class="headerlink" href="#equation-common-technical-manual-desktop-hydro-cfdsolver-komegasst-2" title="Permalink to this equation">¶</a></span>\[\nu_t = a_1 \frac{k}{\text{max} \left( a_1, \omega, b_1, F_{23} \right)}\]</div>
 <p>A more comprehensive overview on the k-Epsilon model is discussed in the below video</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/myv-ityFnS4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this heading">¶</a></h2>
