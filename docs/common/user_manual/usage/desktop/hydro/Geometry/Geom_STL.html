@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>STL Input Geometry &mdash; Hydro-UQ  documentation</title>
+  <title>Custom Geometry Using STL Files &mdash; Hydro-UQ  documentation</title>
   
 
   
@@ -192,7 +192,7 @@
     
       <li><a href="../../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>STL Input Geometry</li>
+      <li>Custom Geometry Using STL Files</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -211,9 +211,20 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="stl-input-geometry">
-<span id="lbl-geom-stl"></span><h1>STL Input Geometry<a class="headerlink" href="#stl-input-geometry" title="Permalink to this heading">¶</a></h1>
-<p>Here the user needs to provide the <code class="docutils literal notranslate"><span class="pre">STL</span></code> files related to the geometry here of the ocean floor. In addition, it is required to provide separate <code class="docutils literal notranslate"><span class="pre">STL</span></code> files for all the boundaries and buildings. The files need to be in the ‘STL ASCII format. The files need to be named as</p>
+  <div class="section" id="custom-geometry-using-stl-files">
+<span id="lbl-geom-stl"></span><h1>Custom Geometry Using STL Files<a class="headerlink" href="#custom-geometry-using-stl-files" title="Permalink to this heading">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">STL</span></code> file format is pervasive in fluid simulation software, hence HydroUQ provides support for the format.</p>
+<p>To define a complex ocean bathymetry, you may use multiple <code class="docutils literal notranslate"><span class="pre">STL</span></code> files to replicate the ocean floor if they form a manifold when combined.</p>
+<p>Custom structures, boundaries, and other features may also be defined using  <code class="docutils literal notranslate"><span class="pre">STL</span></code> files. An example is shown in the HydroUQ UI below:</p>
+<div class="align-center figure" id="id1">
+<span id="fig-geom-stl"></span><a class="reference internal image-reference" href="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/STLfile.png"><img alt="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/STLfile.png" src="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/STLfile.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">UI for loading the geometry as <code class="docutils literal notranslate"><span class="pre">STL</span></code> files</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>For the most robust experience, HydroUQ requires that these custom input files obey the <code class="docutils literal notranslate"><span class="pre">STL</span> <span class="pre">ASCII</span></code> format.</p>
+</div>
+<p>For OpenFOAM simulations, the following <code class="docutils literal notranslate"><span class="pre">STL</span></code> files are <strong>required</strong> to be either produced by the user or selected from existing files:</p>
 <ol class="arabic simple">
 <li><p><strong>Entry.stl</strong> - This is the patch for the inlet of the fluid</p></li>
 <li><p><strong>Exit.stl</strong> - This is the patch for the outlet of the fluid</p></li>
@@ -224,14 +235,13 @@
 <li><p><strong>Buildings.stl</strong> - This is the building of interest on which we aim to determine the structural response</p></li>
 <li><p><strong>Otherbuildings.stl</strong> - These are the other buildings around the structure of interest and could affect the flow around the structure of interest.</p></li>
 </ol>
-<p>The other input is the direction of gravity. For this type of simulation, it is recommended to use <code class="docutils literal notranslate"><span class="pre">-z</span></code> for the gravity direction.</p>
-<div class="align-center figure" id="id1">
-<a class="reference internal image-reference" href="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/STLfile.png"><img alt="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/STLfile.png" src="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/STLfile.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">UI for loading the geometry as <code class="docutils literal notranslate"><span class="pre">STL</span></code> files</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Failure to provide any of the above files will result in an error for HydroUQ OpenFOAM simulations.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>It is necessary to provide each of these <code class="docutils literal notranslate"><span class="pre">STL</span></code> files separately. Hydro-UQ uses them to determine the boundary conditions accurately.</p>
+<p>It is necessary to provide each of these <code class="docutils literal notranslate"><span class="pre">STL</span></code> files separately, not preemptively combined into a single file.</p>
 </div>
 </div>
 

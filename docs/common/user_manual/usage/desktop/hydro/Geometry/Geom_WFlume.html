@@ -213,17 +213,21 @@
             
   <div class="section" id="wave-flume-geometry">
 <span id="lbl-geom-wflume"></span><h1>Wave Flume Geometry<a class="headerlink" href="#wave-flume-geometry" title="Permalink to this heading">¶</a></h1>
-<p>This constitutes the geometric definition of the wave flume. This is the first step in the description of the digital twin for the wave flume. One of the inputs is the direction of gravity. For this type of simulation, it is recommended to use <code class="docutils literal notranslate"><span class="pre">-z</span></code> for the gravity direction.</p>
-<p><strong>Standard OSU flume</strong></p>
-<p>The flume geometry can be defined using the standard flume definition. Here, a common flume geometry for the Large Wave Flume at the O.H. Hinsdale Wave Research Laboratory in Oregon State University. This is selected as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">Flume02</span></code>.</p>
-<div class="align-center figure" id="id1">
+<p>This sections discusses the geometric definition for wave flume simulations. This is the first step in the description of a digital twin of an experimental set in said flume facilities.</p>
+<p>For instance, one of the inputs required to use a simulation to represent a real-world representation is the direction of gravity. For fluid simulations, it is often recommended to use <code class="docutils literal notranslate"><span class="pre">-z</span></code>, but <code class="docutils literal notranslate"><span class="pre">-y</span></code> is a common choice as well. Other parameters may entail wave-maker specifications, concrete wall roughness, the basic wave flume geometry height / width / depth, among others.</p>
+<p>Bathymetry, i.e. sloped panels that are often present in wave flumes to influence wave development, are important for replicating experiments digitally and so an adjustable bathymetry creator is present in HydroUQ. The wave flume geometry in particular is a critical parameter, as it determines whether a full wave flume simulation is done or a truncated one (i.e. if reduced values were chosen). Bathymetry, i.e. sloped panels that are often present in wave flumes to influence wave development, are likewise important and supported in HydroUQ.</p>
+<p>The basic domain geometry of the wave flume is defined by providing the coordinates of the external profile of the wave flume. The coordinates of the standard wave flume are provided below.</p>
+<div class="section" id="definition-via-wave-flume-digital-twins">
+<span id="flumeosu"></span><h2>Definition via Wave Flume Digital Twins<a class="headerlink" href="#definition-via-wave-flume-digital-twins" title="Permalink to this heading">¶</a></h2>
+<p>The flume geometry can be defined using a standard flume definition, i.e. a digital twin. Here, a common flume geometry for the Large Wave Flume at the O.H. Hinsdale Wave Research Laboratory in Oregon State University. This is selected as shown in <a href="#id1"><span class="problematic" id="id2">:fig:`Flume02`</span></a>.</p>
+<div class="align-center figure" id="id7">
 <span id="flume02"></span><a class="reference internal image-reference" href="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/Flume02.png"><img alt="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/Flume02.png" src="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/Flume02.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">Using the standard wave flume geometry</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Using the standard wave flume geometry</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
-<p>The geometry of the wave flume is defined by providing the coordinates of the external profile of the wave flume, as shown below.</p>
-<div class="align-center figure" id="id2">
-<a class="reference internal image-reference" href="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/WaveFlumeGeo.png"><img alt="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/WaveFlumeGeo.png" src="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/WaveFlumeGeo.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-text">The coordinates representing the external profile of the wave flume</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p>The geometry of the wave flume is defined by providing the coordinates of the external profile of the wave flume, as shown in <a href="#id3"><span class="problematic" id="id4">:fig:`WaveFlumeGeo`</span></a> below.</p>
+<div class="align-center figure" id="id8">
+<span id="waveflumegeo"></span><a class="reference internal image-reference" href="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/WaveFlumeGeo.png"><img alt="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/WaveFlumeGeo.png" src="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/WaveFlumeGeo.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">The coordinates representing the external profile of the wave flume</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>The coordinates of the standard wave flume are provided below.</p>
 <div class="highlight-Fortran notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mf">2.085</span><span class="p">,</span><span class="mi">0</span>
@@ -237,15 +241,19 @@
 <span class="o">-</span><span class="mf">2.085</span><span class="p">,</span><span class="mf">4.572</span>
 </pre></div>
 </div>
-<p><strong>Definition by coordinates</strong></p>
-<p>Alternatively, the user can define their own custom wave-flume geometry, as shown below. Here, the user needs to specify the <code class="docutils literal notranslate"><span class="pre">x</span></code> (along the length) and <code class="docutils literal notranslate"><span class="pre">z</span></code> (along the height) coordinates in a tabular format. Additionally, breadth also needs to be provided to define the wave flume geometry uniquely. This is similar to the geometry defined above for the standard OSU flume. HydroUQ constructs the STL files necessary for the CFD simulation process using the provided coordinates and the breadth.</p>
-<div class="align-center figure" id="id3">
-<a class="reference internal image-reference" href="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/Flume01.png"><img alt="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/Flume01.png" src="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/Flume01.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">Defining a custom wave-flume geometry</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The breadth of the flume needs to be greater than 0. If the breadth is too small, this can lead to numerical issues.</p>
+<div class="section" id="definition-by-coordinates">
+<span id="flumecoord"></span><h2>Definition by Coordinates<a class="headerlink" href="#definition-by-coordinates" title="Permalink to this heading">¶</a></h2>
+<p>Alternatively, you may define your own custom wave-flume geometry, as shown in <a href="#id5"><span class="problematic" id="id6">:fig:`Flume01`</span></a>. Specify the <code class="docutils literal notranslate"><span class="pre">x</span></code> (along the length) and <code class="docutils literal notranslate"><span class="pre">z</span></code> (along the height) coordinates in a tabular format. Additionally, breadth must be provided for 3D simulations.</p>
+<p>HydroUQ constructs the digital geometry repesentation, i.e. <code class="docutils literal notranslate"><span class="pre">STL</span></code> files, necessary for common CFD simulations using the provided coordinates and the breadth automatically.</p>
+<div class="align-center figure" id="id9">
+<span id="flume01"></span><a class="reference internal image-reference" href="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/Flume01.png"><img alt="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/Flume01.png" src="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/Flume01.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Defining a custom wave-flume geometry</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The breadth of the flume needs to be greater than 0, and typically a multiple of 4+ times the characteristic simulation length (e.g. a typical grid-cell width). If the breadth is too small, this can lead to numerical issues that may crash the simulation or over-constrain fluid motion.</p>
+</div>
 </div>
 </div>
 

@@ -255,20 +255,25 @@ Shallow-water to CFD coupling<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Here the user needs to select the bathymetry files and solution files related to the shallow-water solutions. At present, HydroUQ can directly read the shallow water solutions from the <code class="docutils literal notranslate"><span class="pre">GeoClaw</span></code> solver. The bathymetry can be provided in the GeoClaw format (Type 1) or the SimCenter format. Similarly, the shallow-water solutions can be provided in the GeoClaw format or the SimCenter format.</p>
-<p class="sd-card-text">For more information about the GeoClaw file format, check out <a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/geoclaw-topo.html#lbl-geoclawtopo"><span class="std std-ref">Topography</span></a>. Similarly, for the SimCenter formats, check out <a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/simcenter-topo.html#lbl-simcentertopo"><span class="std std-ref">Topography: SimCenter</span></a>.</p>
-<p class="sd-card-text">The other input is the direction of gravity. For this type of simulation, it is recommended to use <code class="docutils literal notranslate"><span class="pre">-z</span></code> for the gravity direction.</p>
-<div class="align-center figure" id="id1">
-<a class="reference internal image-reference" href="../../../../../_images/SWCFD.png"><img alt="../../../../../_images/SWCFD.png" src="../../../../../_images/SWCFD.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.1.2.1 </span><span class="caption-text">UI for loading bathymetry and shallow-water solution files</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="sd-card-text">To couple high-fidelity CFD and with simplified shallow-water equations (<strong>SWE</strong>), you must input the bathymetry defining files you previously used in a SWE simulation.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p class="sd-card-text">Please provide as much of the bathymetry as possible. HydroUQ will crop the required areas for the CFD simulation.</p>
 </div>
+<p class="sd-card-text">You must also provide the corresponding solution files from said simulation.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<ol class="arabic simple">
-<li><p class="sd-card-text">Please provide as much of the bathymetry as possible. HydroUQ will crop the required areas for the CFD simulation.</p></li>
-<li><p class="sd-card-text">The solution files can be large in size. Hence, it is recommended to restrict the times required for the CFD simulation only. Here, it is essential to note that the boundaries can lead to unphysical accumulation if there are excessive reflections.</p></li>
-</ol>
+<p class="sd-card-text">The solution files can be large in size. Hence, it is recommended to restrict the times required for the CFD simulation only.
+Here, it is essential to note that the boundaries can lead to unphysical accumulation if there are excessive reflections.</p>
 </div>
+<p class="sd-card-text">Once these files are provided, HydroUQ will produce a convenient graphical interface for a one-way SWE-CFD coupling in a larger UQ workflow. Namely, for GeoClaw and OpenFOAM.</p>
+<div class="align-center figure" id="id7">
+<span id="fig-geom-swcfd"></span><a class="reference internal image-reference" href="../../../../../_images/SWCFD.png"><img alt="../../../../../_images/SWCFD.png" src="../../../../../_images/SWCFD.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.4.1.2.1 </span><span class="caption-text">UI for loading bathymetry and shallow-water solution files into a HydroUQ workflow.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p class="sd-card-text">HydroUQ can directly read the shallow water solutions from the <code class="docutils literal notranslate"><span class="pre">GeoClaw</span></code> solver, so little to no effort is required regarding pre-processing for any user. See <span class="xref std std-ref">lbl-geom-geoclaw</span> for more information on the GeoClaw solver.</p>
+<p class="sd-card-text">The bathymetry can be provided in the GeoClaw format (Type 1) or the SimCenter format. Similarly, the shallow-water solutions can be provided in the GeoClaw format or the SimCenter format.</p>
+<p class="sd-card-text">For details regarding the GeoClaw file format(s), see <a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/geoclaw-topo.html#lbl-geoclawtopo"><span class="std std-ref">Topography</span></a>. For the SimCenter shallow-water format, refer to <a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/simcenter-topo.html#lbl-simcentertopo"><span class="std std-ref">Topography: SimCenter</span></a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -279,9 +284,9 @@ Bathymetry<div class="sd-summary-down docutils">
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Here the user needs to select the bathymetry files of the ocean floor. At present, HydroUQ can directly read the bathymetry provided in the GeoClaw format (Type 1) or the SimCenter format. For more information about the GeoClaw file format, check out <a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/geoclaw-topo.html#lbl-geoclawtopo"><span class="std std-ref">Topography</span></a>. Similarly, for the SimCenter formats, check out <a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/simcenter-topo.html#lbl-simcentertopo"><span class="std std-ref">Topography: SimCenter</span></a>.</p>
 <p class="sd-card-text">The other input is the direction of gravity. For this type of simulation, it is recommended to use <code class="docutils literal notranslate"><span class="pre">-z</span></code> for the gravity direction.</p>
-<div class="align-center figure" id="id2">
+<div class="align-center figure" id="id8">
 <a class="reference internal image-reference" href="../../../../../_images/Bathy.png"><img alt="../../../../../_images/Bathy.png" src="../../../../../_images/Bathy.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.1.2.2 </span><span class="caption-text">UI for loading bathymetry of the ocean floor</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.1.2.2 </span><span class="caption-text">UI for loading bathymetry of the ocean floor</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -295,7 +300,18 @@ STL file<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Here the user needs to provide the <code class="docutils literal notranslate"><span class="pre">STL</span></code> files related to the geometry here of the ocean floor. In addition, it is required to provide separate <code class="docutils literal notranslate"><span class="pre">STL</span></code> files for all the boundaries and buildings. The files need to be in the ‘STL ASCII format. The files need to be named as</p>
+<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">STL</span></code> file format is pervasive in fluid simulation software, hence HydroUQ provides support for the format.</p>
+<p class="sd-card-text">To define a complex ocean bathymetry, you may use multiple <code class="docutils literal notranslate"><span class="pre">STL</span></code> files to replicate the ocean floor if they form a manifold when combined.</p>
+<p class="sd-card-text">Custom structures, boundaries, and other features may also be defined using  <code class="docutils literal notranslate"><span class="pre">STL</span></code> files. An example is shown in the HydroUQ UI below:</p>
+<div class="align-center figure" id="id9">
+<span id="fig-geom-stl"></span><a class="reference internal image-reference" href="../../../../../_images/STLfile.png"><img alt="../../../../../_images/STLfile.png" src="../../../../../_images/STLfile.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.4.1.2.3 </span><span class="caption-text">UI for loading the geometry as <code class="docutils literal notranslate"><span class="pre">STL</span></code> files</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p class="sd-card-text">For the most robust experience, HydroUQ requires that these custom input files obey the <code class="docutils literal notranslate"><span class="pre">STL</span> <span class="pre">ASCII</span></code> format.</p>
+</div>
+<p class="sd-card-text">For OpenFOAM simulations, the following <code class="docutils literal notranslate"><span class="pre">STL</span></code> files are <strong>required</strong> to be either produced by the user or selected from existing files:</p>
 <ol class="arabic simple">
 <li><p class="sd-card-text"><strong>Entry.stl</strong> - This is the patch for the inlet of the fluid</p></li>
 <li><p class="sd-card-text"><strong>Exit.stl</strong> - This is the patch for the outlet of the fluid</p></li>
@@ -306,14 +322,13 @@ STL file<div class="sd-summary-down docutils">
 <li><p class="sd-card-text"><strong>Buildings.stl</strong> - This is the building of interest on which we aim to determine the structural response</p></li>
 <li><p class="sd-card-text"><strong>Otherbuildings.stl</strong> - These are the other buildings around the structure of interest and could affect the flow around the structure of interest.</p></li>
 </ol>
-<p class="sd-card-text">The other input is the direction of gravity. For this type of simulation, it is recommended to use <code class="docutils literal notranslate"><span class="pre">-z</span></code> for the gravity direction.</p>
-<div class="align-center figure" id="id3">
-<a class="reference internal image-reference" href="../../../../../_images/STLfile.png"><img alt="../../../../../_images/STLfile.png" src="../../../../../_images/STLfile.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.1.2.3 </span><span class="caption-text">UI for loading the geometry as <code class="docutils literal notranslate"><span class="pre">STL</span></code> files</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p class="sd-card-text">Failure to provide any of the above files will result in an error for HydroUQ OpenFOAM simulations.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p class="sd-card-text">It is necessary to provide each of these <code class="docutils literal notranslate"><span class="pre">STL</span></code> files separately. Hydro-UQ uses them to determine the boundary conditions accurately.</p>
+<p class="sd-card-text">It is necessary to provide each of these <code class="docutils literal notranslate"><span class="pre">STL</span></code> files separately, not preemptively combined into a single file.</p>
 </div>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -323,17 +338,19 @@ Wave flume<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">This constitutes the geometric definition of the wave flume. This is the first step in the description of the digital twin for the wave flume. One of the inputs is the direction of gravity. For this type of simulation, it is recommended to use <code class="docutils literal notranslate"><span class="pre">-z</span></code> for the gravity direction.</p>
-<p class="sd-card-text"><strong>Standard OSU flume</strong></p>
-<p class="sd-card-text">The flume geometry can be defined using the standard flume definition. Here, a common flume geometry for the Large Wave Flume at the O.H. Hinsdale Wave Research Laboratory in Oregon State University. This is selected as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">Flume02</span></code>.</p>
-<div class="align-center figure" id="id4">
+<p class="sd-card-text">This sections discusses the geometric definition for wave flume simulations. This is the first step in the description of a digital twin of an experimental set in said flume facilities.</p>
+<p class="sd-card-text">For instance, one of the inputs required to use a simulation to represent a real-world representation is the direction of gravity. For fluid simulations, it is often recommended to use <code class="docutils literal notranslate"><span class="pre">-z</span></code>, but <code class="docutils literal notranslate"><span class="pre">-y</span></code> is a common choice as well. Other parameters may entail wave-maker specifications, concrete wall roughness, the basic wave flume geometry height / width / depth, among others.</p>
+<p class="sd-card-text">Bathymetry, i.e. sloped panels that are often present in wave flumes to influence wave development, are important for replicating experiments digitally and so an adjustable bathymetry creator is present in HydroUQ. The wave flume geometry in particular is a critical parameter, as it determines whether a full wave flume simulation is done or a truncated one (i.e. if reduced values were chosen). Bathymetry, i.e. sloped panels that are often present in wave flumes to influence wave development, are likewise important and supported in HydroUQ.</p>
+<p class="sd-card-text">The basic domain geometry of the wave flume is defined by providing the coordinates of the external profile of the wave flume. The coordinates of the standard wave flume are provided below.</p>
+<p class="sd-card-text">The flume geometry can be defined using a standard flume definition, i.e. a digital twin. Here, a common flume geometry for the Large Wave Flume at the O.H. Hinsdale Wave Research Laboratory in Oregon State University. This is selected as shown in <a href="#id1"><span class="problematic" id="id2">:fig:`Flume02`</span></a>.</p>
+<div class="align-center figure" id="id10">
 <span id="flume02"></span><a class="reference internal image-reference" href="../../../../../_images/Flume02.png"><img alt="../../../../../_images/Flume02.png" src="../../../../../_images/Flume02.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.1.2.4 </span><span class="caption-text">Using the standard wave flume geometry</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.1.2.4 </span><span class="caption-text">Using the standard wave flume geometry</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
-<p class="sd-card-text">The geometry of the wave flume is defined by providing the coordinates of the external profile of the wave flume, as shown below.</p>
-<div class="align-center figure" id="id5">
-<a class="reference internal image-reference" href="../../../../../_images/WaveFlumeGeo.png"><img alt="../../../../../_images/WaveFlumeGeo.png" src="../../../../../_images/WaveFlumeGeo.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.1.2.5 </span><span class="caption-text">The coordinates representing the external profile of the wave flume</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="sd-card-text">The geometry of the wave flume is defined by providing the coordinates of the external profile of the wave flume, as shown in <a href="#id3"><span class="problematic" id="id4">:fig:`WaveFlumeGeo`</span></a> below.</p>
+<div class="align-center figure" id="id11">
+<span id="waveflumegeo"></span><a class="reference internal image-reference" href="../../../../../_images/WaveFlumeGeo.png"><img alt="../../../../../_images/WaveFlumeGeo.png" src="../../../../../_images/WaveFlumeGeo.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.4.1.2.5 </span><span class="caption-text">The coordinates representing the external profile of the wave flume</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <p class="sd-card-text">The coordinates of the standard wave flume are provided below.</p>
 <div class="highlight-Fortran notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mf">2.085</span><span class="p">,</span><span class="mi">0</span>
@@ -347,29 +364,29 @@ Wave flume<div class="sd-summary-down docutils">
 <span class="o">-</span><span class="mf">2.085</span><span class="p">,</span><span class="mf">4.572</span>
 </pre></div>
 </div>
-<p class="sd-card-text"><strong>Definition by coordinates</strong></p>
-<p class="sd-card-text">Alternatively, the user can define their own custom wave-flume geometry, as shown below. Here, the user needs to specify the <code class="docutils literal notranslate"><span class="pre">x</span></code> (along the length) and <code class="docutils literal notranslate"><span class="pre">z</span></code> (along the height) coordinates in a tabular format. Additionally, breadth also needs to be provided to define the wave flume geometry uniquely. This is similar to the geometry defined above for the standard OSU flume. HydroUQ constructs the STL files necessary for the CFD simulation process using the provided coordinates and the breadth.</p>
-<div class="align-center figure" id="id6">
-<a class="reference internal image-reference" href="../../../../../_images/Flume01.png"><img alt="../../../../../_images/Flume01.png" src="../../../../../_images/Flume01.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.1.2.6 </span><span class="caption-text">Defining a custom wave-flume geometry</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="sd-card-text">Alternatively, you may define your own custom wave-flume geometry, as shown in <a href="#id5"><span class="problematic" id="id6">:fig:`Flume01`</span></a>. Specify the <code class="docutils literal notranslate"><span class="pre">x</span></code> (along the length) and <code class="docutils literal notranslate"><span class="pre">z</span></code> (along the height) coordinates in a tabular format. Additionally, breadth must be provided for 3D simulations.</p>
+<p class="sd-card-text">HydroUQ constructs the digital geometry repesentation, i.e. <code class="docutils literal notranslate"><span class="pre">STL</span></code> files, necessary for common CFD simulations using the provided coordinates and the breadth automatically.</p>
+<div class="align-center figure" id="id12">
+<span id="flume01"></span><a class="reference internal image-reference" href="../../../../../_images/Flume01.png"><img alt="../../../../../_images/Flume01.png" src="../../../../../_images/Flume01.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.4.1.2.6 </span><span class="caption-text">Defining a custom wave-flume geometry</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p class="sd-card-text">The breadth of the flume needs to be greater than 0. If the breadth is too small, this can lead to numerical issues.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p class="sd-card-text">The breadth of the flume needs to be greater than 0, and typically a multiple of 4+ times the characteristic simulation length (e.g. a typical grid-cell width). If the breadth is too small, this can lead to numerical issues that may crash the simulation or over-constrain fluid motion.</p>
 </div>
 </div>
 </details></div>
 <div class="section" id="shallow-water-to-cfd-interface">
 <h2>Shallow Water to CFD Interface<a class="headerlink" href="#shallow-water-to-cfd-interface" title="Permalink to this heading">¶</a></h2>
 <p>The shallow-water to CFD interface can only be defined for the simulation type where CFD is used to resolve the shallow-water solutions. The interface is specified using a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file and uploaded as shown in <a class="reference internal" href="#swcfdinter"><span class="std std-numref">Fig. 2.4.1.2.7</span></a>.</p>
-<div class="align-center figure" id="id7">
+<div class="align-center figure" id="id13">
 <span id="swcfdinter"></span><a class="reference internal image-reference" href="../../../../../_images/swcfd_Interface.png"><img alt="../../../../../_images/swcfd_Interface.png" src="../../../../../_images/swcfd_Interface.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.1.2.7 </span><span class="caption-text">Uploading the <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file that defines the interface</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.1.2.7 </span><span class="caption-text">Uploading the <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file that defines the interface</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 <p>Consider the problem description as shown in the <a class="reference internal" href="#swcfdinter2"><span class="std std-numref">Fig. 2.4.1.2.8</span></a>. Consider an event (earthquake on a fault or low-pressure due to a hurricane) represented by the red line on the left. The shallow-water solvers are used over the Ocean domain. In order to provide a high-fidelity solution for the structural response, the shallow-water domain is further refined using 3D CFD. The yellow boxes represent the shallow water to CFD interfaces. This interface information is provided in a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file.</p>
-<div class="align-center figure" id="id8">
+<div class="align-center figure" id="id14">
 <span id="swcfdinter2"></span><a class="reference internal image-reference" href="../../../../../_images/SWCFD02.png"><img alt="../../../../../_images/SWCFD02.png" src="../../../../../_images/SWCFD02.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.1.2.8 </span><span class="caption-text">Visual depiction of the shallow water to CFD interface</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.1.2.8 </span><span class="caption-text">Visual depiction of the shallow water to CFD interface</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 <p>A typical interface file is shown below.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Entry</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span>
@@ -397,9 +414,9 @@ Wave flume<div class="sd-summary-down docutils">
 <h2>Buildings and Scaled Specimens<a class="headerlink" href="#buildings-and-scaled-specimens" title="Permalink to this heading">¶</a></h2>
 <p>Buildings or specimens can be defined in the <code class="docutils literal notranslate"><span class="pre">EVT</span></code>. It is important here to note that there can be two types of buildings: (a) Building of interest for which the structural response is measured (b) Other neighboring buildings that impact the flow fields.</p>
 <p>These can either be defined manually in a tabular format or parametrically as shown in <a class="reference internal" href="#builddef"><span class="std std-numref">Fig. 2.4.1.2.9</span></a>.</p>
-<div class="align-center figure" id="id9">
+<div class="align-center figure" id="id15">
 <span id="builddef"></span><a class="reference internal image-reference" href="../../../../../_images/Building.png"><img alt="../../../../../_images/Building.png" src="../../../../../_images/Building.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.1.2.9 </span><span class="caption-text">Building definition in the <code class="docutils literal notranslate"><span class="pre">EVT</span></code></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.1.2.9 </span><span class="caption-text">Building definition in the <code class="docutils literal notranslate"><span class="pre">EVT</span></code></span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="manual-definition">
 <h3>Manual Definition<a class="headerlink" href="#manual-definition" title="Permalink to this heading">¶</a></h3>
@@ -440,15 +457,15 @@ Thus, one needs to appropriately calculate the position of the building.</p>
 <li><p><strong>Building size:</strong> Here, it is required to specify the building’s length - breadth - height. This information can be the size of the building (for those with a cuboidal shape). Alternatively, this is the box into which an irregular building can be fitted.</p></li>
 <li><p><strong>Coordinate of coastline center:</strong> This refers to the center of the coastline from the global (0,0) of the domain.</p></li>
 <li><p><strong>Building shape:</strong> Here, two-building shapes are possible, i.e., cuboid or user-defined as shown in <a class="reference internal" href="#buildshape"><span class="std std-numref">Fig. 2.4.1.2.10</span></a>. If the building shape is user-defined, then an <code class="docutils literal notranslate"><span class="pre">STL</span></code> file in ASCII format needs to be uploaded.</p>
-<div class="align-center figure" id="id10">
+<div class="align-center figure" id="id16">
 <span id="buildshape"></span><a class="reference internal image-reference" href="../../../../../_images/BuildShape.png"><img alt="../../../../../_images/BuildShape.png" src="../../../../../_images/BuildShape.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.1.2.10 </span><span class="caption-text">Building shape definition in the <code class="docutils literal notranslate"><span class="pre">EVT</span></code></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.1.2.10 </span><span class="caption-text">Building shape definition in the <code class="docutils literal notranslate"><span class="pre">EVT</span></code></span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p><strong>Distribution of buildings:</strong> This refers to the distribution of the buildings. At present, this can be simple or staggered, as shown in <a class="reference internal" href="#builddist"><span class="std std-numref">Fig. 2.4.1.2.11</span></a>.</p>
-<div class="align-center figure" id="id11">
+<div class="align-center figure" id="id17">
 <span id="builddist"></span><a class="reference internal image-reference" href="../../../../../_images/BuildDist.png"><img alt="../../../../../_images/BuildDist.png" src="../../../../../_images/BuildDist.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.1.2.11 </span><span class="caption-text">Building distribution definition in the <code class="docutils literal notranslate"><span class="pre">EVT</span></code></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.1.2.11 </span><span class="caption-text">Building distribution definition in the <code class="docutils literal notranslate"><span class="pre">EVT</span></code></span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 </ol>

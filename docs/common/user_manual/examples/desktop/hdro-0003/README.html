@@ -130,7 +130,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#overview">4.2.1. Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#set-up">4.2.2. Set-Up</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#simulation">4.2.3. Simulation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#get-results">4.2.4. Get Results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#results">4.2.4. Results</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#analysis">4.2.5. Analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#references">4.2.6. References</a></li>
 </ul>
@@ -236,19 +236,19 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Problem files</p></td>
-<td><p><a href="#id1"><span class="problematic" id="id2">:ref:`Github &lt;https://github.com/NHERI-SimCenter/HydroUQ/tree/master/Examples/hdro-0003/&gt;`_</span></a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/HydroUQ/tree/master/Examples/hdro-0003/">Github</a></p></td>
 </tr>
 </tbody>
 </table>
 <div class="contents local topic" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#overview" id="id22">Overview</a></p></li>
-<li><p><a class="reference internal" href="#set-up" id="id23">Set-Up</a></p></li>
-<li><p><a class="reference internal" href="#simulation" id="id24">Simulation</a></p></li>
-<li><p><a class="reference internal" href="#get-results" id="id25">Get Results</a></p></li>
-<li><p><a class="reference internal" href="#analysis" id="id26">Analysis</a></p></li>
-<li><p><a class="reference internal" href="#references" id="id27">References</a></p></li>
+<li><p><a class="reference internal" href="#overview" id="id20">Overview</a></p></li>
+<li><p><a class="reference internal" href="#set-up" id="id21">Set-Up</a></p></li>
+<li><p><a class="reference internal" href="#simulation" id="id22">Simulation</a></p></li>
+<li><p><a class="reference internal" href="#results" id="id23">Results</a></p></li>
+<li><p><a class="reference internal" href="#analysis" id="id24">Analysis</a></p></li>
+<li><p><a class="reference internal" href="#references" id="id25">References</a></p></li>
 </ul>
 </div>
 <div class="section" id="overview">
@@ -284,19 +284,19 @@ You can then perform an <strong>OpenSees</strong> simulation of the building ass
 <p>The cylinder is represented in OpenSees by a cantilevered beam, with an elastic section, modelled with displacement-action controlled beam elements. The bottom of the cantilevered beam is fixed at Z=0.0.</p>
 <p>The constrained node is removed from the coupled solution, by omitting it from the list <em>coupledNodes</em> in the OpenSees model file.</p>
 <p>The interface surface file is <code class="docutils literal notranslate"><span class="pre">'src/interface.stl'</span></code>.</p>
-<div class="align-center figure" id="id5">
+<div class="align-center figure" id="id3">
 <span id="hdro-0003-fig-schematic"></span><a class="reference internal image-reference" href="../../../../../_images/hdro-0003example.png"><img alt="../../../../../_images/hdro-0003example.png" src="../../../../../_images/hdro-0003example.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.2.1 </span><span class="caption-text">Schematic of the digital twin example in the UW WASIRF truncated flume</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2.2.1 </span><span class="caption-text">Schematic of the digital twin example in the UW WASIRF truncated flume</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>Probe positions in the digital flume are set at the following locations:</p>
-<div class="align-center figure" id="id6">
+<div class="align-center figure" id="id4">
 <a class="reference internal image-reference" href="../../../../../_images/hdro-0003exampleprobeLoc.png"><img alt="../../../../../_images/hdro-0003exampleprobeLoc.png" src="../../../../../_images/hdro-0003exampleprobeLoc.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.2.2 </span><span class="caption-text">Instrumentation locations in theUW WASIRF truncated digital flume</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2.2.2 </span><span class="caption-text">Instrumentation locations in theUW WASIRF truncated digital flume</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>Inlet Velocity Time History (U(t)) for the truncated digital twin is given by the following function in OpenFOAM:</p>
-<div class="align-center figure" id="id7">
+<div class="align-center figure" id="id5">
 <a class="reference internal image-reference" href="../../../../../_images/inletVTH.png"><img alt="../../../../../_images/inletVTH.png" src="../../../../../_images/inletVTH.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.2.3 </span><span class="caption-text">Inlet Velocity Time History for the UW WASIRF digital twin</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2.2.3 </span><span class="caption-text">Inlet Velocity Time History for the UW WASIRF digital twin</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>We now have a coupled simulation configured for fluid flow around, and the structural response of, a cylinder. Next, we will run the simulation on a remote TACC high-performance computing system.</p>
 </div>
@@ -321,59 +321,59 @@ and the larger the <code class="docutils literal notranslate"><span class="pre">
 Only ask for what you need, or your simulation will become slow due to I/O constraints and the output data will be too large to effecitvely post-process or host on your local machine.</p>
 </div>
 </div>
-<div class="section" id="get-results">
-<span id="hdro-0003-results"></span><h2><span class="section-number">4.2.4. </span>Get Results<a class="headerlink" href="#get-results" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="results">
+<span id="hdro-0003-results"></span><h2><span class="section-number">4.2.4. </span>Results<a class="headerlink" href="#results" title="Permalink to this heading">¶</a></h2>
 <p>First, we must retrieve the <code class="docutils literal notranslate"><span class="pre">results.zip</span></code> folder from the DesignSafe file storage. This zip file will contain all our    from the Tools and Applications Page of Design Safe</p>
-<div class="align-center figure" id="id8">
+<div class="align-center figure" id="id6">
 <a class="reference internal image-reference" href="../../../../../_images/DSToolsAndAppsJobsStatus1.PNG"><img alt="../../../../../_images/DSToolsAndAppsJobsStatus1.PNG" src="../../../../../_images/DSToolsAndAppsJobsStatus1.PNG" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.4.1 </span><span class="caption-text">Locating the job files on DesignSafe</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2.4.1 </span><span class="caption-text">Locating the job files on DesignSafe</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>Check if the job has finished. If it has, click ‘More info’.</p>
-<div class="align-center figure" id="id9">
+<div class="align-center figure" id="id7">
 <a class="reference internal image-reference" href="../../../../../_images/DSToolsAndAppsJobsStatusFinished1.PNG"><img alt="../../../../../_images/DSToolsAndAppsJobsStatusFinished1.PNG" src="../../../../../_images/DSToolsAndAppsJobsStatusFinished1.PNG" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.4.2 </span><span class="caption-text">Once the job is finished, the output files should be available in the directory which the analysis results were sent to</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2.4.2 </span><span class="caption-text">Once the job is finished, the output files should be available in the directory which the analysis results were sent to</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>Find the files by clicking ‘View’.</p>
-<div class="align-center figure" id="id10">
+<div class="align-center figure" id="id8">
 <a class="reference internal image-reference" href="../../../../../_images/DSToolsAndAppsJobsStatusViewFiles1.PNG"><img alt="../../../../../_images/DSToolsAndAppsJobsStatusViewFiles1.PNG" src="../../../../../_images/DSToolsAndAppsJobsStatusViewFiles1.PNG" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.4.3 </span><span class="caption-text">Directory shown on DesignSafe contains the <code class="docutils literal notranslate"><span class="pre">results.zip</span></code> output for a HydroUQ EVT simulation. Download the results.zip folder to your local machine to view the model results.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2.4.3 </span><span class="caption-text">Directory shown on DesignSafe contains the <code class="docutils literal notranslate"><span class="pre">results.zip</span></code> output for a HydroUQ EVT simulation. Download the results.zip folder to your local machine to view the model results.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>Move the <code class="docutils literal notranslate"><span class="pre">results.zip</span></code> to somewhere in <code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">Data/</span></code>. Use the Extractor tool available on DesignSafe.  Unzip the <code class="docutils literal notranslate"><span class="pre">results.zip</span></code> folder.</p>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/extractonDS1.PNG"><img alt="../../../../../_images/extractonDS1.PNG" src="../../../../../_images/extractonDS1.PNG" style="width: 600px;" /></a>
 </div>
 <p>OR Download the <code class="docutils literal notranslate"><span class="pre">results.zip</span></code> folder to your PC and unzip to look at the model results.</p>
-<div class="align-center figure" id="id11">
+<div class="align-center figure" id="id9">
 <a class="reference internal image-reference" href="../../../../../_images/downloadResults1.PNG"><img alt="../../../../../_images/downloadResults1.PNG" src="../../../../../_images/downloadResults1.PNG" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.4.4 </span><span class="caption-text">Download the results to look at the VTK files of the analysis. This will include OpenFOAM and OpenSees field data and model geometry</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2.4.4 </span><span class="caption-text">Download the results to look at the VTK files of the analysis. This will include OpenFOAM and OpenSees field data and model geometry</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p>Extract the Zip folder either on DesignSafe or on your local machine. You will need Paraview to view the model data.</p>
-<div class="align-center figure" id="id12">
+<div class="align-center figure" id="id10">
 <a class="reference internal image-reference" href="../../../../../_images/resultsZip1.png"><img alt="../../../../../_images/resultsZip1.png" src="../../../../../_images/resultsZip1.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.4.5 </span><span class="caption-text">Locate the zip folder and extract it to somewhere convenient</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2.4.5 </span><span class="caption-text">Locate the zip folder and extract it to somewhere convenient</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <p>The results folder should look something like this.</p>
-<div class="align-center figure" id="id13">
+<div class="align-center figure" id="id11">
 <a class="reference internal image-reference" href="../../../../../_images/results.png"><img alt="../../../../../_images/results.png" src="../../../../../_images/results.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.4.6 </span><span class="caption-text">This is the output of the model</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2.4.6 </span><span class="caption-text">This is the output of the model</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="analysis">
 <span id="hdro-0003-analysis"></span><h2><span class="section-number">4.2.5. </span>Analysis<a class="headerlink" href="#analysis" title="Permalink to this heading">¶</a></h2>
 <p>Paraview files have a .PVD extension. Open VTK/Fluid.vtm.series to look at OpenFOAM results.
 Open OpenSeesOutput.pvd to look at OpenSees results.</p>
-<div class="align-center figure" id="id14">
+<div class="align-center figure" id="id12">
 <a class="reference internal image-reference" href="../../../../../_images/Paraview.PNG"><img alt="../../../../../_images/Paraview.PNG" src="../../../../../_images/Paraview.PNG" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.5.1 </span><span class="caption-text">This is the model output data as seen from ParaView</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2.5.1 </span><span class="caption-text">This is the model output data as seen from ParaView</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <p>OpenSees Displacements And Reactions</p>
-<div class="align-center figure" id="id15">
+<div class="align-center figure" id="id13">
 <a class="reference internal image-reference" href="../../../../../_images/TipDisplacement.png"><img alt="../../../../../_images/TipDisplacement.png" src="../../../../../_images/TipDisplacement.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.5.2 </span><span class="caption-text">This is the model output data as seen from ParaView</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2.5.2 </span><span class="caption-text">This is the model output data as seen from ParaView</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
-<div class="align-center figure" id="id16">
+<div class="align-center figure" id="id14">
 <a class="reference internal image-reference" href="../../../../../_images/ReactionForces.png"><img alt="../../../../../_images/ReactionForces.png" src="../../../../../_images/ReactionForces.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.5.3 </span><span class="caption-text">This is the model output data as seen from ParaView</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2.5.3 </span><span class="caption-text">This is the model output data as seen from ParaView</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 <p>OpenFOAM probe and function object output is available in <code class="docutils literal notranslate"><span class="pre">results/postProcessing/</span></code>. OpenFOAM output is currently unorganized. An example Matlab script is provided in the <code class="docutils literal notranslate"><span class="pre">src/</span></code> directory to post process the OpenFOAM output for this particular case and output.
 This file can be modified to work for any case. The names of the data folders will need to be changed according to the name of the probe given in HydroUQ.</p>
@@ -381,30 +381,30 @@ This file can be modified to work for any case. The names of the data folders wi
 <a class="reference internal image-reference" href="../../../../../_images/MatlabScriptCopyToLocation.PNG"><img alt="../../../../../_images/MatlabScriptCopyToLocation.PNG" src="../../../../../_images/MatlabScriptCopyToLocation.PNG" style="width: 600px;" /></a>
 </div>
 <p>OpenFOAM Calculated Story Forces are</p>
-<div class="align-center figure" id="id17">
+<div class="align-center figure" id="id15">
 <a class="reference internal image-reference" href="../../../../../_images/storyForces.png"><img alt="../../../../../_images/storyForces.png" src="../../../../../_images/storyForces.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.5.4 </span><span class="caption-text">Story Forces in OpenFOAM</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2.5.4 </span><span class="caption-text">Story Forces in OpenFOAM</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 <p>OpenFOAM Calculated Coupled Interface Forces are visualized in the following figure</p>
-<div class="align-center figure" id="id18">
+<div class="align-center figure" id="id16">
 <a class="reference internal image-reference" href="../../../../../_images/Forces.png"><img alt="../../../../../_images/Forces.png" src="../../../../../_images/Forces.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.5.5 </span><span class="caption-text">Coupled Interface Forces in OpenFOAM-OpenSees</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2.5.5 </span><span class="caption-text">Coupled Interface Forces in OpenFOAM-OpenSees</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 <p>OpenFOAM calculated, coupled interface moments at the structural surface are</p>
-<div class="align-center figure" id="id19">
+<div class="align-center figure" id="id17">
 <a class="reference internal image-reference" href="../../../../../_images/Moments.png"><img alt="../../../../../_images/Moments.png" src="../../../../../_images/Moments.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.5.6 </span><span class="caption-text">Coupled Interface Moments in OpenFOAM-OpenSees</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2.5.6 </span><span class="caption-text">Coupled Interface Moments in OpenFOAM-OpenSees</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 <p>OpenFOAM calculated pressure probe values throughout the flume are</p>
 <p>OpenFOAM calculated fluid velocity probe values throughout the flume are</p>
-<div class="align-center figure" id="id20">
+<div class="align-center figure" id="id18">
 <a class="reference internal image-reference" href="../../../../../_images/Velocities.png"><img alt="../../../../../_images/Velocities.png" src="../../../../../_images/Velocities.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.5.7 </span><span class="caption-text">Velocity Probe Values in OpenFOAM</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2.5.7 </span><span class="caption-text">Velocity Probe Values in OpenFOAM</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 <p>OpenFOAM calculated wave gauge free-surface values at key locations in the facility are</p>
-<div class="align-center figure" id="id21">
+<div class="align-center figure" id="id19">
 <a class="reference internal image-reference" href="../../../../../_images/WaveGauges.png"><img alt="../../../../../_images/WaveGauges.png" src="../../../../../_images/WaveGauges.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.5.8 </span><span class="caption-text">Wave Gauge Free-Surface Probe Values in OpenFOAM</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2.5.8 </span><span class="caption-text">Wave Gauge Free-Surface Probe Values in OpenFOAM</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
 <p>This completes the analysis of the model. In validation of any flume experimental case, a similar process may be employed with an added step of comparison to experimental data.</p>
 </div>
@@ -417,13 +417,13 @@ This file can be modified to work for any case. The names of the data folders wi
 <dt class="label" id="openfoam"><span class="brackets">OpenFOAM</span></dt>
 <dd><p>OpenFOAM. OpenFOAM Foundation. <a class="reference external" href="https://www.openfoam.com/">https://www.openfoam.com/</a></p>
 </dd>
-<dt class="label" id="id3"><span class="brackets">OpenSees</span></dt>
+<dt class="label" id="id1"><span class="brackets">OpenSees</span></dt>
 <dd><p>OpenSees. Pacific Earthquake Engineering Research Center. <a class="reference external" href="http://opensees.berkeley.edu/">http://opensees.berkeley.edu/</a></p>
 </dd>
 <dt class="label" id="paraview"><span class="brackets">Paraview</span></dt>
 <dd><p>Paraview. Kitware. <a class="reference external" href="https://www.paraview.org/">https://www.paraview.org/</a></p>
 </dd>
-<dt class="label" id="id4"><span class="brackets">DesignSafe</span></dt>
+<dt class="label" id="id2"><span class="brackets">DesignSafe</span></dt>
 <dd><p>DesignSafe**. DesignSafe-CI. <a class="reference external" href="https://www.designsafe-ci.org/">https://www.designsafe-ci.org/</a></p>
 </dd>
 <dt class="label" id="tacc"><span class="brackets">TACC</span></dt>

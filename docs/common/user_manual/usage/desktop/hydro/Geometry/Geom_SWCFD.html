@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Shallow Water CFD Coupling Geometry &mdash; Hydro-UQ  documentation</title>
+  <title>Coupling Shallow Water and CFD Model Geometries &mdash; Hydro-UQ  documentation</title>
   
 
   
@@ -192,7 +192,7 @@
     
       <li><a href="../../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Shallow Water CFD Coupling Geometry</li>
+      <li>Coupling Shallow Water and CFD Model Geometries</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -211,22 +211,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="shallow-water-cfd-coupling-geometry">
-<span id="lbl-geom-swcfd"></span><h1>Shallow Water CFD Coupling Geometry<a class="headerlink" href="#shallow-water-cfd-coupling-geometry" title="Permalink to this heading">¶</a></h1>
-<p>Here the user needs to select the bathymetry files and solution files related to the shallow-water solutions. At present, HydroUQ can directly read the shallow water solutions from the <code class="docutils literal notranslate"><span class="pre">GeoClaw</span></code> solver. The bathymetry can be provided in the GeoClaw format (Type 1) or the SimCenter format. Similarly, the shallow-water solutions can be provided in the GeoClaw format or the SimCenter format.</p>
-<p>For more information about the GeoClaw file format, check out <a class="reference internal" href="../../../../../technical_manual/desktop/hydro/swsolver/geoclaw-topo.html#lbl-geoclawtopo"><span class="std std-ref">Topography</span></a>. Similarly, for the SimCenter formats, check out <a class="reference internal" href="../../../../../technical_manual/desktop/hydro/swsolver/simcenter-topo.html#lbl-simcentertopo"><span class="std std-ref">Topography: SimCenter</span></a>.</p>
-<p>The other input is the direction of gravity. For this type of simulation, it is recommended to use <code class="docutils literal notranslate"><span class="pre">-z</span></code> for the gravity direction.</p>
-<div class="align-center figure" id="id1">
-<a class="reference internal image-reference" href="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/SWCFD.png"><img alt="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/SWCFD.png" src="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/SWCFD.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">UI for loading bathymetry and shallow-water solution files</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+  <div class="section" id="coupling-shallow-water-and-cfd-model-geometries">
+<span id="lbl-geom-swcfd"></span><h1>Coupling Shallow Water and CFD Model Geometries<a class="headerlink" href="#coupling-shallow-water-and-cfd-model-geometries" title="Permalink to this heading">¶</a></h1>
+<p>To couple high-fidelity CFD and with simplified shallow-water equations (<strong>SWE</strong>), you must input the bathymetry defining files you previously used in a SWE simulation.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Please provide as much of the bathymetry as possible. HydroUQ will crop the required areas for the CFD simulation.</p>
 </div>
+<p>You must also provide the corresponding solution files from said simulation.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<ol class="arabic simple">
-<li><p>Please provide as much of the bathymetry as possible. HydroUQ will crop the required areas for the CFD simulation.</p></li>
-<li><p>The solution files can be large in size. Hence, it is recommended to restrict the times required for the CFD simulation only. Here, it is essential to note that the boundaries can lead to unphysical accumulation if there are excessive reflections.</p></li>
-</ol>
+<p>The solution files can be large in size. Hence, it is recommended to restrict the times required for the CFD simulation only.
+Here, it is essential to note that the boundaries can lead to unphysical accumulation if there are excessive reflections.</p>
 </div>
+<p>Once these files are provided, HydroUQ will produce a convenient graphical interface for a one-way SWE-CFD coupling in a larger UQ workflow. Namely, for GeoClaw and OpenFOAM.</p>
+<div class="align-center figure" id="id1">
+<span id="fig-geom-swcfd"></span><a class="reference internal image-reference" href="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/SWCFD.png"><img alt="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/SWCFD.png" src="common/user_manual/usage/desktop/hydro/Geometry/Geometry/figures/SWCFD.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">UI for loading bathymetry and shallow-water solution files into a HydroUQ workflow.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>HydroUQ can directly read the shallow water solutions from the <code class="docutils literal notranslate"><span class="pre">GeoClaw</span></code> solver, so little to no effort is required regarding pre-processing for any user. See <span class="xref std std-ref">lbl-geom-geoclaw</span> for more information on the GeoClaw solver.</p>
+<p>The bathymetry can be provided in the GeoClaw format (Type 1) or the SimCenter format. Similarly, the shallow-water solutions can be provided in the GeoClaw format or the SimCenter format.</p>
+<p>For details regarding the GeoClaw file format(s), see <a class="reference internal" href="../../../../../technical_manual/desktop/hydro/swsolver/geoclaw-topo.html#lbl-geoclawtopo"><span class="std std-ref">Topography</span></a>. For the SimCenter shallow-water format, refer to <a class="reference internal" href="../../../../../technical_manual/desktop/hydro/swsolver/simcenter-topo.html#lbl-simcentertopo"><span class="std std-ref">Topography: SimCenter</span></a>.</p>
 </div>
 
 
