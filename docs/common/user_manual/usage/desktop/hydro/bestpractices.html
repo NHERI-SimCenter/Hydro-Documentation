@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -51,7 +51,7 @@
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
     <link rel="next" title="6. Troubleshooting" href="../../../troubleshooting/desktop/troubleshooting.html" />
-    <link rel="prev" title="4.2. Cylinder Half-Submerged in Flow - UW WASIRF Twin - FOAMySees (OpenFOAM + OpenSees)" href="../../../examples/desktop/hdro-0003/README.html" />
+    <link rel="prev" title="4.6. Tsunami Debris Motion Through a Scaled Port Setting - WU TWB Digital Twin - MPM" href="../../../examples/desktop/hdro-0004/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -232,7 +232,7 @@
 <p>There are several sources of errors that are often observed in CFD simulations. These include:</p>
 <ol class="arabic simple">
 <li><p>The model is described by the Navier-Stokes equations. The exact N-S equations are solved when Direct Numerical Simulations (DNS) are employed. However, when the RANS approach is involved, as in HydroUQ, this involves approximations that could lead to errors and uncertainties. Thus, selecting the correct parameters is paramount.</p></li>
-<li><p>If the solution shows divergence, check the boundary conditions, grid, discretization, and convergence errors. Check whether the flow is steady or unsteady and the timestep used in this regard.</p></li>
+<li><p>If the solution shows divergence, check the boundary conditions, grid, discretization, and convergence errors. Check whether the flow is steady or unsteady and the time step used in this regard.</p></li>
 </ol>
 </div>
 <div class="section" id="froude-number">
@@ -252,7 +252,7 @@
 <li><p>HydroUQ app has a basic mesher available that generates hex grids. For complex geometries, it is recommended to create hybrid grids using external meshing tools. Such grids can generally use prism layer grids in the boundary layer, tetrahedral cells in the core flow region, and hex grids.</p></li>
 <li><p>It is recommended that the aspect ratio be below 5 but can be up to 10 inside the boundary layer. Ensure that the change in grid size is gradual, and the maximum variation in grid spacing should be less than 20%.</p></li>
 </ol>
-<p># Avoid highly skewed cells so that the angles between gridlines are orthogonal or near orthogonal. Angles with less than 40-degrees or greater than 140-degrees may lead to numerical instabilities or unsatisfactory results.</p>
+<p># Avoid highly skewed cells so that the angles between grid lines are orthogonal or near orthogonal. Angles with less than 40 degrees or greater than 140 degrees may lead to numerical instabilities or unsatisfactory results.</p>
 </div>
 <div class="section" id="temporal-discretization">
 <h2><span class="section-number">5.4. </span>Temporal discretization<a class="headerlink" href="#temporal-discretization" title="Permalink to this heading">¶</a></h2>
@@ -275,10 +275,10 @@
 <div class="section" id="sw-cfd-domain-sizes">
 <h2><span class="section-number">5.6. </span>SW-CFD domain sizes<a class="headerlink" href="#sw-cfd-domain-sizes" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
-<li><p>Note that each degree of latitude is approximately 69 miles (111 km apart). At the Equator, the distance is 68.703 miles (110.567 km); at Tropic of Cancer and Capricorn, it is 68.94 miles (110.948 km), and at the poles, it is 69.94 miles (111.699 km).</p></li>
+<li><p>Note that each degree of latitude is approximately 69 miles (111 km apart). At the Equator, the distance is 68.703 miles (110.567 km); at the Tropic of Cancer and Capricorn, it is 68.94 miles (110.948 km), and at the poles, it is 69.94 miles (111.699 km).</p></li>
 <li><p>60 minutes = 1 degree</p></li>
 <li><p>For a 1-minute grid used in the SW-solver, this is approximately a 2 x 2 km grid (in terms of distances). This could still be a considerably large domain for the CFD simulation, depending on the topography and bathymetry.</p></li>
-<li><p>If the simulation type is SW-CFD coupling, then there can be wave reflections. Such wave reflections can lead to unphysical fluid accumulation at the boundary.</p></li>
+<li><p>If the simulation type is SW-CFD coupling, then there can be wave reflections. Such wave reflections can lead to non-physical fluid accumulation at the boundary.</p></li>
 </ol>
 </div>
 <div class="section" id="turbulence-modeling">
@@ -310,16 +310,16 @@
 </div></blockquote>
 </li>
 <li><p>High Reynolds number flows (like aircraft, ships, etc.) will experience boundary layers that extend to several thousand <span class="math notranslate nohighlight">\(y^{+}\)</span> units. However, for flows with low Reynolds numbers, the upper limit can be as little as 100 <span class="math notranslate nohighlight">\(y^{+}\)</span> units. Thus, it is necessary to ensure that the first node does not fall outside this range.</p></li>
-<li><p>HydroUQ app 3.1.0 supports <span class="math notranslate nohighlight">\(k-\epsilon\)</span> and <span class="math notranslate nohighlight">\(k-\omega\)</span> SST models. These are both good choices for general applications. The <span class="math notranslate nohighlight">\(k-\epsilon\)</span> model is very reliable and can often be used to get initial values for more sophisticated models.</p></li>
+<li><p>HydroUQ app 4.0.0 supports <span class="math notranslate nohighlight">\(k-\epsilon\)</span> and <span class="math notranslate nohighlight">\(k-\omega\)</span> SST models. These are both good choices for general applications. The <span class="math notranslate nohighlight">\(k-\epsilon\)</span> model is very reliable and can often be used to get initial values for more sophisticated models.</p></li>
 <li><p>The <span class="math notranslate nohighlight">\(k-\epsilon\)</span> model is inaccurate for flows with adverse pressure gradients. It does not allow integration of the conservation equations through the viscous sublayer where low Reynolds number corrections are recommended.</p></li>
-<li><p>The <span class="math notranslate nohighlight">\(k-\omega\)</span> model is very sensitive to the freestream boundary conditions. However, it performs well for flows with variable pressure gradients.</p></li>
+<li><p>The <span class="math notranslate nohighlight">\(k-\omega\)</span> model is very sensitive to the free-stream boundary conditions. However, it performs well for flows with variable pressure gradients.</p></li>
 </ol>
 </div>
 <div class="section" id="user-errors">
 <h2><span class="section-number">5.8. </span>User errors<a class="headerlink" href="#user-errors" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Check for details in the geometry. Do not over-simplify the geometry without an understanding of the given problem.</p></li>
-<li><p>Inaccurate use of boundary conditions and / or low-quality grids (e.g., poorly meshed in critical locations, inadaquate resolution for the problem) are commonly observed user errors.</p></li>
+<li><p>Inaccurate use of boundary conditions and/or low-quality grids (e.g., poorly meshed in critical locations, inadequate resolution for the problem) are commonly observed user errors.</p></li>
 <li><p>Ensure that the timestep sizes provided are reasonable.</p></li>
 </ol>
 </div>
@@ -344,7 +344,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2024, The Regents of the University of California.
+        &#169; Copyright 2020-2024, The Regents of the University of California.
 
     </p>
   </div>

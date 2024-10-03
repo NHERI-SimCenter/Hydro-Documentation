@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -244,17 +244,13 @@
             
   <div class="section" id="geometry">
 <span id="lbl-geometry"></span><h1><span class="section-number">2.4.1.2. </span>Geometry<a class="headerlink" href="#geometry" title="Permalink to this heading">¶</a></h1>
-<p>There are four aspects related to the definition of geometry, namely geometry of the ocean floor or wave flume, buildings or specimens, floating bodies, and shallow water to CFD interface. This section discusses the setup of all aspects of geometry.</p>
+<p>There are four aspects related to the definition of geometry, namely geometry of the ocean floor or wave flume, buildings or specimens, floating bodies, and shallow water to the CFD interface. This section discusses the setup of all aspects of geometry.</p>
 <div class="section" id="bathymetry">
 <h2>Bathymetry<a class="headerlink" href="#bathymetry" title="Permalink to this heading">¶</a></h2>
 <p>The geometry can be provided either in terms of the bathymetry of the ocean floor, an STL file, or the wave flume digital twin. The geometry definition is based on the type of <code class="docutils literal notranslate"><span class="pre">Simulation</span> <span class="pre">type</span></code> chosen in the <a class="reference internal" href="Project.html#lbl-projsett"><span class="std std-ref">Project Settings</span></a>. The geometry definition for each of the simulation types has been outlined below.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Shallow-water to CFD coupling<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<span class="sd-summary-text">Shallow-water to CFD coupling</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">To couple high-fidelity CFD and with simplified shallow-water equations (<strong>SWE</strong>), you must input the bathymetry defining files you previously used in a SWE simulation.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -277,11 +273,7 @@ Here, it is essential to note that the boundaries can lead to unphysical accumul
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Bathymetry<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<span class="sd-summary-text">Bathymetry</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Here the user needs to select the bathymetry files of the ocean floor. At present, HydroUQ can directly read the bathymetry provided in the GeoClaw format (Type 1) or the SimCenter format. For more information about the GeoClaw file format, check out <a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/geoclaw-topo.html#lbl-geoclawtopo"><span class="std std-ref">Topography</span></a>. Similarly, for the SimCenter formats, check out <a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/simcenter-topo.html#lbl-simcentertopo"><span class="std std-ref">Topography: SimCenter</span></a>.</p>
 <p class="sd-card-text">The other input is the direction of gravity. For this type of simulation, it is recommended to use <code class="docutils literal notranslate"><span class="pre">-z</span></code> for the gravity direction.</p>
 <div class="align-center figure" id="id8">
@@ -295,11 +287,7 @@ Bathymetry<div class="sd-summary-down docutils">
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-STL file<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<span class="sd-summary-text">STL file</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">STL</span></code> file format is pervasive in fluid simulation software, hence HydroUQ provides support for the format.</p>
 <p class="sd-card-text">To define a complex ocean bathymetry, you may use multiple <code class="docutils literal notranslate"><span class="pre">STL</span></code> files to replicate the ocean floor if they form a manifold when combined.</p>
 <p class="sd-card-text">Custom structures, boundaries, and other features may also be defined using  <code class="docutils literal notranslate"><span class="pre">STL</span></code> files. An example is shown in the HydroUQ UI below:</p>
@@ -333,11 +321,7 @@ STL file<div class="sd-summary-down docutils">
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Wave flume<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<span class="sd-summary-text">Wave flume</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">This sections discusses the geometric definition for wave flume simulations. This is the first step in the description of a digital twin of an experimental set in said flume facilities.</p>
 <p class="sd-card-text">For instance, one of the inputs required to use a simulation to represent a real-world representation is the direction of gravity. For fluid simulations, it is often recommended to use <code class="docutils literal notranslate"><span class="pre">-z</span></code>, but <code class="docutils literal notranslate"><span class="pre">-y</span></code> is a common choice as well. Other parameters may entail wave-maker specifications, concrete wall roughness, the basic wave flume geometry height / width / depth, among others.</p>
 <p class="sd-card-text">Bathymetry, i.e. sloped panels that are often present in wave flumes to influence wave development, are important for replicating experiments digitally and so an adjustable bathymetry creator is present in HydroUQ. The wave flume geometry in particular is a critical parameter, as it determines whether a full wave flume simulation is done or a truncated one (i.e. if reduced values were chosen). Bathymetry, i.e. sloped panels that are often present in wave flumes to influence wave development, are likewise important and supported in HydroUQ.</p>
@@ -383,7 +367,7 @@ Wave flume<div class="sd-summary-down docutils">
 <span id="swcfdinter"></span><a class="reference internal image-reference" href="../../../../../_images/swcfd_Interface.png"><img alt="../../../../../_images/swcfd_Interface.png" src="../../../../../_images/swcfd_Interface.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.4.1.2.7 </span><span class="caption-text">Uploading the <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file that defines the interface</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
-<p>Consider the problem description as shown in the <a class="reference internal" href="#swcfdinter2"><span class="std std-numref">Fig. 2.4.1.2.8</span></a>. Consider an event (earthquake on a fault or low-pressure due to a hurricane) represented by the red line on the left. The shallow-water solvers are used over the Ocean domain. In order to provide a high-fidelity solution for the structural response, the shallow-water domain is further refined using 3D CFD. The yellow boxes represent the shallow water to CFD interfaces. This interface information is provided in a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file.</p>
+<p>Consider the problem description as shown in the <a class="reference internal" href="#swcfdinter2"><span class="std std-numref">Fig. 2.4.1.2.8</span></a>. Consider an event (earthquake on a fault or low-pressure due to a hurricane) represented by the red line on the left. The shallow-water solvers are used over the Ocean domain. To provide a high-fidelity solution for the structural response, the shallow-water domain is further refined using 3D CFD. The yellow boxes represent the shallow water to CFD interfaces. This interface information is provided in a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file.</p>
 <div class="align-center figure" id="id14">
 <span id="swcfdinter2"></span><a class="reference internal image-reference" href="../../../../../_images/SWCFD02.png"><img alt="../../../../../_images/SWCFD02.png" src="../../../../../_images/SWCFD02.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.4.1.2.8 </span><span class="caption-text">Visual depiction of the shallow water to CFD interface</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
@@ -405,14 +389,14 @@ Wave flume<div class="sd-summary-down docutils">
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol class="arabic simple">
-<li><p>It is necessary that the point provided to define the interface needs to be closed and a quadrilateral.</p></li>
+<li><p>It is necessary that the points provided to define the interface needs to be closed and create a quadrilateral.</p></li>
 <li><p>The patch names need to be provided to identify appropriate boundaries.</p></li>
 </ol>
 </div>
 </div>
 <div class="section" id="buildings-and-scaled-specimens">
 <h2>Buildings and Scaled Specimens<a class="headerlink" href="#buildings-and-scaled-specimens" title="Permalink to this heading">¶</a></h2>
-<p>Buildings or specimens can be defined in the <code class="docutils literal notranslate"><span class="pre">EVT</span></code>. It is important here to note that there can be two types of buildings: (a) Building of interest for which the structural response is measured (b) Other neighboring buildings that impact the flow fields.</p>
+<p>Buildings or specimens can be defined in the <code class="docutils literal notranslate"><span class="pre">EVT</span></code>. It is important here to note that there can be two types of buildings: (a) The building of interest for which the structural response is measured (b) Other neighboring buildings that impact the flow fields.</p>
 <p>These can either be defined manually in a tabular format or parametrically as shown in <a class="reference internal" href="#builddef"><span class="std std-numref">Fig. 2.4.1.2.9</span></a>.</p>
 <div class="align-center figure" id="id15">
 <span id="builddef"></span><a class="reference internal image-reference" href="../../../../../_images/Building.png"><img alt="../../../../../_images/Building.png" src="../../../../../_images/Building.png" style="width: 500px;" /></a>
@@ -435,7 +419,7 @@ Wave flume<div class="sd-summary-down docutils">
 This limitation will be removed in the upcoming versions.</p>
 </div>
 </li>
-<li><p><strong>Center:</strong> This refers to the location of the building/specimen. This is defined in terms of the coordinates (<code class="docutils literal notranslate"><span class="pre">x</span></code> , <code class="docutils literal notranslate"><span class="pre">y</span></code> , <code class="docutils literal notranslate"><span class="pre">z</span></code>) or latitude-longitude depending on the type of simulation chosen earlier in <a class="reference internal" href="Project.html#lbl-projsett"><span class="std std-ref">Project Settings</span></a>. Suppose the simulation is based on shallow-water to CFD or bathymetry settings. In that case, the latitude and longitude need to be specified. Else, the position is input in terms of the coordinates.</p>
+<li><p><strong>Center:</strong> This refers to the location of the building/specimen. This is defined in terms of the coordinates (<code class="docutils literal notranslate"><span class="pre">x</span></code> , <code class="docutils literal notranslate"><span class="pre">y</span></code> , <code class="docutils literal notranslate"><span class="pre">z</span></code>) or latitude-longitude depending on the type of simulation chosen earlier in <a class="reference internal" href="Project.html#lbl-projsett"><span class="std std-ref">Project Settings</span></a>. Suppose the simulation is based on shallow-water to CFD or bathymetry settings. In that case, the latitude and longitude need to be specified. Otherwise, the position is input in terms of the coordinates.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Here, the building position refers to the center of the bottom surface of the building.
@@ -449,7 +433,7 @@ Thus, one needs to appropriately calculate the position of the building.</p>
 <h3>Parametric Definition<a class="headerlink" href="#parametric-definition" title="Permalink to this heading">¶</a></h3>
 <p>The parametric definition of the building is recommended for usage mainly for the flume. This is recommended for usage when all the buildings are of the same shape and size. Here, the buildings are automatically generated based on a set of parametric inputs. The building of interest is directly determined by the HydroUQ app by using the coordinate information from the <code class="docutils literal notranslate"><span class="pre">GI</span></code> tab and matching it with the nearest building. The set of parameters include:</p>
 <ol class="arabic">
-<li><p><strong>Number of buildings along the coast:</strong> This refers to the number of building in the direction orthogonal to the flow, i.e., between right and left interfaces or walls of the CFD domain.</p></li>
+<li><p><strong>Number of buildings along the coast:</strong> This refers to the number of buildings in the direction orthogonal to the flow, i.e., between right and left interfaces or walls of the CFD domain.</p></li>
 <li><p><strong>Number of buildings into the coast:</strong> This refers to the number of buildings in the flow direction, i.e., between entry and exit of the CFD domain.</p></li>
 <li><p><strong>Distance from coast:</strong> This refers to the distance of the first building from (0,0).</p></li>
 <li><p><strong>Distance between buildings (Side):</strong> This refers to the center-to-center distance between the buildings in the direction orthogonal to the flow.</p></li>
@@ -473,7 +457,7 @@ Thus, one needs to appropriately calculate the position of the building.</p>
 </div>
 <div class="section" id="debris-and-floating-bodies">
 <h2>Debris and Floating Bodies<a class="headerlink" href="#debris-and-floating-bodies" title="Permalink to this heading">¶</a></h2>
-<p>Currently, HydroUQ  only supports floating bodies in the Material Point Method Event. This may expand to include OpenFOAM in an upcoming versions of HydroUQ app.</p>
+<p>Currently, HydroUQ  only supports floating bodies in the Material Point Method Event. This may expand to include OpenFOAM in an upcoming version of HydroUQ app.</p>
 </div>
 </div>
 
@@ -487,7 +471,7 @@ Thus, one needs to appropriately calculate the position of the building.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2024, The Regents of the University of California.
+        &#169; Copyright 2020-2024, The Regents of the University of California.
 
     </p>
   </div>

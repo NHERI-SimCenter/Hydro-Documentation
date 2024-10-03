@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
@@ -49,7 +49,7 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="4.1. Validation - Multiple Debris Impacts on a Raised Structure - Digital Twin (OSU LWF)" href="hdro-0002/README.html" />
+    <link rel="next" title="4.1. Feature - Stochastic Wave Loading on a Simple Structure - Stochastic Wave Spectra" href="hdro-0005/README.html" />
     <link rel="prev" title="3. Tools" href="../../usage/desktop/hydro/tools.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -125,8 +125,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/usage.html">2. User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/hydro/tools.html">3. Tools</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">4. Examples</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="hdro-0002/README.html">4.1. Validation - Multiple Debris Impacts on a Raised Structure - Digital Twin (OSU LWF)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hdro-0003/README.html">4.2. Cylinder Half-Submerged in Flow  -  UW WASIRF Twin  -  FOAMySees (OpenFOAM + OpenSees)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hdro-0005/README.html">4.1. Feature - Stochastic Wave Loading on a Simple Structure - Stochastic Wave Spectra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hdro-0010/README.html">4.2. Forward Sampling - Simple Piston Generated Wave - Taichi Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hdro-0001/README.html">4.3. Multi-Story Shear Building - Coupled CFD-FEM Digital Twin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hdro-0002/README.html">4.4. Validation - Multiple Debris Impacts on a Raised Structure - Digital Twin (OSU LWF)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hdro-0003/README.html">4.5. Cylinder Half-Submerged in Flow  -  UW WASIRF Twin  -  FOAMySees (OpenFOAM + OpenSees)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hdro-0004/README.html">4.6. Tsunami Debris Motion Through a Scaled Port Setting - WU TWB Digital Twin - MPM</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/hydro/bestpractices.html">5. Best Practices</a></li>
@@ -233,6 +237,78 @@
   <div class="row g-0 mb-3">
     <div class="card-header">
         <p>
+        <a href="./hdro-0005/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">Feature - Stochastic Wave Loading on a Simple Structure - Stochastic Wave Spectra</h5>
+          </a>
+        </p>
+    </div>
+    <div class="col-md-6"> 
+      <div class="card-body">
+        <p class="card-text bg-light">This local workflow example loads a simple OpenSees structure using waves from a generated, stochastic spectra (JONSWAP).</p>
+          
+      </div>
+    </div>
+        
+      <div class="col-md-5 ml-auto mr-2 my-3">
+       <img src="../../../../_images/hdro-0005_WaveTimeSeries.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+      </div>
+        
+  </div>
+</div>
+
+  
+<div class="card shadow-sm mb-3  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
+  <div class="row g-0 mb-3">
+    <div class="card-header">
+        <p>
+        <a href="./hdro-0010/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">Forward Sampling - Simple Piston Generated Wave - Taichi Event</h5>
+          </a>
+        </p>
+    </div>
+    <div class="col-md-6"> 
+      <div class="card-body">
+        <p class="card-text bg-light">Forward sample a 2D wave maker piston's generated wave implemented in the high-performance Taichi Lang. The structure is a simple 1-story OpenSees frame structure. Engineering Demand Parameters are PFA, RMSA, PFD, and PID. The wave loading is generated using a stochastic wave spectra (JONSWAP). The wave loading is applied to the floors as lateral forces.</p>
+          
+      </div>
+    </div>
+        
+      <div class="col-md-5 ml-auto mr-2 my-3">
+       <img src="../../../../_images/hdro-0010_EVT_Single.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+      </div>
+        
+  </div>
+</div>
+
+  
+<div class="card shadow-sm mb-3  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
+  <div class="row g-0 mb-3">
+    <div class="card-header">
+        <p>
+        <a href="./hdro-0001/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">Multi-Story Shear Building - Coupled CFD-FEM Digital Twin</h5>
+          </a>
+        </p>
+    </div>
+    <div class="col-md-6"> 
+      <div class="card-body">
+        <p class="card-text bg-light">This example uses a coupled CFD - FEM simulation</p>
+          
+      </div>
+    </div>
+        
+      <div class="col-md-5 ml-auto mr-2 my-3">
+       <img src="../../../../_images/Coupled.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+      </div>
+        
+  </div>
+</div>
+
+  
+<div class="card shadow-sm mb-3  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
+  <div class="row g-0 mb-3">
+    <div class="card-header">
+        <p>
         <a href="./hdro-0002/README.html"> 
               <h5 style="--bs-gutter-x: 1.5em;">Validation - Multiple Debris Impacts on a Raised Structure - Digital Twin (OSU LWF)</h5>
           </a>
@@ -271,6 +347,30 @@
         
       <div class="col-md-5 ml-auto mr-2 my-3">
        <img src="../../../../_images/hdro-0003example.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+      </div>
+        
+  </div>
+</div>
+
+  
+<div class="card shadow-sm mb-3  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
+  <div class="row g-0 mb-3">
+    <div class="card-header">
+        <p>
+        <a href="./hdro-0004/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">Tsunami Debris Motion Through a Scaled Port Setting - WU TWB Digital Twin - MPM</h5>
+          </a>
+        </p>
+    </div>
+    <div class="col-md-6"> 
+      <div class="card-body">
+        <p class="card-text bg-light">This example uses the Material Point Method (MPM) running on GPUs to simulate the WU TWB in 3D with debris.</p>
+          
+      </div>
+    </div>
+        
+      <div class="col-md-5 ml-auto mr-2 my-3">
+       <img src="../../../../_images/TOKYO_BoreFrontImage_Debris3_o5x1_Frame20_29072023.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
       </div>
         
   </div>
@@ -359,7 +459,7 @@ for (const filter of filters) {
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2024, The Regents of the University of California.
+        &#169; Copyright 2020-2024, The Regents of the University of California.
 
     </p>
   </div>

@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
@@ -111,7 +111,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">1. About</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#overview">1.1. Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#capabilities-and-limitations">1.2. Capabilities and Limitations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#capabilities">1.2. Capabilities</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
@@ -231,60 +231,49 @@
 <img alt="../../../../_images/HydroUQ_MPM_3DViewPort_OSULWF_2024.04.25.gif" src="../../../../_images/HydroUQ_MPM_3DViewPort_OSULWF_2024.04.25.gif" />
 <p class="caption"><span class="caption-number">Fig. 1.1.2 </span><span class="caption-text">The HydroUQ Desktop Application’s User Interface for Oregon State University’s Large Wave Flume Digital Twin.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-<p>This is Version 3.1.0 of the tool. Users are encouraged to comment on what additional features and capabilities they would like to see in this application. These requests and feedback can be submitted through an anonymous <a class="reference external" href="https://docs.google.com/forms/d/e/1FAIpQLSfh20kBxDmvmHgz9uFwhkospGLCeazZzL770A2GuYZ2KgBZBA/viewform?usp=sf_link">user survey</a>. We greatly appreciate any input you have. If there are features you want, chances are many of your colleagues also would benefit from them. We encourage you to review the <a class="reference internal" href="../../../reqments/HydroUQ.html#lblhydrorequirements"><span class="std std-ref">Requirments Traceability Matrix</span></a> to see what features are planned.</p>
+<p>This is Version 4.0.0 of the tool. Users are encouraged to comment on what additional features and capabilities they would like to see in this application. These requests and feedback can be submitted through an anonymous <a class="reference external" href="https://docs.google.com/forms/d/e/1FAIpQLSfh20kBxDmvmHgz9uFwhkospGLCeazZzL770A2GuYZ2KgBZBA/viewform?usp=sf_link">user survey</a>. We greatly appreciate any input you have. If there are features you want, chances are many of your colleagues also would benefit from them. We encourage you to review the <a class="reference internal" href="../../../reqments/HydroUQ.html#lblhydrorequirements"><span class="std std-ref">Requirments Traceability Matrix</span></a> to see what features are planned.</p>
 <p>The additional simulations required for uncertainty quantification can be prohibitively expensive. To overcome this impediment, the user has the option to perform the response simulations on the Frontera and Lonestar6 supercomputers, located at the Texas Advanced Computing Center (TACC). These HPC resources are made available to the user through NHERI DesignSafe-CI, the cyberinfrastructure provider for the distributed NSF-funded Natural Hazards Engineering Research Infrastructure (NHERI) facility.</p>
 </div>
-<div class="section" id="capabilities-and-limitations">
-<span id="lblcapabilitiesandlimitationshydrouq"></span><h2><span class="section-number">1.2. </span>Capabilities and Limitations<a class="headerlink" href="#capabilities-and-limitations" title="Permalink to this heading">¶</a></h2>
-<p>Below are key, modular capabilities and limitations of HydroUQ, categorized by Uncertainty Quantification (UQ), Design Building General Information (GI), Structural Information &amp; Analysis Model (SIM), Natural Hazard Event (EVT), Engineering Demand Parameters (EDP), Finite Element Method (FEM), Random Variables (RV), and Results (RES).</p>
+<div class="section" id="capabilities">
+<span id="lblcapabilitiesandlimitationshydrouq"></span><h2><span class="section-number">1.2. </span>Capabilities<a class="headerlink" href="#capabilities" title="Permalink to this heading">¶</a></h2>
+<p>Below are key, modular capabilities of HydroUQ, categorized by Uncertainty Quantification (UQ), Design Building General Information (GI), Structural Information &amp; Analysis Model (SIM), Natural Hazard Event (EVT), Engineering Demand Parameters (EDP), Finite Element Method (FEM), Random Variables (RV), and Results (RES).</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 5%" />
-<col style="width: 48%" />
-<col style="width: 48%" />
+<col style="width: 95%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Item</p></th>
 <th class="head"><p>Capabilities</p></th>
-<th class="head"><p>Limitations</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>UQ</p></td>
 <td><p>Easy access to different UQ methods. Parallelized UQ algorithms. Multiple alternative algorithms for each method.</p></td>
-<td><p>No support for optimization under uncertainty and local sensitivity analysis.</p></td>
 </tr>
 <tr class="row-odd"><td><p>GI</p></td>
 <td><p>Basic interface for user-provided general building information (e.g. location, age, and building type).</p></td>
-<td><p>No support for sophisticated user-defined building types. Yet to implement a map-style interface for building location so users must type in coordinates manually.</p></td>
 </tr>
 <tr class="row-even"><td><p>SIM</p></td>
 <td><p>Easy interface for user-provided structural information and analysis models (e.g. geometry, material properties, and boundary conditions). Provides a multi-degree-of-freedom (MDOF) building model. Allows for OpenSeesPy models defined in user-provided scripts. Supports investigation of multiple potential building models with associated “belief” values for each.</p></td>
-<td><p>Does not make full use of information (e.g. location of the building and date built influences which ASCE guidelines may have applied) provided in GI for automated structural information and analysis model generation.</p></td>
 </tr>
 <tr class="row-odd"><td><p>EVT</p></td>
 <td><p>OpenFOAM computational fluid dynamics (CFD) simulations. GeoClaw Shallow-Water Equations (SWE) and OpenFOAM CFD one-way coupled simulations. FOAMySees two-way coupled CFD-FEA simulations. Material Point Method (MPM, ClaymoreUW) simulations. Pre-built and validated digital wave-flume twins.</p></td>
-<td><p>Most simulation types are limited to remote execution on TACC supercomputers.</p></td>
 </tr>
 <tr class="row-even"><td><p>FEM</p></td>
 <td><p>Easy interface for user-provided simulation models (not only FEM models but <em>any model</em>), including Opensees, Python, or any other simulation models (e.g. FEM or non-FEM software) with only a python-scripted interface provided by the user to HydroUQ.</p></td>
-<td><p>Graphical user-interface support for alternative finite element analysis (FEA) software and non-FEA software is limited.</p></td>
 </tr>
 <tr class="row-odd"><td><p>RV</p></td>
 <td><p>Twelve different kinds of probability distributions with correlations.</p></td>
-<td><p>Does not expose which variables support this feature well to the user. No support for random fields, non-Gaussian copular, or user-defined variables.</p></td>
 </tr>
 <tr class="row-even"><td><p>EDP</p></td>
 <td><p>Scalar and vector EDP parsing. Hazard specific EDP lists (e.g. tsunami and storm-surge). Support for user-defined EDPs.</p></td>
-<td><p>Separate Intensity Measures (IMs) and EDPs (load and response), in functionality and GUI presentation, is not fully delineated yet.</p></td>
 </tr>
 <tr class="row-odd"><td><p>RES</p></td>
 <td><p>Interactive plotting of scatter charts, histograms, and cumulative mass functions. Summary of statistics. Save data into a CSV file.</p></td>
-<td><p>Limited flexibility for in-app visualization. Results must be ported to external plotting software for more advanced visualization.</p></td>
 </tr>
 <tr class="row-even"><td><p>General</p></td>
 <td><p>Graphical user interface. Free and easy one-click remote running option.</p></td>
-<td><p>Limited guidance on how to effectively contribute to this open-source project.</p></td>
 </tr>
 </tbody>
 </table>
@@ -301,7 +290,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2024, The Regents of the University of California.
+        &#169; Copyright 2020-2024, The Regents of the University of California.
 
     </p>
   </div>

@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -130,8 +130,8 @@
 <li class="toctree-l3"><a class="reference internal" href="general.html">2.4.1. General Event (Legacy)</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.2. Coupled Digital Twin</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#coupled-simulation-settings">2.4.2.1. Coupled Simulation Settings</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#specificy-opensees-structural-model-and-an-external-surface-file">2.4.2.2. Specificy OpenSees Structural Model and an External Surface File</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#specificy-openfoam-cfd-model-and-initial-conditions">2.4.2.3. Specificy OpenFOAM CFD Model and Initial Conditions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#specify-opensees-structural-model-and-an-external-surface-file">2.4.2.2. Specify OpenSees Structural Model and an External Surface File</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#specify-openfoam-cfd-model-and-initial-conditions">2.4.2.3. Specify OpenFOAM CFD Model and Initial Conditions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#specify-outputs">2.4.2.4. Specify Outputs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#postprocessing">2.4.2.5. Postprocessing</a></li>
 </ul>
@@ -251,8 +251,8 @@
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#coupled-simulation-settings" id="id12">Coupled Simulation Settings</a></p></li>
-<li><p><a class="reference internal" href="#specificy-opensees-structural-model-and-an-external-surface-file" id="id13">Specificy OpenSees Structural Model and an External Surface File</a></p></li>
-<li><p><a class="reference internal" href="#specificy-openfoam-cfd-model-and-initial-conditions" id="id14">Specificy OpenFOAM CFD Model and Initial Conditions</a></p></li>
+<li><p><a class="reference internal" href="#specify-opensees-structural-model-and-an-external-surface-file" id="id13">Specify OpenSees Structural Model and an External Surface File</a></p></li>
+<li><p><a class="reference internal" href="#specify-openfoam-cfd-model-and-initial-conditions" id="id14">Specify OpenFOAM CFD Model and Initial Conditions</a></p></li>
 <li><p><a class="reference internal" href="#specify-outputs" id="id15">Specify Outputs</a></p></li>
 <li><p><a class="reference internal" href="#postprocessing" id="id16">Postprocessing</a></p></li>
 </ul>
@@ -261,10 +261,10 @@
 <h2><span class="section-number">2.4.2.1. </span>Coupled Simulation Settings<a class="headerlink" href="#coupled-simulation-settings" title="Permalink to this heading">¶</a></h2>
 <p><strong>Simulation Settings</strong></p>
 <p>The user is presented with a variety of settings to specify the coupled simulation. The GUI is shown in Figure  <code class="xref std std-numref docutils literal notranslate"><span class="pre">EVT-CoupledSettings</span></code> and individual input parameters are as follows:</p>
-<p><code class="docutils literal notranslate"><span class="pre">Time</span> <span class="pre">Step</span></code>: The coupling timestep for the solution. This value should be selected such that CFD model CFL criterion is satisfied, as well as the required minimum timestep for finite element analysis model stability.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Time</span> <span class="pre">Step</span></code>: The coupling timestep for the solution. This value should be selected such that the CFD model CFL criterion is satisfied, as well as the required minimum timestep for finite element analysis model stability.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Duration</span></code>: Coupled simulation duration.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Preload</span> <span class="pre">Structure</span> <span class="pre">w/</span> <span class="pre">Gravity</span></code>: Utilize the nodal masses to create a gravity loading in the -Z direction of the OpenSees model. (optional, this could be handled manually within the OpenSees script itself)</p>
-<p><code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">Preliminary</span> <span class="pre">Structural</span> <span class="pre">Analysis</span></code>: Utilize the end state of the OpenSees analysis (if defined in the OpenSees script) as the initial state of structure during the coupled analysis.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">Preliminary</span> <span class="pre">Structural</span> <span class="pre">Analysis</span></code>: Utilize the end state of the OpenSees analysis (if defined in the OpenSees script) as the initial state of the structure during the coupled analysis.</p>
 <div class="align-center settings figure" id="evt-coupledsettings">
 <img alt="../../../../../_images/Settings.png" src="../../../../../_images/Settings.png" />
 </div>
@@ -277,33 +277,33 @@
 <p><code class="docutils literal notranslate"><span class="pre">Coupling</span> <span class="pre">Scheme</span></code>: Implicit/Explicit. Implicit is recommended.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Coupling</span> <span class="pre">Data</span> <span class="pre">Acceleration</span> <span class="pre">Method</span></code>: IQN-ILS is recommended.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Initial</span> <span class="pre">Relaxation</span> <span class="pre">Factor</span></code>: The relaxation factor for FSI coupling iterations.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Maximum</span> <span class="pre">Coupling</span> <span class="pre">Iterations</span></code>: Default, 100. Keep at a large value, should converge before reaching maximum iterations.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Maximum</span> <span class="pre">Coupling</span> <span class="pre">Iterations</span></code>: Default, 100. Keep at a large value, and should converge before reaching maximum iterations.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Coupling</span> <span class="pre">Iteration</span> <span class="pre">Convergence</span> <span class="pre">Tolerance</span></code>: This is a relative convergence measure of the coupling data passed between participants within each coupling timestep. This value should be below 5e-3, but not too small. This is a measure of how much the coupling residuals change from coupling iteration to coupling iteration. Once the values have nearly approached their desired values from the interface acceleration techniques, the coupling convergence tolerance is satisfied.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Mapping</span> <span class="pre">Scheme</span></code>: Nearest Neighbor is recommended. Radial-basis-function mapping is available, but is less stable and slower than nearest neighbor.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Mapping</span> <span class="pre">Scheme</span></code>: Nearest Neighbor is recommended. Radial-basis-function mapping is available but is less stable and slower than the nearest neighbor.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Output</span> <span class="pre">Data</span> <span class="pre">from</span> <span class="pre">Coupling</span> <span class="pre">Iterations</span></code>: Not recommended. Intended for debugging of coupling iterations for models which are not converging.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Coupling</span> <span class="pre">Iteration</span> <span class="pre">Output</span> <span class="pre">Data</span> <span class="pre">Frequency</span></code>: A large value is recommended.</p>
 </div>
-<div class="section" id="specificy-opensees-structural-model-and-an-external-surface-file">
-<h2><span class="section-number">2.4.2.2. </span>Specificy OpenSees Structural Model and an External Surface File<a class="headerlink" href="#specificy-opensees-structural-model-and-an-external-surface-file" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="specify-opensees-structural-model-and-an-external-surface-file">
+<h2><span class="section-number">2.4.2.2. </span>Specify OpenSees Structural Model and an External Surface File<a class="headerlink" href="#specify-opensees-structural-model-and-an-external-surface-file" title="Permalink to this heading">¶</a></h2>
 <p><strong>OpenSees Model</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">OpenSees</span> <span class="pre">File</span></code>: Must be an OpenSeesPy script</p>
-<p><code class="docutils literal notranslate"><span class="pre">External</span> <span class="pre">surface</span> <span class="pre">file</span></code>: Must be a STL file, this is the boundary which will represent the structure within a three-dimensional CFD simulation, which will be coupled to the FEA model)</p>
+<p><code class="docutils literal notranslate"><span class="pre">External</span> <span class="pre">surface</span> <span class="pre">file</span></code>: Must be an STL file, this is the boundary that will represent the structure within a three-dimensional CFD simulation, which will be coupled to the FEA model)</p>
 <div class="align-center figure" id="id2">
 <img alt="../../../../../_images/OpenSees.png" src="../../../../../_images/OpenSees.png" />
 <p class="caption"><span class="caption-number">Fig. 2.4.2.2.1 </span><span class="caption-text">OpenSees</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
-<div class="section" id="specificy-openfoam-cfd-model-and-initial-conditions">
-<h2><span class="section-number">2.4.2.3. </span>Specificy OpenFOAM CFD Model and Initial Conditions<a class="headerlink" href="#specificy-openfoam-cfd-model-and-initial-conditions" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="specify-openfoam-cfd-model-and-initial-conditions">
+<h2><span class="section-number">2.4.2.3. </span>Specify OpenFOAM CFD Model and Initial Conditions<a class="headerlink" href="#specify-openfoam-cfd-model-and-initial-conditions" title="Permalink to this heading">¶</a></h2>
 <p><strong>OpenFOAM Model</strong></p>
-<p>Select a NHERI flume facility or specify the flume geometry within the text field boxes provided.</p>
+<p>Select the NHERI flume facility or specify the flume geometry within the text field boxes provided.</p>
 <p>Specify a flume cell size (this is the approximate edge length size of the volumes within the CFD domain for the largest cells). The minimum flume cell size could tentatively be 8 times smaller than this value, due to mesh castellation during automatic meshing routines. Use caution when specifying this value. CFD mesh resolution is increased in the structural near field.</p>
 <div class="align-center figure" id="id3">
 <img alt="../../../../../_images/OpenFOAM.png" src="../../../../../_images/OpenFOAM.png" />
 <p class="caption"><span class="caption-number">Fig. 2.4.2.3.1 </span><span class="caption-text">OpenFOAM</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Specify the flume bathymetry (STL file, or point list of x position, elevation of flume floor at x position).</strong></p>
-<p>If there is no bathymetry, please provide points within the point list which are outside of the boundary of the flume, or specify the bottom of the flume as a two point list with your start x location and end x location as the start and end of the flume and the flume elevation at both points as 0.</p>
+<p>If there is no bathymetry, please provide points within the point list that are outside of the boundary of the flume, or specify the bottom of the flume as a two-point list with your start x location and end x location as the start and end of the flume and the flume elevation at both points as 0.</p>
 <div class="align-center figure" id="id4">
 <img alt="../../../../../_images/bathymetryOF.png" src="../../../../../_images/bathymetryOF.png" />
 <p class="caption"><span class="caption-number">Fig. 2.4.2.3.2 </span><span class="caption-text">Bathymetry</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
@@ -319,7 +319,7 @@
 <p class="caption"><span class="caption-number">Fig. 2.4.2.3.4 </span><span class="caption-text">Turbulence</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Specify the wave generation techniques for the CFD model, if waves are desired.</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">Paddle</span> <span class="pre">Generated</span> <span class="pre">Waves</span></code>: Upload a CSV of times, displacements of the paddle at the inlet. This will create a paddle generated wave through motion of the CFD boundary at the minimum X boundary of the model.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Paddle</span> <span class="pre">Generated</span> <span class="pre">Waves</span></code>: Upload a CSV of times, displacements of the paddle at the inlet. This will create a paddle-generated wave through the motion of the CFD boundary at the minimum X boundary of the model.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Periodic</span> <span class="pre">Waves</span></code>: Specify the wave properties to apply a periodic wave inlet boundary condition to the CFD model.</p>
 <p><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">Waves</span></code>: Steady state flow or flows without waves.</p>
 <div class="align-center figure" id="id7">
@@ -329,7 +329,7 @@
 </div>
 <div class="section" id="specify-outputs">
 <h2><span class="section-number">2.4.2.4. </span>Specify Outputs<a class="headerlink" href="#specify-outputs" title="Permalink to this heading">¶</a></h2>
-<p>A variety of outputs from the coupled model can be obtained through specification of the output settings.</p>
+<p>A variety of outputs from the coupled model can be obtained through the specification of the output settings.</p>
 <ul>
 <li><p>Output VTK - Output a VTK file of the OpenSees and OpenFOAM models at the specified time interval.</p>
 <div class="align-center figure" id="id8">
@@ -373,7 +373,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2024, The Regents of the University of California.
+        &#169; Copyright 2020-2024, The Regents of the University of California.
 
     </p>
   </div>

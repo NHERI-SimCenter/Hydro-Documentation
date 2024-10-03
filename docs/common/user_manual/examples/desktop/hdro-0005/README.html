@@ -1,0 +1,501 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>4.1. Feature - Stochastic Wave Loading on a Simple Structure - Stochastic Wave Spectra &mdash; Hydro-UQ  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/design-tabs.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="4.2. Forward Sampling - Simple Piston Generated Wave - Taichi Event" href="../hdro-0010/README.html" />
+    <link rel="prev" title="4. Examples" href="../examples.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../_static/HydroUQ-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/Hydro/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/hydroCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/releasenotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/hydroPlans.html">7. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/tools.html">3. Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">4. Examples</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.1. Feature - Stochastic Wave Loading on a Simple Structure - Stochastic Wave Spectra</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">4.1.1. Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-up">4.1.2. Set-Up</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simulation">4.1.3. Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#analysis">4.1.4. Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#references">4.1.5. References</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0010/README.html">4.2. Forward Sampling - Simple Piston Generated Wave - Taichi Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0001/README.html">4.3. Multi-Story Shear Building - Coupled CFD-FEM Digital Twin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0002/README.html">4.4. Validation - Multiple Debris Impacts on a Raised Structure - Digital Twin (OSU LWF)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0003/README.html">4.5. Cylinder Half-Submerged in Flow  -  UW WASIRF Twin  -  FOAMySees (OpenFOAM + OpenSees)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0004/README.html">4.6. Tsunami Debris Motion Through a Scaled Port Setting - WU TWB Digital Twin - MPM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/bestpractices.html">5. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">7. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/helpvideo.html">9. Video Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/hazards/water.html">3. Water-borne Hazards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/swsolver.html">4. Shallow Water Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/cfdsolver/cfdsolver.html">5. CFD Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/fvm/fvm.html">6. Finite Volume Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/mpm/mpm.html">7. Material Point Method</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend.html">2. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Hydro-UQ</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../examples.html"><span class="section-number">4. </span>Examples</a> &raquo;</li>
+        
+      <li><span class="section-number">4.1. </span>Feature - Stochastic Wave Loading on a Simple Structure - Stochastic Wave Spectra</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/common/user_manual/examples/desktop/hdro-0005/README.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="feature-stochastic-wave-loading-on-a-simple-structure-stochastic-wave-spectra">
+<span id="hdro-0005"></span><h1><span class="section-number">4.1. </span>Feature - Stochastic Wave Loading on a Simple Structure - Stochastic Wave Spectra<a class="headerlink" href="#feature-stochastic-wave-loading-on-a-simple-structure-stochastic-wave-spectra" title="Permalink to this heading">¶</a></h1>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Problem files</p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/HydroUQ/tree/master/Examples/hdro-0005/">Github</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview" id="id37">Overview</a></p></li>
+<li><p><a class="reference internal" href="#set-up" id="id38">Set-Up</a></p></li>
+<li><p><a class="reference internal" href="#simulation" id="id39">Simulation</a></p></li>
+<li><p><a class="reference internal" href="#analysis" id="id40">Analysis</a></p></li>
+<li><p><a class="reference internal" href="#references" id="id41">References</a></p></li>
+</ul>
+</div>
+<div class="section" id="overview">
+<span id="hdro-0005-overview"></span><h2><span class="section-number">4.1.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
+<div class="align-center figure" id="id19">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0005_WaveTimeSeries.png"><img alt="../../../../../_images/hdro-0005_WaveTimeSeries.png" src="../../../../../_images/hdro-0005_WaveTimeSeries.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.1.1.1 </span><span class="caption-text">Stochastic JONSWAP wave spectra produced in HydroUQ, applying the welib Python package.</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+</div>
+<p>In this local workflow example, basic uncertainty quantification methods (Forward, Sensitivity, Reliability) are applied to the response of a simple structure loaded by stochastic wave spectra.</p>
+</div>
+<div class="section" id="set-up">
+<h2><span class="section-number">4.1.2. </span>Set-Up<a class="headerlink" href="#set-up" title="Permalink to this heading">¶</a></h2>
+<div class="align-center figure" id="id20">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0005_UQ.png"><img alt="../../../../../_images/hdro-0005_UQ.png" src="../../../../../_images/hdro-0005_UQ.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.1.2.1 </span><span class="caption-text">HydroUQ’s desktop GUI for the NHERI OSU LWF digital wave-flume twin.</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+<p>Details for the experiments are available in various publications. Namely, the work of Andrew Winter <a class="reference internal" href="../hdro-0010/README.html#winter2020" id="id1"><span>[Winter2020]</span></a> <a class="reference internal" href="../hdro-0010/README.html#winter2019" id="id2"><span>[Winter2019]</span></a>, Krishnendu Shekhar <a class="reference internal" href="../hdro-0010/README.html#shekhar2020" id="id3"><span>[Shekhar2020]</span></a> and Dakota Mascarenas <a class="reference internal" href="../hdro-0010/README.html#mascarenas2022" id="id4"><span>[Mascarenas2022]</span></a> <a class="reference internal" href="../hdro-0010/README.html#mascarenas2022ports" id="id5"><span>[Mascarenas2022PORTS]</span></a>.  The simulations replicated in this example appeared originally in Bonus 2023 <a class="reference internal" href="../hdro-0010/README.html#bonus2023dissertation" id="id6"><span>[Bonus2023Dissertation]</span></a>.</p>
+<p>Experiments were performed in the NHERI OSU LWF, a 100 meter long flume with adjustable bathymetry, in order to quantify stochastic impact loads of ordered and disordered debris-fields on effectively rigid, raised structure.</p>
+<div class="align-center figure" id="id21">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0005_GI.png"><img alt="../../../../../_images/hdro-0005_GI.png" src="../../../../../_images/hdro-0005_GI.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.1.2.2 </span><span class="caption-text">NHERI OSU LWF facilty’s experimental schematic used in this example. Adapted from Winter 2019 <a class="reference internal" href="../hdro-0010/README.html#winter2019" id="id7"><span>[Winter2019]</span></a>, and Mascarenas 2022 <a class="reference internal" href="../hdro-0010/README.html#mascarenas2022" id="id8"><span>[Mascarenas2022]</span></a>.</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+</div>
+<p>This example may help to produce a robust database (numerical and physical) from which to eventually be able to extract both the first principles of wave-driven debris-field phenomena and design guidelines on induced forces.</p>
+<p>We validate against two very similar (but not identical) physical studies done in the OSU LWF by <a class="reference internal" href="../hdro-0010/README.html#shekhar2020" id="id9"><span>[Shekhar2020]</span></a> and <a class="reference internal" href="../hdro-0010/README.html#mascarenas2022" id="id10"><span>[Mascarenas2022]</span></a>, indicating high accuracy of our model and low bias to minor experiment specifications.</p>
+<p>Results for free surface elevation and streamwise structural loads are to be recorded for validation at a specified interval.</p>
+<p>Qualitatively, an MPM simulation of debris impacts on a raised structure in the OSU LWF is shown below.</p>
+<div class="align-center figure" id="id22">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0005_SIM.png"><img alt="../../../../../_images/hdro-0005_SIM.png" src="../../../../../_images/hdro-0005_SIM.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.1.2.3 </span><span class="caption-text">OSU LWF debris impact photos from HydroUQ’s MPM simulations.</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+</div>
+<p>It appears similar in the mechanism of debris impact, stalling, and deflection relative to the structure and flow for a similar case in Mascarenas 2022 <a class="reference internal" href="../hdro-0010/README.html#mascarenas2022" id="id11"><span>[Mascarenas2022]</span></a>.</p>
+<div class="align-center figure" id="id23">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0005_EVT.png"><img alt="../../../../../_images/hdro-0005_EVT.png" src="../../../../../_images/hdro-0005_EVT.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.1.2.4 </span><span class="caption-text">OSU LWF debris impact photos from Mascarenas 2022 <a class="reference internal" href="../hdro-0010/README.html#mascarenas2022" id="id12"><span>[Mascarenas2022]</span></a> experiments.</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+</div>
+<p>The experiments by Shekhar et al. 2020 <a class="reference internal" href="../hdro-0010/README.html#shekhar2020" id="id13"><span>[Shekhar2020]</span></a> are also shown below for comparison. These tests had a slightly different configuartion, primarily the debris were located 0.5 meters further upstream from the box and the water level was 0.10-0.15 meters lower than the 2.0 meter datum used in the simulations and Mascarenas 2022 <a class="reference internal" href="../hdro-0010/README.html#mascarenas2022" id="id14"><span>[Mascarenas2022]</span></a> experiments.</p>
+<div class="align-center figure" id="id24">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0005_EDP.png"><img alt="../../../../../_images/hdro-0005_EDP.png" src="../../../../../_images/hdro-0005_EDP.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.1.2.5 </span><span class="caption-text">OSU LWF debris impact photos from Shekhar et al. 2020 <a class="reference internal" href="../hdro-0010/README.html#shekhar2020" id="id15"><span>[Shekhar2020]</span></a> experiments.</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+</div>
+<p>Similar figures can be made for the whole range of order debris-array experiments done at the OSU LWF. However, this example focuses on teaching you how to replicate the above results.</p>
+<p id="hdro-0005-setup">A step-by-step walkthrough on replicating an MPM simulation result from Bonus 2023 <a class="reference internal" href="../hdro-0010/README.html#bonus2023dissertation" id="id16"><span>[Bonus2023Dissertation]</span></a> is provided below.</p>
+<p>Open <code class="docutils literal notranslate"><span class="pre">Settings</span></code>. Here we set the simulation time, the time step, and the number of processors to use, among other pre-simulation decisions.</p>
+<div class="align-center figure" id="id25">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0005_RV.png"><img alt="../../../../../_images/hdro-0005_RV.png" src="../../../../../_images/hdro-0005_RV.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.1.2.6 </span><span class="caption-text">HydroUQ Settings GUI</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+</div>
+<p>Open <code class="docutils literal notranslate"><span class="pre">Bodies</span></code> / <code class="docutils literal notranslate"><span class="pre">Fluid</span></code> / <code class="docutils literal notranslate"><span class="pre">Material</span></code>. Here we set the material properties of the fluid and the debris.</p>
+<div class="align-center figure" id="id26">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0005_RES_Summary_Forward.png"><img alt="../../../../../_images/hdro-0005_RES_Summary_Forward.png" src="../../../../../_images/hdro-0005_RES_Summary_Forward.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.1.2.7 </span><span class="caption-text">HydroUQ Bodies Fluid Material GUI</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+</div>
+<p>Open <code class="docutils literal notranslate"><span class="pre">Bodies</span></code> / <code class="docutils literal notranslate"><span class="pre">Fluid</span></code> / <code class="docutils literal notranslate"><span class="pre">Geometry</span></code>. Here we set the geometry of the flume, the debris, and the raised structure.</p>
+<div class="align-center figure" id="id27">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0005_RES_Scatter.png"><img alt="../../../../../_images/hdro-0005_RES_Scatter.png" src="../../../../../_images/hdro-0005_RES_Scatter.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.1.2.8 </span><span class="caption-text">HydroUQ Bodies Fluid Geometry GUI</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+</div>
+<p>Open <code class="docutils literal notranslate"><span class="pre">Algorithm</span></code>. Here we set the algorithm parameters for the simulation. We choose to apply F-Bar antilocking to aid in the pressure field’s accuracy on the fluid. The associated toggle must be checked, and the antilocking ratio set to 0.9, loosely.</p>
+<div class="align-center figure" id="id28">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0005_RES_Cumulative_Forward.png"><img alt="../../../../../_images/hdro-0005_RES_Cumulative_Forward.png" src="../../../../../_images/hdro-0005_RES_Cumulative_Forward.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.1.2.9 </span><span class="caption-text">HydroUQ Bodies Fluid Algorithm GUI</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+</div>
+<p>Open <code class="docutils literal notranslate"><span class="pre">Bodies</span></code> / <code class="docutils literal notranslate"><span class="pre">Fluid</span></code> / <code class="docutils literal notranslate"><span class="pre">Partitions</span></code>. Here we set the number of partitions for the simulation. This is the domain decomposition across discrete hardware units, i.e. Multi-GPUs. These may be kept as their default values.</p>
+<div class="align-center figure" id="id29">
+<a class="reference internal image-reference" href="common/user_manual/examples/desktop/hdro-0005/figures/hdro-0005_RES_HistogramForward.png"><img alt="common/user_manual/examples/desktop/hdro-0005/figures/hdro-0005_RES_HistogramForward.png" src="common/user_manual/examples/desktop/hdro-0005/figures/hdro-0005_RES_HistogramForward.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.1.2.10 </span><span class="caption-text">HydroUQ Bodies Fluid Partitions GUI</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+</div>
+<p>Moving onto the creation of an ordered debris-array, we set the debris properties in the <code class="docutils literal notranslate"><span class="pre">Bodies</span></code> / <code class="docutils literal notranslate"><span class="pre">Debris</span></code> / <code class="docutils literal notranslate"><span class="pre">Material</span></code> tab. We will assume debris are made of HDPE plastic, as in experiments by Mascarenas 2022 <a class="reference internal" href="../hdro-0010/README.html#mascarenas2022" id="id17"><span>[Mascarenas2022]</span></a> and Shekhar et al. 2020 <a class="reference internal" href="../hdro-0010/README.html#shekhar2020" id="id18"><span>[Shekhar2020]</span></a>.</p>
+<div class="align-center figure" id="id30">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0005_RV_Sensitivity.png"><img alt="../../../../../_images/hdro-0005_RV_Sensitivity.png" src="../../../../../_images/hdro-0005_RV_Sensitivity.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.1.2.11 </span><span class="caption-text">HydroUQ Bodies Debris Material GUI</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+</div>
+<p>Open <code class="docutils literal notranslate"><span class="pre">Bodies</span></code> / <code class="docutils literal notranslate"><span class="pre">Debris</span></code> / <code class="docutils literal notranslate"><span class="pre">Geometry</span></code>. Here we set the debris properties, such as the number of debris, the size of the debris, and the spacing between the debris. Rotation is another option, though not used in this example. We’ve elected to use an 8 x 4 grid of debris (longitudinal axis parallel to long-axis of the flume).</p>
+<div class="align-center figure" id="id31">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0005_RES_Summary_Sensitivity.png"><img alt="../../../../../_images/hdro-0005_RES_Summary_Sensitivity.png" src="../../../../../_images/hdro-0005_RES_Summary_Sensitivity.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.1.2.12 </span><span class="caption-text">HydroUQ Bodies Debris Geometry GUI</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">Bodies</span></code> / <code class="docutils literal notranslate"><span class="pre">Debris</span></code> / <code class="docutils literal notranslate"><span class="pre">Algorithm</span></code> and <code class="docutils literal notranslate"><span class="pre">Debris</span></code> / <code class="docutils literal notranslate"><span class="pre">Partitions</span></code> tabs are not used in this example, but are available for more advanced users.</p>
+<p>Open <code class="docutils literal notranslate"><span class="pre">Bodies</span></code> / <code class="docutils literal notranslate"><span class="pre">Structures</span></code>. Uncheck the box that enables this body, if it is checked. We will not model the structure as a body in this example, instead, we will modify it as a boundary later.</p>
+<div class="align-center figure" id="id32">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0005_RES_Scatter_Sensitivity.png"><img alt="../../../../../_images/hdro-0005_RES_Scatter_Sensitivity.png" src="../../../../../_images/hdro-0005_RES_Scatter_Sensitivity.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.1.2.13 </span><span class="caption-text">HydroUQ Bodies Structures GUI</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
+</div>
+<p>Open <code class="docutils literal notranslate"><span class="pre">Boundaries</span></code> / <code class="docutils literal notranslate"><span class="pre">Wave</span> <span class="pre">Flume</span></code>. We will set the boundary to be a rigid body, with a fixed separable velocity condition, that is faithful to the digital tiwn of the NHERI OSU LWF. Bathmyetry joint points should be identical to the ones used in <code class="docutils literal notranslate"><span class="pre">Bodeis</span></code> / <code class="docutils literal notranslate"><span class="pre">FLuid</span></code>.</p>
+<div class="align-center figure" id="id33">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0005_RES_Summary_Reliability.png"><img alt="../../../../../_images/hdro-0005_RES_Summary_Reliability.png" src="../../../../../_images/hdro-0005_RES_Summary_Reliability.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.1.2.14 </span><span class="caption-text">HydroUQ Boundaries Wave Flume Facility GUI</span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
+</div>
+<p>Open <code class="docutils literal notranslate"><span class="pre">Boundaries</span></code> / <code class="docutils literal notranslate"><span class="pre">Wave</span> <span class="pre">Generator</span></code>. Fill in the appropriate file-path for the wave generator paddle motion. It is designed to produce near-solitary like waves.</p>
+<div class="align-center figure" id="id34">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0005_forces.png"><img alt="../../../../../_images/hdro-0005_forces.png" src="../../../../../_images/hdro-0005_forces.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.1.2.15 </span><span class="caption-text">HydroUQ Boundaries Wave Generator GUI</span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
+</div>
+<p>Open <code class="docutils literal notranslate"><span class="pre">Boundaries</span></code> / <code class="docutils literal notranslate"><span class="pre">Rigid</span> <span class="pre">Structure</span></code>. This is where we will specify the raised structure as a boundary condition. By doing so, we can determine exact loads on the rigid boundary grid-nodes, which may then be mapped to the FEM tab for nonlinear UQ structural response analysis.</p>
+<div class="align-center figure" id="id35">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0005_moments.png"><img alt="../../../../../_images/hdro-0005_moments.png" src="../../../../../_images/hdro-0005_moments.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.1.2.16 </span><span class="caption-text">HydroUQ Boundaries Rigid Structure GUI</span><a class="headerlink" href="#id35" title="Permalink to this image">¶</a></p>
+</div>
+<p>Open <code class="docutils literal notranslate"><span class="pre">Boundaries</span></code> / <code class="docutils literal notranslate"><span class="pre">RigidWalls</span></code>.</p>
+<div class="align-center figure" id="id36">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0005_IntegratedPileLoads.png"><img alt="../../../../../_images/hdro-0005_IntegratedPileLoads.png" src="../../../../../_images/hdro-0005_IntegratedPileLoads.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.1.2.17 </span><span class="caption-text">HydroUQ Boundaries Wave-Flume Facility GUI</span><a class="headerlink" href="#id36" title="Permalink to this image">¶</a></p>
+</div>
+<p>Open <code class="docutils literal notranslate"><span class="pre">Sensors</span></code> / <code class="docutils literal notranslate"><span class="pre">Wave</span> <span class="pre">Gauges</span></code>. Set the <code class="docutils literal notranslate"><span class="pre">Use</span> <span class="pre">these</span> <span class="pre">sensor?</span></code> box to <code class="docutils literal notranslate"><span class="pre">True</span></code> so that the simulation will output results for the instruments we set on this page.</p>
+<p>Three wave gauges will be defined. The first is located prior to the bathymetry ramps, the second partially up the ramps, and the third near the bathymetry crest, debris, and raised structure.</p>
+<p>Set the origins and dimensions of each wave as in the table below. To match experimental conditions, we also apply a 120 Hz sampling rate to the wave gauges, meaning they record data every 0.0083 seconds.</p>
+</div>
+<div class="section" id="simulation">
+<span id="hdro-0005-simulation"></span><h2><span class="section-number">4.1.3. </span>Simulation<a class="headerlink" href="#simulation" title="Permalink to this heading">¶</a></h2>
+<p>We assume most computers will be able to run this simulation within a few minutes if samples are kept below 100.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Only ask for what you need in terms of recorder count, time-step size, random variables, and UQ samples. Otherwise, you will end up with massive amounts of data which can slow simulations due to I/O constraints.</p>
+</div>
+</div>
+<div class="section" id="analysis">
+<span id="hdro-0005-analysis"></span><h2><span class="section-number">4.1.4. </span>Analysis<a class="headerlink" href="#analysis" title="Permalink to this heading">¶</a></h2>
+<p>This completes our HydroUQ validation example for stochastic wave-loading on a simple frame structure.</p>
+</div>
+<div class="section" id="references">
+<span id="hdro-0005-references"></span><h2><span class="section-number">4.1.5. </span>References<a class="headerlink" href="#references" title="Permalink to this heading">¶</a></h2>
+<dl class="citation">
+<dt class="label" id="winter2019"><span class="brackets">Winter2019</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id7">2</a>)</span></dt>
+<dd><p>Winter, A. (2019). “Effects of Flow Shielding and Channeling on Tsunami-Induced Loading of Coastal Structures.” PhD thesis. University of Washington, Seattle.</p>
+</dd>
+<dt class="label" id="winter2020"><span class="brackets"><a class="fn-backref" href="#id1">Winter2020</a></span></dt>
+<dd><p>Andrew O Winter, Mohammad S Alam, Krishnendu Shekhar, Michael R Motley, Marc O Eberhard, Andre R Barbosa, Pedro Lomonaco, Pedro Arduino, Daniel T Cox (2019). “Tsunami-Like Wave Forces on an Elevated Coastal Structure: Effects of Flow Shielding and Channeling.” Journal of Waterway, Port, Coastal, and Ocean Engineering.</p>
+</dd>
+<dt class="label" id="shekhar2020"><span class="brackets">Shekhar2020</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id9">2</a>,<a href="#id13">3</a>,<a href="#id15">4</a>,<a href="#id18">5</a>)</span></dt>
+<dd><p>Shekhar, K., Mascarenas, D., and Cox, D. (2020). “Wave-Driven Debris Impact on a Raised Structure in the Large Wave Flume.” 17th International Conference on Hydroinformatics, Seoul, South Korea.</p>
+</dd>
+<dt class="label" id="mascarenas2022"><span class="brackets">Mascarenas2022</span><span class="fn-backref">(<a href="#id4">1</a>,<a href="#id8">2</a>,<a href="#id10">3</a>,<a href="#id11">4</a>,<a href="#id12">5</a>,<a href="#id14">6</a>,<a href="#id17">7</a>)</span></dt>
+<dd><p>Mascarenas, Dakota. (2022). “Quantification of Wave-Driven Debris Impact on a Raised Structure in a Large Wave Flume.” Masters thesis. University of Washington, Seattle.</p>
+</dd>
+<dt class="label" id="mascarenas2022ports"><span class="brackets"><a class="fn-backref" href="#id5">Mascarenas2022PORTS</a></span></dt>
+<dd><p>Mascarenas, Dakota, Motley, M., Eberhard, M. (2022). “Wave-Driven Debris Impact on a Raised Structure in the Large Wave Flume.” Journal of Waterway, Port, Coastal, and Ocean Engineering.</p>
+</dd>
+<dt class="label" id="bonus2023dissertation"><span class="brackets">Bonus2023Dissertation</span><span class="fn-backref">(<a href="#id6">1</a>,<a href="#id16">2</a>)</span></dt>
+<dd><p>Bonus, Justin (2023). “Evaluation of Fluid-Driven Debris Impacts in a High-Performance Multi-GPU Material Point Method.” PhD thesis. University of Washington, Seattle.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020-2024, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '...', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>

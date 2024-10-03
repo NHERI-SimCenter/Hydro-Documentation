@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -224,11 +224,7 @@
 <h2><span class="section-number">6.1. </span>Version 3.1<a class="headerlink" href="#version-3-1" title="Permalink to this heading">¶</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
-Version 3.1.0 (<span class="blue">Current</span>)<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<span class="sd-summary-text">Version 3.1.0 (<span class="blue">Current</span>)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text"><strong>Release date:</strong> April 1st, 2024</p>
 <p class="sd-card-text"><strong>Simulation Types</strong>:</p>
 <blockquote>
@@ -252,7 +248,7 @@ Version 3.1.0 (<span class="blue">Current</span>)<div class="sd-summary-down doc
 <blockquote>
 <div><ol class="loweralpha simple">
 <li><p class="sd-card-text">Added debris modeling to <code class="docutils literal notranslate"><span class="pre">MPM</span></code> simulations.</p></li>
-<li><p class="sd-card-text">Added support for complex debris geomtries (e.g. vehicles, shipping crates, composed primitives).</p></li>
+<li><p class="sd-card-text">Added support for complex debris geometries (e.g. vehicles, shipping crates, composed primitives).</p></li>
 <li><p class="sd-card-text">Added support for advanced debris material models (e.g. <code class="docutils literal notranslate"><span class="pre">Fixed-Corotated</span></code>, <code class="docutils literal notranslate"><span class="pre">Neo-Hookean</span></code>, <code class="docutils literal notranslate"><span class="pre">Drucker-Prager</span></code>, <code class="docutils literal notranslate"><span class="pre">Non-Associative</span> <span class="pre">Cam-Clay</span></code>).</p></li>
 </ol>
 </div></blockquote>
@@ -284,7 +280,7 @@ Version 3.1.0 (<span class="blue">Current</span>)<div class="sd-summary-down doc
 <li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Fixed-Corotated</span></code>: Hyperelastic material model for plastic and rubber-like materials.</p></li>
 <li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Neo-Hookean</span></code>: Hyperelastic material model for plastic and rubber-like materials.</p></li>
 <li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Drucker-Prager</span></code>: Applicable to granular materials, concrete, and other materials with a yield surface.</p></li>
-<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Non-Associative</span> <span class="pre">Cam-Clay</span></code>: Aplicable to clays, concrete, and other topology changing material bodies</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Non-Associative</span> <span class="pre">Cam-Clay</span></code>: Applicable to clays, concrete, and other topology-changing material bodies</p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -321,7 +317,7 @@ Version 3.1.0 (<span class="blue">Current</span>)<div class="sd-summary-down doc
 <li><p class="sd-card-text">Bodies may be split across multiple hardware partitions.</p></li>
 <li><p class="sd-card-text">Accelerates simulation times by running multiple bodies in parallel.</p></li>
 <li><p class="sd-card-text">A valid hardware partition may be a core, a GPU, or a node in an HPC cluster.</p></li>
-<li><p class="sd-card-text">Each partition may hold some maximum number of bodies at once (specific to the system which the simulating tool was compiled on).</p></li>
+<li><p class="sd-card-text">Each partition may hold some maximum number of bodies at once (specific to the system on which the simulating tool was compiled).</p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -330,19 +326,19 @@ Version 3.1.0 (<span class="blue">Current</span>)<div class="sd-summary-down doc
 </li>
 <li><p class="sd-card-text"><strong>Boundaries</strong></p>
 <blockquote>
-<div><p class="sd-card-text">Any object in a simulation that is not a sensor or body is considered a <code class="docutils literal notranslate"><span class="pre">Boundary</span></code>. <code class="docutils literal notranslate"><span class="pre">Boundaries</span></code>, the collection of <code class="docutils literal notranslate"><span class="pre">Boundary</span></code> objects, are enforced boundary conditions which may apply to parts of the simulation (e.g. on grid-nodes or particles).</p>
+<div><p class="sd-card-text">Any object in a simulation that is not a sensor or body is considered a <code class="docutils literal notranslate"><span class="pre">Boundary</span></code>. <code class="docutils literal notranslate"><span class="pre">Boundaries</span></code>, the collection of <code class="docutils literal notranslate"><span class="pre">Boundary</span></code> objects, are enforced boundary conditions that may apply to parts of the simulation (e.g. on grid nodes or particles).</p>
 <ul class="simple">
 <li><p class="sd-card-text">Added boundaries for geometry primitives (e.g. <code class="docutils literal notranslate"><span class="pre">sphere</span></code>, <code class="docutils literal notranslate"><span class="pre">box</span></code>, <code class="docutils literal notranslate"><span class="pre">cylinder</span></code>).</p></li>
 <li><p class="sd-card-text">Added selectable contact models (e.g. <code class="docutils literal notranslate"><span class="pre">Sticky</span></code>, <code class="docutils literal notranslate"><span class="pre">Slip</span></code>, <code class="docutils literal notranslate"><span class="pre">Separable</span></code>).</p></li>
 <li><p class="sd-card-text">Added boundaries for the <code class="docutils literal notranslate"><span class="pre">OSU</span> <span class="pre">LWF</span></code> and <code class="docutils literal notranslate"><span class="pre">WU</span> <span class="pre">TWB</span></code> digital twin bathymetries.</p></li>
 <li><p class="sd-card-text">Added boundary for the <code class="docutils literal notranslate"><span class="pre">OSU</span> <span class="pre">LWF</span></code> moving piston wave-maker.</p></li>
-<li><p class="sd-card-text">Implemented array operations for boundary conditions (e.g. instace a boundary at specified spacings in X, Y, and Z).</p></li>
+<li><p class="sd-card-text">Implemented array operations for boundary conditions (e.g. instance a boundary at specified spacings in X, Y, and Z).</p></li>
 </ul>
 </div></blockquote>
 </li>
 <li><p class="sd-card-text"><strong>Sensors</strong></p>
 <blockquote>
-<div><p class="sd-card-text">Any object in a simulation that is not a boundary condition or body is considered a <code class="docutils literal notranslate"><span class="pre">Sensor</span></code>. <code class="docutils literal notranslate"><span class="pre">Sensors</span></code>, the collection of <code class="docutils literal notranslate"><span class="pre">Sensor</span></code> objects, are used to monitor the simulation, collect desired data, reduce said data, and report the aggregated output as a time-series. In effect, they replicate instruments / sensors used in experiments (e.g. load-cells, wave-gauges, piezometers, velocimeters).</p>
+<div><p class="sd-card-text">Any object in a simulation that is not a boundary condition or body is considered a <code class="docutils literal notranslate"><span class="pre">Sensor</span></code>. <code class="docutils literal notranslate"><span class="pre">Sensors</span></code>, the collection of <code class="docutils literal notranslate"><span class="pre">Sensor</span></code> objects, are used to monitor the simulation, collect desired data, reduce said data, and report the aggregated output as a time-series. In effect, they replicate instruments/sensors used in experiments (e.g. load-cells, wave-gauges, piezometers, velocimeters).</p>
 <ul class="simple">
 <li><p class="sd-card-text">Sensors may be placed on numerical bodies (e.g. on <code class="docutils literal notranslate"><span class="pre">particles</span></code> or <code class="docutils literal notranslate"><span class="pre">grid-nodes</span></code> for <code class="docutils literal notranslate"><span class="pre">MPM</span></code>) to monitor the simulation.</p></li>
 <li><p class="sd-card-text">Supports force, pressure, velocity, and elevation sensors by default.</p></li>
@@ -354,13 +350,13 @@ Version 3.1.0 (<span class="blue">Current</span>)<div class="sd-summary-down doc
 </li>
 <li><p class="sd-card-text"><strong>Outputs</strong></p>
 <blockquote>
-<div><p class="sd-card-text">Collection of simulation settings that do not effect the simulation itself, but rather the output it gives to the user.</p>
+<div><p class="sd-card-text">Collection of simulation settings that do not affect the simulation itself, but rather the output it gives to the user.</p>
 <ul class="simple">
 <li><p class="sd-card-text">Supports output of simulation geometry data in the form of <code class="docutils literal notranslate"><span class="pre">.bgeo</span></code> files, <code class="docutils literal notranslate"><span class="pre">.vtk</span></code> files, and <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files.</p></li>
 <li><p class="sd-card-text">Supports output of simulation sensor data in the form of <code class="docutils literal notranslate"><span class="pre">.csv</span></code> and <code class="docutils literal notranslate"><span class="pre">.txt</span></code> files.</p></li>
 <li><p class="sd-card-text">Supports output of simulation state data in the form of <code class="docutils literal notranslate"><span class="pre">.bgeo</span></code> files.</p></li>
-<li><p class="sd-card-text">Enable / disable tracking of and output of simulation energy (kinetic, strain, etc.).</p></li>
-<li><p class="sd-card-text">Enable / disable output of simulation checkpoints (allow for a simulation to be resumed if stopped).</p></li>
+<li><p class="sd-card-text">Enable/disable tracking of and output of simulation energy (kinetic, strain, etc.).</p></li>
+<li><p class="sd-card-text">Enable/disable output of simulation checkpoints (allow for a simulation to be resumed if stopped).</p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -370,7 +366,7 @@ Version 3.1.0 (<span class="blue">Current</span>)<div class="sd-summary-down doc
 <blockquote>
 <div><ul class="simple">
 <li><p class="sd-card-text">Enabled visualization of the Event (<code class="docutils literal notranslate"><span class="pre">EVT</span></code>) using <code class="docutils literal notranslate"><span class="pre">Qt3D</span></code></p></li>
-<li><p class="sd-card-text">Added support for mouse controls of camera in 3D visualization.</p></li>
+<li><p class="sd-card-text">Added support for mouse controls of the camera in 3D visualization.</p></li>
 <li><p class="sd-card-text">Added support for visualizing simulation <code class="docutils literal notranslate"><span class="pre">Bodies</span></code> in 3D.</p></li>
 <li><p class="sd-card-text">Added support for visualizing simulation <code class="docutils literal notranslate"><span class="pre">Boundaries</span></code> in 3D.</p></li>
 <li><p class="sd-card-text">Added support for visualizing simulation <code class="docutils literal notranslate"><span class="pre">Sensors</span></code> in 3D.</p></li>
@@ -387,7 +383,7 @@ Version 3.1.0 (<span class="blue">Current</span>)<div class="sd-summary-down doc
 <p class="sd-card-text"><strong>DesignSafe Support and Hardware</strong></p>
 <blockquote>
 <div><ul>
-<li><p class="sd-card-text">Multi-GPU accelerated simulations now supported in certain simulation types (e.g. <code class="docutils literal notranslate"><span class="pre">ClaymoreUW</span> <span class="pre">MPM</span></code>).</p></li>
+<li><p class="sd-card-text">Multi-GPU accelerated simulations are now supported in certain simulation types (e.g. <code class="docutils literal notranslate"><span class="pre">ClaymoreUW</span> <span class="pre">MPM</span></code>).</p></li>
 <li><p class="sd-card-text">Updated support for the TACC Frontera supercomputer:</p>
 <blockquote>
 <div><ul class="simple">
@@ -427,11 +423,7 @@ Version 3.1.0 (<span class="blue">Current</span>)<div class="sd-summary-down doc
 <h2><span class="section-number">6.2. </span>Version 2.0<a class="headerlink" href="#version-2-0" title="Permalink to this heading">¶</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
-Version 2.0.0<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<span class="sd-summary-text">Version 2.0.0</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text"><strong>Release date:</strong>  November 30th, 2023</p>
 <blockquote>
 <div><ol class="arabic">
@@ -459,11 +451,7 @@ Version 2.0.0<div class="sd-summary-down docutils">
 <h2><span class="section-number">6.3. </span>Version 1.0<a class="headerlink" href="#version-1-0" title="Permalink to this heading">¶</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
-Version 1.0.0<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<span class="sd-summary-text">Version 1.0.0</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text"><strong>Release date:</strong> Apr 30th, 2021</p>
 <ol class="arabic">
 <li><p class="sd-card-text">Supports run on DesignSafe only. Local run on the user’s desktop is not supported.</p></li>
@@ -515,7 +503,7 @@ Version 1.0.0<div class="sd-summary-down docutils">
 <li><p class="sd-card-text"><strong>Boundary conditions</strong>:</p>
 <blockquote>
 <div><ol class="loweralpha simple">
-<li><p class="sd-card-text">The boundary conditions can be selected based using standard patch names. Here standard patches include entry / exit / inlet / outlet / left / right.</p></li>
+<li><p class="sd-card-text">The boundary conditions can be selected based using standard patch names. Here standard patches include entry/exit / inlet/outlet / left/right.</p></li>
 <li><p class="sd-card-text">Velocity boundary conditions for inlet conditions include shallow-water solutions, moving wall, and constant velocity; for outlet conditions include zeroGradient and inletOutlet</p></li>
 <li><p class="sd-card-text">Pressure boundary conditions include zeroGradient and fixedValue. Alternatively, the user can also leave the default option. An appropriate boundary condition relevant to the velocity boundary will be chosen.</p></li>
 <li><p class="sd-card-text">It is recommended to use the wall boundary conditions for walls</p></li>
@@ -527,7 +515,7 @@ Version 1.0.0<div class="sd-summary-down docutils">
 <div><ol class="loweralpha simple">
 <li><p class="sd-card-text">Allows simple decomposition techniques from OpenFOAM.</p></li>
 <li><p class="sd-card-text">Can set start and end times for simulation</p></li>
-<li><p class="sd-card-text">Can set time interval and the write intervals</p></li>
+<li><p class="sd-card-text">Can set time intervals and write intervals</p></li>
 <li><p class="sd-card-text">Restarting facility is supported</p></li>
 </ol>
 </div></blockquote>
@@ -555,7 +543,7 @@ Version 1.0.0<div class="sd-summary-down docutils">
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2024, The Regents of the University of California.
+        &#169; Copyright 2020-2024, The Regents of the University of California.
 
     </p>
   </div>

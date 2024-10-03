@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -242,17 +242,17 @@
 <li><p><strong>No dakota.err and dakota.in exists</strong>: Dakota failed to run. Check installation of Dakota and Python. NOTE: Sometimes, if Python starts, it is not using the version of Python you specified in the environment variables when setting up Python. This is because many applications install their own version of Python. If Dakota is installed correctly, set the location of the Python executable in Preferences.</p></li>
 <li><p><strong>dakota.err file exists</strong>: Open the file and see what the error is.  For example, if it says <strong>Error: at least one variable must be specified.</strong> This means no random variables have been set. You have only one deterministic event, or you have not set any random variables in the EDP.</p></li>
 <li><p><strong>dakota.err file exists but is empty</strong>: This means that Dakota ran, but there was a problem with the simulation. Go to one of the <code class="docutils literal notranslate"><span class="pre">workdir</span></code> locations. There is a file workflow driver that can be run. Run it and see what the errors are.</p></li>
-<li><p><strong>You ran at DesignSafe and no dakota.out files come back</strong>: Go to your data depot folder at DesignSafe using your browser. Go to archive/jobs and use the job number shown in table that pops up when you ask to get the job from DesignSafe. Study both the <code class="docutils literal notranslate"><span class="pre">.err</span></code> and <code class="docutils literal notranslate"><span class="pre">.out</span></code> files in that directory for a clues to as what went wrong.</p></li>
+<li><p><strong>You ran at DesignSafe and no dakota.out files come back</strong>: Go to your data depot folder at DesignSafe using your browser. Go to archive/jobs and use the job number shown in the table that pops up when you ask to get the job from DesignSafe. Study both the <code class="docutils literal notranslate"><span class="pre">.err</span></code> and <code class="docutils literal notranslate"><span class="pre">.out</span></code> files in that directory for clues to as what went wrong.</p></li>
 </ol>
 </li>
 </ol>
-<p>If problems persists, please post them on the <a class="reference external" href="https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=17.0">Message Board</a></p>
+<p>If the problem persis, please post them on the <a class="reference external" href="https://github.com/orgs/NHERI-SimCenter/discussions/categories/hydro-uq">github discussion page</a></p>
 </div>
 <div class="section" id="other-issues">
 <h2>Other issues<a class="headerlink" href="#other-issues" title="Permalink to this heading">¶</a></h2>
 <p>Some of the other common tips and tricks for troubleshooting include:</p>
 <p><strong>Know the objective</strong></p>
-<p>Before starting the simulation, it is essential to understand the intended goal of the project. This will help set up appropriate inputs. <code class="docutils literal notranslate"><span class="pre">Hydro-UQ</span></code> workflows already helps with this to the best extent possible. Yet, the user’s understanding of the physics is much necessary.</p>
+<p>Before starting the simulation, it is essential to understand the intended goal of the project. This will help set up appropriate inputs. <code class="docutils literal notranslate"><span class="pre">Hydro-UQ</span></code> workflows already help with this to the best extent possible. Yet, the user’s understanding of the physics is much necessary.</p>
 <p><strong>Mesh quality</strong></p>
 <p>Most often, the quality of the mesh can be the reason for the simulation failure. Check the mesh quality. <code class="docutils literal notranslate"><span class="pre">Hydro-UQ</span></code> has an in-built mesher, and we continue to optimize its performance. However, this is limited and might not serve the needs of advanced researchers. It is then recommended to use external meshing tools and directly import the mesh. If the tool you used for meshing is unavailable, please submit a feature request using <span class="xref std std-ref">lblBugs</span>.</p>
 <p><strong>Units</strong></p>
@@ -270,7 +270,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2018-2024, The Regents of the University of California.
+        &#169; Copyright 2020-2024, The Regents of the University of California.
 
     </p>
   </div>
