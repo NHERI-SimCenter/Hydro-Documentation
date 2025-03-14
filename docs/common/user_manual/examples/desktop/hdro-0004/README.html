@@ -121,7 +121,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Running Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/tools.html">3. Tools</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../examples.html">4. Examples</a><ul class="current">
@@ -132,9 +132,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../hdro-0003/README.html">4.5. Cylinder Half-Submerged in Flow  -  UW WASIRF Twin  -  FOAMySees (OpenFOAM + OpenSees)</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">4.6. Tsunami Debris Motion Through a Scaled Port Setting - WU TWB Digital Twin - MPM</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#outline">4.6.1. Outline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#simulation">4.6.2. Simulation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#analysis">4.6.3. Analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#references">4.6.4. References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-up">4.6.2. Set-Up</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simulation">4.6.3. Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#analysis">4.6.4. Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#references">4.6.5. References</a></li>
 </ul>
 </li>
 </ul>
@@ -245,34 +246,37 @@
 <div class="contents local topic" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#outline" id="id9">Outline</a></p></li>
-<li><p><a class="reference internal" href="#simulation" id="id10">Simulation</a></p></li>
-<li><p><a class="reference internal" href="#analysis" id="id11">Analysis</a></p></li>
-<li><p><a class="reference internal" href="#references" id="id12">References</a></p></li>
+<li><p><a class="reference internal" href="#outline" id="id14">Outline</a></p></li>
+<li><p><a class="reference internal" href="#set-up" id="id15">Set-Up</a></p></li>
+<li><p><a class="reference internal" href="#simulation" id="id16">Simulation</a></p></li>
+<li><p><a class="reference internal" href="#analysis" id="id17">Analysis</a></p></li>
+<li><p><a class="reference internal" href="#references" id="id18">References</a></p></li>
 </ul>
 </div>
 <div class="section" id="outline">
 <span id="hdro-0004-overview"></span><h2><span class="section-number">4.6.1. </span>Outline<a class="headerlink" href="#outline" title="Permalink to this heading">¶</a></h2>
-<p>Example to demonstrate how to run a MPM simulation to determine loads on an array of port buildings during a tsunami with respect to debris impacts and damming. After, we perform
-an OpenSees simulation of one building assuming uncertainties in the building properties.</p>
-<p>The Waseda University Tsunami Wave Basin (WU TBW) flume is 4 meters wide (from X=-2m to X=2 m), 1 meter tall (Z=0.0m to Z=1.0m), and 9 meters long (Y=0.0m to Y=9.0m).</p>
-<p>The case is initialized with a still water level of 0.23 meters.</p>
-<p>Results for free surface, velocity, and pressure, as well as structural load forces, are output at a specified interval to match experimental instruments.</p>
-<div class="align-center figure" id="id1">
-<a class="reference internal image-reference" href="../../../../../_images/TOKYO_BoreFrontImage_Debris3_o5x1_Frame20_29072023.png"><img alt="../../../../../_images/TOKYO_BoreFrontImage_Debris3_o5x1_Frame20_29072023.png" src="../../../../../_images/TOKYO_BoreFrontImage_Debris3_o5x1_Frame20_29072023.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.6.1.1 </span><span class="caption-text">Simulation of MPM debris impacts on one row of five obstacles</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
+<p>Example to demonstrate how to run a MPM simulation to determine loads on an array of port buildings during a tsunami with respect to debris impacts and damming. Replicates at low resolution the comparative analysis paper results of <span id="id1">[Bonus2025]</span>.</p>
 <div class="align-center figure" id="id2">
-<a class="reference internal image-reference" href="../../../../../_images/B4_Flume_Schematic.png"><img alt="../../../../../_images/B4_Flume_Schematic.png" src="../../../../../_images/B4_Flume_Schematic.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.6.1.2 </span><span class="caption-text">Schematic of the flume and sensor locations</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<a class="reference internal image-reference" href="../../../../../_images/TOKYO_MPM_ObstacleEffect_AllCases_y0.25to0.375_Persp_2024.04.03.png"><img alt="../../../../../_images/TOKYO_MPM_ObstacleEffect_AllCases_y0.25to0.375_Persp_2024.04.03.png" src="../../../../../_images/TOKYO_MPM_ObstacleEffect_AllCases_y0.25to0.375_Persp_2024.04.03.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.6.1.1 </span><span class="caption-text">Simulation of three MPM tsunami debris simulations on zero, one, and two rows of five obstacles replicating a port-setting at a Froude scale of 1:40.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
+<p>Stochastic experiments were performed at the Waseda University Tsunami Wave Basin (WU TBW) flume. Here we replicate it in a simple digital twin with HydroUQ’s MPM module. The flume is 4 meters wide (from X=-2m to X=2 m), 1 meter tall (Z=0.0m to Z=1.0m), and 9 meters long (Y=0.0m to Y=9.0m). The case is initialized with a still water level of 0.23 meters.</p>
 <div class="align-center figure" id="id3">
-<a class="reference internal image-reference" href="../../../../../_images/B4_Debris_Picture.PNG"><img alt="../../../../../_images/B4_Debris_Picture.PNG" src="../../../../../_images/B4_Debris_Picture.PNG" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.6.1.3 </span><span class="caption-text">Smart debris used in experiments</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<a class="reference internal image-reference" href="../../../../../_images/TOKYO_Flume_Schematic_2024.04.05.png"><img alt="../../../../../_images/TOKYO_Flume_Schematic_2024.04.05.png" src="../../../../../_images/TOKYO_Flume_Schematic_2024.04.05.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.6.1.2 </span><span class="caption-text">Schematic of Waseda University’s Tsunami Wave Basin (WU TWB) and sensor locations</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
+<p>“Smart” debris were used in the experiments, shown below. In MPM they are modeled as fixed-corotated debris.</p>
+<div class="align-center figure" id="id4">
+<a class="reference internal image-reference" href="../../../../../_images/B4_Debris_Picture.PNG"><img alt="../../../../../_images/B4_Debris_Picture.PNG" src="../../../../../_images/B4_Debris_Picture.PNG" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.6.1.3 </span><span class="caption-text">Smart debris used in experiments</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="set-up">
+<span id="hdro-0004-setup"></span><h2><span class="section-number">4.6.2. </span>Set-Up<a class="headerlink" href="#set-up" title="Permalink to this heading">¶</a></h2>
+<p>To configure the digital twin case in HydroUQ, the following settings will be specified.</p>
 </div>
 <div class="section" id="simulation">
-<span id="hdro-0004-simulation"></span><h2><span class="section-number">4.6.2. </span>Simulation<a class="headerlink" href="#simulation" title="Permalink to this heading">¶</a></h2>
+<span id="hdro-0004-simulation"></span><h2><span class="section-number">4.6.3. </span>Simulation<a class="headerlink" href="#simulation" title="Permalink to this heading">¶</a></h2>
 <p>Simulation Time: 6 seconds - Ran on TACC Lonestar6, 56 processors, 3 NVIDIA A100 GPUs, 1 node -&gt; Real Time: 1hr, 20 minutes</p>
 <p>The case can be run for as long as desired, but mind that the longer the case runs, the longer the postprocessing routines will be.</p>
 <p>In order to retrieve results from the analysis, the analysis must complete and postprocess the model output files into a VTK format before the end of the allotted submission time.</p>
@@ -284,39 +288,57 @@ an OpenSees simulation of one building assuming uncertainties in the building pr
 </div>
 </div>
 <div class="section" id="analysis">
-<span id="hdro-0004-analysis"></span><h2><span class="section-number">4.6.3. </span>Analysis<a class="headerlink" href="#analysis" title="Permalink to this heading">¶</a></h2>
+<span id="hdro-0004-analysis"></span><h2><span class="section-number">4.6.4. </span>Analysis<a class="headerlink" href="#analysis" title="Permalink to this heading">¶</a></h2>
 <p>Retrieving the results.zip folder from the Tools and Applications Page of Design Safe..</p>
-<div class="align-center figure" id="id4">
+<div class="align-center figure" id="id5">
 <a class="reference internal image-reference" href="../../../../../_images/DSToolsAndAppsJobsStatus2.PNG"><img alt="../../../../../_images/DSToolsAndAppsJobsStatus2.PNG" src="../../../../../_images/DSToolsAndAppsJobsStatus2.PNG" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.6.3.1 </span><span class="caption-text">Locating the job files on DesignSafe</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.6.4.1 </span><span class="caption-text">Locating the job files on DesignSafe</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>Check if the job has finished. If it has, click ‘More info’.</p>
-<div class="align-center figure" id="id5">
+<div class="align-center figure" id="id6">
 <a class="reference internal image-reference" href="../../../../../_images/DSToolsAndAppsJobsStatusFinished2.PNG"><img alt="../../../../../_images/DSToolsAndAppsJobsStatusFinished2.PNG" src="../../../../../_images/DSToolsAndAppsJobsStatusFinished2.PNG" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.6.3.2 </span><span class="caption-text">Once the job is finished, the output files should be available in the directory to which the analysis results were sent</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.6.4.2 </span><span class="caption-text">Once the job is finished, the output files should be available in the directory to which the analysis results were sent</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>Find the files by clicking ‘View’.</p>
-<div class="align-center figure" id="id6">
+<div class="align-center figure" id="id7">
 <a class="reference internal image-reference" href="../../../../../_images/DSToolsAndAppsJobsStatusViewFiles2.PNG"><img alt="../../../../../_images/DSToolsAndAppsJobsStatusViewFiles2.PNG" src="../../../../../_images/DSToolsAndAppsJobsStatusViewFiles2.PNG" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.6.3.3 </span><span class="caption-text">Locating this directory is easy.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.6.4.3 </span><span class="caption-text">Locating this directory is easy.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>Move the results.zip to somewhere in My Data/. Use the Extractor tool available on DesignSafe.  Unzip the results.zip folder.</p>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../../_images/extractonDS2.PNG"><img alt="../../../../../_images/extractonDS2.PNG" src="../../../../../_images/extractonDS2.PNG" style="width: 600px;" /></a>
 </div>
 <p>OR Download the results.zip folder to your PC and unzip to look at the model results.</p>
-<div class="align-center figure" id="id7">
+<div class="align-center figure" id="id8">
 <a class="reference internal image-reference" href="../../../../../_images/downloadResults2.PNG"><img alt="../../../../../_images/downloadResults2.PNG" src="../../../../../_images/downloadResults2.PNG" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.6.3.4 </span><span class="caption-text">Download the results to look at the VTK files of the analysis. This will include OpenFOAM and OpenSees field data and model geometry</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.6.4.4 </span><span class="caption-text">Download the results to look at the VTK files of the analysis. This will include OpenFOAM and OpenSees field data and model geometry</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>Extract the Zip folder either on DesignSafe or on your local machine. You will need Paraview to view the model data.</p>
-<div class="align-center figure" id="id8">
+<div class="align-center figure" id="id9">
 <a class="reference internal image-reference" href="../../../../../_images/resultsZip2.png"><img alt="../../../../../_images/resultsZip2.png" src="../../../../../_images/resultsZip2.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.6.3.5 </span><span class="caption-text">Locate the zip folder and extract it to somewhere convenient</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.6.4.5 </span><span class="caption-text">Locate the zip folder and extract it to somewhere convenient</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<p>Comparative results between the Material Point Method (MPM, HydroUQ), Smoothed Particle Hydrodynamics (SPH, DualSPHysics), and the Finite Volume Method (FVM, STAR-CCM+).:</p>
+<div class="align-center figure" id="id10">
+<a class="reference internal image-reference" href="../../../../../_images/Benchmark4_Wave_Gauge_Plots4_2024.04.27.png"><img alt="../../../../../_images/Benchmark4_Wave_Gauge_Plots4_2024.04.27.png" src="../../../../../_images/Benchmark4_Wave_Gauge_Plots4_2024.04.27.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.6.4.6 </span><span class="caption-text">Comparative results for wave gauge free-surface measurements</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id11">
+<a class="reference internal image-reference" href="../../../../../_images/Benchmark4_Debris_Displacement_BoxAndWhiskers_2024.04.27.png"><img alt="../../../../../_images/Benchmark4_Debris_Displacement_BoxAndWhiskers_2024.04.27.png" src="../../../../../_images/Benchmark4_Debris_Displacement_BoxAndWhiskers_2024.04.27.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.6.4.7 </span><span class="caption-text">Comparative results for debris displacement</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id12">
+<a class="reference internal image-reference" href="../../../../../_images/Benchmark4_Debris_Spread_BoxAndWhiskers_2024.04.27.png"><img alt="../../../../../_images/Benchmark4_Debris_Spread_BoxAndWhiskers_2024.04.27.png" src="../../../../../_images/Benchmark4_Debris_Spread_BoxAndWhiskers_2024.04.27.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.6.4.8 </span><span class="caption-text">Comparative results for debris spreading angle</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id13">
+<a class="reference internal image-reference" href="../../../../../_images/Benchmark4_Obstacle_Load_Plots3_2024.04.27.png"><img alt="../../../../../_images/Benchmark4_Obstacle_Load_Plots3_2024.04.27.png" src="../../../../../_images/Benchmark4_Obstacle_Load_Plots3_2024.04.27.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.6.4.9 </span><span class="caption-text">Comparative results for debris-structure loads</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="references">
-<span id="hdro-0004-references"></span><h2><span class="section-number">4.6.4. </span>References<a class="headerlink" href="#references" title="Permalink to this heading">¶</a></h2>
+<span id="hdro-0004-references"></span><h2><span class="section-number">4.6.5. </span>References<a class="headerlink" href="#references" title="Permalink to this heading">¶</a></h2>
+<p>[Bonus2025] Justin Bonus, Felix Spröer, Andrew Winter, Pedro Arduino, Clemens Krautwald, Michael Motley, Nils Goseberg (2025). “Tsunami Debris Motion and Loads in a Scaled Port Setting: Comparative Analysis of Three State-of-the-Art Methods Against Experiments.” Coastal Engineering. Volume 197. <a class="reference external" href="https://doi.org/10.1016/j.coastaleng.2024.104672">https://doi.org/10.1016/j.coastaleng.2024.104672</a>.</p>
 </div>
 </div>
 
@@ -330,7 +352,7 @@ an OpenSees simulation of one building assuming uncertainties in the building pr
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2020-2024, The Regents of the University of California.
+        &#169; Copyright 2020-2025, The Regents of the University of California.
 
     </p>
   </div>

@@ -115,9 +115,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../releases/hydroCapabilities.html">5. Capabilities</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">6. Release Notes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#version-3-1">6.1. Version 3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-2-0">6.2. Version 2.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-1-0">6.3. Version 1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-4-0">6.1. Version 4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-3-1">6.2. Version 3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-2-0">6.3. Version 2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-1-0">6.4. Version 1.0</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../releases/hydroPlans.html">7. Release Plans</a></li>
@@ -126,7 +127,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Running Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">2. User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">3. Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
@@ -220,11 +221,40 @@
             
   <div class="section" id="release-notes">
 <span id="lbl-release"></span><h1><span class="section-number">6. </span>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this heading">¶</a></h1>
-<div class="section" id="version-3-1">
-<h2><span class="section-number">6.1. </span>Version 3.1<a class="headerlink" href="#version-3-1" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="version-4-0">
+<h2><span class="section-number">6.1. </span>Version 4.0<a class="headerlink" href="#version-4-0" title="Permalink to this heading">¶</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Version 3.1.0 (<span class="blue">Current</span>)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<span class="sd-summary-text">Version 4.0.0 (<span class="blue">Current</span>)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Release date:</strong> September 30th, 2024</p>
+<p class="sd-card-text"><strong>Simulation Types</strong>:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p class="sd-card-text">Added <code class="docutils literal notranslate"><span class="pre">Boussinesq</span> <span class="pre">and</span> <span class="pre">NLSW</span> <span class="pre">wave-solver</span></code> via <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">and</span> <span class="pre">Celeris</span> <span class="pre">(Taichi</span> <span class="pre">Lang)</span></code>.</p></li>
+<li><p class="sd-card-text">Added <code class="docutils literal notranslate"><span class="pre">Stochastic</span> <span class="pre">Wave</span> <span class="pre">Event</span></code> via <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">and</span> <span class="pre">welib</span></code>.</p></li>
+</ol>
+</div></blockquote>
+<p class="sd-card-text"><strong>Tools</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="sd-card-text">Added tool for accessing NOAA’s Digital Coast web-app suite (e.g., sea-level rise viewer).</p></li>
+<li><p class="sd-card-text">Added Taichi Lang tool for local HPC in custom and example numerical simulations.</p></li>
+</ul>
+</div></blockquote>
+<p class="sd-card-text"><strong>Examples</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="sd-card-text">Added example simulation for stochastic loading of a monopile structure in <code class="docutils literal notranslate"><span class="pre">StochasticWaves</span> <span class="pre">EVT</span></code>.</p></li>
+<li><p class="sd-card-text">Added example simulation for a piston wave-maker in <code class="docutils literal notranslate"><span class="pre">TaichiEvent</span></code> with local HPC enabled.</p></li>
+</ul>
+</div></blockquote>
+</div>
+</details></div>
+<div class="section" id="version-3-1">
+<h2><span class="section-number">6.2. </span>Version 3.1<a class="headerlink" href="#version-3-1" title="Permalink to this heading">¶</a></h2>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Version 3.1.0</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text"><strong>Release date:</strong> April 1st, 2024</p>
 <p class="sd-card-text"><strong>Simulation Types</strong>:</p>
 <blockquote>
@@ -420,7 +450,7 @@
 </div>
 </details></div>
 <div class="section" id="version-2-0">
-<h2><span class="section-number">6.2. </span>Version 2.0<a class="headerlink" href="#version-2-0" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.3. </span>Version 2.0<a class="headerlink" href="#version-2-0" title="Permalink to this heading">¶</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Version 2.0.0</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
@@ -448,7 +478,7 @@
 </div>
 </details></div>
 <div class="section" id="version-1-0">
-<h2><span class="section-number">6.3. </span>Version 1.0<a class="headerlink" href="#version-1-0" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.4. </span>Version 1.0<a class="headerlink" href="#version-1-0" title="Permalink to this heading">¶</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Version 1.0.0</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
@@ -543,7 +573,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2020-2024, The Regents of the University of California.
+        &#169; Copyright 2020-2025, The Regents of the University of California.
 
     </p>
   </div>

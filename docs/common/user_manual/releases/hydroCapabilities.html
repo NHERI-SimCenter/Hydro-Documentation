@@ -130,7 +130,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/desktop/installation.html">1. Running Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage/desktop/usage.html">2. User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage/desktop/hydro/tools.html">3. Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples/desktop/examples.html">4. Examples</a></li>
@@ -224,14 +224,16 @@
             
   <div class="section" id="capabilities">
 <span id="lbl-capabilities-hydrouq"></span><h1><span class="section-number">5. </span>Capabilities<a class="headerlink" href="#capabilities" title="Permalink to this heading">¶</a></h1>
-<p>Version 4.0.0 of the HydroUQ app was released on <strong>April 1st, 2024</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
+<p>Version 4.0.0 of the HydroUQ app was released on <strong>September 30th, 2024</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
 <ol class="arabic simple">
 <li><p>Water Event Selection: Users are provided with multiple paths for water borne hazard generation:</p>
 <ol class="upperalpha simple">
 <li><p>Generate/record integrated loads and point pressure measurements by creating and running a CFD model on DesignSafe.</p></li>
 <li><p>Run GeoClaw, a widely used shallow-water solver vetted for tsunamis / storm surges, via the graphical user interface.</p></li>
-<li><p><span class="blue">Define and adjust prebuilt, digital twin wave-makers (1D / 2D pistons, pumps, gravity head).</span></p></li>
-<li><p><span class="blue">For advanced users, full authority is provided to input hydrodynamic files from tools of their choice.</span></p></li>
+<li><p>For advanced users, full authority is provided to input hydrodynamic files from tools of their choice.</p></li>
+<li><p><span class="blue">Define and adjust prebuilt, digital twin wave-makers (piston based, vacuum-chamber release).</span></p></li>
+<li><p><span class="blue">Simulate coastal wave events using the Celeris wave-solver (Boussinesq, non-linear shallow water).</span></p></li>
+<li><p><span class="blue">Employ local high-performance computation (GPU &amp; CPU) using Taichi Lang (examples provided).</span></p></li>
 </ol>
 </li>
 <li><p>Structural Model: Defines the structural modeling approach and returns the scripts required to perform the response simulation. One or more models can be assigned to a workflow. Using more than one model allows for benchmarking and epistemic uncertainty analysis. The following options are available:</p>
@@ -261,6 +263,8 @@
 <li><p>Multi-degree-of-freedom (MDOF) model</p></li>
 <li><p>MDOF-LU</p></li>
 <li><p>OpenSees</p></li>
+<li><p><span class="blue">Steel Building Model</span></p></li>
+<li><p><span class="blue">Concrete Building Model</span></p></li>
 <li><p>Custom Python Script (customPy)</p></li>
 <li><p>Multiple Models</p></li>
 </ol>
@@ -410,12 +414,16 @@
 </ol>
 </div></blockquote>
 </li>
-<li><p><span class="blue">Standard Tsunami EDPs`</span></p>
+<li><p><span class="blue">Standard Hydrodynamic EDPs</span></p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p><span class="blue">Peak force / pressure / wave-velocity / wave-height / inter-story drift (PID) / roof displacement (PRD)</span></p></li>
-<li><p><span class="blue">Total impulse / wave-duration / wave momentum-flux</span></p></li>
-<li><p><span class="blue">Average wave velocity / wave height</span></p></li>
+<li><p><span class="blue">Peak floor displacement (PFD)</span></p></li>
+<li><p><span class="blue">Peak floor acceleration (PFA)</span></p></li>
+<li><p><span class="blue">Peak floor force (PFF)</span></p></li>
+<li><p><span class="blue">Peak floor pressure (PFP)</span></p></li>
+<li><p><span class="blue">Peak wave height (PWH)</span></p></li>
+<li><p><span class="blue">Average wave velocity (AWV)</span></p></li>
+<li><p><span class="blue">Total wave momentum-flux (TWM)</span></p></li>
 </ol>
 </div></blockquote>
 </li>
@@ -512,7 +520,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2020-2024, The Regents of the University of California.
+        &#169; Copyright 2020-2025, The Regents of the University of California.
 
     </p>
   </div>

@@ -120,7 +120,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/installation/desktop/installation.html">1. Running Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/usage.html">2. User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/hydro/tools.html">3. Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/examples/desktop/examples.html">4. Examples</a></li>
@@ -269,11 +269,11 @@
 </div>
 <div class="section" id="estimation-of-sobol-indices-using-probabilistic-model-based-global-sensitivity-analysis-pm-gsa">
 <h3>Estimation of Sobol indices using Probabilistic model-based global sensitivity analysis (PM-GSA)<a class="headerlink" href="#estimation-of-sobol-indices-using-probabilistic-model-based-global-sensitivity-analysis-pm-gsa" title="Permalink to this heading">¶</a></h3>
-<p>GSA is typically computationally expensive. High computation cost attributes to the multiple integrations (<span class="math notranslate nohighlight">\(d\)</span>-dimensional) associated with the variance and expectation operations shown in Eqs. <a class="reference internal" href="../../user_manual/usage/desktop/hydro/DakotaSe.html#equation-si">()</a> and <a class="reference internal" href="../../user_manual/usage/desktop/hydro/DakotaSe.html#equation-sit">()</a>. To reduce the computational cost, efficient Monte Carlo methods, stochastic expansion methods, or meta-model-based methods can be employed. Among different approaches, the SimCenterUQ engine supports the probability model-based GSA (PM-GSA) framework developed by <a class="reference internal" href="#hu2019" id="id3"><span>[Hu2019]</span></a>.</p>
-<p>The framework first conducts ordinary MCS to obtain input-output data pairs. Then by extracting only a subset dimension of the dataset, the probability distribution of a reduced dimension can be approximated and used for estimating the Sobol index. Among different probability distribution models introduced in <a class="reference internal" href="#hu2019" id="id4"><span>[Hu2019]</span></a>  the Gaussian mixture model is implemented in this engine to approximate this lower dimension distribution. For example, to identify 1st order main Sobol index for a variable <span class="math notranslate nohighlight">\(x_i\)</span>, a bivariate Gaussian mixture model is fitted for the joint probability distribution of <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, i.e.</p>
+<p>GSA is typically computationally expensive. High computation cost attributes to the multiple integrations (<span class="math notranslate nohighlight">\(d\)</span>-dimensional) associated with the variance and expectation operations shown in Eqs. <a class="reference internal" href="../../user_manual/usage/desktop/hydro/DakotaSe.html#equation-si">()</a> and <a class="reference internal" href="../../user_manual/usage/desktop/hydro/DakotaSe.html#equation-sit">()</a>. To reduce the computational cost, efficient Monte Carlo methods, stochastic expansion methods, or meta-model-based methods can be employed. Among different approaches, the SimCenterUQ engine supports the probability model-based GSA (PM-GSA) framework developed by <a class="reference internal" href="../../user_manual/examples/desktop/hdro-0010/README.html#hu2019" id="id3"><span>[Hu2019]</span></a>.</p>
+<p>The framework first conducts ordinary MCS to obtain input-output data pairs. Then by extracting only a subset dimension of the dataset, the probability distribution of a reduced dimension can be approximated and used for estimating the Sobol index. Among different probability distribution models introduced in <a class="reference internal" href="../../user_manual/examples/desktop/hdro-0010/README.html#hu2019" id="id4"><span>[Hu2019]</span></a>  the Gaussian mixture model is implemented in this engine to approximate this lower dimension distribution. For example, to identify 1st order main Sobol index for a variable <span class="math notranslate nohighlight">\(x_i\)</span>, a bivariate Gaussian mixture model is fitted for the joint probability distribution of <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, i.e.</p>
 <div class="math notranslate nohighlight" id="equation-gm">
 <span class="eqno">()<a class="headerlink" href="#equation-gm" title="Permalink to this equation">¶</a></span>\[f_{x_i,y}(x_i,y) \simeq f_{x_i,y}^{GM} (x_i,y)\]</div>
-<p>using the expectation-maximization (EM) algorithm. The mean operation Eq. <a class="reference internal" href="../../user_manual/usage/desktop/hydro/DakotaSe.html#equation-si">()</a> is then derived analytically from the Gaussian mixture model, while the variance is approximated to be the sample variance. Therefore, the accuracy of the method depends on the quality of the base samples as well as the fitness of the mixture model. The below figure summarizes the procedure of Gaussian mixture model-based PM-GSA introduced in <a class="reference internal" href="#hu2019" id="id5"><span>[Hu2019]</span></a>. The number of mixture components is optimized along with the mixture parameters during expectation-maximization iterations.</p>
+<p>using the expectation-maximization (EM) algorithm. The mean operation Eq. <a class="reference internal" href="../../user_manual/usage/desktop/hydro/DakotaSe.html#equation-si">()</a> is then derived analytically from the Gaussian mixture model, while the variance is approximated to be the sample variance. Therefore, the accuracy of the method depends on the quality of the base samples as well as the fitness of the mixture model. The below figure summarizes the procedure of Gaussian mixture model-based PM-GSA introduced in <a class="reference internal" href="../../user_manual/examples/desktop/hdro-0010/README.html#hu2019" id="id5"><span>[Hu2019]</span></a>. The number of mixture components is optimized along with the mixture parameters during expectation-maximization iterations.</p>
 <div class="align-center figure" id="id27">
 <span id="figsensitivity2"></span><a class="reference internal image-reference" href="../../../_images/SimCenterSensitivity2.png"><img alt="../../../_images/SimCenterSensitivity2.png" src="../../../_images/SimCenterSensitivity2.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-text">Data-driven global sensitivity analysis by Hu and Mahadevan (2019)</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
@@ -424,10 +424,6 @@ g_{d,\frac{3}{2}}(h_d) &amp;= \Bigg(1+ \frac{\sqrt{3}|h_d|}{l_d}\Bigg)\exp\Bigg(
 </div>
 <div class="section" id="adaptive-design-of-experiments-doe">
 <h3>Adaptive Design of Experiments (DoE)<a class="headerlink" href="#adaptive-design-of-experiments-doe" title="Permalink to this heading">¶</a></h3>
-<p>only:: EEUQ_app</p>
-<blockquote>
-<div><p>Currently not supported in EE-UQ.</p>
-</div></blockquote>
 </div>
 <div class="section" id="verification-of-surrogate-model">
 <h3>Verification of surrogate model<a class="headerlink" href="#verification-of-surrogate-model" title="Permalink to this heading">¶</a></h3>
@@ -678,7 +674,7 @@ computer experiments. <em>Stat Sci</em> 4(4):409–435</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2020-2024, The Regents of the University of California.
+        &#169; Copyright 2020-2025, The Regents of the University of California.
 
     </p>
   </div>
