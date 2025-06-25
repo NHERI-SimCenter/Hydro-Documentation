@@ -1,0 +1,330 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.3. Near-Real Time Wave-Solver - Seaside, OR Experimental Replication - CelerisAi &mdash; Hydro-UQ  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=66b6668b" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/custom.css?v=4b5bf716" />
+
+  
+      <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../../../../_static/design-tabs.js?v=36754332"></script>
+      <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+      <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="4.4. Validation - Multiple Debris Impacts on a Raised Structure - Digital Twin (OSU LWF)" href="../hdro-0002/README.html" />
+    <link rel="prev" title="4.2. Forward Sampling - Simple Piston Generated Wave - Taichi Event" href="../hdro-0010/README.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html" class="icon icon-home"> Hydro-UQ
+
+
+
+</a>
+
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/Hydro/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/hydroCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/releasenotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/hydroPlans.html">7. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Running Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/tools.html">3. Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">4. Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0005/README.html">4.1. Feature - Stochastic Wave Loading on a Simple Structure - Stochastic Wave Spectra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0010/README.html">4.2. Forward Sampling - Simple Piston Generated Wave - Taichi Event</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.3. Near-Real Time Wave-Solver - Seaside, OR Experimental Replication - CelerisAi</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">4.3.1. Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-up">4.3.2. Set-Up</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simulation">4.3.3. Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#analysis">4.3.4. Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#references">4.3.5. References</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0002/README.html">4.4. Validation - Multiple Debris Impacts on a Raised Structure - Digital Twin (OSU LWF)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0004/README.html">4.5. Tsunami Debris Motion Through a Scaled Port Setting - WU TWB Digital Twin - MPM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0001/README.html">4.6. Multi-Story Shear Building - Coupled CFD-FEM Digital Twin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0003/README.html">4.7. Cylinder Half-Submerged in Flow  -  UW WASIRF Twin  -  FOAMySees (OpenFOAM + OpenSees)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/bestpractices.html">5. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">7. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/helpvideo.html">9. Video Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/hazards/water.html">3. Water-borne Hazards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/swsolver.html">4. Shallow Water Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/cfdsolver/cfdsolver.html">5. CFD Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/fvm/fvm.html">6. Finite Volume Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/mpm/mpm.html">7. Material Point Method</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend.html">2. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #F2F2F2" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Hydro-UQ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../examples.html"><span class="section-number">4. </span>Examples</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4.3. </span>Near-Real Time Wave-Solver - Seaside, OR Experimental Replication - CelerisAi</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../../_sources/common/user_manual/examples/desktop/hdro-0020/README.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="near-real-time-wave-solver-seaside-or-experimental-replication-celerisai">
+<span id="hdro-0010"></span><h1><span class="section-number">4.3. </span>Near-Real Time Wave-Solver - Seaside, OR Experimental Replication - CelerisAi<a class="headerlink" href="#near-real-time-wave-solver-seaside-or-experimental-replication-celerisai" title="Link to this heading"></a></h1>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Problem files</p></td>
+<td><p><a class="extlink-github reference external" href="https://github.com/NHERI-SimCenter/HydroUQ/tree/master/Examples/hdro-0020/">Github</a></p></td>
+</tr>
+</tbody>
+</table>
+<nav class="contents local" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview" id="id8">Overview</a></p></li>
+<li><p><a class="reference internal" href="#set-up" id="id9">Set-Up</a></p></li>
+<li><p><a class="reference internal" href="#simulation" id="id10">Simulation</a></p></li>
+<li><p><a class="reference internal" href="#analysis" id="id11">Analysis</a></p></li>
+<li><p><a class="reference internal" href="#references" id="id12">References</a></p></li>
+</ul>
+</nav>
+<section id="overview">
+<span id="hdro-0010-overview"></span><h2><span class="section-number">4.3.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="common/user_manual/examples/desktop/hdro-0020/figures/hdro-0010_EVT_Single.png"><img alt="common/user_manual/examples/desktop/hdro-0020/figures/hdro-0010_EVT_Single.png" src="common/user_manual/examples/desktop/hdro-0020/figures/hdro-0010_EVT_Single.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.3.1.1 </span><span class="caption-text">TaichiEvent EVT of the pbf2d.py example. Includes a linear piston wave-maker creating breaking waves using local HPC resources (e.g. vectorized CPU, GPU).</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>In this local workflow example, we demonstrate high-performance computation making use of your personal computer’s hardware (both CPU and GPU). A linear actuator (i.e. piston) produces a wave in real-time with automatic visualization via the Taichi Lang framework <a class="reference internal" href="#hu2019" id="id1"><span>[Hu2019]</span></a>. This replicates the basic physics of wave-makers in real facilities, such as Oregon State University’s Large Wave Flume.</p>
+</section>
+<section id="set-up">
+<span id="hdro-0010-setup"></span><h2><span class="section-number">4.3.2. </span>Set-Up<a class="headerlink" href="#set-up" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0010_UQ1.png"><img alt="../../../../../_images/hdro-0010_UQ1.png" src="../../../../../_images/hdro-0010_UQ1.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.3.2.1 </span><span class="caption-text">Uncertainty Quantification (UQ) tab with forward propagation selected.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>First we select forward propagation using the Dakota UQ engine under the <code class="docutils literal notranslate"><span class="pre">UQ</span></code> tab. We will be looking at parallel execution of multiple simulations, set by the samples variable.</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0010_GI1.png"><img alt="../../../../../_images/hdro-0010_GI1.png" src="../../../../../_images/hdro-0010_GI1.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.3.2.2 </span><span class="caption-text">General Information (GI) tab with placeholder values as no structure is being analyzed in this example.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The general information tab, <code class="docutils literal notranslate"><span class="pre">GI</span></code>, is left unmodified as in this example we are not looking at a structure, just a wave maker. Note that this example can be extrapolated to include structural analysis due to the produced wave’s loading.</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0010_SIM1.png"><img alt="../../../../../_images/hdro-0010_SIM1.png" src="../../../../../_images/hdro-0010_SIM1.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.3.2.3 </span><span class="caption-text">Structural Information Model tab (SIM) set to a placeholder structure, as this example does not require a structre.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The simulation tab, <code class="docutils literal notranslate"><span class="pre">SIM</span></code>, is not neccesary either, due to no structure being used, however it must be filled in regardless.</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0010_EVT1.png"><img alt="../../../../../_images/hdro-0010_EVT1.png" src="../../../../../_images/hdro-0010_EVT1.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.3.2.4 </span><span class="caption-text">Event tab (EVT) set to the TaichiEvent module for high-performance numerical simulations. Specifically, it is set to run a fluid simulation of a linear piston wave-maker generating breaking waves, similar to the OSU LWF.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Opening the event tab, <code class="docutils literal notranslate"><span class="pre">EVT</span></code>, set the event to be TaichiEvent. Set the workflow script to be TaichiEvent.py and the simulation script to be pbf2d.py, found at applications/createEVENT/TaichiEvent/.</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0010_EDP1.png"><img alt="../../../../../_images/hdro-0010_EDP1.png" src="../../../../../_images/hdro-0010_EDP1.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.3.2.5 </span><span class="caption-text">Engineering Demand Parameters tab (EDP).</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>As we are not looking at a structure, the <code class="docutils literal notranslate"><span class="pre">EDP</span></code> tab is not necessary. However, note that in coastal engineering intensity measures such as wave height, velocity, and momentum flux are often taken to be EDPs. It is possible in the SimCenter workflow to implement such IMs as custom EDPs if you wish to extrapolate this example for structural analysis.</p>
+</section>
+<section id="simulation">
+<span id="hdro-0010-simulation"></span><h2><span class="section-number">4.3.3. </span>Simulation<a class="headerlink" href="#simulation" title="Link to this heading"></a></h2>
+<p>We assume most modern computers will be able to run 1 - 10 of these simulations (set by samples in the <code class="docutils literal notranslate"><span class="pre">UQ</span></code> tab) in parallel in real-time (60 frames-per-second) or near real-time. A pop-up GUI(s) should appear once the <code class="docutils literal notranslate"><span class="pre">RUN</span></code> button is clicked at the bottom of the HydroUQ desktop app. The <code class="docutils literal notranslate"><span class="pre">taichi</span></code> PyPi will be automatically installed if your system does not currently have it. The backend graphics library is automatically swapped out by Taichi to meet your systems capabilities, though there are some edge-cases which you may contact NHERI SimCenter developers for assistance on.</p>
+</section>
+<section id="analysis">
+<span id="hdro-0010-analysis"></span><h2><span class="section-number">4.3.4. </span>Analysis<a class="headerlink" href="#analysis" title="Link to this heading"></a></h2>
+<p>No further analysis is performed in this simple demonstration of the Taichi Lang framework within HydroUQ. As Taichi Lang is a powerful language for numerical simulation, it can be extrapolated to run essentially any form of simulation with subsequent analysis. Contact the NHERI SimCenter developer team for assistance in doing so if desired.</p>
+</section>
+<section id="references">
+<span id="hdro-0010-references"></span><h2><span class="section-number">4.3.5. </span>References<a class="headerlink" href="#references" title="Link to this heading"></a></h2>
+<div role="list" class="citation-list">
+<div class="citation" id="hu2019" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">Hu2019</a><span class="fn-bracket">]</span></span>
+<p>Hu, Yuanming et al. (2019). “Taichi: a language for high-performance computation on spatially sparse data structures.” ACM Transactions on Graphics (TOG). Volume 38.</p>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2025, The Regents of the University of California.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=..."></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '...', {
+          'anonymize_ip': false,
+      });
+    </script>  
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>
