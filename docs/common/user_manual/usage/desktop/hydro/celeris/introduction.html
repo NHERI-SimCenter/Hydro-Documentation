@@ -30,7 +30,7 @@
     <link rel="index" title="Index" href="../../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../../search.html" />
     <link rel="next" title="Usage" href="usage.html" />
-    <link rel="prev" title="2.4.4. Welcome to CelerisAi’s documentation" href="index.html" />
+    <link rel="prev" title="2.4.4. CelerisAi" href="index.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -81,9 +81,29 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../installation/desktop/installation.html">1. Running Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../usage.html">2. User Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../usage.html">2. User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GI.html">2.2. GI: General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SIM.html">2.3. SIM: Structural Model</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../EVT.html">2.4. EVT: Hydro Events</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../general.html">2.4.1. General Event (Legacy)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../coupled.html">2.4.2. Coupled Digital Twin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../MPM.html">2.4.3. Material Point Method</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">2.4.4. CelerisAi</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html#code-documentation">2.4.4.1. Code Documentation</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html#user-interface">2.4.4.2. User Interface</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../FEM.html">2.5. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../response/EDP.html">2.6. EDP: Demand Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../RV.html">2.7. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resHydro.html">2.8. RES: Results</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../tools.html">3. Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../examples/desktop/examples.html">4. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bestpractices.html">5. Best Practices</a></li>
@@ -125,7 +145,7 @@
       <li><a href="../../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../../usage.html"><span class="section-number">2. </span>User Interface</a></li>
           <li class="breadcrumb-item"><a href="../EVT.html"><span class="section-number">2.4. </span>EVT: Hydro Events</a></li>
-          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2.4.4. </span>Welcome to CelerisAi’s documentation</a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2.4.4. </span>CelerisAi</a></li>
       <li class="breadcrumb-item active">Introduction</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../../../_sources/common/user_manual/usage/desktop/hydro/celeris/introduction.rst.txt" rel="nofollow"> View page source</a>
@@ -162,7 +182,7 @@
 <h2>Class Architecture and Workflow<a class="headerlink" href="#class-architecture-and-workflow" title="Link to this heading"></a></h2>
 <p>The simulation setup can be performed directly within a Python script or through JSON files by specifying the domain geometry, initial conditions, and boundary conditions.</p>
 <figure class="align-center" id="id4">
-<a class="reference internal image-reference" href="images/Celeris.svg"><img alt="images/Celeris.svg" src="images/Celeris.svg" style="width: 90%;" />
+<a class="reference internal image-reference" href="../../../../../../_images/Celeris.svg"><img alt="../../../../../../_images/Celeris.svg" src="../../../../../../_images/Celeris.svg" style="width: 90%;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Fig. 2.4.4.1.1 </span><span class="caption-text">CelerisAi classes and setup.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
@@ -172,7 +192,7 @@
 <section id="workflow-to-solve-the-shallow-water-equations">
 <h3>Workflow to solve the Shallow water equations<a class="headerlink" href="#workflow-to-solve-the-shallow-water-equations" title="Link to this heading"></a></h3>
 <figure class="align-center" id="id5">
-<a class="reference internal image-reference" href="images/Celeris_SWE.svg"><img alt="images/Celeris_SWE.svg" src="images/Celeris_SWE.svg" style="width: 80%;" />
+<a class="reference internal image-reference" href="../../../../../../_images/Celeris_SWE.svg"><img alt="../../../../../../_images/Celeris_SWE.svg" src="../../../../../../_images/Celeris_SWE.svg" style="width: 80%;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Fig. 2.4.4.1.2 </span><span class="caption-text">SWE workflow</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
@@ -182,7 +202,7 @@
 <section id="workflow-to-solve-the-extended-boussinesq-equations">
 <h3>Workflow to solve the extended Boussinesq equations<a class="headerlink" href="#workflow-to-solve-the-extended-boussinesq-equations" title="Link to this heading"></a></h3>
 <figure class="align-center" id="id6">
-<a class="reference internal image-reference" href="images/Celeris_Bouss.svg"><img alt="images/Celeris_Bouss.svg" src="images/Celeris_Bouss.svg" style="width: 80%;" />
+<a class="reference internal image-reference" href="../../../../../../_images/Celeris_Bouss.svg"><img alt="../../../../../../_images/Celeris_Bouss.svg" src="../../../../../../_images/Celeris_Bouss.svg" style="width: 80%;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Fig. 2.4.4.1.3 </span><span class="caption-text">Boussinesq workflow</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>

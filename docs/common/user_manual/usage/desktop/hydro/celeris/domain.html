@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Usage &mdash; Hydro-UQ  documentation</title>
+  <title>Domain &mdash; Hydro-UQ  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/theme.css?v=66b6668b" />
       <link rel="stylesheet" type="text/css" href="../../../../../../_static/copybutton.css?v=76b2166b" />
@@ -26,11 +26,12 @@
       <script src="../../../../../../_static/design-tabs.js?v=36754332"></script>
       <script src="../../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
       <script src="../../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../../search.html" />
-    <link rel="next" title="Celeris Modules" href="modules.html" />
-    <link rel="prev" title="Introduction" href="introduction.html" />
+    <link rel="next" title="2.5. FEM: Finite Element Method" href="../../FEM.html" />
+    <link rel="prev" title="Solver" href="solver.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -146,9 +147,10 @@
           <li class="breadcrumb-item"><a href="../../usage.html"><span class="section-number">2. </span>User Interface</a></li>
           <li class="breadcrumb-item"><a href="../EVT.html"><span class="section-number">2.4. </span>EVT: Hydro Events</a></li>
           <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2.4.4. </span>CelerisAi</a></li>
-      <li class="breadcrumb-item active">Usage</li>
+          <li class="breadcrumb-item"><a href="modules.html">Celeris Modules</a></li>
+      <li class="breadcrumb-item active">Domain</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../../../../_sources/common/user_manual/usage/desktop/hydro/celeris/usage.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../../../../_sources/common/user_manual/usage/desktop/hydro/celeris/domain.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -156,43 +158,62 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="usage">
-<h1>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h1>
-<section id="installation">
-<span id="id1"></span><h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
-<p>The prerequisites for CelerisAi are standard Python libraries, with Taichi being the most important. You can install these libraries manually:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>imageio&gt;<span class="o">=</span><span class="m">2</span>.36.0<span class="w"> </span>matplotlib&gt;<span class="o">=</span><span class="m">3</span>.7.2<span class="w"> </span>numpy&gt;<span class="o">=</span><span class="m">1</span>.24.3<span class="w"> </span>scipy&gt;<span class="o">=</span><span class="m">1</span>.9.0<span class="w"> </span>taichi&gt;<span class="o">=</span><span class="m">1</span>.7.0
-</pre></div>
-</div>
-<p>Alternatively, you can install all required dependencies automatically using the provided requirements file:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-</pre></div>
-</div>
-</section>
-<section id="downloading-the-source-code">
-<h2>Downloading the Source Code<a class="headerlink" href="#downloading-the-source-code" title="Link to this heading"></a></h2>
-<p>Clone the repository from GitHub to download the source code:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/wrenteria/CelerisAi.git
-</pre></div>
-</div>
-</section>
-<section id="running-the-examples">
-<h2>Running the Examples<a class="headerlink" href="#running-the-examples" title="Link to this heading"></a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Make sure to execute these examples from within the CelerisAi directory.</p>
-</div>
-<p>After installing the dependencies and downloading the source, you can verify the installation by running the provided examples.</p>
-<p>For a 1D example, execute:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>setrun_1D.py
-</pre></div>
-</div>
-<p>For a 2D example based on the configuration files created by CelerisWebGPU, execute:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>setrun_web.py
-</pre></div>
-</div>
-<p>For more details on configuring CelerisWebGPU, please refer to its application at
-<a class="reference external" href="https://plynett.github.io/">CelerisWebGPU</a>.</p>
+  <section id="domain">
+<h1>Domain<a class="headerlink" href="#domain" title="Link to this heading"></a></h1>
+<p>Defines the numerical domain for the wave propagation solver in CelerisAi.</p>
+<p>This class sets up the domain geometry (<span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, <span class="math notranslate nohighlight">\(y_1\)</span>, <span class="math notranslate nohighlight">\(y_2\)</span>) and resolution (<span class="math notranslate nohighlight">\(N_x\)</span>, <span class="math notranslate nohighlight">\(N_y\)</span>),
+handles bathymetric/topographic data (via an instance of a <code class="xref py py-class docutils literal notranslate"><span class="pre">Topodata</span></code> class),
+configures boundary sea levels on each face (north, south, east, west),
+and stores critical parameters such as Courant number (<code class="docutils literal notranslate"><span class="pre">Courant</span></code>), friction,
+and base depth.</p>
+<p>Two main configuration modes are supported:</p>
+<ol class="arabic simple">
+<li><p><strong>Celeris format</strong>
+Reads from a <code class="docutils literal notranslate"><span class="pre">config.json</span></code> file (if <code class="docutils literal notranslate"><span class="pre">topodata.datatype</span> <span class="pre">==</span> <span class="pre">&quot;celeris&quot;</span></code>).</p></li>
+<li><p><strong>Manual</strong>
+Uses arguments passed directly to the constructor.</p></li>
+</ol>
+<p>This class also defines utility methods to:</p>
+<ul class="simple">
+<li><p>Create a meshgrid for the domain (<code class="docutils literal notranslate"><span class="pre">grid</span></code>).</p></li>
+<li><p>Load and interpolate topographic/bathymetric data (<code class="docutils literal notranslate"><span class="pre">topofield</span></code>, <code class="docutils literal notranslate"><span class="pre">bottom</span></code>).</p></li>
+<li><p>Compute maximum depth (<code class="docutils literal notranslate"><span class="pre">maxdepth</span></code>) and highest topography (<code class="docutils literal notranslate"><span class="pre">maxtopo</span></code>).</p></li>
+<li><p>Compute the time step (<code class="docutils literal notranslate"><span class="pre">dt</span></code>) based on Courant criteria.</p></li>
+<li><p>Provide reflection indices for solid boundary conditions (<code class="docutils literal notranslate"><span class="pre">reflect_x</span></code>, <code class="docutils literal notranslate"><span class="pre">reflect_y</span></code>).</p></li>
+<li><p>Create Taichi field templates for solver states (<code class="docutils literal notranslate"><span class="pre">states</span></code>, <code class="docutils literal notranslate"><span class="pre">states_one</span></code>).</p></li>
+</ul>
+<section id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading"></a></h2>
+<dl>
+<dt><strong>precision</strong><span class="classifier"><code class="docutils literal notranslate"><span class="pre">ti.types.primitive_types</span></code></span></dt><dd><p>Taichi precision (e.g., <code class="docutils literal notranslate"><span class="pre">ti.f32</span></code>, <code class="docutils literal notranslate"><span class="pre">ti.f64</span></code>).</p>
+</dd>
+<dt><strong>x1</strong>, <strong>x2</strong>, <strong>y1</strong>, <strong>y2</strong><span class="classifier">float</span></dt><dd><p>Spatial domain boundaries.</p>
+</dd>
+<dt><strong>Nx</strong>, <strong>Ny</strong><span class="classifier">int</span></dt><dd><p>Number of grid cells in x and y directions.</p>
+</dd>
+<dt><strong>topodata</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Topodata</span></code></span></dt><dd><p>Instance that handles bathymetry/topography data.</p>
+</dd>
+<dt><strong>north_sl</strong>, <strong>south_sl</strong>, <strong>east_sl</strong>, <strong>west_sl</strong><span class="classifier">float</span></dt><dd><p>Sea level values for each boundary face.</p>
+</dd>
+<dt><strong>Courant</strong><span class="classifier">float</span></dt><dd><p>Courant number for numerical stability.</p>
+</dd>
+<dt><strong>isManning</strong><span class="classifier">int</span></dt><dd><p>Flag to indicate if Manning friction is used.</p>
+</dd>
+<dt><strong>friction</strong><span class="classifier">float</span></dt><dd><p>Friction value (e.g., Manning’s n).</p>
+</dd>
+<dt><strong>base_depth_</strong><span class="classifier">float or None</span></dt><dd><p>Reference depth for the domain. If None, it is inferred from topography.</p>
+</dd>
+<dt><strong>Boundary_shift</strong><span class="classifier">int</span></dt><dd><p>Shift parameter used for boundary indexing or reflection.</p>
+</dd>
+<dt><strong>pixels</strong><span class="classifier"><code class="docutils literal notranslate"><span class="pre">ti.field</span></code></span></dt><dd><p>2D Taichi field (shape = [Nx, Ny]) for visualization/debugging.</p>
+</dd>
+<dt><strong>g</strong><span class="classifier">float</span></dt><dd><p>Gravitational constant (9.80665).</p>
+</dd>
+<dt><strong>configfile</strong><span class="classifier">dict or None</span></dt><dd><p>Loaded JSON dictionary if using Celeris config format.</p>
+</dd>
+<dt><strong>seaLevel</strong><span class="classifier">float</span></dt><dd><p>Reference sea level (default = 0.0).</p>
+</dd>
+</dl>
 </section>
 </section>
 

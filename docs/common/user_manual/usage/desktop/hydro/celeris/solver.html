@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Usage &mdash; Hydro-UQ  documentation</title>
+  <title>Solver &mdash; Hydro-UQ  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/theme.css?v=66b6668b" />
       <link rel="stylesheet" type="text/css" href="../../../../../../_static/copybutton.css?v=76b2166b" />
@@ -29,8 +29,8 @@
     <script src="../../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../../search.html" />
-    <link rel="next" title="Celeris Modules" href="modules.html" />
-    <link rel="prev" title="Introduction" href="introduction.html" />
+    <link rel="next" title="Domain" href="domain.html" />
+    <link rel="prev" title="Modules" href="celeris.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -146,9 +146,10 @@
           <li class="breadcrumb-item"><a href="../../usage.html"><span class="section-number">2. </span>User Interface</a></li>
           <li class="breadcrumb-item"><a href="../EVT.html"><span class="section-number">2.4. </span>EVT: Hydro Events</a></li>
           <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2.4.4. </span>CelerisAi</a></li>
-      <li class="breadcrumb-item active">Usage</li>
+          <li class="breadcrumb-item"><a href="modules.html">Celeris Modules</a></li>
+      <li class="breadcrumb-item active">Solver</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../../../../_sources/common/user_manual/usage/desktop/hydro/celeris/usage.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../../../../_sources/common/user_manual/usage/desktop/hydro/celeris/solver.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -156,43 +157,74 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="usage">
-<h1>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h1>
-<section id="installation">
-<span id="id1"></span><h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
-<p>The prerequisites for CelerisAi are standard Python libraries, with Taichi being the most important. You can install these libraries manually:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>imageio&gt;<span class="o">=</span><span class="m">2</span>.36.0<span class="w"> </span>matplotlib&gt;<span class="o">=</span><span class="m">3</span>.7.2<span class="w"> </span>numpy&gt;<span class="o">=</span><span class="m">1</span>.24.3<span class="w"> </span>scipy&gt;<span class="o">=</span><span class="m">1</span>.9.0<span class="w"> </span>taichi&gt;<span class="o">=</span><span class="m">1</span>.7.0
-</pre></div>
-</div>
-<p>Alternatively, you can install all required dependencies automatically using the provided requirements file:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-</pre></div>
-</div>
+  <section id="solver">
+<h1>Solver<a class="headerlink" href="#solver" title="Link to this heading"></a></h1>
+<p>Main numerical solver class for the CelerisAi model.</p>
+<p>This class manages the entire simulation process, including:</p>
+<ul class="simple">
+<li><p>Initializing solution states and bottom fields from the <code class="xref py py-class docutils literal notranslate"><span class="pre">Domain</span></code> class.</p></li>
+<li><p>Controlling boundary conditions from the <code class="xref py py-class docutils literal notranslate"><span class="pre">BoundaryConditions</span></code> class.</p></li>
+<li><p>Executing the time-stepping scheme (Euler, Adams-Bashforth variants) and
+1D/2D flow updates (SWE or Boussinesq).</p></li>
+<li><p>Incorporating breaking models, sediment transport, and the
+kernels for reconstruction (Pass1), flux computations (Pass2),
+and final updates (Pass3).</p></li>
+</ul>
+<section id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading"></a></h2>
+<dl>
+<dt><strong>domain</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Domain</span></code></span></dt><dd><p>Instance of the Domain class containing grid info and topography.</p>
+</dd>
+<dt><strong>bc</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoundaryConditions</span></code></span></dt><dd><p>Instance managing boundary condition types and wave settings.</p>
+</dd>
+<dt><strong>dissipation_threshold</strong><span class="classifier">float</span></dt><dd><p>Used for visualization (mark cells above certain foam/dissipation).</p>
+</dd>
+<dt><strong>theta</strong><span class="classifier">float</span></dt><dd><p>Midmod limiter parameter (1.0 more dissipative, 2.0 less dissipative).</p>
+</dd>
+<dt><strong>timeScheme</strong><span class="classifier">int</span></dt><dd><p>Time integration scheme:</p>
+<ul class="simple">
+<li><p>0 = Euler</p></li>
+<li><p>1 = 3rd-order predictor</p></li>
+<li><p>2 = 4th-order predictor/corrector</p></li>
+</ul>
+</dd>
+<dt><strong>pred_or_corrector</strong><span class="classifier">int</span></dt><dd><p>Indicates stage in solver loop (1 = predictor, 2 = corrector).</p>
+</dd>
+<dt><strong>Bcoef</strong><span class="classifier">float</span></dt><dd><p>Dispersion parameter for Boussinesq model; default 1/15.</p>
+</dd>
+<dt><strong>model</strong><span class="classifier">str</span></dt><dd><p>Type of model, ‘SWE’ or ‘Bouss’.</p>
+</dd>
+<dt><strong>useBreakingModel</strong><span class="classifier">bool</span></dt><dd><p>True if wave-breaking model is included.</p>
+</dd>
+<dt><strong>whiteWaterDecayRate</strong><span class="classifier">float</span></dt><dd><p>Turbulence decay rate for foam (visualization).</p>
+</dd>
+<dt><strong>whiteWaterDispersion</strong><span class="classifier">float</span></dt><dd><p>Turbulence dispersion factor.</p>
+</dd>
+<dt><strong>useSedTransModel</strong><span class="classifier">bool</span></dt><dd><p>True if sediment transport is included.</p>
+</dd>
+<dt><strong>sediment</strong><span class="classifier">object</span></dt><dd><p>Default or custom sediment parameters.</p>
+</dd>
+<dt><strong>infiltrationRate</strong><span class="classifier">float</span></dt><dd><p>For modeling infiltration on dry beaches.</p>
+</dd>
+<dt><strong>clearCon</strong><span class="classifier">int</span></dt><dd><p>If 1, concentration channel is cleared for visualization.</p>
+</dd>
+<dt><strong>showBreaking</strong><span class="classifier">int</span></dt><dd><p>If greater than 0, shows wave breaking foam areas.</p>
+</dd>
+<dt><strong>delta_breaking</strong><span class="classifier">float</span></dt><dd><p>Eddy viscosity coefficient in breaking zones.</p>
+</dd>
+<dt><strong>T_star_coef</strong><span class="classifier">float</span></dt><dd><p>Timescale factor for fully developed breaking.</p>
+</dd>
+<dt><strong>dzdt_I_coef</strong><span class="classifier">float</span></dt><dd><p>Start-breaking parameter threshold.</p>
+</dd>
+<dt><strong>dzdt_F_coef</strong><span class="classifier">float</span></dt><dd><p>End-breaking parameter threshold.</p>
+</dd>
+</dl>
 </section>
-<section id="downloading-the-source-code">
-<h2>Downloading the Source Code<a class="headerlink" href="#downloading-the-source-code" title="Link to this heading"></a></h2>
-<p>Clone the repository from GitHub to download the source code:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/wrenteria/CelerisAi.git
-</pre></div>
-</div>
-</section>
-<section id="running-the-examples">
-<h2>Running the Examples<a class="headerlink" href="#running-the-examples" title="Link to this heading"></a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Make sure to execute these examples from within the CelerisAi directory.</p>
-</div>
-<p>After installing the dependencies and downloading the source, you can verify the installation by running the provided examples.</p>
-<p>For a 1D example, execute:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>setrun_1D.py
-</pre></div>
-</div>
-<p>For a 2D example based on the configuration files created by CelerisWebGPU, execute:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>setrun_web.py
-</pre></div>
-</div>
-<p>For more details on configuring CelerisWebGPU, please refer to its application at
-<a class="reference external" href="https://plynett.github.io/">CelerisWebGPU</a>.</p>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
+<p>The class initializes a large set of Taichi vector fields (state vectors, flux arrays,
+intermediate arrays for Boussinesq tridiagonal solves, sediment transport arrays, etc.)
+to manage the numerical solution.</p>
 </section>
 </section>
 

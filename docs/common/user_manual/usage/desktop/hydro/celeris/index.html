@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2.4.4. Welcome to CelerisAi’s documentation &mdash; Hydro-UQ  documentation</title>
+  <title>2.4.4. CelerisAi &mdash; Hydro-UQ  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/theme.css?v=66b6668b" />
       <link rel="stylesheet" type="text/css" href="../../../../../../_static/copybutton.css?v=76b2166b" />
@@ -26,6 +26,7 @@
       <script src="../../../../../../_static/design-tabs.js?v=36754332"></script>
       <script src="../../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
       <script src="../../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../../search.html" />
@@ -81,9 +82,29 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../installation/desktop/installation.html">1. Running Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../usage.html">2. User Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../usage.html">2. User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../GI.html">2.2. GI: General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../SIM.html">2.3. SIM: Structural Model</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../EVT.html">2.4. EVT: Hydro Events</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../general.html">2.4.1. General Event (Legacy)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../coupled.html">2.4.2. Coupled Digital Twin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../MPM.html">2.4.3. Material Point Method</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.4. CelerisAi</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#code-documentation">2.4.4.1. Code Documentation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#user-interface">2.4.4.2. User Interface</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../FEM.html">2.5. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../response/EDP.html">2.6. EDP: Demand Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../RV.html">2.7. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resHydro.html">2.8. RES: Results</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../tools.html">3. Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../examples/desktop/examples.html">4. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bestpractices.html">5. Best Practices</a></li>
@@ -125,7 +146,7 @@
       <li><a href="../../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../../usage.html"><span class="section-number">2. </span>User Interface</a></li>
           <li class="breadcrumb-item"><a href="../EVT.html"><span class="section-number">2.4. </span>EVT: Hydro Events</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">2.4.4. </span>Welcome to CelerisAi’s documentation</li>
+      <li class="breadcrumb-item active"><span class="section-number">2.4.4. </span>CelerisAi</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../../../_sources/common/user_manual/usage/desktop/hydro/celeris/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -135,16 +156,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="welcome-to-celerisai-s-documentation">
-<h1><span class="section-number">2.4.4. </span>Welcome to CelerisAi’s documentation<a class="headerlink" href="#welcome-to-celerisai-s-documentation" title="Link to this heading"></a></h1>
+  <section id="celerisai">
+<h1><span class="section-number">2.4.4. </span>CelerisAi<a class="headerlink" href="#celerisai" title="Link to this heading"></a></h1>
 <p><strong>CelerisAi</strong> is Python-Taichi-based software for nearshore wave modeling. This solver offers high-performance simulations on various hardware platforms and seamlessly integrates with machine learning and artificial intelligence environments. The solver makes use of the flexibility of the Python language for customization and interoperability, while the Taichi implementation provides high-performance capabilities and facilitates integration into artificial intelligence environments such as PyTorch.</p>
-<p>Check out the <a class="reference internal" href="usage.html"><span class="doc">Usage</span></a> section for further information, including how to <a class="reference internal" href="usage.html#installation"><span class="std std-ref">install</span></a> the project.</p>
+<p>Check out the <a class="reference internal" href="usage.html"><span class="doc">Usage</span></a> section for further information, including how to <a class="reference internal" href="usage.html#installation"><span class="std std-ref">install</span></a> the project for external use.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This project is under active development.</p>
 </div>
-<section id="documentation-for-the-code">
-<h2><span class="section-number">2.4.4.1. </span>Documentation for the Code<a class="headerlink" href="#documentation-for-the-code" title="Link to this heading"></a></h2>
+<section id="code-documentation">
+<h2><span class="section-number">2.4.4.1. </span>Code Documentation<a class="headerlink" href="#code-documentation" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
@@ -152,7 +173,11 @@
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#celerisai-a-nearshore-wave-modeling-framework-for-integrated-ai-applications">CelerisAi: A Nearshore Wave Modeling Framework for Integrated AI Applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#methods">Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#characteristics">Characteristics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#class-architecture-and-workflow">Class Architecture and Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#class-architecture-and-workflow">Class Architecture and Workflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="introduction.html#workflow-to-solve-the-shallow-water-equations">Workflow to solve the Shallow water equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="introduction.html#workflow-to-solve-the-extended-boussinesq-equations">Workflow to solve the extended Boussinesq equations</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#performance">Performance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#references">References</a></li>
 </ul>
@@ -164,7 +189,70 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">Celeris Modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="celeris.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="celeris.html">Modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="celeris.html#domain-module">Domain module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="celeris.html#solver-module">Solver module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="celeris.html#runner-module">Runner module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="celeris.html#utils-module">Utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="celeris.html#current-version">Current Version</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="solver.html">Solver</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="solver.html#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="solver.html#notes">Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="domain.html">Domain</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="domain.html#attributes">Attributes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="user-interface">
+<h2><span class="section-number">2.4.4.2. </span>User Interface<a class="headerlink" href="#user-interface" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#celerisai-a-nearshore-wave-modeling-framework-for-integrated-ai-applications">CelerisAi: A Nearshore Wave Modeling Framework for Integrated AI Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#methods">Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#characteristics">Characteristics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#class-architecture-and-workflow">Class Architecture and Workflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="introduction.html#workflow-to-solve-the-shallow-water-equations">Workflow to solve the Shallow water equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="introduction.html#workflow-to-solve-the-extended-boussinesq-equations">Workflow to solve the extended Boussinesq equations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#performance">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#downloading-the-source-code">Downloading the Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#running-the-examples">Running the Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Celeris Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="celeris.html">Modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="celeris.html#domain-module">Domain module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="celeris.html#solver-module">Solver module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="celeris.html#runner-module">Runner module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="celeris.html#utils-module">Utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="celeris.html#current-version">Current Version</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="solver.html">Solver</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="solver.html#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="solver.html#notes">Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="domain.html">Domain</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="domain.html#attributes">Attributes</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
