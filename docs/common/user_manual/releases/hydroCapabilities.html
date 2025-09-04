@@ -95,11 +95,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../usage/desktop/usage.html">2. User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage/desktop/hydro/tools.html">3. Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/hydro/bestpractices.html">5. Best Practices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../reqments/HydroUQ.html">7. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../bugs.html">8. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/hydro/helpvideo.html">9. Video Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/jobs.html">5. Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/hydro/bestpractices.html">6. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/desktop/troubleshooting.html">7. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reqments/HydroUQ.html">8. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bugs.html">9. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/hydro/helpvideo.html">10. Video Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -144,7 +145,7 @@
              
   <section id="capabilities">
 <span id="lbl-capabilities-hydrouq"></span><h1><span class="section-number">5. </span>Capabilities<a class="headerlink" href="#capabilities" title="Link to this heading"></a></h1>
-<p>Version 4.1.0 of the HydroUQ app was released on <strong>September 30th, 2024</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
+<p>Version 4.2.0 of the HydroUQ app was released on <strong>August 20th, 2025</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
 <ol class="arabic simple">
 <li><p>Water Event Selection: Users are provided with multiple paths for water borne hazard generation:</p>
 <ol class="upperalpha simple">
@@ -153,6 +154,7 @@
 <li><p>For advanced users, full authority is provided to input hydrodynamic files from tools of their choice.</p></li>
 <li><p><span class="blue">Define and adjust prebuilt, digital twin wave-makers (piston based, vacuum-chamber release).</span></p></li>
 <li><p><span class="blue">Simulate coastal wave events using the Celeris wave-solver (Boussinesq, non-linear shallow water).</span></p></li>
+<li><p><span class="blue">Access BRAILS building inventories and NOAA bathymetry-topographies through the Celeris module coupling.</span></p></li>
 <li><p><span class="blue">Employ local high-performance computation (GPU &amp; CPU) using Taichi Lang (examples provided).</span></p></li>
 </ol>
 </li>
@@ -205,12 +207,15 @@
 <li><p>Digital Twins</p>
 <blockquote>
 <div><ol class="arabic">
-<li><p>Prevalidated digital twins of wave-flume experimental facilities</p></li>
-<li><p>Available wave-flume twins</p>
+<li><p>Prevalidated digital wave-flumes replicating experimental facilities</p></li>
+<li><p>Available digital wave-flumes</p>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p>Oregon State University Large Wave Flume (OSU LWF)</p></li>
+<li><p><span class="blue">Oregon State University Directional Wave Basin (OSU DWB)</span></p></li>
+<li><p><span class="blue">University of Washington’s Wind-and-Sea Interaction Facility (UW WASIRF)</span></p></li>
 <li><p><span class="blue">Waseda University’s Tsunami Wave Basin (WU TWB)</span></p></li>
+<li><p><span class="blue">United States Geological Survey Debris-Flow Flume (USGS DFF)</span></p></li>
 </ol>
 </div></blockquote>
 </li>
@@ -232,31 +237,44 @@
 <li><p>Numerical Methods</p>
 <blockquote>
 <div><ol class="arabic">
-<li><p>OpenFOAM</p>
+<li><p><span class="blue">Material Point Method (ClaymoreUW MPM)</span></p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><span class="blue">Unified debris-fluid-structure-soil interaction simulations using Material Point Method (MPM)</span></p></li>
+<li><p><span class="blue">Accepts custom event probe types and locations</span></p></li>
+<li><p><span class="blue">Multi-GPU accelerated</span></p></li>
+<li><p><span class="blue">Available for running on TACC HPC</span></p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p><span class="blue">Celeris</span></p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><span class="blue">Boussinesq wave solver</span></p></li>
+<li><p><span class="blue">Nonlinear shallow-water solver</span></p></li>
+<li><p><span class="blue">Accepts custom bathymetries and event probe locations</span></p></li>
+<li><p><span class="blue">Automatic BRAILS inventory with NOAA bathymetries</span></p></li>
+<li><p><span class="blue">Taichi Lang accelerated (GPU &amp; CPU).</span></p></li>
+<li><p><span class="blue">Available for running on local machine</span></p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>FOAMySees (<strong>Returning Soon</strong>) <sup>1</sup></p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Computational Fluid Dynamics using OpenFOAM</p></li>
+<li><p>Computational Structural Dynamics using OpenSees</p></li>
+<li><p>Two-way coupled using Precice library</p></li>
+<li><p>Available for running on TACC HPC</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>OpenFOAM (<strong>Returning Soon</strong>) <sup>2</sup></p>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p>Computational Fluid Dynamics</p></li>
 <li><p>Partially deprecated functionality for allowing inlets for GeoClaw / generic shallow-water equation solutions in OpenFOAM <sup>2</sup></p></li>
 <li><p>Available for running on TACC HPC</p></li>
-</ol>
-</div></blockquote>
-</li>
-<li><p><span class="blue">FOAMySees</span></p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p><span class="blue">Computational Fluid Dynamics using OpenFOAM</span></p></li>
-<li><p><span class="blue">Computational Structural Dynamics using OpenSees</span></p></li>
-<li><p><span class="blue">Two-way coupled using Precice library</span></p></li>
-<li><p><span class="blue">Available for running on TACC HPC</span></p></li>
-</ol>
-</div></blockquote>
-</li>
-<li><p><span class="blue">Material Point Method (ClaymoreUW MPM)</span> <sup>1</sup></p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p><span class="blue">Unified debris-fluid-structure-soil interaction simulations using Material Point Method (MPM)</span></p></li>
-<li><p><span class="blue">Multi-GPU accelerated</span></p></li>
-<li><p><span class="blue">Available for running on TACC HPC</span></p></li>
 </ol>
 </div></blockquote>
 </li>
@@ -276,8 +294,8 @@
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><sup>1</sup> ClaymoreUW MPM numerical method currently only available as a standalone tool in the <code class="docutils literal notranslate"><span class="pre">Tools</span></code> header-ribbon. Soon to be introduced into the full workflow.</p>
-<p><sup>2</sup> GeoClaw functionality from HydroUQ v1.0 is partially deprecated in the current version. It is to be fully reintroduced in the near future.</p>
+<p><sup>1</sup> FOAMySees functionality from HydroUQ v2.0 is deprecated in the current version due to remote supercomputer migration from Frontera to Stampede3. It is to be fully reintroduced in the near future if funding returns to this project.
+<sup>2</sup> OpenFOAM-GeoClaw functionality from HydroUQ v1.0 is deprecated in the current version due to remote supercomputer migration from Frontera to Stampede3. It is to be fully reintroduced in the near future if funding returns to this project.</p>
 </div>
 </section>
 <section id="fem-computational-model-specification">

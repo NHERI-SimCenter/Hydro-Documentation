@@ -1,0 +1,1056 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.5. Near-Real Time Wave-Solver - Tsunami Vulnerability of a School in Loiza, Puerto Rico - Celeris + BRAILS &mdash; Hydro-UQ  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=66b6668b" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/custom.css?v=4b5bf716" />
+
+  
+      <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../../../../_static/design-tabs.js?v=36754332"></script>
+      <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+      <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="4.6. Multiple Debris Impacts on a Raised Structure - Digital Flume (OSU LWF) - MPM" href="../hdro-0002/README.html" />
+    <link rel="prev" title="4.4. Near-Real Time Wave-Solver - Oregon State University’s Large Wave Flume - Celeris" href="../hdro-0021/README.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html" class="icon icon-home"> Hydro-UQ
+
+
+
+</a>
+
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/Hydro/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/hydroCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/releasenotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/hydroPlans.html">7. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Running Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/tools.html">3. Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">4. Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0005/README.html">4.1. Stochastic Wave Loading on a Frame Structure - JONSWAP Spectra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0010/README.html">4.2. Real-Time Wave-Solver - Simple Piston Generated Wave Loading - Taichi Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0020/README.html">4.3. Near-Real Time Wave-Solver - Seaside, OR Experimental Replication - Celeris</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0021/README.html">4.4. Near-Real Time Wave-Solver - Oregon State University’s Large Wave Flume - Celeris</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.5. Near-Real Time Wave-Solver - Tsunami Vulnerability of a School in Loiza, Puerto Rico - Celeris + BRAILS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">4.5.1. Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-up">4.5.2. Set-Up</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#step-1-uq">4.5.2.1. Step 1: UQ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-2-gi">4.5.2.2. Step 2: GI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-3-sim">4.5.2.3. Step 3: SIM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-4-evt">4.5.2.4. Step 4: EVT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-5-fem">4.5.2.5. Step 5: FEM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-6-edp">4.5.2.6. Step 6: EDP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-7-rv">4.5.2.7. Step 7: RV</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#simulation">4.5.3. Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#analysis">4.5.4. Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conclusions">4.5.5. Conclusions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reproducibility">4.5.6. Reproducibility</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0002/README.html">4.6. Multiple Debris Impacts on a Raised Structure - Digital Flume (OSU LWF) - MPM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0006/README.html">4.7. Debris Group Motion Over a Frictional Bed - Digital Flume (OSU DWB) - MPM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0007/README.html">4.8. Debris in Steady-State Flow - Digital Flume (UW WASIRF) - MPM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0004/README.html">4.9. Tsunami Debris Motion In a Scaled Port Setting - Digital Flume (WU TWB) - MPM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0008/README.html">4.10. Debris-Flow Down a Hill-Slope - Digital Flume (USGS DFF) - MPM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/jobs.html">5. Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/bestpractices.html">6. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">7. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">8. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">9. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/helpvideo.html">10. Video Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/hazards/water.html">3. Water-borne Hazards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/swsolver.html">4. Shallow Water Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/cfdsolver/cfdsolver.html">5. CFD Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/fvm/fvm.html">6. Finite Volume Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/hydro/mpm/mpm.html">7. Material Point Method</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend.html">2. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #F2F2F2" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Hydro-UQ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../examples.html"><span class="section-number">4. </span>Examples</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4.5. </span>Near-Real Time Wave-Solver - Tsunami Vulnerability of a School in Loiza, Puerto Rico - Celeris + BRAILS</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../../_sources/common/user_manual/examples/desktop/hdro-0022/README.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="near-real-time-wave-solver-tsunami-vulnerability-of-a-school-in-loiza-puerto-rico-celeris-brails">
+<span id="hdro-0022"></span><h1><span class="section-number">4.5. </span>Near-Real Time Wave-Solver - Tsunami Vulnerability of a School in Loiza, Puerto Rico - Celeris + BRAILS<a class="headerlink" href="#near-real-time-wave-solver-tsunami-vulnerability-of-a-school-in-loiza-puerto-rico-celeris-brails" title="Link to this heading"></a></h1>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Problem files</p></td>
+<td><p><a class="extlink-github reference external" href="https://github.com/NHERI-SimCenter/HydroUQ/tree/master/Examples/hdro-0022/">Github</a></p></td>
+</tr>
+</tbody>
+</table>
+<nav class="contents local" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p></li>
+<li><p><a class="reference internal" href="#set-up" id="id3">Set-Up</a></p>
+<ul>
+<li><p><a class="reference internal" href="#step-1-uq" id="id4">Step 1: UQ</a></p></li>
+<li><p><a class="reference internal" href="#step-2-gi" id="id5">Step 2: GI</a></p></li>
+<li><p><a class="reference internal" href="#step-3-sim" id="id6">Step 3: SIM</a></p></li>
+<li><p><a class="reference internal" href="#step-4-evt" id="id7">Step 4: EVT</a></p></li>
+<li><p><a class="reference internal" href="#step-5-fem" id="id8">Step 5: FEM</a></p></li>
+<li><p><a class="reference internal" href="#step-6-edp" id="id9">Step 6: EDP</a></p></li>
+<li><p><a class="reference internal" href="#step-7-rv" id="id10">Step 7: RV</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#simulation" id="id11">Simulation</a></p></li>
+<li><p><a class="reference internal" href="#analysis" id="id12">Analysis</a></p></li>
+<li><p><a class="reference internal" href="#conclusions" id="id13">Conclusions</a></p></li>
+<li><p><a class="reference internal" href="#reproducibility" id="id14">Reproducibility</a></p></li>
+</ul>
+</nav>
+<section id="overview">
+<span id="hdro-0022-overview"></span><h2><span class="section-number">4.5.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0022.gif"><img alt="Near-real-time CelerisAi depth-averaged wave simulation over Loiza, Puerto Rico; incoming tsunami-like wave interacts with coastline and a nearby river inlet; school site and probe locations marked." src="../../../../../_images/hdro-0022.gif" style="width: 600px;" />
+</a>
+</figure>
+<p>Study the <strong>tsunami vulnerability of a school in Loiza, Puerto Rico</strong>, driven by <strong>local bathymetry</strong>—a <strong>coastline</strong> and <strong>nearby river</strong>—amid <strong>sea level rise</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The school is a <strong>cross-shaped</strong> building, which influences both its structural response and the way hydrodynamic loads are distributed during tsunami inundation. This geometry should be considered when interpreting simulation results and configuring probe locations for load mapping, but we emphasize that we keep the structural representation as a simple frame for this example. Advanced users are urged to explore a more detailed structural modeling approach.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The school is adjacent to a diamond shaped, open field and an ‘L’ shaped structure. The former is a baseball field used by the local, predominantly minority students, and the latter is the stadium seating. We emphasize that this open field poses a localized threat during a tsunami due to its bathymetric features. Further, it is a likely gathering point for students during an evacuation so it may become a <strong>hazard zone</strong>.</p>
+</div>
+<p>Two approaches will be taken:</p>
+<ol class="arabic simple">
+<li><p>Analysis on an existing bathymetry file with a limited building inventory for the town of Loiza, Puerto Rico. This represents a typical but unwieldy workflow.</p></li>
+<li><p>Analysis on a bathymetry that is created at run-time by calling on a NOAA API for bathymetry-topography and merging in automated building inventory scraping results from BRAILS for Loiza, Puerto Rico. This represents a highly automated and convenient workflow.</p></li>
+</ol>
+<p>Hydrodynamics are represented by a composed sine-wave tsunami-like far-field signal inflow. On-top of to-be-discussed <strong>structural</strong> uncertainty, this example is unique in that it also includes <strong>hydrodynamic</strong> uncertainty: a <strong>seaLevel</strong> offset (mean 0.0, stdev 0.25) to reflect sea-level rise scenarios which are anticipated to have a pronounced effect on the region.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Keep <strong>GI</strong>, <strong>SIM</strong>, <strong>EVT</strong>, and <strong>FEM</strong> units consistent between CelerisAi outputs and OpenSees inputs, including any geographic/time scaling used for the Loiza domain.</p>
+</div>
+</section>
+<section id="set-up">
+<span id="hdro-0022-set-up"></span><h2><span class="section-number">4.5.2. </span>Set-Up<a class="headerlink" href="#set-up" title="Link to this heading"></a></h2>
+<section id="step-1-uq">
+<h3><span class="section-number">4.5.2.1. </span>Step 1: UQ<a class="headerlink" href="#step-1-uq" title="Link to this heading"></a></h3>
+<p>Configure <strong>Forward</strong> sampling to explore structural and hydrodynamic uncertainty.</p>
+<ul class="simple">
+<li><p><strong>Engine</strong>: Dakota</p></li>
+<li><p><strong>Forward Propagation</strong>: Sampling method (e.g., <strong>LHS</strong>) with <code class="docutils literal notranslate"><span class="pre">samples</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">40</span></code>) and an optional reproducible <code class="docutils literal notranslate"><span class="pre">seed</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">1</span></code>).</p></li>
+</ul>
+<figure class="align-center">
+<img alt="HydroUQ UQ panel with Dakota engine; Forward method selected with sample count and optional seed." src="../../../../../_images/hdro-0022_UQ.png" />
+</figure>
+</section>
+<section id="step-2-gi">
+<h3><span class="section-number">4.5.2.2. </span>Step 2: GI<a class="headerlink" href="#step-2-gi" title="Link to this heading"></a></h3>
+<p>Set <strong>General Information</strong> and <strong>Units</strong>. Ensure units are consistent across the workflow.</p>
+<ul class="simple">
+<li><p>Project name: <code class="docutils literal notranslate"><span class="pre">CelerisAi_Loiza_School</span></code></p></li>
+<li><p>Location/metadata: optional</p></li>
+<li><p>Units: pick a consistent set (e.g., N-m-s or kips-in-s)</p></li>
+</ul>
+<figure class="align-center">
+<img alt="General Information panel showing project name and unit selections." src="../../../../../_images/hdro-0022_GI.png" />
+</figure>
+</section>
+<section id="step-3-sim">
+<h3><span class="section-number">4.5.2.3. </span>Step 3: SIM<a class="headerlink" href="#step-3-sim" title="Link to this heading"></a></h3>
+<p>The structural model is as follows: a <strong>2D, 3-DOF OpenSees portal frame</strong> in OpenSees, <a class="reference internal" href="../../../usage/desktop/SIM.html#lblopenseessim"><span class="std std-ref">OpenSees</span></a>.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0022_Structure.png"><img alt="Schematic of a 2D three-degree-of-freedom portal frame subjected to horizontal wave-induced drag forces along the column line, with parameters taken from a JONSWAP spectrum." src="../../../../../_images/hdro-0022_Structure.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.5.2.3.1 </span><span class="caption-text">2D 3-DOF portal frame under stochastic wave loading (JONSWAP)</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>For the OpenSees generator the following model script, <a class="reference external" href="https://github.com/NHERI-SimCenter/HydroUQ/blob/master/Examples/hdro-0022/src/Frame.tcl">Frame.tcl</a> , is used:</p>
+<details open style="border:1px solid #ccc; border-radius:6px; background:#efefef; padding:0.5em; margin:0.5em 0;">
+<summary style="font-weight:bold; text-decoration:underline; cursor:pointer;">Click to expand the OpenSees input file used for this example</summary><div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="c"># Create ModelBuilder (with two-dimensions and 3 DOF/node)</span>
+<span class="linenos">  2</span>
+<span class="linenos">  3</span><span class="nv">model</span><span class="w"> </span>basic<span class="w"> </span><span class="o">-</span>ndm<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span>ndf<span class="w"> </span><span class="mi">3</span>
+<span class="linenos">  4</span>
+<span class="linenos">  5</span><span class="k">set</span><span class="w"> </span>width<span class="w">    </span><span class="mi">360</span>
+<span class="linenos">  6</span><span class="k">set</span><span class="w"> </span>height<span class="w">   </span><span class="mi">144</span>
+<span class="linenos">  7</span>
+<span class="linenos">  8</span><span class="nv">node</span><span class="w">  </span><span class="mi">1</span><span class="w">       </span><span class="mf">0.0</span><span class="w">     </span><span class="mf">0.0</span><span class="w"> </span>
+<span class="linenos">  9</span>node<span class="w">  </span><span class="mi">2</span><span class="w">    </span><span class="nv">$width</span><span class="w">     </span><span class="mf">0.0</span><span class="w"> </span>
+<span class="linenos"> 10</span>node<span class="w">  </span><span class="mi">3</span><span class="w">       </span><span class="mf">0.0</span><span class="w"> </span><span class="nv">$height</span>
+<span class="linenos"> 11</span><span class="nv">node</span><span class="w">  </span><span class="mi">4</span><span class="w">    </span><span class="nv">$width</span><span class="w"> </span><span class="nv">$height</span>
+<span class="linenos"> 12</span>
+<span class="linenos"> 13</span><span class="nv">fix</span><span class="w">   </span><span class="mi">1</span><span class="w">     </span><span class="mi">1</span><span class="w">    </span><span class="mi">1</span><span class="w">    </span><span class="mi">1</span>
+<span class="linenos"> 14</span><span class="nv">fix</span><span class="w">   </span><span class="mi">2</span><span class="w">     </span><span class="mi">1</span><span class="w">    </span><span class="mi">1</span><span class="w">    </span><span class="mi">1</span>
+<span class="linenos"> 15</span>
+<span class="linenos"> 16</span><span class="c"># Concrete ( Youngs Modulus, Yield Strength, and Compressive Strength)</span>
+<span class="linenos"> 17</span><span class="nv">pset</span><span class="w"> </span>fc<span class="w"> </span><span class="mf">6.0</span>
+<span class="linenos"> 18</span><span class="nv">pset</span><span class="w"> </span>fy<span class="w"> </span><span class="mf">60.0</span>
+<span class="linenos"> 19</span><span class="nv">pset</span><span class="w"> </span>E<span class="w"> </span><span class="mf">30000.0</span>
+<span class="linenos"> 20</span><span class="nv">uniaxialMaterial</span><span class="w"> </span>Concrete01<span class="w">  </span><span class="mi">1</span><span class="w">  </span><span class="o">-</span><span class="nv">$fc</span><span class="w">  </span><span class="o">-</span><span class="mf">0.004</span><span class="w">   </span><span class="o">-</span><span class="mf">5.0</span><span class="w">     </span><span class="o">-</span><span class="mf">0.014</span>
+<span class="linenos"> 21</span><span class="nv">uniaxialMaterial</span><span class="w"> </span>Concrete01<span class="w">  </span><span class="mi">2</span><span class="w">  </span><span class="o">-</span><span class="mf">5.0</span><span class="w">   </span><span class="o">-</span><span class="mf">0.002</span><span class="w">   </span><span class="mf">0.0</span><span class="w">     </span><span class="o">-</span><span class="mf">0.006</span>
+<span class="linenos"> 22</span>
+<span class="linenos"> 23</span><span class="c"># STEEL</span>
+<span class="linenos"> 24</span><span class="nv">uniaxialMaterial</span><span class="w"> </span>Steel01<span class="w">  </span><span class="mi">3</span><span class="w">  </span><span class="nv">$fy</span><span class="w"> </span><span class="nv">$E</span><span class="w"> </span><span class="mf">0.01</span>
+<span class="linenos"> 25</span>
+<span class="linenos"> 26</span><span class="k">set</span><span class="w"> </span>colWidth<span class="w"> </span><span class="mi">15</span>
+<span class="linenos"> 27</span><span class="k">set</span><span class="w"> </span>colDepth<span class="w"> </span><span class="mi">24</span><span class="w"> </span>
+<span class="linenos"> 28</span>set<span class="w"> </span>cover<span class="w">  </span><span class="mf">1.5</span>
+<span class="linenos"> 29</span><span class="k">set</span><span class="w"> </span>As<span class="w">    </span><span class="mf">0.60</span><span class="k">;</span><span class="w">     </span><span class="c"># area of no. 7 bars</span>
+<span class="linenos"> 30</span><span class="k">set</span><span class="w"> </span>y1<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$colDepth</span><span class="o">/</span><span class="mf">2.0</span><span class="k">]</span>
+<span class="linenos"> 31</span><span class="k">set</span><span class="w"> </span>z1<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$colWidth</span><span class="o">/</span><span class="mf">2.0</span><span class="k">]</span>
+<span class="linenos"> 32</span>
+<span class="linenos"> 33</span><span class="nv">section</span><span class="w"> </span>Fiber<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">{</span>
+<span class="linenos"> 34</span>
+<span class="linenos"> 35</span><span class="w">    </span><span class="c"># Create the concrete core fibers</span>
+<span class="linenos"> 36</span><span class="w">    </span><span class="nv">patch</span><span class="w"> </span>rect<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$cover-$y1</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$cover-$z1</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$y1-$cover</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$z1-$cover</span><span class="k">]</span>
+<span class="linenos"> 37</span>
+<span class="linenos"> 38</span><span class="w">    </span><span class="c"># Create the concrete cover fibers (top, bottom, left, right)</span>
+<span class="linenos"> 39</span><span class="w">    </span><span class="nv">patch</span><span class="w"> </span>rect<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="k">[expr</span><span class="w"> </span><span class="o">-</span><span class="nv">$y1</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$z1-$cover</span><span class="k">]</span><span class="w"> </span><span class="nv">$y1</span><span class="w"> </span><span class="nv">$z1</span>
+<span class="linenos"> 40</span><span class="w">    </span><span class="nv">patch</span><span class="w"> </span>rect<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="k">[expr</span><span class="w"> </span><span class="o">-</span><span class="nv">$y1</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="o">-</span><span class="nv">$z1</span><span class="k">]</span><span class="w"> </span><span class="nv">$y1</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$cover-$z1</span><span class="k">]</span>
+<span class="linenos"> 41</span><span class="w">    </span><span class="nv">patch</span><span class="w"> </span>rect<span class="w"> </span><span class="mi">2</span><span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="k">[expr</span><span class="w"> </span><span class="o">-</span><span class="nv">$y1</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$cover-$z1</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$cover-$y1</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$z1-$cover</span><span class="k">]</span>
+<span class="linenos"> 42</span><span class="w">    </span><span class="nv">patch</span><span class="w"> </span>rect<span class="w"> </span><span class="mi">2</span><span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$y1-$cover</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$cover-$z1</span><span class="k">]</span><span class="w"> </span><span class="nv">$y1</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$z1-$cover</span><span class="k">]</span>
+<span class="linenos"> 43</span>
+<span class="linenos"> 44</span><span class="w">    </span><span class="c"># Create the reinforcing fibers (left, middle, right)</span>
+<span class="linenos"> 45</span><span class="w">    </span><span class="nv">layer</span><span class="w"> </span>straight<span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nv">$As</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$y1-$cover</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$z1-$cover</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$y1-$cover</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$cover-$z1</span><span class="k">]</span>
+<span class="linenos"> 46</span><span class="w">    </span><span class="nv">layer</span><span class="w"> </span>straight<span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="nv">$As</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$z1-$cover</span><span class="k">]</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$cover-$z1</span><span class="k">]</span>
+<span class="linenos"> 47</span><span class="w">    </span><span class="nv">layer</span><span class="w"> </span>straight<span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nv">$As</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$cover-$y1</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$z1-$cover</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$cover-$y1</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$cover-$z1</span><span class="k">]</span>
+<span class="linenos"> 48</span>
+<span class="linenos"> 49</span><span class="k">}</span><span class="w">    </span>
+<span class="linenos"> 50</span>
+<span class="linenos"> 51</span>
+<span class="linenos"> 52</span><span class="err">#</span><span class="w"> </span>Define<span class="w"> </span>column<span class="w"> </span>elements
+<span class="linenos"> 53</span><span class="c"># ----------------------</span>
+<span class="linenos"> 54</span>
+<span class="linenos"> 55</span><span class="c"># Geometry of column elements</span>
+<span class="linenos"> 56</span><span class="c">#                tag </span>
+<span class="linenos"> 57</span>
+<span class="linenos"> 58</span><span class="nv">geomTransf</span><span class="w"> </span>Corotational<span class="w"> </span><span class="mi">1</span><span class="w">  </span>
+<span class="linenos"> 59</span>
+<span class="linenos"> 60</span><span class="err">#</span><span class="w"> </span>Number<span class="w"> </span>of<span class="w"> </span>integration<span class="w"> </span>points<span class="w"> </span>along<span class="w"> </span>length<span class="w"> </span>of<span class="w"> </span>element
+<span class="linenos"> 61</span><span class="k">set</span><span class="w"> </span>np<span class="w"> </span><span class="mi">5</span>
+<span class="linenos"> 62</span>
+<span class="linenos"> 63</span><span class="c"># Create the coulumns using Beam-column elements</span>
+<span class="linenos"> 64</span><span class="c">#               e            tag ndI ndJ nsecs secID transfTag</span>
+<span class="linenos"> 65</span><span class="k">set</span><span class="w"> </span>eleType<span class="w"> </span>dispBeamColumn
+<span class="linenos"> 66</span><span class="nv">element</span><span class="w"> </span><span class="nv">$eleType</span><span class="w">  </span><span class="mi">1</span><span class="w">   </span><span class="mi">1</span><span class="w">   </span><span class="mi">3</span><span class="w">   </span><span class="nv">$np</span><span class="w">    </span><span class="mi">1</span><span class="w">       </span><span class="mi">1</span><span class="w"> </span>
+<span class="linenos"> 67</span>element<span class="w"> </span><span class="nv">$eleType</span><span class="w">  </span><span class="mi">2</span><span class="w">   </span><span class="mi">2</span><span class="w">   </span><span class="mi">4</span><span class="w">   </span><span class="nv">$np</span><span class="w">    </span><span class="mi">1</span><span class="w">       </span><span class="mi">1</span><span class="w"> </span>
+<span class="linenos"> 68</span>
+<span class="linenos"> 69</span><span class="err">#</span><span class="w"> </span>Define<span class="w"> </span>beam<span class="w"> </span>elment
+<span class="linenos"> 70</span><span class="c"># -----------------------------</span>
+<span class="linenos"> 71</span>
+<span class="linenos"> 72</span><span class="c"># Geometry of column elements</span>
+<span class="linenos"> 73</span><span class="c">#                tag </span>
+<span class="linenos"> 74</span><span class="nv">geomTransf</span><span class="w"> </span>Linear<span class="w"> </span><span class="mi">2</span><span class="w">  </span>
+<span class="linenos"> 75</span>
+<span class="linenos"> 76</span><span class="err">#</span><span class="w"> </span>Create<span class="w"> </span>the<span class="w"> </span>beam<span class="w"> </span>element
+<span class="linenos"> 77</span><span class="c">#                          tag ndI ndJ     A       E    Iz   transfTag</span>
+<span class="linenos"> 78</span><span class="nv">element</span><span class="w"> </span>elasticBeamColumn<span class="w">   </span><span class="mi">3</span><span class="w">   </span><span class="mi">3</span><span class="w">   </span><span class="mi">4</span><span class="w">    </span><span class="mi">360</span><span class="w">    </span><span class="mi">4030</span><span class="w">  </span><span class="mi">8640</span><span class="w">    </span><span class="mi">2</span>
+<span class="linenos"> 79</span>
+<span class="linenos"> 80</span><span class="c"># Define gravity loads</span>
+<span class="linenos"> 81</span><span class="c"># --------------------</span>
+<span class="linenos"> 82</span>
+<span class="linenos"> 83</span><span class="c"># Set a parameter for the axial load</span>
+<span class="linenos"> 84</span><span class="k">set</span><span class="w"> </span>P<span class="w"> </span><span class="mi">180</span><span class="k">;</span><span class="w">                </span><span class="c"># 10% of axial capacity of columns</span>
+<span class="linenos"> 85</span>
+<span class="linenos"> 86</span><span class="c"># Create a Plain load pattern with a Linear TimeSeries</span>
+<span class="linenos"> 87</span><span class="nv">pattern</span><span class="w"> </span>Plain<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="s2">&quot;Linear&quot;</span><span class="w"> </span><span class="k">{</span>
+<span class="linenos"> 88</span>
+<span class="linenos"> 89</span><span class="w">        </span><span class="c"># Create nodal loads at nodes 3 &amp; 4</span>
+<span class="linenos"> 90</span><span class="w">	</span><span class="c">#    nd    FX          FY  MZ </span>
+<span class="linenos"> 91</span><span class="w">	</span><span class="nb">load</span><span class="w">  </span><span class="mi">3</span><span class="w">   </span><span class="mf">0.0</span><span class="w">  </span><span class="k">[expr</span><span class="w"> </span><span class="o">-</span><span class="nv">$P</span><span class="k">]</span><span class="w"> </span><span class="mf">0.0</span>
+<span class="linenos"> 92</span><span class="w">	</span><span class="nb">load</span><span class="w">  </span><span class="mi">4</span><span class="w">   </span><span class="mf">0.0</span><span class="w">  </span><span class="k">[expr</span><span class="w"> </span><span class="o">-</span><span class="nv">$P</span><span class="k">]</span><span class="w"> </span><span class="mf">0.0</span>
+<span class="linenos"> 93</span><span class="k">}</span>
+<span class="linenos"> 94</span>
+<span class="linenos"> 95</span><span class="c"># ------------------------------</span>
+<span class="linenos"> 96</span><span class="c"># Start of analysis generation</span>
+<span class="linenos"> 97</span><span class="c"># ------------------------------</span>
+<span class="linenos"> 98</span>
+<span class="linenos"> 99</span><span class="c"># Create the system of equation, a sparse solver with partial pivoting</span>
+<span class="linenos">100</span><span class="nv">system</span><span class="w"> </span>ProfileSPD
+<span class="linenos">101</span>
+<span class="linenos">102</span><span class="c"># Create the constraint handler, the transformation method</span>
+<span class="linenos">103</span><span class="nv">constraints</span><span class="w"> </span>Transformation
+<span class="linenos">104</span>
+<span class="linenos">105</span><span class="c"># Create the DOF numberer, the reverse Cuthill-McKee algorithm</span>
+<span class="linenos">106</span><span class="nv">numberer</span><span class="w"> </span>RCM
+<span class="linenos">107</span>
+<span class="linenos">108</span><span class="c"># Create the convergence test, the norm of the residual with a tolerance of </span>
+<span class="linenos">109</span><span class="c"># 1e-12 and a max number of iterations of 10</span>
+<span class="linenos">110</span><span class="nv">test</span><span class="w"> </span>NormDispIncr<span class="w"> </span><span class="mf">1.0</span>e-12<span class="w">  </span><span class="mi">10</span><span class="w"> </span><span class="mi">3</span>
+<span class="linenos">111</span>
+<span class="linenos">112</span><span class="c"># Create the solution algorithm, a Newton-Raphson algorithm</span>
+<span class="linenos">113</span><span class="nv">algorithm</span><span class="w"> </span>Newton
+<span class="linenos">114</span>
+<span class="linenos">115</span><span class="c"># Create the integration scheme, the LoadControl scheme using steps of 0.1 </span>
+<span class="linenos">116</span><span class="nv">integrator</span><span class="w"> </span>LoadControl<span class="w"> </span><span class="mf">0.1</span>
+<span class="linenos">117</span>
+<span class="linenos">118</span><span class="c"># Create the analysis object</span>
+<span class="linenos">119</span><span class="nv">analysis</span><span class="w"> </span>Static
+<span class="linenos">120</span>
+<span class="linenos">121</span><span class="c"># ------------------------------</span>
+<span class="linenos">122</span><span class="c"># End of analysis generation</span>
+<span class="linenos">123</span><span class="c"># ------------------------------</span>
+<span class="linenos">124</span>
+<span class="linenos">125</span><span class="c"># perform the gravity load analysis, requires 10 steps to reach the load level</span>
+<span class="linenos">126</span><span class="nv">analyze</span><span class="w"> </span><span class="mi">10</span>
+<span class="linenos">127</span>
+<span class="linenos">128</span><span class="nv">loadConst</span><span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="mf">0.0</span>
+<span class="linenos">129</span>
+<span class="linenos">130</span><span class="c"># ----------------------------------------------------</span>
+<span class="linenos">131</span><span class="c"># End of Model Generation &amp; Initial Gravity Analysis</span>
+<span class="linenos">132</span><span class="c"># ----------------------------------------------------</span>
+<span class="linenos">133</span>
+<span class="linenos">134</span>
+<span class="linenos">135</span><span class="c"># ----------------------------------------------------</span>
+<span class="linenos">136</span><span class="c"># Start of additional modelling for dynamic loads</span>
+<span class="linenos">137</span><span class="c"># ----------------------------------------------------</span>
+<span class="linenos">138</span>
+<span class="linenos">139</span><span class="c"># Define nodal mass in terms of axial load on columns</span>
+<span class="linenos">140</span><span class="k">set</span><span class="w"> </span>g<span class="w"> </span><span class="mf">386.4</span>
+<span class="linenos">141</span><span class="k">set</span><span class="w"> </span>m<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$P</span><span class="o">/</span><span class="nv">$g</span><span class="k">];</span><span class="w">       </span><span class="c"># expr command to evaluate an expression</span>
+<span class="linenos">142</span>
+<span class="linenos">143</span><span class="c">#    tag   MX   MY   RZ</span>
+<span class="linenos">144</span><span class="nv">mass</span><span class="w">  </span><span class="mi">3</span><span class="w">    </span><span class="nv">$m</span><span class="w">   </span><span class="nv">$m</span><span class="w">    </span><span class="mi">0</span>
+<span class="linenos">145</span><span class="nv">mass</span><span class="w">  </span><span class="mi">4</span><span class="w">    </span><span class="nv">$m</span><span class="w">   </span><span class="nv">$m</span><span class="w">    </span><span class="mi">0</span>
+</pre></div>
+</div>
+</details><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The first lines containing <code class="docutils literal notranslate"><span class="pre">pset</span></code> in an OpenSees tcl file will be read by the application when the file is selected. The application will autopopulate the random variables in the <strong>RV</strong>  panel with these same variable names.</p>
+</div>
+<figure class="align-center">
+<img alt="SIM panel referencing an OpenSees model file (Frame.tcl) with fields for material properties set as variable names fc, fy, and E." src="../../../../../_images/hdro-0022_SIM.png" />
+</figure>
+<p>These variable names (<code class="docutils literal notranslate"><span class="pre">fc</span></code>, <code class="docutils literal notranslate"><span class="pre">fy</span></code>, <code class="docutils literal notranslate"><span class="pre">E</span></code>) are <strong>recognized</strong> in <code class="docutils literal notranslate"><span class="pre">Frame.tcl</span></code> due to use of the <cite>pset</cite> command instead of <cite>set</cite>. This is so that <strong>RV</strong> picks them up automatically. You can try adding new <strong>RV</strong> parameters in the same way.</p>
+<p><strong>Uncertain properties</strong> (treated as RVs; see Step 7):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fc</span></code>: mean <code class="docutils literal notranslate"><span class="pre">6</span></code>, stdev <code class="docutils literal notranslate"><span class="pre">0.06</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fy</span></code>: mean <code class="docutils literal notranslate"><span class="pre">60</span></code>, stdev <code class="docutils literal notranslate"><span class="pre">0.6</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">E</span></code>: mean <code class="docutils literal notranslate"><span class="pre">30000</span></code>, stdev <code class="docutils literal notranslate"><span class="pre">300</span></code></p></li>
+</ul>
+</section>
+<section id="step-4-evt">
+<h3><span class="section-number">4.5.2.4. </span>Step 4: EVT<a class="headerlink" href="#step-4-evt" title="Link to this heading"></a></h3>
+<p><strong>Load Generator</strong>: <strong>CelerisAi Event - Near-Real-Time Boussinesq Solver</strong> (Loiza, PR coastal + riverine bathymetry).</p>
+<p>Configuration outline:</p>
+<ul class="simple">
+<li><p><strong>Bathymetry/geometry</strong>: Loiza coastline, adjacent river channel, and local urban footprint for shielding/flow pathways.</p></li>
+<li><p><strong>Wavemaker</strong>: tsunami-like incoming signal (solitary/long-wave proxy).</p></li>
+<li><p><strong>Instrumentation</strong>: place <strong>wave-gauges</strong> (η), <strong>velocimeters</strong> (u, v), and <strong>load proxies</strong> at school façade and along the river corridor to study channeling.</p></li>
+<li><p><strong>Hydrodynamic RVs</strong>: promote <strong>seaLevel</strong> to a RV (see Step 7).</p></li>
+<li><p><strong>Export</strong>: time histories at probe and structure locations for load mapping into OpenSees.</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>To perform the standard, manual workflow, load-in the following files to the <code class="docutils literal notranslate"><span class="pre">Celeris</span></code> tab:</p></li>
+</ol>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/NHERI-SimCenter/HydroUQ/blob/master/Examples/hdro-0022/src/config.json">config.json</a></p></li>
+<li><p><a class="reference external" href="https://github.com/NHERI-SimCenter/HydroUQ/blob/master/Examples/hdro-0022/src/bathy.txt">bathy.txt</a></p></li>
+<li><p><a class="reference external" href="https://github.com/NHERI-SimCenter/HydroUQ/blob/master/Examples/hdro-0022/src/waves.txt">waves.txt</a></p></li>
+</ul>
+<figure class="align-center">
+<img alt="EVT panel showing Celeris configuration." src="../../../../../_images/hdro-0022_EVT_Celeris.png" />
+</figure>
+<ol class="arabic simple" start="2">
+<li><p>To perform the automated workflow using BRAILS for a fleshed-out building inventory and a NOAA API for high-quality bathymetry-topography, configure the following in the <code class="docutils literal notranslate"><span class="pre">BRAILS</span></code> tab and press <code class="docutils literal notranslate"><span class="pre">Run</span></code>. It may take between 20 to 120 seconds to finish:</p></li>
+</ol>
+<figure class="align-center">
+<img alt="EVT panel showing Celeris-BRAILS configuration." src="../../../../../_images/hdro-0022_EVT_BRAILS.png" />
+</figure>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You will need to reconfigure wave-gauges and load-sensors to fit this new bathymetry, as the example’s provided values are valid for the manual workflow only.</p>
+</div>
+<figure class="align-center">
+<img alt="EVT panel showing the Full-Scale Celeris configuration." src="../../../../../_images/hdro-0022_EVT_Celeris_FullScale.png" />
+</figure>
+<p>For both workflows, double-check that the following parameters are set in the <code class="docutils literal notranslate"><span class="pre">Solver</span></code> and <code class="docutils literal notranslate"><span class="pre">Domain</span></code> tabs:</p>
+<figure class="align-center">
+<img alt="EVT panel showing Celeris Solver configuration." src="../../../../../_images/hdro-0022_EVT_Solver.png" />
+</figure>
+<figure class="align-center">
+<img alt="EVT panel showing Celeris Domain configuration." src="../../../../../_images/hdro-0022_EVT_Domain.png" />
+</figure>
+</section>
+<section id="step-5-fem">
+<h3><span class="section-number">4.5.2.5. </span>Step 5: FEM<a class="headerlink" href="#step-5-fem" title="Link to this heading"></a></h3>
+<p><strong>Solver</strong>: OpenSees dynamic analysis. Check:</p>
+<ul class="simple">
+<li><p>Integration step compatible with Celeris output interval.</p></li>
+<li><p>Algorithm/convergence tolerances suitable for expected nonlinearity.</p></li>
+<li><p>Damping model as needed (e.g., Rayleigh).</p></li>
+</ul>
+<figure class="align-center">
+<img alt="FEM panel with integration, algorithm, solver, and damping settings." src="../../../../../_images/hdro-0022_FEM.png" />
+</figure>
+</section>
+<section id="step-6-edp">
+<h3><span class="section-number">4.5.2.6. </span>Step 6: EDP<a class="headerlink" href="#step-6-edp" title="Link to this heading"></a></h3>
+<p>Select <strong>Engineering Demand Parameters (EDPs)</strong> to summarize response:</p>
+<ul class="simple">
+<li><p>Peak Floor Acceleration (PFA)</p></li>
+<li><p>Root Mean Square Acceleration (RMSA)</p></li>
+<li><p>Peak Floor Displacement (PFD)</p></li>
+<li><p>Peak Interstory Drift (PID)</p></li>
+</ul>
+<figure class="align-center">
+<img alt="EDP panel with standard selections enabled." src="../../../../../_images/hdro-0022_EDP.png" />
+</figure>
+</section>
+<section id="step-7-rv">
+<h3><span class="section-number">4.5.2.7. </span>Step 7: RV<a class="headerlink" href="#step-7-rv" title="Link to this heading"></a></h3>
+<p>Define distributions for <strong>structural</strong> and <strong>hydrodynamic</strong> RVs:</p>
+<p><strong>Structural</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fc</span></code>: <strong>Normal</strong> (mean <code class="docutils literal notranslate"><span class="pre">6</span></code>, stdev <code class="docutils literal notranslate"><span class="pre">0.06</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fy</span></code>: <strong>Normal</strong> (mean <code class="docutils literal notranslate"><span class="pre">60</span></code>, stdev <code class="docutils literal notranslate"><span class="pre">0.6</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">E</span></code>:  <strong>Normal</strong> (mean <code class="docutils literal notranslate"><span class="pre">30000</span></code>, stdev <code class="docutils literal notranslate"><span class="pre">300</span></code>)</p></li>
+</ul>
+<p><strong>Hydrodynamic (incoming signal + mean level)</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">seaLevel</span></code>:  <strong>Normal</strong> (mean <code class="docutils literal notranslate"><span class="pre">0.0</span></code>, stdev <code class="docutils literal notranslate"><span class="pre">0.25</span></code>)</p></li>
+</ul>
+<figure class="align-center">
+<img alt="RV panel listing fc, fy, E, and seaLevel with Normal distributions and parameters." src="../../../../../_images/hdro-0022_RV.png" />
+</figure>
+</section>
+</section>
+<section id="simulation">
+<span id="hdro-0022-simulation"></span><h2><span class="section-number">4.5.3. </span>Simulation<a class="headerlink" href="#simulation" title="Link to this heading"></a></h2>
+<p>This workflow is intended for either <strong>local execution</strong> or <strong>remote execution</strong> to leverage near-real-time Celeris computation. Click <strong>RUN</strong> for local if you have a decently strong computer, or <strong>RUN at DesignSafe</strong> if you have a DesignSafe account and wish to use the Stampede3 supercomputer. When complete, the <strong>RES</strong> panel opens. Locally, the workflow will take from 30 to 120 minutes depending on your PC.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Keep recorder counts, export frequency, and sample size reasonable. Excessive export rates or too many recorders can dominate runtime and disk usage.</p>
+</div>
+</section>
+<section id="analysis">
+<span id="hdro-0022-analysis"></span><h2><span class="section-number">4.5.4. </span>Analysis<a class="headerlink" href="#analysis" title="Link to this heading"></a></h2>
+<p>Visualize time-series from event probes (e.g., wave-gauges, velocimeters, and load-sensors) by navigating to <code class="docutils literal notranslate"><span class="pre">EVT</span></code> / <code class="docutils literal notranslate"><span class="pre">Wave</span> <span class="pre">Solver</span> <span class="pre">(Celeris)</span></code> / <code class="docutils literal notranslate"><span class="pre">Results</span></code>. Then set the <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">Type</span></code> to <code class="docutils literal notranslate"><span class="pre">Local</span></code> for local workflows and choose the simulation you wish to inspect by setting <code class="docutils literal notranslate"><span class="pre">Simulation</span> <span class="pre">Number</span></code> between 1 and the number of samples you set in the <strong>UQ</strong> tab.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0022_EVT_Results.png"><img alt="Probe comparisons (wave-gauges, velocimeters, and load proxies) near the coastline, river corridor, and at the school façade for CelerisAi runs across forward samples." src="../../../../../_images/hdro-0022_EVT_Results.png" style="width: 700px;" />
+</a>
+</figure>
+<ul class="simple">
+<li><p><strong>Coastline proximity</strong>: not especially predictive of demand at the school due to <strong>shielding by adjacent buildings</strong>.</p></li>
+<li><p><strong>River proximity</strong>: a <strong>significant hazard driver</strong>—channelized flow and reduced shielding increase local velocities and loads.</p></li>
+<li><p><strong>Sea-level rise</strong>: higher <code class="docutils literal notranslate"><span class="pre">seaLevel</span></code> shifts inundation extents and amplifies local flow depths/velocities along the <strong>river corridor</strong> more than along the coast-fronted school site.</p></li>
+</ul>
+<p>Returning to our primary HydroUQ workflow, which concerns uncertainty in structural response, we may now view the final results in the <strong>RES</strong> tab. Clicking <code class="docutils literal notranslate"><span class="pre">Summary</span></code> on the top-bar, a statistical summary of results is shown below:</p>
+<figure class="align-center">
+<img alt="Results summary from Forward UQ runs under CelerisAi-derived loading at the school site." src="../../../../../_images/hdro-0022_RES_Summary.png" />
+</figure>
+<p>Clicking <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Values</span></code> on the top-bar shows detailed histograms, cumulative distribution functions, and scatter plots relating the dependent and independent variables:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the <strong>Data Values</strong> tab, left- and right-click column headers to change plot axes; selecting a single column with both clicks displays frequency and CDF plots.</p>
+</div>
+<figure class="align-center">
+<img alt="Results scatter plot from Forward UQ runs under CelerisAi-derived loading at the school site." src="../../../../../_images/hdro-0022_RES_Scatter.png" />
+</figure>
+<figure class="align-center">
+<img alt="Histogram view and tabular outputs for key response measures." src="../../../../../_images/hdro-0022_RES_Histogram.png" />
+</figure>
+<figure class="align-center">
+<img alt="CDF view and tabular outputs for key response measures." src="../../../../../_images/hdro-0022_RES_Cumulative.png" />
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Use <strong>consistent Froude similitude scaling</strong> when comparing numerical simulations, experiments, and full-scale scenarios. For cross-method comparisons, adopt <strong>identical structure footprints</strong>, <strong>friction models</strong>, <strong>probe placement</strong>, and other pertinent parameters to reduce bias.</p>
+</div>
+<p>For more advanced analysis, export results as a CSV file by clicking <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">Table</span></code> on the upper-right of the application window. This will save the independent and dependent variable data. I.e., the <strong>Random Variables</strong> you defined and the <strong>Engineering Demand Parameters</strong> determined from the structural response per each simulation.</p>
+<p>To save your simulation configuration with results included, click <code class="docutils literal notranslate"><span class="pre">File</span></code> / <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">As</span></code> and specify a location for the HydroUQ JSON input file to be recorded to. You may then reload the file at a later time by clicking <code class="docutils literal notranslate"><span class="pre">File</span></code> / <code class="docutils literal notranslate"><span class="pre">Open</span></code>. You may also send it to others by email or place it in an online repository for research reproducibility. This example’s input file is viewable at <a class="reference internal" href="#hdro-0022-reproducibility"><span class="std std-ref">Reproducibility</span></a>.</p>
+<p>To directly share your simulation job and results in HydroUQ with other DesignSafe users, click <code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">from</span> <span class="pre">DesignSafe</span></code>. Then, navigate to the row with your job and right-click it. Select <code class="docutils literal notranslate"><span class="pre">Share</span> <span class="pre">Job</span></code>. You may then enter the DesignSafe username or usernames (comma-separated) to share with.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Sharing a job requires that the job was initially ran with an <code class="docutils literal notranslate"><span class="pre">Archive</span> <span class="pre">System</span> <span class="pre">ID</span></code> (listed in the <code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">from</span> <span class="pre">DesignSafe</span></code> table’s columns) that is <strong>not</strong> <code class="docutils literal notranslate"><span class="pre">designsafe.storage.default</span></code>. Any other <code class="docutils literal notranslate"><span class="pre">Archive</span> <span class="pre">System</span> <span class="pre">ID</span></code> allows for sharing with DesignSafe <strong>members on the associated project</strong>. See <a class="reference internal" href="../../../usage/desktop/jobs.html#lbl-jobs"><span class="std std-ref">Jobs</span></a> for more details.</p>
+</div>
+</section>
+<section id="conclusions">
+<span id="hdro-0022-conclusions"></span><h2><span class="section-number">4.5.5. </span>Conclusions<a class="headerlink" href="#conclusions" title="Link to this heading"></a></h2>
+<p>This town and its school, which is minority serving demographically, features notable tsunami risk despite being in a region not well-known for this hazard. Notably, proximity to the coastline was seen to not be especially relevant as other buildings provided shielding effects for the school, however, proximity to a river was a significant source of danger due to the local bathymetry and lack of impeding structures. If we were to further refine our model (both hydrodynamic and structural), it may provide actionable insights for this community. This is due to the advanced UQ-equipped engineering hazard workflow present in HydroUQ.</p>
+</section>
+<section id="reproducibility">
+<span id="hdro-0022-reproducibility"></span><h2><span class="section-number">4.5.6. </span>Reproducibility<a class="headerlink" href="#reproducibility" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Random seed(s): <code class="docutils literal notranslate"><span class="pre">1</span></code> (set in UQ)</p></li>
+<li><p>Model file: <code class="docutils literal notranslate"><span class="pre">Frame.tcl</span></code></p></li>
+<li><p>App version: HydroUQ v4.2.0 (or current)</p></li>
+<li><p>Wave solver: CelerisAi (as provided in NHERI-SimCenter/SimCenterBackendApplications)</p></li>
+<li><p>System: Local Mac, Linux, and Windows, as well as TACC HPC clusters such as Stampede3.</p></li>
+<li><p>Input: The HydroUQ input file is as follows: <a class="reference external" href="https://github.com/NHERI-SimCenter/HydroUQ/blob/master/Examples/hdro-0022/src/input.json">input.json</a> , is used:</p></li>
+</ul>
+<details style="border:1px solid #ccc; border-radius:6px; background:#efefef; padding:0.5em; margin:0.5em 0;">
+<summary style="font-weight:bold; text-decoration:underline; cursor:pointer;">Click to expand the HydroUQ input file used for this example</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="p">{</span>
+<span class="linenos">  2</span><span class="w">    </span><span class="nt">&quot;Applications&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">  3</span><span class="w">        </span><span class="nt">&quot;EDP&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">  4</span><span class="w">            </span><span class="nt">&quot;Application&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;StandardEDP&quot;</span><span class="p">,</span>
+<span class="linenos">  5</span><span class="w">            </span><span class="nt">&quot;ApplicationData&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">  6</span><span class="w">            </span><span class="p">}</span>
+<span class="linenos">  7</span><span class="w">        </span><span class="p">},</span>
+<span class="linenos">  8</span><span class="w">        </span><span class="nt">&quot;Events&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">  9</span><span class="w">            </span><span class="p">{</span>
+<span class="linenos"> 10</span><span class="w">                </span><span class="nt">&quot;Application&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Celeris&quot;</span><span class="p">,</span>
+<span class="linenos"> 11</span><span class="w">                </span><span class="nt">&quot;ApplicationData&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 12</span><span class="w">                </span><span class="p">},</span>
+<span class="linenos"> 13</span><span class="w">                </span><span class="nt">&quot;EventClassification&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hydro&quot;</span>
+<span class="linenos"> 14</span><span class="w">            </span><span class="p">}</span>
+<span class="linenos"> 15</span><span class="w">        </span><span class="p">],</span>
+<span class="linenos"> 16</span><span class="w">        </span><span class="nt">&quot;Modeling&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 17</span><span class="w">            </span><span class="nt">&quot;Application&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OpenSeesInput&quot;</span><span class="p">,</span>
+<span class="linenos"> 18</span><span class="w">            </span><span class="nt">&quot;ApplicationData&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 19</span><span class="w">                </span><span class="nt">&quot;fileName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Frame.tcl&quot;</span><span class="p">,</span>
+<span class="linenos"> 20</span><span class="w">                </span><span class="nt">&quot;filePath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{Current_Dir}/.&quot;</span>
+<span class="linenos"> 21</span><span class="w">            </span><span class="p">}</span>
+<span class="linenos"> 22</span><span class="w">        </span><span class="p">},</span>
+<span class="linenos"> 23</span><span class="w">        </span><span class="nt">&quot;Simulation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 24</span><span class="w">            </span><span class="nt">&quot;Application&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OpenSees-Simulation&quot;</span><span class="p">,</span>
+<span class="linenos"> 25</span><span class="w">            </span><span class="nt">&quot;ApplicationData&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 26</span><span class="w">            </span><span class="p">}</span>
+<span class="linenos"> 27</span><span class="w">        </span><span class="p">},</span>
+<span class="linenos"> 28</span><span class="w">        </span><span class="nt">&quot;UQ&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 29</span><span class="w">            </span><span class="nt">&quot;Application&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Dakota-UQ&quot;</span><span class="p">,</span>
+<span class="linenos"> 30</span><span class="w">            </span><span class="nt">&quot;ApplicationData&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 31</span><span class="w">            </span><span class="p">}</span>
+<span class="linenos"> 32</span><span class="w">        </span><span class="p">}</span>
+<span class="linenos"> 33</span><span class="w">    </span><span class="p">},</span>
+<span class="linenos"> 34</span><span class="w">    </span><span class="nt">&quot;DefaultValues&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 35</span><span class="w">        </span><span class="nt">&quot;driverFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;driver&quot;</span><span class="p">,</span>
+<span class="linenos"> 36</span><span class="w">        </span><span class="nt">&quot;edpFiles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos"> 37</span><span class="w">            </span><span class="s2">&quot;EDP.json&quot;</span>
+<span class="linenos"> 38</span><span class="w">        </span><span class="p">],</span>
+<span class="linenos"> 39</span><span class="w">        </span><span class="nt">&quot;filenameAIM&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AIM.json&quot;</span><span class="p">,</span>
+<span class="linenos"> 40</span><span class="w">        </span><span class="nt">&quot;filenameDL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BIM.json&quot;</span><span class="p">,</span>
+<span class="linenos"> 41</span><span class="w">        </span><span class="nt">&quot;filenameEDP&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EDP.json&quot;</span><span class="p">,</span>
+<span class="linenos"> 42</span><span class="w">        </span><span class="nt">&quot;filenameEVENT&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EVENT.json&quot;</span><span class="p">,</span>
+<span class="linenos"> 43</span><span class="w">        </span><span class="nt">&quot;filenameSAM&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SAM.json&quot;</span><span class="p">,</span>
+<span class="linenos"> 44</span><span class="w">        </span><span class="nt">&quot;filenameSIM&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SIM.json&quot;</span><span class="p">,</span>
+<span class="linenos"> 45</span><span class="w">        </span><span class="nt">&quot;rvFiles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos"> 46</span><span class="w">            </span><span class="s2">&quot;AIM.json&quot;</span><span class="p">,</span>
+<span class="linenos"> 47</span><span class="w">            </span><span class="s2">&quot;SAM.json&quot;</span><span class="p">,</span>
+<span class="linenos"> 48</span><span class="w">            </span><span class="s2">&quot;EVENT.json&quot;</span><span class="p">,</span>
+<span class="linenos"> 49</span><span class="w">            </span><span class="s2">&quot;SIM.json&quot;</span>
+<span class="linenos"> 50</span><span class="w">        </span><span class="p">],</span>
+<span class="linenos"> 51</span><span class="w">        </span><span class="nt">&quot;workflowInput&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;scInput.json&quot;</span><span class="p">,</span>
+<span class="linenos"> 52</span><span class="w">        </span><span class="nt">&quot;workflowOutput&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EDP.json&quot;</span>
+<span class="linenos"> 53</span><span class="w">    </span><span class="p">},</span>
+<span class="linenos"> 54</span><span class="w">    </span><span class="nt">&quot;EDP&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 55</span><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;StandardEDP&quot;</span>
+<span class="linenos"> 56</span><span class="w">    </span><span class="p">},</span>
+<span class="linenos"> 57</span><span class="w">    </span><span class="nt">&quot;Events&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos"> 58</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos"> 59</span><span class="w">            </span><span class="nt">&quot;Application&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Celeris&quot;</span><span class="p">,</span>
+<span class="linenos"> 60</span><span class="w">            </span><span class="nt">&quot;EventClassification&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hydro&quot;</span><span class="p">,</span>
+<span class="linenos"> 61</span><span class="w">            </span><span class="nt">&quot;bathymetryFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bathy.txt&quot;</span><span class="p">,</span>
+<span class="linenos"> 62</span><span class="w">            </span><span class="nt">&quot;bathymetryFilePath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{Current_Dir}/.&quot;</span><span class="p">,</span>
+<span class="linenos"> 63</span><span class="w">            </span><span class="nt">&quot;config&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 64</span><span class="w">                </span><span class="nt">&quot;Bcoef&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0666667</span><span class="p">,</span>
+<span class="linenos"> 65</span><span class="w">                </span><span class="nt">&quot;BoundaryWidth&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
+<span class="linenos"> 66</span><span class="w">                </span><span class="nt">&quot;Courant_num&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span>
+<span class="linenos"> 67</span><span class="w">                </span><span class="nt">&quot;HEIGHT&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">750</span><span class="p">,</span>
+<span class="linenos"> 68</span><span class="w">                </span><span class="nt">&quot;NLSW_or_Bous&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos"> 69</span><span class="w">                </span><span class="nt">&quot;NumberOfTimeSeries&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<span class="linenos"> 70</span><span class="w">                </span><span class="nt">&quot;T_star_coef&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="linenos"> 71</span><span class="w">                </span><span class="nt">&quot;Theta&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="linenos"> 72</span><span class="w">                </span><span class="nt">&quot;WIDTH&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">750</span><span class="p">,</span>
+<span class="linenos"> 73</span><span class="w">                </span><span class="nt">&quot;WaveType&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span>
+<span class="linenos"> 74</span><span class="w">                </span><span class="nt">&quot;base_depth&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="linenos"> 75</span><span class="w">                </span><span class="nt">&quot;boundary_shift&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="linenos"> 76</span><span class="w">                </span><span class="nt">&quot;delta_breaking&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="linenos"> 77</span><span class="w">                </span><span class="nt">&quot;dissipation_threshold&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span>
+<span class="linenos"> 78</span><span class="w">                </span><span class="nt">&quot;duration&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1250</span><span class="p">,</span>
+<span class="linenos"> 79</span><span class="w">                </span><span class="nt">&quot;dx&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="linenos"> 80</span><span class="w">                </span><span class="nt">&quot;dy&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="linenos"> 81</span><span class="w">                </span><span class="nt">&quot;dzdt_F_coef&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span>
+<span class="linenos"> 82</span><span class="w">                </span><span class="nt">&quot;dzdt_I_coef&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span>
+<span class="linenos"> 83</span><span class="w">                </span><span class="nt">&quot;east_boundary_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos"> 84</span><span class="w">                </span><span class="nt">&quot;east_seaLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos"> 85</span><span class="w">                </span><span class="nt">&quot;force_sensor_begin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos"> 86</span><span class="w">                    </span><span class="mi">1239</span><span class="p">,</span>
+<span class="linenos"> 87</span><span class="w">                    </span><span class="mi">1785</span>
+<span class="linenos"> 88</span><span class="w">                </span><span class="p">],</span>
+<span class="linenos"> 89</span><span class="w">                </span><span class="nt">&quot;force_sensor_end&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos"> 90</span><span class="w">                    </span><span class="mi">1281</span><span class="p">,</span>
+<span class="linenos"> 91</span><span class="w">                    </span><span class="mi">1806</span>
+<span class="linenos"> 92</span><span class="w">                </span><span class="p">],</span>
+<span class="linenos"> 93</span><span class="w">                </span><span class="nt">&quot;friction&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.001</span><span class="p">,</span>
+<span class="linenos"> 94</span><span class="w">                </span><span class="nt">&quot;g&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">9.80665</span><span class="p">,</span>
+<span class="linenos"> 95</span><span class="w">                </span><span class="nt">&quot;infiltrationRate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.001</span><span class="p">,</span>
+<span class="linenos"> 96</span><span class="w">                </span><span class="nt">&quot;isManning&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos"> 97</span><span class="w">                </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Loiza, Puerto Rico&quot;</span><span class="p">,</span>
+<span class="linenos"> 98</span><span class="w">                </span><span class="nt">&quot;lat_LL&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">18.4323008</span><span class="p">,</span>
+<span class="linenos"> 99</span><span class="w">                </span><span class="nt">&quot;lon_LL&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-65.8780065</span><span class="p">,</span>
+<span class="linenos">100</span><span class="w">                </span><span class="nt">&quot;lat_UR&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">18.4423008</span><span class="p">,</span>
+<span class="linenos">101</span><span class="w">                </span><span class="nt">&quot;lon_UR&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-65.8680065</span><span class="p">,</span>
+<span class="linenos">102</span><span class="w">                </span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">18.4323008</span><span class="p">,</span>
+<span class="linenos">103</span><span class="w">                </span><span class="nt">&quot;locationOfTimeSeries&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">104</span><span class="w">                    </span><span class="p">{</span>
+<span class="linenos">105</span><span class="w">                        </span><span class="nt">&quot;xts&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">106</span><span class="w">                        </span><span class="nt">&quot;yts&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="linenos">107</span><span class="w">                    </span><span class="p">},</span>
+<span class="linenos">108</span><span class="w">                    </span><span class="p">{</span>
+<span class="linenos">109</span><span class="w">                        </span><span class="nt">&quot;xts&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span>
+<span class="linenos">110</span><span class="w">                        </span><span class="nt">&quot;yts&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span>
+<span class="linenos">111</span><span class="w">                    </span><span class="p">},</span>
+<span class="linenos">112</span><span class="w">                    </span><span class="p">{</span>
+<span class="linenos">113</span><span class="w">                        </span><span class="nt">&quot;xts&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="linenos">114</span><span class="w">                        </span><span class="nt">&quot;yts&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span>
+<span class="linenos">115</span><span class="w">                    </span><span class="p">},</span>
+<span class="linenos">116</span><span class="w">                    </span><span class="p">{</span>
+<span class="linenos">117</span><span class="w">                        </span><span class="nt">&quot;xts&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1500</span><span class="p">,</span>
+<span class="linenos">118</span><span class="w">                        </span><span class="nt">&quot;yts&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1400</span>
+<span class="linenos">119</span><span class="w">                    </span><span class="p">},</span>
+<span class="linenos">120</span><span class="w">                    </span><span class="p">{</span>
+<span class="linenos">121</span><span class="w">                        </span><span class="nt">&quot;xts&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1236</span><span class="p">,</span>
+<span class="linenos">122</span><span class="w">                        </span><span class="nt">&quot;yts&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1677</span>
+<span class="linenos">123</span><span class="w">                    </span><span class="p">},</span>
+<span class="linenos">124</span><span class="w">                    </span><span class="p">{</span>
+<span class="linenos">125</span><span class="w">                        </span><span class="nt">&quot;xts&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1281</span><span class="p">,</span>
+<span class="linenos">126</span><span class="w">                        </span><span class="nt">&quot;yts&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1797</span>
+<span class="linenos">127</span><span class="w">                    </span><span class="p">}</span>
+<span class="linenos">128</span><span class="w">                </span><span class="p">],</span>
+<span class="linenos">129</span><span class="w">                </span><span class="nt">&quot;lon&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-65.8780065</span><span class="p">,</span>
+<span class="linenos">130</span><span class="w">                </span><span class="nt">&quot;north_boundary_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">131</span><span class="w">                </span><span class="nt">&quot;north_seaLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">132</span><span class="w">                </span><span class="nt">&quot;seaLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RV.seaLevel&quot;</span><span class="p">,</span>
+<span class="linenos">133</span><span class="w">                </span><span class="nt">&quot;sedC1_criticalshields&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.045</span><span class="p">,</span>
+<span class="linenos">134</span><span class="w">                </span><span class="nt">&quot;sedC1_d50&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span>
+<span class="linenos">135</span><span class="w">                </span><span class="nt">&quot;sedC1_denrat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2.65</span><span class="p">,</span>
+<span class="linenos">136</span><span class="w">                </span><span class="nt">&quot;sedC1_n&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.4</span><span class="p">,</span>
+<span class="linenos">137</span><span class="w">                </span><span class="nt">&quot;sedC1_psi&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5e-05</span><span class="p">,</span>
+<span class="linenos">138</span><span class="w">                </span><span class="nt">&quot;showBreaking&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">139</span><span class="w">                </span><span class="nt">&quot;significant_wave_height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="linenos">140</span><span class="w">                </span><span class="nt">&quot;south_boundary_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="linenos">141</span><span class="w">                </span><span class="nt">&quot;south_seaLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">142</span><span class="w">                </span><span class="nt">&quot;timeScheme&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="linenos">143</span><span class="w">                </span><span class="nt">&quot;tridiag_solve&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="linenos">144</span><span class="w">                </span><span class="nt">&quot;useBreakingModel&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">145</span><span class="w">                </span><span class="nt">&quot;useSedTransModel&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">146</span><span class="w">                </span><span class="nt">&quot;west_boundary_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="linenos">147</span><span class="w">                </span><span class="nt">&quot;west_seaLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">148</span><span class="w">                </span><span class="nt">&quot;whiteWaterDecayRate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span>
+<span class="linenos">149</span><span class="w">                </span><span class="nt">&quot;whiteWaterDispersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span>
+<span class="linenos">150</span><span class="w">            </span><span class="p">},</span>
+<span class="linenos">151</span><span class="w">            </span><span class="nt">&quot;configFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;config.json&quot;</span><span class="p">,</span>
+<span class="linenos">152</span><span class="w">            </span><span class="nt">&quot;configFilePath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{Current_Dir}/.&quot;</span><span class="p">,</span>
+<span class="linenos">153</span><span class="w">            </span><span class="nt">&quot;subtype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Celeris&quot;</span><span class="p">,</span>
+<span class="linenos">154</span><span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Celeris&quot;</span><span class="p">,</span>
+<span class="linenos">155</span><span class="w">            </span><span class="nt">&quot;waveFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;waves.txt&quot;</span><span class="p">,</span>
+<span class="linenos">156</span><span class="w">            </span><span class="nt">&quot;waveFilePath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{Current_Dir}/.&quot;</span>
+<span class="linenos">157</span><span class="w">        </span><span class="p">}</span>
+<span class="linenos">158</span><span class="w">    </span><span class="p">],</span>
+<span class="linenos">159</span><span class="w">    </span><span class="nt">&quot;GeneralInformation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">160</span><span class="w">        </span><span class="nt">&quot;NumberOfStories&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">161</span><span class="w">        </span><span class="nt">&quot;PlanArea&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">129600</span><span class="p">,</span>
+<span class="linenos">162</span><span class="w">        </span><span class="nt">&quot;StructureType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RM1&quot;</span><span class="p">,</span>
+<span class="linenos">163</span><span class="w">        </span><span class="nt">&quot;YearBuilt&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1990</span><span class="p">,</span>
+<span class="linenos">164</span><span class="w">        </span><span class="nt">&quot;depth&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">360</span><span class="p">,</span>
+<span class="linenos">165</span><span class="w">        </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">576</span><span class="p">,</span>
+<span class="linenos">166</span><span class="w">        </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">167</span><span class="w">            </span><span class="nt">&quot;latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">37.8715</span><span class="p">,</span>
+<span class="linenos">168</span><span class="w">            </span><span class="nt">&quot;longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-122.273</span>
+<span class="linenos">169</span><span class="w">        </span><span class="p">},</span>
+<span class="linenos">170</span><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos">171</span><span class="w">        </span><span class="nt">&quot;planArea&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">129600</span><span class="p">,</span>
+<span class="linenos">172</span><span class="w">        </span><span class="nt">&quot;stories&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">173</span><span class="w">        </span><span class="nt">&quot;units&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">174</span><span class="w">            </span><span class="nt">&quot;force&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;kips&quot;</span><span class="p">,</span>
+<span class="linenos">175</span><span class="w">            </span><span class="nt">&quot;length&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;in&quot;</span><span class="p">,</span>
+<span class="linenos">176</span><span class="w">            </span><span class="nt">&quot;temperature&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C&quot;</span><span class="p">,</span>
+<span class="linenos">177</span><span class="w">            </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sec&quot;</span>
+<span class="linenos">178</span><span class="w">        </span><span class="p">},</span>
+<span class="linenos">179</span><span class="w">        </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">360</span>
+<span class="linenos">180</span><span class="w">    </span><span class="p">},</span>
+<span class="linenos">181</span><span class="w">    </span><span class="nt">&quot;Modeling&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">182</span><span class="w">        </span><span class="nt">&quot;centroidNodes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">183</span><span class="w">            </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">184</span><span class="w">            </span><span class="mi">3</span>
+<span class="linenos">185</span><span class="w">        </span><span class="p">],</span>
+<span class="linenos">186</span><span class="w">        </span><span class="nt">&quot;dampingRatio&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.02</span><span class="p">,</span>
+<span class="linenos">187</span><span class="w">        </span><span class="nt">&quot;ndf&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="linenos">188</span><span class="w">        </span><span class="nt">&quot;ndm&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="linenos">189</span><span class="w">        </span><span class="nt">&quot;randomVar&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">190</span><span class="w">            </span><span class="p">{</span>
+<span class="linenos">191</span><span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fc&quot;</span><span class="p">,</span>
+<span class="linenos">192</span><span class="w">                </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RV.fc&quot;</span>
+<span class="linenos">193</span><span class="w">            </span><span class="p">},</span>
+<span class="linenos">194</span><span class="w">            </span><span class="p">{</span>
+<span class="linenos">195</span><span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fy&quot;</span><span class="p">,</span>
+<span class="linenos">196</span><span class="w">                </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RV.fy&quot;</span>
+<span class="linenos">197</span><span class="w">            </span><span class="p">},</span>
+<span class="linenos">198</span><span class="w">            </span><span class="p">{</span>
+<span class="linenos">199</span><span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;E&quot;</span><span class="p">,</span>
+<span class="linenos">200</span><span class="w">                </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RV.E&quot;</span>
+<span class="linenos">201</span><span class="w">            </span><span class="p">}</span>
+<span class="linenos">202</span><span class="w">        </span><span class="p">],</span>
+<span class="linenos">203</span><span class="w">        </span><span class="nt">&quot;responseNodes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">204</span><span class="w">            </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">205</span><span class="w">            </span><span class="mi">3</span>
+<span class="linenos">206</span><span class="w">        </span><span class="p">],</span>
+<span class="linenos">207</span><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OpenSeesInput&quot;</span>
+<span class="linenos">208</span><span class="w">    </span><span class="p">},</span>
+<span class="linenos">209</span><span class="w">    </span><span class="nt">&quot;Simulation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">210</span><span class="w">        </span><span class="nt">&quot;Application&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OpenSees-Simulation&quot;</span><span class="p">,</span>
+<span class="linenos">211</span><span class="w">        </span><span class="nt">&quot;algorithm&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Newton&quot;</span><span class="p">,</span>
+<span class="linenos">212</span><span class="w">        </span><span class="nt">&quot;analysis&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Transient -numSubLevels 2 -numSubSteps 10&quot;</span><span class="p">,</span>
+<span class="linenos">213</span><span class="w">        </span><span class="nt">&quot;convergenceTest&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NormUnbalance 1.0e-2 10&quot;</span><span class="p">,</span>
+<span class="linenos">214</span><span class="w">        </span><span class="nt">&quot;dampingModel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rayleigh Damping&quot;</span><span class="p">,</span>
+<span class="linenos">215</span><span class="w">        </span><span class="nt">&quot;firstMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">216</span><span class="w">        </span><span class="nt">&quot;integration&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Newmark 0.5 0.25&quot;</span><span class="p">,</span>
+<span class="linenos">217</span><span class="w">        </span><span class="nt">&quot;modalRayleighTangentRatio&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">218</span><span class="w">        </span><span class="nt">&quot;numModesModal&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span>
+<span class="linenos">219</span><span class="w">        </span><span class="nt">&quot;rayleighTangent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Initial&quot;</span><span class="p">,</span>
+<span class="linenos">220</span><span class="w">        </span><span class="nt">&quot;secondMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span>
+<span class="linenos">221</span><span class="w">        </span><span class="nt">&quot;solver&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Umfpack&quot;</span>
+<span class="linenos">222</span><span class="w">    </span><span class="p">},</span>
+<span class="linenos">223</span><span class="w">    </span><span class="nt">&quot;UQ&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">224</span><span class="w">        </span><span class="nt">&quot;parallelExecution&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="linenos">225</span><span class="w">        </span><span class="nt">&quot;samplingMethodData&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">226</span><span class="w">            </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LHS&quot;</span><span class="p">,</span>
+<span class="linenos">227</span><span class="w">            </span><span class="nt">&quot;samples&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">228</span><span class="w">            </span><span class="nt">&quot;seed&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="linenos">229</span><span class="w">        </span><span class="p">},</span>
+<span class="linenos">230</span><span class="w">        </span><span class="nt">&quot;saveWorkDir&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="linenos">231</span><span class="w">        </span><span class="nt">&quot;uqType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Forward Propagation&quot;</span>
+<span class="linenos">232</span><span class="w">    </span><span class="p">},</span>
+<span class="linenos">233</span><span class="w">    </span><span class="nt">&quot;correlationMatrix&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">234</span><span class="w">        </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">235</span><span class="w">        </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">236</span><span class="w">        </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">237</span><span class="w">        </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">238</span><span class="w">        </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">239</span><span class="w">        </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">240</span><span class="w">        </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">241</span><span class="w">        </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">242</span><span class="w">        </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">243</span><span class="w">        </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">244</span><span class="w">        </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">245</span><span class="w">        </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">246</span><span class="w">        </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">247</span><span class="w">        </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">248</span><span class="w">        </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">249</span><span class="w">        </span><span class="mi">1</span>
+<span class="linenos">250</span><span class="w">    </span><span class="p">],</span>
+<span class="linenos">251</span><span class="w">    </span><span class="nt">&quot;localAppDir&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/home/justinbonus/SimCenter/HydroUQ/build&quot;</span><span class="p">,</span>
+<span class="linenos">252</span><span class="w">    </span><span class="nt">&quot;randomVariables&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">253</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos">254</span><span class="w">            </span><span class="nt">&quot;distribution&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Normal&quot;</span><span class="p">,</span>
+<span class="linenos">255</span><span class="w">            </span><span class="nt">&quot;inputType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Parameters&quot;</span><span class="p">,</span>
+<span class="linenos">256</span><span class="w">            </span><span class="nt">&quot;mean&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<span class="linenos">257</span><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fc&quot;</span><span class="p">,</span>
+<span class="linenos">258</span><span class="w">            </span><span class="nt">&quot;refCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">259</span><span class="w">            </span><span class="nt">&quot;stdDev&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.06</span><span class="p">,</span>
+<span class="linenos">260</span><span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RV.fc&quot;</span><span class="p">,</span>
+<span class="linenos">261</span><span class="w">            </span><span class="nt">&quot;variableClass&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Uncertain&quot;</span>
+<span class="linenos">262</span><span class="w">        </span><span class="p">},</span>
+<span class="linenos">263</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos">264</span><span class="w">            </span><span class="nt">&quot;distribution&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Normal&quot;</span><span class="p">,</span>
+<span class="linenos">265</span><span class="w">            </span><span class="nt">&quot;inputType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Parameters&quot;</span><span class="p">,</span>
+<span class="linenos">266</span><span class="w">            </span><span class="nt">&quot;mean&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span>
+<span class="linenos">267</span><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fy&quot;</span><span class="p">,</span>
+<span class="linenos">268</span><span class="w">            </span><span class="nt">&quot;refCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">269</span><span class="w">            </span><span class="nt">&quot;stdDev&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span>
+<span class="linenos">270</span><span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RV.fy&quot;</span><span class="p">,</span>
+<span class="linenos">271</span><span class="w">            </span><span class="nt">&quot;variableClass&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Uncertain&quot;</span>
+<span class="linenos">272</span><span class="w">        </span><span class="p">},</span>
+<span class="linenos">273</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos">274</span><span class="w">            </span><span class="nt">&quot;distribution&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Normal&quot;</span><span class="p">,</span>
+<span class="linenos">275</span><span class="w">            </span><span class="nt">&quot;inputType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Parameters&quot;</span><span class="p">,</span>
+<span class="linenos">276</span><span class="w">            </span><span class="nt">&quot;mean&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30000</span><span class="p">,</span>
+<span class="linenos">277</span><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;E&quot;</span><span class="p">,</span>
+<span class="linenos">278</span><span class="w">            </span><span class="nt">&quot;refCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">279</span><span class="w">            </span><span class="nt">&quot;stdDev&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span>
+<span class="linenos">280</span><span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RV.E&quot;</span><span class="p">,</span>
+<span class="linenos">281</span><span class="w">            </span><span class="nt">&quot;variableClass&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Uncertain&quot;</span>
+<span class="linenos">282</span><span class="w">        </span><span class="p">},</span>
+<span class="linenos">283</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos">284</span><span class="w">            </span><span class="nt">&quot;distribution&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Normal&quot;</span><span class="p">,</span>
+<span class="linenos">285</span><span class="w">            </span><span class="nt">&quot;inputType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Parameters&quot;</span><span class="p">,</span>
+<span class="linenos">286</span><span class="w">            </span><span class="nt">&quot;mean&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">287</span><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;seaLevel&quot;</span><span class="p">,</span>
+<span class="linenos">288</span><span class="w">            </span><span class="nt">&quot;refCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">289</span><span class="w">            </span><span class="nt">&quot;stdDev&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.25</span><span class="p">,</span>
+<span class="linenos">290</span><span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RV.seaLevel&quot;</span><span class="p">,</span>
+<span class="linenos">291</span><span class="w">            </span><span class="nt">&quot;variableClass&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Uncertain&quot;</span>
+<span class="linenos">292</span><span class="w">        </span><span class="p">}</span>
+<span class="linenos">293</span><span class="w">    </span><span class="p">],</span>
+<span class="linenos">294</span><span class="w">    </span><span class="nt">&quot;remoteAppDir&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/home/justinbonus/SimCenter/HydroUQ/build&quot;</span><span class="p">,</span>
+<span class="linenos">295</span><span class="w">    </span><span class="nt">&quot;resultType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SimCenterUQResultsSampling&quot;</span><span class="p">,</span>
+<span class="linenos">296</span><span class="w">    </span><span class="nt">&quot;runType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;runningLocal&quot;</span><span class="p">,</span>
+<span class="linenos">297</span><span class="w">    </span><span class="nt">&quot;spreadsheet&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">298</span><span class="w">        </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">299</span><span class="w">            </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">300</span><span class="w">            </span><span class="mf">5.987428929</span><span class="p">,</span>
+<span class="linenos">301</span><span class="w">            </span><span class="mf">61.66113893</span><span class="p">,</span>
+<span class="linenos">302</span><span class="w">            </span><span class="mf">30175.14172</span><span class="p">,</span>
+<span class="linenos">303</span><span class="w">            </span><span class="mf">0.3737779393</span><span class="p">,</span>
+<span class="linenos">304</span><span class="w">            </span><span class="mf">13.9508</span><span class="p">,</span>
+<span class="linenos">305</span><span class="w">            </span><span class="mf">6.53392</span><span class="p">,</span>
+<span class="linenos">306</span><span class="w">            </span><span class="mf">0.409945</span><span class="p">,</span>
+<span class="linenos">307</span><span class="w">            </span><span class="mf">0.0438376</span><span class="p">,</span>
+<span class="linenos">308</span><span class="w">            </span><span class="mf">0.258779</span><span class="p">,</span>
+<span class="linenos">309</span><span class="w">            </span><span class="mf">0.0188354</span><span class="p">,</span>
+<span class="linenos">310</span><span class="w">            </span><span class="mf">0.00179707</span><span class="p">,</span>
+<span class="linenos">311</span><span class="w">            </span><span class="mi">0</span>
+<span class="linenos">312</span><span class="w">        </span><span class="p">],</span>
+<span class="linenos">313</span><span class="w">        </span><span class="nt">&quot;headings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">314</span><span class="w">            </span><span class="s2">&quot;Run #&quot;</span><span class="p">,</span>
+<span class="linenos">315</span><span class="w">            </span><span class="s2">&quot;fc&quot;</span><span class="p">,</span>
+<span class="linenos">316</span><span class="w">            </span><span class="s2">&quot;fy&quot;</span><span class="p">,</span>
+<span class="linenos">317</span><span class="w">            </span><span class="s2">&quot;E&quot;</span><span class="p">,</span>
+<span class="linenos">318</span><span class="w">            </span><span class="s2">&quot;seaLevel&quot;</span><span class="p">,</span>
+<span class="linenos">319</span><span class="w">            </span><span class="s2">&quot;1-PFA-1-1&quot;</span><span class="p">,</span>
+<span class="linenos">320</span><span class="w">            </span><span class="s2">&quot;1-PFA-1-2&quot;</span><span class="p">,</span>
+<span class="linenos">321</span><span class="w">            </span><span class="s2">&quot;1-RMSA-1-1&quot;</span><span class="p">,</span>
+<span class="linenos">322</span><span class="w">            </span><span class="s2">&quot;1-RMSA-1-2&quot;</span><span class="p">,</span>
+<span class="linenos">323</span><span class="w">            </span><span class="s2">&quot;1-PFD-1-1&quot;</span><span class="p">,</span>
+<span class="linenos">324</span><span class="w">            </span><span class="s2">&quot;1-PFD-1-2&quot;</span><span class="p">,</span>
+<span class="linenos">325</span><span class="w">            </span><span class="s2">&quot;1-PID-1-1&quot;</span><span class="p">,</span>
+<span class="linenos">326</span><span class="w">            </span><span class="s2">&quot;1-PID-1-2&quot;</span><span class="p">,</span>
+<span class="linenos">327</span><span class="w">            </span><span class="s2">&quot;&quot;</span>
+<span class="linenos">328</span><span class="w">        </span><span class="p">],</span>
+<span class="linenos">329</span><span class="w">        </span><span class="nt">&quot;isSurrogate&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="linenos">330</span><span class="w">        </span><span class="nt">&quot;nrv&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="linenos">331</span><span class="w">        </span><span class="nt">&quot;numCol&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span>
+<span class="linenos">332</span><span class="w">        </span><span class="nt">&quot;numRow&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="linenos">333</span><span class="w">    </span><span class="p">},</span>
+<span class="linenos">334</span><span class="w">    </span><span class="nt">&quot;summary&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">335</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos">336</span><span class="w">            </span><span class="nt">&quot;kurtosis&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="linenos">337</span><span class="w">            </span><span class="nt">&quot;mean&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">13.9508</span><span class="p">,</span>
+<span class="linenos">338</span><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1-PFA-1-1&quot;</span><span class="p">,</span>
+<span class="linenos">339</span><span class="w">            </span><span class="nt">&quot;skewness&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="linenos">340</span><span class="w">            </span><span class="nt">&quot;stdDev&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="linenos">341</span><span class="w">        </span><span class="p">},</span>
+<span class="linenos">342</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos">343</span><span class="w">            </span><span class="nt">&quot;kurtosis&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="linenos">344</span><span class="w">            </span><span class="nt">&quot;mean&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">6.53392</span><span class="p">,</span>
+<span class="linenos">345</span><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1-PFA-1-2&quot;</span><span class="p">,</span>
+<span class="linenos">346</span><span class="w">            </span><span class="nt">&quot;skewness&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="linenos">347</span><span class="w">            </span><span class="nt">&quot;stdDev&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="linenos">348</span><span class="w">        </span><span class="p">},</span>
+<span class="linenos">349</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos">350</span><span class="w">            </span><span class="nt">&quot;kurtosis&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="linenos">351</span><span class="w">            </span><span class="nt">&quot;mean&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.409945</span><span class="p">,</span>
+<span class="linenos">352</span><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1-RMSA-1-1&quot;</span><span class="p">,</span>
+<span class="linenos">353</span><span class="w">            </span><span class="nt">&quot;skewness&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="linenos">354</span><span class="w">            </span><span class="nt">&quot;stdDev&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="linenos">355</span><span class="w">        </span><span class="p">},</span>
+<span class="linenos">356</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos">357</span><span class="w">            </span><span class="nt">&quot;kurtosis&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="linenos">358</span><span class="w">            </span><span class="nt">&quot;mean&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0438376</span><span class="p">,</span>
+<span class="linenos">359</span><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1-RMSA-1-2&quot;</span><span class="p">,</span>
+<span class="linenos">360</span><span class="w">            </span><span class="nt">&quot;skewness&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="linenos">361</span><span class="w">            </span><span class="nt">&quot;stdDev&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="linenos">362</span><span class="w">        </span><span class="p">},</span>
+<span class="linenos">363</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos">364</span><span class="w">            </span><span class="nt">&quot;kurtosis&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="linenos">365</span><span class="w">            </span><span class="nt">&quot;mean&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.258779</span><span class="p">,</span>
+<span class="linenos">366</span><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1-PFD-1-1&quot;</span><span class="p">,</span>
+<span class="linenos">367</span><span class="w">            </span><span class="nt">&quot;skewness&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="linenos">368</span><span class="w">            </span><span class="nt">&quot;stdDev&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="linenos">369</span><span class="w">        </span><span class="p">},</span>
+<span class="linenos">370</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos">371</span><span class="w">            </span><span class="nt">&quot;kurtosis&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="linenos">372</span><span class="w">            </span><span class="nt">&quot;mean&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0188354</span><span class="p">,</span>
+<span class="linenos">373</span><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1-PFD-1-2&quot;</span><span class="p">,</span>
+<span class="linenos">374</span><span class="w">            </span><span class="nt">&quot;skewness&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="linenos">375</span><span class="w">            </span><span class="nt">&quot;stdDev&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="linenos">376</span><span class="w">        </span><span class="p">},</span>
+<span class="linenos">377</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos">378</span><span class="w">            </span><span class="nt">&quot;kurtosis&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="linenos">379</span><span class="w">            </span><span class="nt">&quot;mean&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00179707</span><span class="p">,</span>
+<span class="linenos">380</span><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1-PID-1-1&quot;</span><span class="p">,</span>
+<span class="linenos">381</span><span class="w">            </span><span class="nt">&quot;skewness&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="linenos">382</span><span class="w">            </span><span class="nt">&quot;stdDev&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="linenos">383</span><span class="w">        </span><span class="p">},</span>
+<span class="linenos">384</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos">385</span><span class="w">            </span><span class="nt">&quot;kurtosis&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="linenos">386</span><span class="w">            </span><span class="nt">&quot;mean&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">387</span><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1-PID-1-2&quot;</span><span class="p">,</span>
+<span class="linenos">388</span><span class="w">            </span><span class="nt">&quot;skewness&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="linenos">389</span><span class="w">            </span><span class="nt">&quot;stdDev&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="linenos">390</span><span class="w">        </span><span class="p">}</span>
+<span class="linenos">391</span><span class="w">    </span><span class="p">],</span>
+<span class="linenos">392</span><span class="w">    </span><span class="nt">&quot;workingDir&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/home/justinbonus/Documents/HydroUQ/LocalWorkDir&quot;</span>
+<span class="linenos">393</span><span class="p">}</span>
+</pre></div>
+</div>
+</details></section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2025, The Regents of the University of California.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=..."></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '...', {
+          'anonymize_ip': false,
+      });
+    </script>  
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>

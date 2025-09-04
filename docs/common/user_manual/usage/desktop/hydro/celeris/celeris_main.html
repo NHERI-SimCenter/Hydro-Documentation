@@ -1,0 +1,329 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Celeris &mdash; Hydro-UQ  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/theme.css?v=66b6668b" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/custom.css?v=4b5bf716" />
+
+  
+      <script src="../../../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../../../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../../../../../_static/design-tabs.js?v=36754332"></script>
+      <script src="../../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+      <script src="../../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+    <link rel="next" title="Solver" href="solver.html" />
+    <link rel="prev" title="2.4.2.2. Celeris Modules" href="modules.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../../index.html" class="icon icon-home"> Hydro-UQ
+
+
+
+</a>
+
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../about/Hydro/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../releases/hydroCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../releases/hydroPlans.html">7. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation/desktop/installation.html">1. Running Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">2. User Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tools.html">3. Tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../MPM.html">2.4.1. Material Point Method</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">2.4.2. CelerisAi</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">2.4.2.1. Introduction</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="modules.html">2.4.2.2. Celeris Modules</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Celeris</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solver.html">Solver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="domain.html">Domain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brails.html">BRAILS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="results.html">Results</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../OpenSeesTool.html">3.1. OpenSees&#64;DesignSafe Tool</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jobs.html">5. Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bestpractices.html">6. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/desktop/troubleshooting.html">7. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../reqments/HydroUQ.html">8. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../bugs.html">9. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../helpvideo.html">10. Video Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../technical_manual/desktop/hydro/hazards/water.html">3. Water-borne Hazards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../technical_manual/desktop/hydro/swsolver/swsolver.html">4. Shallow Water Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../technical_manual/desktop/hydro/cfdsolver/cfdsolver.html">5. CFD Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../technical_manual/desktop/hydro/fvm/fvm.html">6. Finite Volume Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../technical_manual/desktop/hydro/mpm/mpm.html">7. Material Point Method</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/how_to_extend.html">2. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #F2F2F2" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../index.html">Hydro-UQ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../usage.html"><span class="section-number">2. </span>User Interface</a></li>
+          <li class="breadcrumb-item"><a href="../EVT.html"><span class="section-number">2.4. </span>EVT: Hydro Events</a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2.4.2. </span>CelerisAi</a></li>
+          <li class="breadcrumb-item"><a href="modules.html"><span class="section-number">2.4.2.2. </span>Celeris Modules</a></li>
+      <li class="breadcrumb-item active">Celeris</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../../../_sources/common/user_manual/usage/desktop/hydro/celeris/celeris_main.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="celeris">
+<span id="lblevt-celeris-celeris"></span><h1>Celeris<a class="headerlink" href="#celeris" title="Link to this heading"></a></h1>
+<p>This page allows you to configure the input files, define sensors, and visualize
+the simulation setup for <strong>Celeris</strong>.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../../_images/EVT_Celeris_Celeris.png"><img alt="EVT Celeris Celeris panel." src="../../../../../../_images/EVT_Celeris_Celeris.png" style="width: 600px;" />
+</a>
+</figure>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#input-files-panel" id="id1">Input Files Panel</a></p></li>
+<li><p><a class="reference internal" href="#force-sensor-panel" id="id2">Force Sensor Panel</a></p></li>
+<li><p><a class="reference internal" href="#wave-gauge-locations-panel" id="id3">Wave Gauge Locations Panel</a></p></li>
+<li><p><a class="reference internal" href="#bathymetry-and-sensor-visualization" id="id4">Bathymetry and Sensor Visualization</a></p></li>
+</ul>
+</nav>
+<section id="input-files-panel">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Input Files Panel</a><a class="headerlink" href="#input-files-panel" title="Link to this heading"></a></h2>
+<p>On the <strong>top-left</strong>, the <strong>Input File</strong> widget provides options to select the three
+essential files for a simulation:</p>
+<ul class="simple">
+<li><p><strong>Configuration File (JSON)</strong> — specifies Celeris simulation parameters.</p></li>
+<li><p><strong>Bathymetry File (TXT)</strong> — contains seafloor elevation data.</p></li>
+<li><p><strong>Waves File (TXT)</strong> — defines incident wave conditions.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While these files are often selected manually, an alternate tab in the GUI
+labeled <code class="docutils literal notranslate"><span class="pre">BRAILS</span></code> will automatically update them after completing its workflow.</p>
+</div>
+</section>
+<section id="force-sensor-panel">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Force Sensor Panel</a><a class="headerlink" href="#force-sensor-panel" title="Link to this heading"></a></h2>
+<p>The <strong>middle-left</strong> panel, <strong>Force Sensor</strong>, allows you to define a line sensor
+for recording hydrodynamic forces.</p>
+<ul class="simple">
+<li><p>Define <strong>start</strong> and <strong>end points</strong> of the line.</p></li>
+<li><p>The <strong>ordering</strong> of points matters:
+it affects the sensor’s <strong>normal vector</strong> calculation.</p></li>
+<li><p>Can be defined in:
+- <strong>Length units</strong> (e.g., meters), or
+- <strong>Geographic coordinates</strong> (longitude / latitude).</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>To capture realistic forces, place the force sensor <strong>flush with a structure’s perimeter</strong>.</p>
+</div>
+</section>
+<section id="wave-gauge-locations-panel">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Wave Gauge Locations Panel</a><a class="headerlink" href="#wave-gauge-locations-panel" title="Link to this heading"></a></h2>
+<p>The <strong>right-hand</strong> panel, <strong>Wave Gauge Locations</strong>, defines a list of point sensors
+to record the <strong>free surface elevation</strong> during the simulation.</p>
+<ul class="simple">
+<li><p>Each <strong>row</strong> corresponds to one gauge:
+- Column 1 = <strong>X position</strong>
+- Column 2 = <strong>Y position</strong></p></li>
+<li><p>Gauges can be specified in either:
+- <strong>Length units</strong> (e.g., meters), or
+- <strong>Longitude / latitude</strong>.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use multiple wave gauges to compare simulated wave records at several locations.</p>
+</div>
+</section>
+<section id="bathymetry-and-sensor-visualization">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Bathymetry and Sensor Visualization</a><a class="headerlink" href="#bathymetry-and-sensor-visualization" title="Link to this heading"></a></h2>
+<p>The <strong>bottom</strong> panel, <strong>Bathymetry and Sensor Visualization</strong>, provides a simple
+visualization interface.</p>
+<ul class="simple">
+<li><p>Displays the <strong>bathymetry height map</strong> using the file selected in <em>Input Files</em>.</p></li>
+<li><p>Overlays <strong>force sensors</strong> and <strong>wave gauges</strong>.</p></li>
+<li><p>Controlled via the <strong>Draw Bathymetry</strong> button.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The visualization axes can also be displayed in either <strong>length units</strong>
+or <strong>longitude / latitude</strong>.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Ensure that the bathymetry file is formatted correctly.
+An invalid file will result in failed or misleading visualizations.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2025, The Regents of the University of California.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=..."></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '...', {
+          'anonymize_ip': false,
+      });
+    </script>  
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>

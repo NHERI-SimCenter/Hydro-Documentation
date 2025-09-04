@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2.4.1.6. Solver &mdash; Hydro-UQ  documentation</title>
+  <title>2.4.5.6. Solver &mdash; Hydro-UQ  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=66b6668b" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
@@ -29,8 +29,8 @@
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.4.2. Coupled Digital Twin" href="coupled.html" />
-    <link rel="prev" title="2.4.1.5. Initial conditions" href="Initial.html" />
+    <link rel="next" title="2.5. FEM: Finite Element Method" href="../FEM.html" />
+    <link rel="prev" title="2.4.5.5. Initial conditions" href="Initial.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -88,18 +88,19 @@
 <li class="toctree-l2"><a class="reference internal" href="../GI.html">2.2. GI: General Information</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.3. SIM: Structural Model</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="EVT.html">2.4. EVT: Hydro Events</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="general.html">2.4.1. General Event (Legacy)</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="Project.html">2.4.1.1. Project Settings</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Geometry.html">2.4.1.2. Geometry</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Meshing.html">2.4.1.3. Meshing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Materials.html">2.4.1.4. Materials</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Initial.html">2.4.1.5. Initial conditions</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">2.4.1.6. Solver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MPM.html">2.4.1. Material Point Method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="celeris/index.html">2.4.2. CelerisAi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stochasticWave.html">2.4.3. Stochastic Wave Loading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="coupled.html">2.4.4. FOAMySees Coupled Digital Twin (Legacy)</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="general.html">2.4.5. General Event (Legacy)</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Project.html">2.4.5.1. Project Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Geometry.html">2.4.5.2. Geometry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Meshing.html">2.4.5.3. Meshing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Materials.html">2.4.5.4. Materials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Initial.html">2.4.5.5. Initial conditions</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">2.4.5.6. Solver</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="coupled.html">2.4.2. Coupled Digital Twin</a></li>
-<li class="toctree-l3"><a class="reference internal" href="MPM.html">2.4.3. Material Point Method</a></li>
-<li class="toctree-l3"><a class="reference internal" href="celeris/index.html">2.4.4. CelerisAi</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
@@ -110,11 +111,12 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">3. Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bestpractices.html">5. Best Practices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">7. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="helpvideo.html">9. Video Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs.html">5. Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bestpractices.html">6. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">7. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">8. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">9. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helpvideo.html">10. Video Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -149,8 +151,8 @@
       <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../usage.html"><span class="section-number">2. </span>User Interface</a></li>
           <li class="breadcrumb-item"><a href="EVT.html"><span class="section-number">2.4. </span>EVT: Hydro Events</a></li>
-          <li class="breadcrumb-item"><a href="general.html"><span class="section-number">2.4.1. </span>General Event (Legacy)</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">2.4.1.6. </span>Solver</li>
+          <li class="breadcrumb-item"><a href="general.html"><span class="section-number">2.4.5. </span>General Event (Legacy)</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2.4.5.6. </span>Solver</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../../_sources/common/user_manual/usage/desktop/hydro/Solver.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -161,12 +163,12 @@
            <div itemprop="articleBody">
              
   <section id="solver">
-<span id="lbl-solversett"></span><h1><span class="section-number">2.4.1.6. </span>Solver<a class="headerlink" href="#solver" title="Link to this heading"></a></h1>
-<p>The solver window can be activated by selecting the option from the left panel as shown in <a class="reference internal" href="#id1"><span class="std std-numref">Fig. 2.4.1.6.1</span></a>.</p>
+<span id="lbl-solversett"></span><h1><span class="section-number">2.4.5.6. </span>Solver<a class="headerlink" href="#solver" title="Link to this heading"></a></h1>
+<p>The solver window can be activated by selecting the option from the left panel as shown in <a class="reference internal" href="#id1"><span class="std std-numref">Fig. 2.4.5.6.1</span></a>.</p>
 <figure class="align-center" id="id2">
 <span id="id1"></span><img alt="../../../../../_images/Solver.png" src="../../../../../_images/Solver.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.4.1.6.1 </span><span class="caption-text">Solver settings panel available in <code class="docutils literal notranslate"><span class="pre">EVT</span></code></span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 2.4.5.6.1 </span><span class="caption-text">Solver settings panel available in <code class="docutils literal notranslate"><span class="pre">EVT</span></code></span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>There are three categories of inputs required from the user.</p>

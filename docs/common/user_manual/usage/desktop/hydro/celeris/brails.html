@@ -1,0 +1,346 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BRAILS &mdash; Hydro-UQ  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/theme.css?v=66b6668b" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/custom.css?v=4b5bf716" />
+
+  
+      <script src="../../../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../../../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../../../../../_static/design-tabs.js?v=36754332"></script>
+      <script src="../../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+      <script src="../../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+    <link rel="next" title="Results" href="results.html" />
+    <link rel="prev" title="Domain" href="domain.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../../index.html" class="icon icon-home"> Hydro-UQ
+
+
+
+</a>
+
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../about/Hydro/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../releases/hydroCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../releasenotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../releases/hydroPlans.html">7. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation/desktop/installation.html">1. Running Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">2. User Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tools.html">3. Tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../MPM.html">2.4.1. Material Point Method</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">2.4.2. CelerisAi</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">2.4.2.1. Introduction</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="modules.html">2.4.2.2. Celeris Modules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="celeris_main.html">Celeris</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solver.html">Solver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="domain.html">Domain</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">BRAILS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="results.html">Results</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../OpenSeesTool.html">3.1. OpenSees&#64;DesignSafe Tool</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jobs.html">5. Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bestpractices.html">6. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/desktop/troubleshooting.html">7. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../reqments/HydroUQ.html">8. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../bugs.html">9. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../helpvideo.html">10. Video Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../technical_manual/desktop/hydro/hazards/water.html">3. Water-borne Hazards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../technical_manual/desktop/hydro/swsolver/swsolver.html">4. Shallow Water Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../technical_manual/desktop/hydro/cfdsolver/cfdsolver.html">5. CFD Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../technical_manual/desktop/hydro/fvm/fvm.html">6. Finite Volume Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../technical_manual/desktop/hydro/mpm/mpm.html">7. Material Point Method</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/how_to_extend.html">2. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #F2F2F2" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../index.html">Hydro-UQ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../usage.html"><span class="section-number">2. </span>User Interface</a></li>
+          <li class="breadcrumb-item"><a href="../EVT.html"><span class="section-number">2.4. </span>EVT: Hydro Events</a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2.4.2. </span>CelerisAi</a></li>
+          <li class="breadcrumb-item"><a href="modules.html"><span class="section-number">2.4.2.2. </span>Celeris Modules</a></li>
+      <li class="breadcrumb-item active">BRAILS</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../../../_sources/common/user_manual/usage/desktop/hydro/celeris/brails.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="brails">
+<span id="lblevt-celeris-brails"></span><h1>BRAILS<a class="headerlink" href="#brails" title="Link to this heading"></a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">BRAILS</span></code> tab provides an automated workflow for coupling <strong>Celeris</strong> with
+<strong>BRAILS building inventories</strong> and <strong>NOAA topo-bathymetry data</strong>.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../../_images/EVT_Celeris_BRAILS.png"><img alt="EVT Celeris BRAILS panel." src="../../../../../../_images/EVT_Celeris_BRAILS.png" style="width: 600px;" />
+</a>
+</figure>
+<p>It streamlines the preparation of simulation inputs by:</p>
+<ul class="simple">
+<li><p>Acquiring <strong>topo-bathymetry</strong> from NOAA APIs automatically.</p></li>
+<li><p>Generating and merging <strong>BRAILS building inventories</strong>.</p></li>
+<li><p>Performing <strong>imputation</strong> to fill missing building attributes.</p></li>
+<li><p>Combining building data with bathymetry-topography to form the input
+<strong>bathymetry file</strong> for the simulation.</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This tool directly updates the input files in the <code class="docutils literal notranslate"><span class="pre">Celeris</span></code> tab.
+Once the workflow finishes, the <strong>bathymetry visualization</strong> will also refresh
+with the new inputs.</p>
+</div>
+<section id="location-selection">
+<h2>Location Selection<a class="headerlink" href="#location-selection" title="Link to this heading"></a></h2>
+<p>At the <strong>top of the tab</strong>, the <strong>Location Selection</strong> widget provides two methods
+for defining the region of interest.</p>
+<p><strong>Option 1: Address (Easy / Recommended)</strong></p>
+<ul class="simple">
+<li><p>Enter a <strong>text address</strong> (e.g., “Seattle, WA”).</p></li>
+<li><p>The tool automatically <strong>geocodes</strong> this to latitude/longitude.</p></li>
+<li><p>Specify:</p>
+<ul>
+<li><p><strong>Buffer Radius (degrees):</strong> defines the square region size.</p></li>
+<li><p><strong>Offset Longitude / Latitude (degrees):</strong> shifts the centroid if needed.</p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This approach is easiest since it uses a human-readable address with optional
+adjustments.</p>
+</div>
+<p><strong>Option 2: Bounding Box (Precise)</strong></p>
+<ul class="simple">
+<li><p>Manually specify:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">lon_LL</span></code> and <code class="docutils literal notranslate"><span class="pre">lat_LL</span></code> = lower-left corner</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lon_UR</span></code> and <code class="docutils literal notranslate"><span class="pre">lat_UR</span></code> = upper-right corner</p></li>
+</ul>
+</li>
+<li><p>Retrieves BRAILS inventories and NOAA bathymetry <strong>within the bounding box</strong>.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use the bounding box if you require <strong>fine-grained control</strong> of the study area.</p>
+</div>
+</section>
+<section id="settings-widget">
+<h2>Settings Widget<a class="headerlink" href="#settings-widget" title="Link to this heading"></a></h2>
+<p>At the <strong>bottom of the tab</strong>, the <strong>Settings</strong> widget allows fine control of
+bathymetry grid preparation:</p>
+<ul>
+<li><p><strong>Approx. Grid-Cell Size (m):</strong>
+NOAA API attempts to match this resolution, with slight warping due to
+global projections.</p></li>
+<li><p><strong>Upsampling Ratio:</strong>
+- <code class="docutils literal notranslate"><span class="pre">1</span></code> = no upsampling
+- <code class="docutils literal notranslate"><span class="pre">2</span></code> = doubles the resolution
+- Higher values increase detail, but also computational cost.</p></li>
+<li><p><strong>Include Buildings?:</strong>
+- <strong>Checked</strong> = merge BRAILS building inventory with topo-bathymetry.
+- <strong>Unchecked</strong> = skip buildings for faster runs (minutes saved), but lose</p>
+<blockquote>
+<div><p>built-environment effects.</p>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Excluding buildings speeds up the workflow but removes their influence
+on hydrodynamics in your Celeris simulations.</p>
+</div>
+</section>
+<section id="run-workflow">
+<h2>Run Workflow<a class="headerlink" href="#run-workflow" title="Link to this heading"></a></h2>
+<p>At the <strong>bottom</strong>, press the <strong>Run</strong> widget to execute the automated workflow.</p>
+<p>Workflow sequence:</p>
+<ol class="arabic simple">
+<li><p>Acquire <strong>topo-bathymetry</strong> from NOAA APIs.</p></li>
+<li><p>Generate and <strong>merge BRAILS inventories</strong>.</p></li>
+<li><p>Perform <strong>imputation</strong> for missing attributes.</p></li>
+<li><p>Combine inventories with bathymetry to form simulation-ready input files.</p></li>
+<li><p>Update the <strong>Celeris tab</strong> automatically:
+- Input bathymetry file
+- Visualization of bathymetry, sensors, and structures</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Always verify the updated inputs in the <code class="docutils literal notranslate"><span class="pre">Celeris</span></code> tab before launching
+full simulations.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2025, The Regents of the University of California.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=..."></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '...', {
+          'anonymize_ip': false,
+      });
+    </script>  
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>

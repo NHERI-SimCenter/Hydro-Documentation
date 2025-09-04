@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Celeris Modules &mdash; Hydro-UQ  documentation</title>
+  <title>2.4.2.2. Celeris Modules &mdash; Hydro-UQ  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/theme.css?v=66b6668b" />
       <link rel="stylesheet" type="text/css" href="../../../../../../_static/copybutton.css?v=76b2166b" />
@@ -30,8 +30,8 @@
     <script src="../../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../../search.html" />
-    <link rel="next" title="Modules" href="celeris.html" />
-    <link rel="prev" title="Usage" href="usage.html" />
+    <link rel="next" title="Celeris" href="celeris_main.html" />
+    <link rel="prev" title="2.4.2.1. Introduction" href="introduction.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -82,16 +82,33 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../installation/desktop/installation.html">1. Running Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../usage.html">2. User Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tools.html">3. Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tools.html">3. Tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../MPM.html">2.4.1. Material Point Method</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">2.4.2. CelerisAi</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">2.4.2.1. Introduction</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.2.2. Celeris Modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="celeris_main.html">Celeris</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solver.html">Solver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="domain.html">Domain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brails.html">BRAILS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="results.html">Results</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../OpenSeesTool.html">3.1. OpenSees&#64;DesignSafe Tool</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../bestpractices.html">5. Best Practices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../reqments/HydroUQ.html">7. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../helpvideo.html">9. Video Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jobs.html">5. Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bestpractices.html">6. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/desktop/troubleshooting.html">7. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../reqments/HydroUQ.html">8. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../bugs.html">9. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../helpvideo.html">10. Video Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -126,8 +143,8 @@
       <li><a href="../../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../../usage.html"><span class="section-number">2. </span>User Interface</a></li>
           <li class="breadcrumb-item"><a href="../EVT.html"><span class="section-number">2.4. </span>EVT: Hydro Events</a></li>
-          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2.4.4. </span>CelerisAi</a></li>
-      <li class="breadcrumb-item active">Celeris Modules</li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2.4.2. </span>CelerisAi</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2.4.2.2. </span>Celeris Modules</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../../../_sources/common/user_manual/usage/desktop/hydro/celeris/modules.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -138,15 +155,14 @@
            <div itemprop="articleBody">
              
   <section id="celeris-modules">
-<h1>Celeris Modules<a class="headerlink" href="#celeris-modules" title="Link to this heading"></a></h1>
+<span id="lblevt-celeris-modules"></span><h1><span class="section-number">2.4.2.2. </span>Celeris Modules<a class="headerlink" href="#celeris-modules" title="Link to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="celeris.html">Modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="celeris.html#domain-module">Domain module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="celeris.html#solver-module">Solver module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="celeris.html#runner-module">Runner module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="celeris.html#utils-module">Utils module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="celeris.html#current-version">Current Version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="celeris_main.html">Celeris</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="celeris_main.html#input-files-panel">Input Files Panel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="celeris_main.html#force-sensor-panel">Force Sensor Panel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="celeris_main.html#wave-gauge-locations-panel">Wave Gauge Locations Panel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="celeris_main.html#bathymetry-and-sensor-visualization">Bathymetry and Sensor Visualization</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="solver.html">Solver</a><ul>
@@ -156,6 +172,21 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="domain.html">Domain</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="domain.html#attributes">Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="brails.html">BRAILS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="brails.html#location-selection">Location Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="brails.html#settings-widget">Settings Widget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="brails.html#run-workflow">Run Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Results</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="results.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="results.html#select-a-run-type">Select a Run Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="results.html#choose-a-simulation-number">Choose a Simulation Number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="results.html#visualize-the-results">Visualize the Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="results.html#quality-caveats">Quality &amp; Caveats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="results.html#troubleshooting-tips">Troubleshooting Tips</a></li>
 </ul>
 </li>
 </ul>

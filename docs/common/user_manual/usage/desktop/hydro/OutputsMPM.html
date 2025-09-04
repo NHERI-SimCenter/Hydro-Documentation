@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2.4.3.5. Outputs &mdash; Hydro-UQ  documentation</title>
+  <title>Outputs &mdash; Hydro-UQ  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=66b6668b" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
@@ -29,8 +29,8 @@
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.4.4. CelerisAi" href="celeris/index.html" />
-    <link rel="prev" title="2.4.3.4. Sensors" href="SensorsMPM.html" />
+    <link rel="next" title="2.4.2. CelerisAi" href="celeris/index.html" />
+    <link rel="prev" title="Sensors" href="SensorsMPM.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -85,22 +85,29 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Running Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">2. User Interface</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="tools.html">3. Tools</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="tools.html#material-point-method">3.1. Material Point Method</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="SettingsMPM.html">2.4.3.1. Settings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="BodiesMPM.html">2.4.3.2. Bodies</a></li>
-<li class="toctree-l3"><a class="reference internal" href="BoundariesMPM.html">2.4.3.3. Boundaries</a></li>
-<li class="toctree-l3"><a class="reference internal" href="SensorsMPM.html">2.4.3.4. Sensors</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.3.5. Outputs</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="MPM.html">2.4.1. Material Point Method</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="MPM.html#basic-documentation">2.4.1.1. Basic Documentation</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="SettingsMPM.html">Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BodiesMPM.html">Bodies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BoundariesMPM.html">Boundaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SensorsMPM.html">Sensors</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Outputs</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="MPM.html#detailed-documentation">2.4.1.2. Detailed Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="celeris/index.html">2.4.2. CelerisAi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpenSeesTool.html">3.1. OpenSees&#64;DesignSafe Tool</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bestpractices.html">5. Best Practices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">7. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="helpvideo.html">9. Video Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs.html">5. Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bestpractices.html">6. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">7. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">8. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">9. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helpvideo.html">10. Video Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -135,8 +142,8 @@
       <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../usage.html"><span class="section-number">2. </span>User Interface</a></li>
           <li class="breadcrumb-item"><a href="EVT.html"><span class="section-number">2.4. </span>EVT: Hydro Events</a></li>
-          <li class="breadcrumb-item"><a href="MPM.html"><span class="section-number">2.4.3. </span>Material Point Method</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">2.4.3.5. </span>Outputs</li>
+          <li class="breadcrumb-item"><a href="MPM.html"><span class="section-number">2.4.1. </span>Material Point Method</a></li>
+      <li class="breadcrumb-item active">Outputs</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../../_sources/common/user_manual/usage/desktop/hydro/OutputsMPM.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -147,8 +154,220 @@
            <div itemprop="articleBody">
              
   <section id="outputs">
-<span id="lbl-outputsmpm"></span><h1><span class="section-number">2.4.3.5. </span>Outputs<a class="headerlink" href="#outputs" title="Link to this heading"></a></h1>
-<p>Outputs from the simulation not controlled by individual Sensors are collected in the <code class="docutils literal notranslate"><span class="pre">Outputs</span></code> tab. This includes choosing the output file format, checkpoint-resume file configuration, and other settings related to output.</p>
+<span id="lbl-outputsmpm"></span><h1>Outputs<a class="headerlink" href="#outputs" title="Link to this heading"></a></h1>
+<p>The <strong>Outputs</strong> tab collects simulation results that are <strong>not</strong> controlled by
+individual Sensors. Here you choose file formats, sampling rates, and (legacy)
+checkpoint/resume behavior.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/GUI_Outputs5.png"><img alt="HydroUQ Outputs panel." src="../../../../../_images/GUI_Outputs5.png" style="width: 600px;" />
+</a>
+</figure>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#bodies" id="id1">Bodies</a></p>
+<ul>
+<li><p><a class="reference internal" href="#output-attributes-per-body" id="id2">Output Attributes (per body)</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#checkpoint-resume-state" id="id3">Checkpoint-Resume State</a></p></li>
+<li><p><a class="reference internal" href="#boundaries" id="id4">Boundaries</a></p></li>
+<li><p><a class="reference internal" href="#sensors" id="id5">Sensors</a></p></li>
+<li><p><a class="reference internal" href="#energies" id="id6">Energies</a></p></li>
+<li><p><a class="reference internal" href="#best-practice-guidance" id="id7">Best-Practice Guidance</a></p></li>
+</ul>
+</nav>
+<section id="bodies">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Bodies</a><a class="headerlink" href="#bodies" title="Link to this heading"></a></h2>
+<p>Controls per-frame output for material <strong>bodies</strong> defined in <a class="reference internal" href="BodiesMPM.html#lbl-bodiesmpm"><span class="std std-ref">Bodies</span></a>.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26.0%" />
+<col style="width: 54.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Setting</p></th>
+<th class="head"><p>What it does</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Output File Type</strong></p></td>
+<td><p>Select the geometry cache format for body snapshots.</p></td>
+<td><p><strong>BGEO</strong> or <strong>GEO</strong> (viewable in <strong>SideFX Houdini</strong>; Apprentice edition is free).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Output Frequency (Hz)</strong></p></td>
+<td><p>How often body frames are written.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">Hz</span></code> → one frame per simulated second.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Only Save Exterior</strong></p></td>
+<td><p>If checked, writes only particles near the body <strong>surface</strong>.</p></td>
+<td><p>Reduces disk/I/O at the cost of <strong>losing interior data</strong>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Only Save Exterior</strong> removes interior state permanently from the saved frames.
+Leave <strong>unchecked</strong> unless you are certain you only need surface data.</p>
+</div>
+<section id="output-attributes-per-body">
+<h3><a class="toc-backref" href="#id2" role="doc-backlink">Output Attributes (per body)</a><a class="headerlink" href="#output-attributes-per-body" title="Link to this heading"></a></h3>
+<p>This table appears inside the <strong>Bodies</strong> widget:</p>
+<ul class="simple">
+<li><p>Each <strong>row</strong> corresponds to a body from <a class="reference internal" href="BodiesMPM.html#lbl-bodiesmpm"><span class="std std-ref">Bodies</span></a> <strong>in exact order</strong>.</p></li>
+<li><p>Each <strong>cell</strong> holds an attribute name to record <strong>per particle</strong> on that body
+(e.g., <code class="docutils literal notranslate"><span class="pre">Pressure</span></code>, <code class="docutils literal notranslate"><span class="pre">Velocity_X</span></code>, <code class="docutils literal notranslate"><span class="pre">ID</span></code>, …).</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Keep the table synchronized with your body list. If you reorder or add/remove
+bodies, revisit <strong>Output Attributes</strong> to ensure rows still match the intended
+body.</p>
+</div>
+</section>
+</section>
+<section id="checkpoint-resume-state">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Checkpoint-Resume State</a><a class="headerlink" href="#checkpoint-resume-state" title="Link to this heading"></a></h2>
+<p><strong>Deprecated (pending fixes).</strong> Allows periodic snapshots for restart.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28.0%" />
+<col style="width: 52.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Setting</p></th>
+<th class="head"><p>What it does</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Output File Type</strong></p></td>
+<td><p>Format for checkpoint files.</p></td>
+<td><p><strong>BGEO</strong> or <strong>GEO</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Output Frequency (Hz)</strong></p></td>
+<td><p>How often checkpoints are written.</p></td>
+<td><p>Use a <strong>low</strong> rate to limit disk churn.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This feature is currently <strong>deprecated</strong>. Parameters are exposed for forward
+compatibility, but checkpointing may be disabled or unstable in this version.</p>
+</div>
+</section>
+<section id="boundaries">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Boundaries</a><a class="headerlink" href="#boundaries" title="Link to this heading"></a></h2>
+<p>Controls export of <strong>boundary</strong> geometry defined in <a class="reference internal" href="BoundariesMPM.html#lbl-boundariesmpm"><span class="std std-ref">Boundaries</span></a>.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28.0%" />
+<col style="width: 52.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Setting</p></th>
+<th class="head"><p>What it does</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Output File Type</strong></p></td>
+<td><p>File format for boundary exports.</p></td>
+<td><p><strong>OBJ</strong> (currently the only option)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Output Frequency (Hz)</strong></p></td>
+<td><p>Sampling rate for boundary output.</p></td>
+<td><p>Match to how often you need boundary motion snapshots.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="sensors">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Sensors</a><a class="headerlink" href="#sensors" title="Link to this heading"></a></h2>
+<p>Controls the file format for <strong>sensor</strong> time series defined in <a class="reference internal" href="SensorsMPM.html#lbl-sensorsmpm"><span class="std std-ref">Sensors</span></a>.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28.0%" />
+<col style="width: 52.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Setting</p></th>
+<th class="head"><p>What it does</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Output File Type</strong></p></td>
+<td><p>Choose the tabular format for sensor outputs.</p></td>
+<td><p><strong>CSV</strong> or <strong>TXT</strong></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <strong>sampling rate</strong> of sensor outputs is set in the <strong>Sensors</strong> tab per
+sensor group (e.g., wave-gauges, load-cells). The <strong>file type here</strong> only
+selects the on-disk format.</p>
+</div>
+</section>
+<section id="energies">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Energies</a><a class="headerlink" href="#energies" title="Link to this heading"></a></h2>
+<p>Exports global energy diagnostics.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26.0%" />
+<col style="width: 50.0%" />
+<col style="width: 24.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Setting</p></th>
+<th class="head"><p>What it does</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Output File Type</strong></p></td>
+<td><p>Select the tabular format.</p></td>
+<td><p><strong>CSV</strong> or <strong>TXT</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Output Frequency (Hz)</strong></p></td>
+<td><p>How often energy samples are written.</p></td>
+<td><p>Choose based on how quickly energies vary.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Output Kinetic?</strong></p></td>
+<td><p>Toggle export of <strong>kinetic</strong> energy.</p></td>
+<td><p>On/Off</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Output Gravity?</strong></p></td>
+<td><p>Toggle export of <strong>gravitational potential</strong> energy.</p></td>
+<td><p>Datum is <strong>Y = 0</strong> (vertical zero level).</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Output Strain?</strong></p></td>
+<td><p>Toggle export of <strong>elastic strain</strong> energy.</p></td>
+<td><p>On/Off</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="best-practice-guidance">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Best-Practice Guidance</a><a class="headerlink" href="#best-practice-guidance" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Start with <strong>Bodies Output = 1-5 Hz</strong> for interactive review; increase only if
+motion details are being aliased, at which point <strong>24-60 Hz</strong> may be appropriate for typical animations.</p></li>
+<li><p>Prefer <strong>BGEO</strong> when using Houdini-based post-processing pipelines.</p></li>
+<li><p>Keep <strong>sensor sampling</strong> aligned with the <strong>instrument rates</strong> you’re replicating;
+don’t oversample unless you truly need the bandwidth.</p></li>
+<li><p>Use <strong>Only Save Exterior</strong> for very large free-surface runs where interior data
+is unnecessary, and monitor disk usage.</p></li>
+<li><p>For <strong>Boundaries</strong>, match output frequency to the <strong>fastest motion</strong> of interest
+(e.g., wave-maker strokes) to avoid temporal aliasing.</p></li>
+</ul>
+</section>
 </section>
 
 

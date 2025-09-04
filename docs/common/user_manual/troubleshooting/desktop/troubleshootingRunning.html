@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>6.2. Issues While Running &mdash; Hydro-UQ  documentation</title>
+  <title>Issues While Running &mdash; Hydro-UQ  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=66b6668b" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
@@ -29,8 +29,6 @@
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="7. Requirements" href="../../../reqments/HydroUQ.html" />
-    <link rel="prev" title="6.1. Startup Issues" href="troubleshootingStartup.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -81,20 +79,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Running Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/usage.html">2. User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/hydro/tools.html">3. Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/hydro/bestpractices.html">5. Best Practices</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="troubleshooting.html">6. Troubleshooting</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="troubleshootingStartup.html">6.1. Startup Issues</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6.2. Issues While Running</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../../reqments/HydroUQ.html">7. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/hydro/helpvideo.html">9. Video Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/jobs.html">5. Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/hydro/bestpractices.html">6. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">7. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reqments/HydroUQ.html">8. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">9. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/hydro/helpvideo.html">10. Video Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -127,8 +122,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="troubleshooting.html"><span class="section-number">6. </span>Troubleshooting</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">6.2. </span>Issues While Running</li>
+      <li class="breadcrumb-item active">Issues While Running</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../_sources/common/user_manual/troubleshooting/desktop/troubleshootingRunning.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -139,7 +133,7 @@
            <div itemprop="articleBody">
              
   <section id="issues-while-running">
-<span id="troubleshootingrunning"></span><h1><span class="section-number">6.2. </span>Issues While Running<a class="headerlink" href="#issues-while-running" title="Link to this heading"></a></h1>
+<span id="troubleshootingrunning"></span><h1>Issues While Running<a class="headerlink" href="#issues-while-running" title="Link to this heading"></a></h1>
 <p>When running simulations, failures can occur due to various reasons such as incorrect setup, malfunctioning websites, user errors, or software bugs. Understanding the sequence of actions initiated by the user interface (UI) and backend upon job submission can aid in diagnosing issues. Here’s what happens when the Submit button is clicked:</p>
 <ol class="arabic simple">
 <li><p>A temporary directory, <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code>, is created in the working directory, followed by a <code class="docutils literal notranslate"><span class="pre">templatedir</span></code> within it.</p></li>

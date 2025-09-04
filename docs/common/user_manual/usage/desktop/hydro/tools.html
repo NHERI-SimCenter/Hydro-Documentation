@@ -26,10 +26,11 @@
       <script src="../../../../../_static/design-tabs.js?v=36754332"></script>
       <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
       <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="4. Examples" href="../../../examples/desktop/examples.html" />
+    <link rel="next" title="3.1. OpenSees@DesignSafe Tool" href="OpenSeesTool.html" />
     <link rel="prev" title="2.8. RES: Results" href="resHydro.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -85,22 +86,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Running Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">2. User Interface</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">3. Tools</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#material-point-method">3.1. Material Point Method</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="SettingsMPM.html">2.4.3.1. Settings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="BodiesMPM.html">2.4.3.2. Bodies</a></li>
-<li class="toctree-l3"><a class="reference internal" href="BoundariesMPM.html">2.4.3.3. Boundaries</a></li>
-<li class="toctree-l3"><a class="reference internal" href="SensorsMPM.html">2.4.3.4. Sensors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="OutputsMPM.html">2.4.3.5. Outputs</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="MPM.html">2.4.1. Material Point Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="celeris/index.html">2.4.2. CelerisAi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpenSeesTool.html">3.1. OpenSees&#64;DesignSafe Tool</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bestpractices.html">5. Best Practices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">7. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="helpvideo.html">9. Video Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs.html">5. Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bestpractices.html">6. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">7. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">8. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">9. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helpvideo.html">10. Video Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -146,39 +143,13 @@
   <section id="tools">
 <span id="hydro-tools"></span><h1><span class="section-number">3. </span>Tools<a class="headerlink" href="#tools" title="Link to this heading"></a></h1>
 <p>The main menu toolbar, i.e. the ribbon at the top of the HydroUQ app, contains the <code class="docutils literal notranslate"><span class="pre">Tools</span></code> dropdown menu. Tools in HydroUQ are standalone applications that create inputs for certain workflow applications, e.g. the <strong>Digital Twin (Material Point Method)</strong> tool provides ready-made digital twins of wave-flumes which are used to compute the engineering demand parameters for use on structures within flumes. At a later time, results from a tool can be brought back into the main SimCenter workflow.</p>
-<nav class="contents local" id="table-of-contents">
-<p class="topic-title">Table of Contents</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="#material-point-method" id="id2">Material Point Method</a></p></li>
-</ul>
-</nav>
-<section id="material-point-method">
-<span id="lblevt-mpm"></span><h2><span class="section-number">3.1. </span>Material Point Method<a class="headerlink" href="#material-point-method" title="Link to this heading"></a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">MPM</span></code> event option is used to set the flow parameters related to the water-borne hazard event. This can either be a coupling between the shallow-water and MPM solver or using the ClaymoreUW MPM solver alone. The steps of the setup process for the event have been kept nearly similar to that often used in the Finite Element Method to make it easier for researchers from structural engineering background to easily use this application. This includes <code class="docutils literal notranslate"><span class="pre">SettingsMPM</span></code> &gt;&gt; <code class="docutils literal notranslate"><span class="pre">BodiesMPM</span></code> &gt;&gt; <code class="docutils literal notranslate"><span class="pre">BoundariesMPM</span></code> &gt;&gt; <code class="docutils literal notranslate"><span class="pre">SensorsMPM</span></code> &gt;&gt; <code class="docutils literal notranslate"><span class="pre">OutputsMPM</span></code>. Figure <code class="xref std std-numref docutils literal notranslate"><span class="pre">HydroSteps_MPM</span></code> shows the steps as selectable tab-pages in the GUI.</p>
-<figure class="align-center" id="id1">
-<span id="evtsettings-mpm"></span><img alt="../../../../../_images/HydroSteps_MPM.png" src="../../../../../_images/HydroSteps_MPM.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 3.1.1 </span><span class="caption-text">The steps involved in setup of the <code class="docutils literal notranslate"><span class="pre">Hydro</span></code> event</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<p>Each of the above steps in the setup process is documented in detail in respective sections below:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="SettingsMPM.html">2.4.3.1. Settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BodiesMPM.html">2.4.3.2. Bodies</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="BodiesMPM.html#material">Material</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BodiesMPM.html#geometries">Geometries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BodiesMPM.html#algorithm">Algorithm</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BodiesMPM.html#partitions">Partitions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BodiesMPM.html#debris">Debris</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="BoundariesMPM.html">2.4.3.3. Boundaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SensorsMPM.html">2.4.3.4. Sensors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="OutputsMPM.html">2.4.3.5. Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MPM.html">2.4.1. Material Point Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="celeris/index.html">2.4.2. CelerisAi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenSeesTool.html">3.1. OpenSees&#64;DesignSafe Tool</a></li>
 </ul>
 </div>
-</section>
 </section>
 
 

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2.4.3.1. Settings &mdash; Hydro-UQ  documentation</title>
+  <title>Settings &mdash; Hydro-UQ  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=66b6668b" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
@@ -29,8 +29,8 @@
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.4.3.2. Bodies" href="BodiesMPM.html" />
-    <link rel="prev" title="2.4.3. Material Point Method" href="MPM.html" />
+    <link rel="next" title="Bodies" href="BodiesMPM.html" />
+    <link rel="prev" title="2.4.1. Material Point Method" href="MPM.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -85,22 +85,29 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Running Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">2. User Interface</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="tools.html">3. Tools</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="tools.html#material-point-method">3.1. Material Point Method</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.3.1. Settings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="BodiesMPM.html">2.4.3.2. Bodies</a></li>
-<li class="toctree-l3"><a class="reference internal" href="BoundariesMPM.html">2.4.3.3. Boundaries</a></li>
-<li class="toctree-l3"><a class="reference internal" href="SensorsMPM.html">2.4.3.4. Sensors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="OutputsMPM.html">2.4.3.5. Outputs</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="MPM.html">2.4.1. Material Point Method</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="MPM.html#basic-documentation">2.4.1.1. Basic Documentation</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BodiesMPM.html">Bodies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BoundariesMPM.html">Boundaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SensorsMPM.html">Sensors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="OutputsMPM.html">Outputs</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="MPM.html#detailed-documentation">2.4.1.2. Detailed Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="celeris/index.html">2.4.2. CelerisAi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpenSeesTool.html">3.1. OpenSees&#64;DesignSafe Tool</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bestpractices.html">5. Best Practices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">7. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="helpvideo.html">9. Video Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs.html">5. Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bestpractices.html">6. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">7. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">8. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">9. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helpvideo.html">10. Video Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -135,8 +142,8 @@
       <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../usage.html"><span class="section-number">2. </span>User Interface</a></li>
           <li class="breadcrumb-item"><a href="EVT.html"><span class="section-number">2.4. </span>EVT: Hydro Events</a></li>
-          <li class="breadcrumb-item"><a href="MPM.html"><span class="section-number">2.4.3. </span>Material Point Method</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">2.4.3.1. </span>Settings</li>
+          <li class="breadcrumb-item"><a href="MPM.html"><span class="section-number">2.4.1. </span>Material Point Method</a></li>
+      <li class="breadcrumb-item active">Settings</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../../_sources/common/user_manual/usage/desktop/hydro/SettingsMPM.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -147,13 +154,238 @@
            <div itemprop="articleBody">
              
   <section id="settings">
-<span id="lbl-settingsmpm"></span><h1><span class="section-number">2.4.3.1. </span>Settings<a class="headerlink" href="#settings" title="Link to this heading"></a></h1>
-<p>Settings for the simulation that are not specific to a body, boundary, or sensor (i.e. global settings) are collected here. They sort into a few primary categories:</p>
+<span id="lbl-settingsmpm"></span><h1>Settings<a class="headerlink" href="#settings" title="Link to this heading"></a></h1>
+<p>Global (solver-wide) settings for <strong>ClaymoreUW</strong> that are <strong>not</strong> specific to any
+body, boundary, or sensor are collected here. They are grouped into:</p>
 <ul class="simple">
-<li><p><strong>Simulation Settings</strong>: These are settings that are not specific to any particular part of the simulation, such as the time step, the number of steps, and the output frequency.</p></li>
-<li><p><strong>Scaling Settings</strong>: These are settings that are used to scale the simulation, such as the length scale and the time scale. These are used to convert the simulation from a dimensionless form to a form that is more relevant to the physical system being modeled (e.g. a model wave-flume or prototype wave event).</p></li>
-<li><p><strong>Computer Settings</strong>: These are settings that are specific to the computer being used, such as the number of graphics processing units (GPU) and compile-time memory allocations.</p></li>
+<li><p><strong>Simulation Settings</strong> (Ambient, Spatial, Temporal)</p></li>
+<li><p><strong>Scaling Settings</strong></p></li>
+<li><p><strong>Computer Settings (Deprecated)</strong></p></li>
 </ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/GUI_Settings5.png"><img alt="HydroUQ Settings panel where simulation time, time step, and grid resolution are configured." src="../../../../../_images/GUI_Settings5.png" style="width: 600px;" />
+</a>
+</figure>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#simulation-settings" id="id1">Simulation Settings</a></p>
+<ul>
+<li><p><a class="reference internal" href="#ambient" id="id2">Ambient</a></p></li>
+<li><p><a class="reference internal" href="#spatial" id="id3">Spatial</a></p></li>
+<li><p><a class="reference internal" href="#temporal" id="id4">Temporal</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#scaling-settings" id="id5">Scaling Settings</a></p></li>
+<li><p><a class="reference internal" href="#computer-settings-deprecated" id="id6">Computer Settings (Deprecated)</a></p></li>
+<li><p><a class="reference internal" href="#best-practice-hints" id="id7">Best-Practice Hints</a></p></li>
+</ul>
+</nav>
+<section id="simulation-settings">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Simulation Settings</a><a class="headerlink" href="#simulation-settings" title="Link to this heading"></a></h2>
+<p>General solver controls that govern stability, accuracy, and runtime.</p>
+<section id="ambient">
+<h3><a class="toc-backref" href="#id2" role="doc-backlink">Ambient</a><a class="headerlink" href="#ambient" title="Link to this heading"></a></h3>
+<p>Parameters that ambiently affect the entire simulation (not tied to space/time
+discretization).</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24.0%" />
+<col style="width: 60.0%" />
+<col style="width: 16.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Typical / Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>CFL Number</strong></p></td>
+<td><p>Courant–Friedrichs–Lewy stability number used by the material models to
+compute a stable time step.</p></td>
+<td><p>Keep in <strong>0.3–0.5</strong> for robust runs.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Gravity</strong> (vector)</p></td>
+<td><p>Uniform acceleration applied globally.</p></td>
+<td><p>Example: <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">-9.80665,</span> <span class="pre">0]</span></code> (m/s²)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>A lower CFL yields more conservative (smaller) time steps → <strong>more stable</strong> but
+<strong>slower</strong>. A higher CFL approaches the stability limit and risks divergence.</p>
+</div>
+</section>
+<section id="spatial">
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">Spatial</a><a class="headerlink" href="#spatial" title="Link to this heading"></a></h3>
+<p>Parameters defining the computational grid and domain.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24.0%" />
+<col style="width: 60.0%" />
+<col style="width: 16.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Typical / Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Grid-Cell Size (dx)</strong></p></td>
+<td><p>MPM background grid spacing. Directly impacts accuracy and cost
+(smaller <code class="docutils literal notranslate"><span class="pre">dx</span></code> → more cells/steps).</p></td>
+<td><p>Choose to adequately resolve features of interest.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Domain</strong> (vector / bbox)</p></td>
+<td><p>Bounding box of the computational domain (full extent).</p></td>
+<td><p>Ensure all bodies and boundary motions remain inside for full duration.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Mirror</strong> <em>(Deprecated)</em></p></td>
+<td><p>Legacy symmetry mirroring across coordinate planes for efficiency.</p></td>
+<td><p>Avoid for new studies.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As you <strong>refine</strong> <code class="docutils literal notranslate"><span class="pre">dx</span></code>, you must also reduce the stable time step due to the
+CFL condition. Expect runtime to increase superlinearly with refinement.</p>
+</div>
+</section>
+<section id="temporal">
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Temporal</a><a class="headerlink" href="#temporal" title="Link to this heading"></a></h3>
+<p>Parameters controlling the simulation clock and integration.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24.0%" />
+<col style="width: 60.0%" />
+<col style="width: 16.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Typical / Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Max Time Step (dt)</strong></p></td>
+<td><p>Upper bound on the time step. The <strong>effective step is computed</strong>
+by the material models from the CFL and material stiffness; the solver
+uses the <strong>minimum</strong> of this value and the CFL-based step.</p></td>
+<td><p>Acts as a safety cap; do <strong>not</strong> set above the stable CFL step.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Time-Integration</strong></p></td>
+<td><p>Currently <strong>explicit</strong> scheme.</p></td>
+<td><p>Implicit not yet available.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Initial Time (t0)</strong></p></td>
+<td><p>Time datum (start time).</p></td>
+<td><p>Usually <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Duration (tf - t0)</strong></p></td>
+<td><p>Total simulated time to run.</p></td>
+<td><p>Pick long enough to capture the full response.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>A practical rule of thumb is
+<code class="docutils literal notranslate"><span class="pre">Δt_effective</span> <span class="pre">≤</span> <span class="pre">CFL</span> <span class="pre">*</span> <span class="pre">dx</span> <span class="pre">/</span> <span class="pre">c_max</span></code>
+where <code class="docutils literal notranslate"><span class="pre">c_max</span></code> is the problem’s max wave/signal speed (material dependent).
+Keep <strong>CFL ≤ 0.5</strong> for headroom.</p>
+</div>
+</section>
+</section>
+<section id="scaling-settings">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Scaling Settings</a><a class="headerlink" href="#scaling-settings" title="Link to this heading"></a></h2>
+<p>Controls to enforce similitude when mapping between model-scale and prototype-scale.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26.0%" />
+<col style="width: 58.0%" />
+<col style="width: 16.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Setting</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Dominant Law</strong></p></td>
+<td><p>Choose <strong>Froude</strong> or <strong>Cauchy</strong> similitude as the governing scaling law.</p></td>
+<td><p>Determines which primary ratios you specify.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Froude</strong> inputs</p></td>
+<td><p>Provide <strong>Length Ratio</strong> and <strong>Time Ratio</strong>; other quantities
+auto-scale for consistency (e.g., velocities, accelerations).</p></td>
+<td><p>Useful for <strong>gravity-dominated</strong> free-surface flows.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Cauchy</strong> inputs</p></td>
+<td><p>Provide <strong>Elasticity Ratio</strong> (and Length Ratio as needed); elastic and
+inertial effects are scaled to maintain stress similitude.</p></td>
+<td><p>Useful for <strong>elastic/inertial</strong> similarity (e.g., solid response).</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Ensure your <strong>units are consistent</strong> before and after scaling. Check that
+derived properties (e.g., densities, moduli, gravity) are scaled as intended
+by the selected law. Mismatched units or incompatible ratios can silently
+invalidate results.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This feature may expand in future versions. For now, only the listed inputs
+are user-editable; other parameters are adjusted automatically to maintain
+the chosen similitude.</p>
+</div>
+</section>
+<section id="computer-settings-deprecated">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Computer Settings (Deprecated)</a><a class="headerlink" href="#computer-settings-deprecated" title="Link to this heading"></a></h2>
+<p>Legacy controls tied to the host system.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28.0%" />
+<col style="width: 56.0%" />
+<col style="width: 16.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>GPU Count</strong></p></td>
+<td><p>Select number of GPUs to target.</p></td>
+<td><p>Deprecated</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Compile-Time Memory</strong></p></td>
+<td><p>Static memory reservations used by older builds.</p></td>
+<td><p>Deprecated</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These settings are retained for backwards compatibility and may be removed in
+future releases. Prefer <strong>runtime auto-configuration</strong> and modern build presets.</p>
+</div>
+</section>
+<section id="best-practice-hints">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Best-Practice Hints</a><a class="headerlink" href="#best-practice-hints" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Start with <strong>CFL = 0.4</strong>, moderate <code class="docutils literal notranslate"><span class="pre">dx</span></code>, then refine based on accuracy checks.</p></li>
+<li><p>Verify the <strong>Domain</strong> encloses all motion for the entire <strong>Duration</strong>.</p></li>
+<li><p>Use <strong>Scaling Settings</strong> to translate model-scale studies to prototype behavior,
+but validate with at least one unscaled baseline case.</p></li>
+</ul>
+</section>
 </section>
 
 

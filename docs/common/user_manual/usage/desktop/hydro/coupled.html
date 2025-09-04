@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2.4.2. Coupled Digital Twin &mdash; Hydro-UQ  documentation</title>
+  <title>2.4.4. FOAMySees Coupled Digital Twin (Legacy) &mdash; Hydro-UQ  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=66b6668b" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
@@ -29,8 +29,8 @@
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.4.3. Material Point Method" href="MPM.html" />
-    <link rel="prev" title="2.4.1.6. Solver" href="Solver.html" />
+    <link rel="next" title="2.4.5. General Event (Legacy)" href="general.html" />
+    <link rel="prev" title="2.4.3. Stochastic Wave Loading" href="stochasticWave.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -88,17 +88,18 @@
 <li class="toctree-l2"><a class="reference internal" href="../GI.html">2.2. GI: General Information</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.3. SIM: Structural Model</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="EVT.html">2.4. EVT: Hydro Events</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="general.html">2.4.1. General Event (Legacy)</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.2. Coupled Digital Twin</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#coupled-simulation-settings">2.4.2.1. Coupled Simulation Settings</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#specify-opensees-structural-model-and-an-external-surface-file">2.4.2.2. Specify OpenSees Structural Model and an External Surface File</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#specify-openfoam-cfd-model-and-initial-conditions">2.4.2.3. Specify OpenFOAM CFD Model and Initial Conditions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#specify-outputs">2.4.2.4. Specify Outputs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#postprocessing">2.4.2.5. Postprocessing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MPM.html">2.4.1. Material Point Method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="celeris/index.html">2.4.2. CelerisAi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stochasticWave.html">2.4.3. Stochastic Wave Loading</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.4. FOAMySees Coupled Digital Twin (Legacy)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#coupled-simulation-settings">2.4.4.1. Coupled Simulation Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#specify-opensees-structural-model-and-an-external-surface-file">2.4.4.2. Specify OpenSees Structural Model and an External Surface File</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#specify-openfoam-cfd-model-and-initial-conditions">2.4.4.3. Specify OpenFOAM CFD Model and Initial Conditions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#specify-outputs">2.4.4.4. Specify Outputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#postprocessing">2.4.4.5. Postprocessing</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="MPM.html">2.4.3. Material Point Method</a></li>
-<li class="toctree-l3"><a class="reference internal" href="celeris/index.html">2.4.4. CelerisAi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="general.html">2.4.5. General Event (Legacy)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
@@ -109,11 +110,12 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">3. Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bestpractices.html">5. Best Practices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">7. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="helpvideo.html">9. Video Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs.html">5. Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bestpractices.html">6. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">7. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">8. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">9. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helpvideo.html">10. Video Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -148,7 +150,7 @@
       <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../usage.html"><span class="section-number">2. </span>User Interface</a></li>
           <li class="breadcrumb-item"><a href="EVT.html"><span class="section-number">2.4. </span>EVT: Hydro Events</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">2.4.2. </span>Coupled Digital Twin</li>
+      <li class="breadcrumb-item active"><span class="section-number">2.4.4. </span>FOAMySees Coupled Digital Twin (Legacy)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../../_sources/common/user_manual/usage/desktop/hydro/coupled.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -158,13 +160,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="coupled-digital-twin">
-<h1><span class="section-number">2.4.2. </span>Coupled Digital Twin<a class="headerlink" href="#coupled-digital-twin" title="Link to this heading"></a></h1>
-<p>This panel allows users to utilize a coupled OpenFOAM CFD simulation and OpenSeesPy finite element simulation to obtain loads and pressures on the building for subsequent UQ analysis. A screenshot of the GUI is shown below in <a class="reference internal" href="#evt-coupled"><span class="std std-numref">Fig. 2.4.2.1</span></a></p>
+  <section id="foamysees-coupled-digital-twin-legacy">
+<h1><span class="section-number">2.4.4. </span>FOAMySees Coupled Digital Twin (Legacy)<a class="headerlink" href="#foamysees-coupled-digital-twin-legacy" title="Link to this heading"></a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>FOAMySees Coupled Digital Twin functionality is currently disabled in HydroUQ due to the migration of remote supercomputing resources from Frontera to Stampede3. This functionality will be reintroduced in a future release if funding allows.</p>
+</div>
+<p>This panel allows users to utilize a coupled OpenFOAM CFD simulation and OpenSeesPy finite element simulation to obtain loads and pressures on the building for subsequent UQ analysis. A screenshot of the GUI is shown below in <a class="reference internal" href="#evt-coupled"><span class="std std-numref">Fig. 2.4.4.1</span></a></p>
 <figure class="align-center" id="id1">
 <span id="evt-coupled"></span><img alt="../../../../../_images/Coupled1.png" src="../../../../../_images/Coupled1.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.4.2.1 </span><span class="caption-text">Coupled Event Panel</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 2.4.4.1 </span><span class="caption-text">Coupled Event Panel</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>For a coupled event the user is presented with a workflow they must progress through:</p>
@@ -179,7 +185,7 @@
 </ul>
 </nav>
 <section id="coupled-simulation-settings">
-<h2><span class="section-number">2.4.2.1. </span>Coupled Simulation Settings<a class="headerlink" href="#coupled-simulation-settings" title="Link to this heading"></a></h2>
+<h2><span class="section-number">2.4.4.1. </span>Coupled Simulation Settings<a class="headerlink" href="#coupled-simulation-settings" title="Link to this heading"></a></h2>
 <p><strong>Simulation Settings</strong></p>
 <p>The user is presented with a variety of settings to specify the coupled simulation. The GUI is shown in Figure  <code class="xref std std-numref docutils literal notranslate"><span class="pre">EVT-CoupledSettings</span></code> and individual input parameters are as follows:</p>
 <p><code class="docutils literal notranslate"><span class="pre">Time</span> <span class="pre">Step</span></code>: The coupling timestep for the solution. This value should be selected such that the CFD model CFL criterion is satisfied, as well as the required minimum timestep for finite element analysis model stability.</p>
@@ -205,26 +211,26 @@
 <p><code class="docutils literal notranslate"><span class="pre">Coupling</span> <span class="pre">Iteration</span> <span class="pre">Output</span> <span class="pre">Data</span> <span class="pre">Frequency</span></code>: A large value is recommended.</p>
 </section>
 <section id="specify-opensees-structural-model-and-an-external-surface-file">
-<h2><span class="section-number">2.4.2.2. </span>Specify OpenSees Structural Model and an External Surface File<a class="headerlink" href="#specify-opensees-structural-model-and-an-external-surface-file" title="Link to this heading"></a></h2>
+<h2><span class="section-number">2.4.4.2. </span>Specify OpenSees Structural Model and an External Surface File<a class="headerlink" href="#specify-opensees-structural-model-and-an-external-surface-file" title="Link to this heading"></a></h2>
 <p><strong>OpenSees Model</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">OpenSees</span> <span class="pre">File</span></code>: Must be an OpenSeesPy script</p>
 <p><code class="docutils literal notranslate"><span class="pre">External</span> <span class="pre">surface</span> <span class="pre">file</span></code>: Must be an STL file, this is the boundary that will represent the structure within a three-dimensional CFD simulation, which will be coupled to the FEA model)</p>
 <figure class="align-center" id="id2">
 <img alt="../../../../../_images/OpenSees.png" src="../../../../../_images/OpenSees.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.4.2.2.1 </span><span class="caption-text">OpenSees</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 2.4.4.2.1 </span><span class="caption-text">OpenSees</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="specify-openfoam-cfd-model-and-initial-conditions">
-<h2><span class="section-number">2.4.2.3. </span>Specify OpenFOAM CFD Model and Initial Conditions<a class="headerlink" href="#specify-openfoam-cfd-model-and-initial-conditions" title="Link to this heading"></a></h2>
+<h2><span class="section-number">2.4.4.3. </span>Specify OpenFOAM CFD Model and Initial Conditions<a class="headerlink" href="#specify-openfoam-cfd-model-and-initial-conditions" title="Link to this heading"></a></h2>
 <p><strong>OpenFOAM Model</strong></p>
 <p>Select the NHERI flume facility or specify the flume geometry within the text field boxes provided.</p>
 <p>Specify a flume cell size (this is the approximate edge length size of the volumes within the CFD domain for the largest cells). The minimum flume cell size could tentatively be 8 times smaller than this value, due to mesh castellation during automatic meshing routines. Use caution when specifying this value. CFD mesh resolution is increased in the structural near field.</p>
 <figure class="align-center" id="id3">
 <img alt="../../../../../_images/OpenFOAM.png" src="../../../../../_images/OpenFOAM.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.4.2.3.1 </span><span class="caption-text">OpenFOAM</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 2.4.4.3.1 </span><span class="caption-text">OpenFOAM</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p><strong>Specify the flume bathymetry (STL file, or point list of x position, elevation of flume floor at x position).</strong></p>
@@ -232,21 +238,21 @@
 <figure class="align-center" id="id4">
 <img alt="../../../../../_images/bathymetryOF.png" src="../../../../../_images/bathymetryOF.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.4.2.3.2 </span><span class="caption-text">Bathymetry</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 2.4.4.3.2 </span><span class="caption-text">Bathymetry</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p><strong>Specify the initial conditions of the OpenFOAM model, including the still water level, the initial fluid velocity, and the fluid reference pressure [default, 0 Pa]. If a velocity time history is desired as an inlet boundary condition, upload a CSV file containing the times and velocities desired at the inlet at those times.</strong></p>
 <figure class="align-center" id="id5">
 <img alt="../../../../../_images/initialOF.png" src="../../../../../_images/initialOF.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.4.2.3.3 </span><span class="caption-text">Initial Conditions</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 2.4.4.3.3 </span><span class="caption-text">Initial Conditions</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p><strong>Specify the turbulence initial conditions. The reference length, turbulence intensity, and the reference velocity of the turbulence.</strong></p>
 <figure class="align-center" id="id6">
 <img alt="../../../../../_images/turbulanceOF.png" src="../../../../../_images/turbulanceOF.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.4.2.3.4 </span><span class="caption-text">Turbulence</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 2.4.4.3.4 </span><span class="caption-text">Turbulence</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p><strong>Specify the wave generation techniques for the CFD model, if waves are desired.</strong></p>
@@ -256,19 +262,19 @@
 <figure class="align-center" id="id7">
 <img alt="../../../../../_images/waveOF.png" src="../../../../../_images/waveOF.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.4.2.3.5 </span><span class="caption-text">Wave Generation</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 2.4.4.3.5 </span><span class="caption-text">Wave Generation</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="specify-outputs">
-<h2><span class="section-number">2.4.2.4. </span>Specify Outputs<a class="headerlink" href="#specify-outputs" title="Link to this heading"></a></h2>
+<h2><span class="section-number">2.4.4.4. </span>Specify Outputs<a class="headerlink" href="#specify-outputs" title="Link to this heading"></a></h2>
 <p>A variety of outputs from the coupled model can be obtained through the specification of the output settings.</p>
 <ul>
 <li><p>Output VTK - Output a VTK file of the OpenSees and OpenFOAM models at the specified time interval.</p>
 <figure class="align-center" id="id8">
 <img alt="../../../../../_images/Outputs.png" src="../../../../../_images/Outputs.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.4.2.4.1 </span><span class="caption-text">Outputs</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 2.4.4.4.1 </span><span class="caption-text">Outputs</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </li>
@@ -276,7 +282,7 @@
 <figure class="align-center" id="id9">
 <img alt="../../../../../_images/OutputSuraceProbes.png" src="../../../../../_images/OutputSuraceProbes.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.4.2.4.2 </span><span class="caption-text">Surface Probes</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 2.4.4.4.2 </span><span class="caption-text">Surface Probes</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </li>
@@ -284,7 +290,7 @@
 <figure class="align-center" id="id10">
 <img alt="../../../../../_images/OutputFieldProbes.png" src="../../../../../_images/OutputFieldProbes.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.4.2.4.3 </span><span class="caption-text">Field Probes</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 2.4.4.4.3 </span><span class="caption-text">Field Probes</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </li>
@@ -292,14 +298,14 @@
 <figure class="align-center" id="id11">
 <img alt="../../../../../_images/OutputCuts.png" src="../../../../../_images/OutputCuts.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.4.2.4.4 </span><span class="caption-text">Section Cuts</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 2.4.4.4.4 </span><span class="caption-text">Section Cuts</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </li>
 </ul>
 </section>
 <section id="postprocessing">
-<h2><span class="section-number">2.4.2.5. </span>Postprocessing<a class="headerlink" href="#postprocessing" title="Link to this heading"></a></h2>
+<h2><span class="section-number">2.4.4.5. </span>Postprocessing<a class="headerlink" href="#postprocessing" title="Link to this heading"></a></h2>
 <p>Data from the coupled analysis will be available in the DesignSafe Data Depot under your <code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">Data/Hydro-UQ/</span></code> folder. Each analysis will have a temporary directory associated with it. Within this directory, there is a results.zip file which contains the OpenFOAM postProcessing folder, as well as VTK output from OpenSees. This zip folder can be extracted and results can be viewed with ParaView.</p>
 </section>
 </section>

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2.4.3.3. Boundaries &mdash; Hydro-UQ  documentation</title>
+  <title>Boundaries &mdash; Hydro-UQ  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=66b6668b" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
@@ -29,8 +29,8 @@
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.4.3.4. Sensors" href="SensorsMPM.html" />
-    <link rel="prev" title="2.4.3.2. Bodies" href="BodiesMPM.html" />
+    <link rel="next" title="Sensors" href="SensorsMPM.html" />
+    <link rel="prev" title="Bodies" href="BodiesMPM.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -85,22 +85,29 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Running Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">2. User Interface</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="tools.html">3. Tools</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="tools.html#material-point-method">3.1. Material Point Method</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="SettingsMPM.html">2.4.3.1. Settings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="BodiesMPM.html">2.4.3.2. Bodies</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.3.3. Boundaries</a></li>
-<li class="toctree-l3"><a class="reference internal" href="SensorsMPM.html">2.4.3.4. Sensors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="OutputsMPM.html">2.4.3.5. Outputs</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="MPM.html">2.4.1. Material Point Method</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="MPM.html#basic-documentation">2.4.1.1. Basic Documentation</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="SettingsMPM.html">Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BodiesMPM.html">Bodies</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Boundaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SensorsMPM.html">Sensors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="OutputsMPM.html">Outputs</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="MPM.html#detailed-documentation">2.4.1.2. Detailed Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="celeris/index.html">2.4.2. CelerisAi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpenSeesTool.html">3.1. OpenSees&#64;DesignSafe Tool</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bestpractices.html">5. Best Practices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">7. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="helpvideo.html">9. Video Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs.html">5. Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bestpractices.html">6. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">7. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">8. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">9. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helpvideo.html">10. Video Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -135,8 +142,8 @@
       <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../usage.html"><span class="section-number">2. </span>User Interface</a></li>
           <li class="breadcrumb-item"><a href="EVT.html"><span class="section-number">2.4. </span>EVT: Hydro Events</a></li>
-          <li class="breadcrumb-item"><a href="MPM.html"><span class="section-number">2.4.3. </span>Material Point Method</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">2.4.3.3. </span>Boundaries</li>
+          <li class="breadcrumb-item"><a href="MPM.html"><span class="section-number">2.4.1. </span>Material Point Method</a></li>
+      <li class="breadcrumb-item active">Boundaries</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../../_sources/common/user_manual/usage/desktop/hydro/BoundariesMPM.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -147,8 +154,232 @@
            <div itemprop="articleBody">
              
   <section id="boundaries">
-<span id="lbl-boundariesmpm"></span><h1><span class="section-number">2.4.3.3. </span>Boundaries<a class="headerlink" href="#boundaries" title="Link to this heading"></a></h1>
-<p>There are four aspects related to the definition of boundaries, namely geometry of the ocean floor or wave flume, buildings or specimens, floating bodies, and shallow water to the CFD interface.</p>
+<span id="lbl-boundariesmpm"></span><h1>Boundaries<a class="headerlink" href="#boundaries" title="Link to this heading"></a></h1>
+<p>Use the <strong>Boundaries</strong> tab to define the walls, structures, wave-makers, and other
+facility elements that interact with the material points. Each boundary has a
+<strong>type</strong>, <strong>contact behavior</strong>, <strong>geometry</strong>, <strong>temporal activation window</strong>, and optional
+<strong>motion</strong>.</p>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#default-boundary-entities" id="id1">Default Boundary Entities</a></p></li>
+<li><p><a class="reference internal" href="#boundary-types" id="id2">Boundary Types</a></p></li>
+<li><p><a class="reference internal" href="#contact-friction" id="id3">Contact &amp; Friction</a></p></li>
+<li><p><a class="reference internal" href="#geometry-extents" id="id4">Geometry &amp; Extents</a></p></li>
+<li><p><a class="reference internal" href="#activation-window-time" id="id5">Activation Window (Time)</a></p></li>
+<li><p><a class="reference internal" href="#motion-options" id="id6">Motion Options</a></p></li>
+<li><p><a class="reference internal" href="#parameter-reference" id="id7">Parameter Reference</a></p></li>
+<li><p><a class="reference internal" href="#best-practice-workflow" id="id8">Best-Practice Workflow</a></p></li>
+</ul>
+</nav>
+<section id="default-boundary-entities">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Default Boundary Entities</a><a class="headerlink" href="#default-boundary-entities" title="Link to this heading"></a></h2>
+<p>The GUI provides four preconfigured entities to streamline setup:</p>
+<ul class="simple">
+<li><p><strong>Flume Facility</strong>
+Defines the overall flume geometry (e.g., optional bathymetry ramps,
+and surface friction). Presets are provided for supported physical facilities.</p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/GUI_Boundaries_Flume5.png"><img alt="HydroUQ Flume panel." src="../../../../../_images/GUI_Boundaries_Flume5.png" style="width: 600px;" />
+</a>
+</figure>
+<ul class="simple">
+<li><p><strong>Wave Generator</strong>
+Configures the mechanism that produces waves (e.g., piston-style wave maker or
+a velocity boundary condition). Presets match each example facility.</p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/GUI_Boundaries_WaveGenerator5.png"><img alt="HydroUQ Wave Generator panel." src="../../../../../_images/GUI_Boundaries_WaveGenerator5.png" style="width: 600px;" />
+</a>
+</figure>
+<ul class="simple">
+<li><p><strong>Rigid Structure</strong>
+Adds an immovable body (commonly a rectangular prism) representing a test
+specimen. In the <a class="reference internal" href="SensorsMPM.html#lbl-sensorsmpm"><span class="std std-ref">Sensors</span></a> tab you may attach load cells to
+map forces to structural models (e.g., OpenSees).</p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/GUI_Boundaries_RigidStructure5.png"><img alt="HydroUQ Rigid Structure panel." src="../../../../../_images/GUI_Boundaries_RigidStructure5.png" style="width: 600px;" />
+</a>
+</figure>
+<ul class="simple">
+<li><p><strong>Rigid Walls</strong>
+Sets the computational domain’s enclosing box (the “tank” or “room” the
+simulation runs in).</p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/GUI_Boundaries_RigidWalls5.png"><img alt="HydroUQ Rigid Walls panel." src="../../../../../_images/GUI_Boundaries_RigidWalls5.png" style="width: 600px;" />
+</a>
+</figure>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Start from these defaults and refine parameters rather than building each
+boundary from scratch.</p>
+</div>
+</section>
+<section id="boundary-types">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Boundary Types</a><a class="headerlink" href="#boundary-types" title="Link to this heading"></a></h2>
+<p>Common types include <strong>Walls</strong>, <strong>Box</strong>, <strong>Sphere</strong>, <strong>Cylinder</strong>, and <strong>Plane</strong>, along with facility-specific
+presets (e.g., <strong>OSU_LWF_RAMP</strong>, <strong>OSU_LWF_PADDLE</strong>, <strong>USGS_RAMP</strong>, <strong>USGS_GATE</strong>,
+<strong>OSU_TWB_RAMP</strong>, <strong>OSU_TWB_PADDLE</strong>, <strong>WASIRF_PUMP</strong>, <strong>TOKYO_HARBOR</strong>, and a
+<strong>velocity boundary</strong> type). Facility-prefixed types correspond to digital-twin
+geometries and motions tailored to specific labs.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some types expose <strong>friction</strong> fields, others intentionally hide them. If a
+parameter does not appear for a chosen type, it is not applicable.</p>
+</div>
+</section>
+<section id="contact-friction">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Contact &amp; Friction</a><a class="headerlink" href="#contact-friction" title="Link to this heading"></a></h2>
+<p><strong>Contact</strong> controls how material points interact with a boundary surface:</p>
+<ul class="simple">
+<li><p><strong>Sticky</strong> — No slip at the interface (points adhere to the surface).</p></li>
+<li><p><strong>Slip</strong> — Tangential slip allowed; normal penetration prevented.</p></li>
+<li><p><strong>Separable</strong> — Interface can separate (no tension transfer), with optional
+tangential slip.</p></li>
+</ul>
+<p><strong>Friction</strong> (when available):</p>
+<ul class="simple">
+<li><p><strong>Static friction coefficient</strong> — Onset threshold for sliding (≥ 0).</p></li>
+<li><p><strong>Dynamic friction coefficient</strong> — Sliding resistance once motion begins (≥ 0).</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Use <strong>Slip</strong> with low friction for hydraulically smooth walls, <strong>Sticky</strong> to
+anchor material to moving parts (e.g., a paddle), and <strong>Separable</strong> where
+loss of contact is physically expected (lift-off, cavitation zones, etc.).</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Excessively large friction can cause artificial sticking and nonphysical force
+spikes; start modestly and calibrate.</p>
+</div>
+</section>
+<section id="geometry-extents">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Geometry &amp; Extents</a><a class="headerlink" href="#geometry-extents" title="Link to this heading"></a></h2>
+<p>Define where a boundary exists in space:</p>
+<ul class="simple">
+<li><p><strong>Domain Start</strong> — The corner/point <strong>nearest the origin</strong>.</p></li>
+<li><p><strong>Domain End</strong> — The opposite corner/point <strong>farthest from the origin</strong>.</p></li>
+</ul>
+<p>These two vectors bound the region where the boundary acts (e.g., the size and
+placement of a wall, paddle track, or structure).</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Ensure each component of <strong>Domain End</strong> is greater than the corresponding
+<strong>Domain Start</strong> component to produce a positive-size region.</p>
+</div>
+</section>
+<section id="activation-window-time">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Activation Window (Time)</a><a class="headerlink" href="#activation-window-time" title="Link to this heading"></a></h2>
+<p>Control when a boundary is active by specifying two times:</p>
+<ul class="simple">
+<li><p><strong>Start time</strong> — When the boundary appears/enables.</p></li>
+<li><p><strong>End time</strong> — When the boundary disappears/disables.</p></li>
+</ul>
+<p>This is useful for staged motions (e.g., start the paddle after still-water
+settling, or retract a gate at a given time).</p>
+</section>
+<section id="motion-options">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Motion Options</a><a class="headerlink" href="#motion-options" title="Link to this heading"></a></h2>
+<p>Some boundaries can move or impose velocities.</p>
+<ul>
+<li><p><strong>Constant Velocity</strong> — A vector speed applied continuously (e.g., a uniform
+inflow/outflow or translating plane).</p></li>
+<li><p><strong>Motion File</strong> — A CSV time series driving a moving boundary (e.g., a piston wave maker). The file contains rows of:
+- <strong>Time</strong> (s)
+- <strong>Velocity along the actuation axis</strong> (m/s; typically <strong>X</strong> by default)
+- <strong>Position along the actuation axis</strong> (m; measured relative to the boundary’s local origin between your Domain Start/End)</p>
+<p>Use <strong>Sampling Frequency</strong> to indicate the data rate (Hz). Intermediate samples are interpreted at fixed increments of the frequency’s inverse.</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The motion file’s <strong>position</strong> should be consistent with the chosen <strong>Domain</strong>
+orientation. Keep your sign convention and axis alignment consistent across
+all boundaries.</p>
+</div>
+</section>
+<section id="parameter-reference">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Parameter Reference</a><a class="headerlink" href="#parameter-reference" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24.0%" />
+<col style="width: 56.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>What it controls</p></th>
+<th class="head"><p>Units / Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Type</strong></p></td>
+<td><p>Boundary geometry/preset (e.g., Wall, Plane, Facility-specific paddle/ramp, velocity boundary).</p></td>
+<td><p>Choose from the GUI list.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Contact</strong></p></td>
+<td><p>Interface behavior: <strong>Sticky</strong>, <strong>Slip</strong>, or <strong>Separable</strong>.</p></td>
+<td><p>Affects tangential slip and normal separation.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Static Friction</strong></p></td>
+<td><p>Sliding onset threshold when contact is engaged.</p></td>
+<td><p>≥ 0; shown only for applicable types.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Dynamic Friction</strong></p></td>
+<td><p>Resistance during sliding motion.</p></td>
+<td><p>≥ 0; shown only for applicable types.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Active Time (Start, End)</strong></p></td>
+<td><p>Enables/disables the boundary between two times.</p></td>
+<td><p>Seconds</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Domain Start</strong></p></td>
+<td><p>Lower/near corner of the boundary’s extent.</p></td>
+<td><p>Meters</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Domain End</strong></p></td>
+<td><p>Upper/far corner of the boundary’s extent.</p></td>
+<td><p>Meters (must exceed Start per component)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Constant Velocity</strong></p></td>
+<td><p>Prescribed velocity vector (if supported).</p></td>
+<td><p>m/s</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Motion File</strong></p></td>
+<td><p>CSV with time, velocity (axis), and position (axis).</p></td>
+<td><p>Axis typically <strong>X</strong>; relative to local domain.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Sampling Frequency</strong></p></td>
+<td><p>Data rate for interpreting motion file samples.</p></td>
+<td><p>Hz</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="best-practice-workflow">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Best-Practice Workflow</a><a class="headerlink" href="#best-practice-workflow" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><strong>Pick a type</strong> that matches the physical element (facility preset for flumes,
+<strong>Plane</strong>/<strong>Wall</strong> for simple boundaries, <strong>velocity boundary</strong> for inflow/outflow).</p></li>
+<li><p>Set <strong>Domain Start/End</strong> to place and size it correctly.</p></li>
+<li><p>Choose <strong>Contact</strong> consistent with physics; add <strong>friction</strong> only where
+supported/needed.</p></li>
+<li><p>Define <strong>Active Time</strong> so motions begin after initial transients settle.</p></li>
+<li><p>For moving boundaries, use a clean <strong>Motion File</strong> with proper sampling and
+axis alignment, or a <strong>Constant Velocity</strong> when appropriate.</p></li>
+<li><p>Validate with quick, short runs (coarse grid, short duration) and inspect
+force/velocity responses before scaling up.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Misaligned domains or inverted extents will yield missing or misapplied
+boundaries. If a boundary appears to have no effect, first verify <strong>Domain</strong>
+coordinates, <strong>activation times</strong>, and <strong>contact</strong> settings.</p>
+</div>
+</section>
 </section>
 
 

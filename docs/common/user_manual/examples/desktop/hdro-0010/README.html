@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4.2. Forward Sampling - Simple Piston Generated Wave - Taichi Event &mdash; Hydro-UQ  documentation</title>
+  <title>4.2. Real-Time Wave-Solver - Simple Piston Generated Wave Loading - Taichi Event &mdash; Hydro-UQ  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=66b6668b" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
@@ -29,8 +29,8 @@
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="4.3. Near-Real Time Wave-Solver - Seaside, OR Experimental Replication - CelerisAi" href="../hdro-0020/README.html" />
-    <link rel="prev" title="4.1. Feature - Stochastic Wave Loading on a Simple Structure - Stochastic Wave Spectra" href="../hdro-0005/README.html" />
+    <link rel="next" title="4.3. Near-Real Time Wave-Solver - Seaside, OR Experimental Replication - Celeris" href="../hdro-0020/README.html" />
+    <link rel="prev" title="4.1. Stochastic Wave Loading on a Frame Structure - JONSWAP Spectra" href="../hdro-0005/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -86,27 +86,42 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/tools.html">3. Tools</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../examples.html">4. Examples</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../hdro-0005/README.html">4.1. Feature - Stochastic Wave Loading on a Simple Structure - Stochastic Wave Spectra</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.2. Forward Sampling - Simple Piston Generated Wave - Taichi Event</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0005/README.html">4.1. Stochastic Wave Loading on a Frame Structure - JONSWAP Spectra</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.2. Real-Time Wave-Solver - Simple Piston Generated Wave Loading - Taichi Event</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">4.2.1. Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#set-up">4.2.2. Set-Up</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-up">4.2.2. Set-Up</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#step-1-uq">4.2.2.1. Step 1: UQ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-2-gi">4.2.2.2. Step 2: GI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-3-sim">4.2.2.3. Step 3: SIM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-4-evt">4.2.2.4. Step 4: EVT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-5-fem">4.2.2.5. Step 5: FEM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-6-edp">4.2.2.6. Step 6: EDP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-7-rv">4.2.2.7. Step 7: RV</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#simulation">4.2.3. Simulation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#analysis">4.2.4. Analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#references">4.2.5. References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conclusions">4.2.5. Conclusions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#references">4.2.6. References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reproducibility">4.2.7. Reproducibility</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../hdro-0020/README.html">4.3. Near-Real Time Wave-Solver - Seaside, OR Experimental Replication - CelerisAi</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hdro-0002/README.html">4.4. Validation - Multiple Debris Impacts on a Raised Structure - Digital Twin (OSU LWF)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hdro-0004/README.html">4.5. Tsunami Debris Motion Through a Scaled Port Setting - WU TWB Digital Twin - MPM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hdro-0001/README.html">4.6. Multi-Story Shear Building - Coupled CFD-FEM Digital Twin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hdro-0003/README.html">4.7. Cylinder Half-Submerged in Flow  -  UW WASIRF Twin  -  FOAMySees (OpenFOAM + OpenSees)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0020/README.html">4.3. Near-Real Time Wave-Solver - Seaside, OR Experimental Replication - Celeris</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0021/README.html">4.4. Near-Real Time Wave-Solver - Oregon State University’s Large Wave Flume - Celeris</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0022/README.html">4.5. Near-Real Time Wave-Solver - Tsunami Vulnerability of a School in Loiza, Puerto Rico - Celeris + BRAILS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0002/README.html">4.6. Multiple Debris Impacts on a Raised Structure - Digital Flume (OSU LWF) - MPM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0006/README.html">4.7. Debris Group Motion Over a Frictional Bed - Digital Flume (OSU DWB) - MPM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0007/README.html">4.8. Debris in Steady-State Flow - Digital Flume (UW WASIRF) - MPM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0004/README.html">4.9. Tsunami Debris Motion In a Scaled Port Setting - Digital Flume (WU TWB) - MPM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hdro-0008/README.html">4.10. Debris-Flow Down a Hill-Slope - Digital Flume (USGS DFF) - MPM</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/bestpractices.html">5. Best Practices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">7. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/helpvideo.html">9. Video Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/jobs.html">5. Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/bestpractices.html">6. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">7. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">8. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">9. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/hydro/helpvideo.html">10. Video Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -140,7 +155,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../examples.html"><span class="section-number">4. </span>Examples</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">4.2. </span>Forward Sampling - Simple Piston Generated Wave - Taichi Event</li>
+      <li class="breadcrumb-item active"><span class="section-number">4.2. </span>Real-Time Wave-Solver - Simple Piston Generated Wave Loading - Taichi Event</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../../_sources/common/user_manual/examples/desktop/hdro-0010/README.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -150,8 +165,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="forward-sampling-simple-piston-generated-wave-taichi-event">
-<span id="hdro-0010"></span><h1><span class="section-number">4.2. </span>Forward Sampling - Simple Piston Generated Wave - Taichi Event<a class="headerlink" href="#forward-sampling-simple-piston-generated-wave-taichi-event" title="Link to this heading"></a></h1>
+  <section id="real-time-wave-solver-simple-piston-generated-wave-loading-taichi-event">
+<span id="hdro-0010"></span><h1><span class="section-number">4.2. </span>Real-Time Wave-Solver - Simple Piston Generated Wave Loading - Taichi Event<a class="headerlink" href="#real-time-wave-solver-simple-piston-generated-wave-loading-taichi-event" title="Link to this heading"></a></h1>
 <table class="docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p>Problem files</p></td>
@@ -162,77 +177,675 @@
 <nav class="contents local" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#overview" id="id8">Overview</a></p></li>
-<li><p><a class="reference internal" href="#set-up" id="id9">Set-Up</a></p></li>
-<li><p><a class="reference internal" href="#simulation" id="id10">Simulation</a></p></li>
-<li><p><a class="reference internal" href="#analysis" id="id11">Analysis</a></p></li>
-<li><p><a class="reference internal" href="#references" id="id12">References</a></p></li>
+<li><p><a class="reference internal" href="#overview" id="id3">Overview</a></p></li>
+<li><p><a class="reference internal" href="#set-up" id="id4">Set-Up</a></p>
+<ul>
+<li><p><a class="reference internal" href="#step-1-uq" id="id5">Step 1: UQ</a></p></li>
+<li><p><a class="reference internal" href="#step-2-gi" id="id6">Step 2: GI</a></p></li>
+<li><p><a class="reference internal" href="#step-3-sim" id="id7">Step 3: SIM</a></p></li>
+<li><p><a class="reference internal" href="#step-4-evt" id="id8">Step 4: EVT</a></p></li>
+<li><p><a class="reference internal" href="#step-5-fem" id="id9">Step 5: FEM</a></p></li>
+<li><p><a class="reference internal" href="#step-6-edp" id="id10">Step 6: EDP</a></p></li>
+<li><p><a class="reference internal" href="#step-7-rv" id="id11">Step 7: RV</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#simulation" id="id12">Simulation</a></p></li>
+<li><p><a class="reference internal" href="#analysis" id="id13">Analysis</a></p></li>
+<li><p><a class="reference internal" href="#conclusions" id="id14">Conclusions</a></p></li>
+<li><p><a class="reference internal" href="#references" id="id15">References</a></p></li>
+<li><p><a class="reference internal" href="#reproducibility" id="id16">Reproducibility</a></p></li>
 </ul>
 </nav>
 <section id="overview">
 <span id="hdro-0010-overview"></span><h2><span class="section-number">4.2.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
-<figure class="align-center" id="id2">
-<a class="reference internal image-reference" href="../../../../../_images/hdro-0010_EVT_Single.png"><img alt="../../../../../_images/hdro-0010_EVT_Single.png" src="../../../../../_images/hdro-0010_EVT_Single.png" style="width: 600px;" />
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0010.gif"><img alt="Real-time 2D position-based fluid dynamics (PBFD) simulation in Taichi Lang showing a right-side piston (moving wall) generating waves that propagate through a particle water column toward a rigid wall representing the structure." src="../../../../../_images/hdro-0010.gif" style="width: 600px;" />
 </a>
-<figcaption>
-<p><span class="caption-number">Fig. 4.2.1.1 </span><span class="caption-text">TaichiEvent EVT of the pbf2d.py example. Includes a linear piston wave-maker creating breaking waves using local HPC resources (e.g. vectorized CPU, GPU).</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
-</figcaption>
 </figure>
-<p>In this local workflow example, we demonstrate high-performance computation making use of your personal computer’s hardware (both CPU and GPU). A linear actuator (i.e. piston) produces a wave in real-time with automatic visualization via the Taichi Lang framework <a class="reference internal" href="../hdro-0020/README.html#hu2019" id="id1"><span>[Hu2019]</span></a>. This replicates the basic physics of wave-makers in real facilities, such as Oregon State University’s Large Wave Flume.</p>
+<p>Forward sample an uncertain structure loaded by a physics-based wave maker piston’s generated wave in real-time. This workflow uses the high-performance <strong>Taichi Lang</strong> on your local PC to accelerate simulations using your <strong>CPU</strong> or your <strong>GPU</strong> <a class="reference internal" href="#hu2019" id="id1"><span>[Hu2019]</span></a>. We numerically simulate <strong>position-based fluid dynamics (PBFD)</strong> in 2D: the <strong>right</strong> boundary is a moving wall (wave-maker piston), the <strong>center</strong> is a water particle mass, and the <strong>left</strong> is a rigid wall representing the structure onto which HydroUQ maps hydrodynamic loads for an <strong>OpenSees</strong> model. This replicates the basic physics of wave-makers in real facilities, such as Oregon State University’s Large Wave Flume and Directional Wave Basin. The OpenSees structure is a <strong>2D three degree-of-freedom portal frame</strong> with uncertain variables.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Keep <strong>GI</strong>, <strong>SIM</strong>, <strong>EVT</strong>, and <strong>FEM</strong> units consistent. Match Taichi’s PBFD length/time scales and OpenSees integration settings (e.g., time step). Verify any force/unit conversions used during load mapping.</p>
+</div>
 </section>
 <section id="set-up">
-<span id="hdro-0010-setup"></span><h2><span class="section-number">4.2.2. </span>Set-Up<a class="headerlink" href="#set-up" title="Link to this heading"></a></h2>
-<figure class="align-center" id="id3">
-<a class="reference internal image-reference" href="../../../../../_images/hdro-0010_UQ.png"><img alt="../../../../../_images/hdro-0010_UQ.png" src="../../../../../_images/hdro-0010_UQ.png" style="width: 600px;" />
+<span id="hdro-0010-set-up"></span><h2><span class="section-number">4.2.2. </span>Set-Up<a class="headerlink" href="#set-up" title="Link to this heading"></a></h2>
+<section id="step-1-uq">
+<h3><span class="section-number">4.2.2.1. </span>Step 1: UQ<a class="headerlink" href="#step-1-uq" title="Link to this heading"></a></h3>
+<p>Configure <strong>Forward</strong> sampling to explore structural/material uncertainty under a fixed piston-generated wave signal.</p>
+<ul class="simple">
+<li><p><strong>Engine</strong>: Dakota</p></li>
+<li><p><strong>Forward Propagation</strong> (e.g., <strong>LHS</strong>) with <code class="docutils literal notranslate"><span class="pre">samples</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">4</span></code>) and a reproducible <code class="docutils literal notranslate"><span class="pre">seed</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">1</span></code>).</p></li>
+</ul>
+<figure class="align-center">
+<img alt="HydroUQ UQ panel with Dakota engine; Forward method selected with sample count and seed set." src="../../../../../_images/hdro-0010_UQ.png" />
+</figure>
+</section>
+<section id="step-2-gi">
+<h3><span class="section-number">4.2.2.2. </span>Step 2: GI<a class="headerlink" href="#step-2-gi" title="Link to this heading"></a></h3>
+<p>Set <strong>General Information</strong> and <strong>Units</strong>. Ensure that length/time units are consistent with the Taichi Lang script’s and OpenSees model’s parameters.</p>
+<ul class="simple">
+<li><p>Project name: <code class="docutils literal notranslate"><span class="pre">hdro-0010</span></code></p></li>
+<li><p>Location/metadata: optional</p></li>
+<li><p>Units: choose a consistent set (e.g., N-m-s or kips-in-s)</p></li>
+</ul>
+<figure class="align-center">
+<img alt="General Information panel showing project name and unit selections." src="../../../../../_images/hdro-0010_GI.png" />
+</figure>
+</section>
+<section id="step-3-sim">
+<h3><span class="section-number">4.2.2.3. </span>Step 3: SIM<a class="headerlink" href="#step-3-sim" title="Link to this heading"></a></h3>
+<p>The structural model is as follows: a <strong>2D, 3-DOF OpenSees portal frame</strong> in OpenSees, <a class="reference internal" href="../../../usage/desktop/SIM.html#lblopenseessim"><span class="std std-ref">OpenSees</span></a>.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../../../../../_images/hdro-0010_Structure.png"><img alt="Schematic of a 2D three-degree-of-freedom portal frame subjected to horizontal wave-induced drag forces along the column line, with parameters taken from a JONSWAP spectrum." src="../../../../../_images/hdro-0010_Structure.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.2.2.1 </span><span class="caption-text">Uncertainty Quantification (UQ) tab with forward propagation selected.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.2.2.3.1 </span><span class="caption-text">2D 3-DOF portal frame under stochastic wave loading (JONSWAP)</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p>First we select forward propagation using the Dakota UQ engine under the <code class="docutils literal notranslate"><span class="pre">UQ</span></code> tab. We will be looking at parallel execution of multiple simulations, set by the samples variable.</p>
-<figure class="align-center" id="id4">
-<a class="reference internal image-reference" href="../../../../../_images/hdro-0010_GI.png"><img alt="../../../../../_images/hdro-0010_GI.png" src="../../../../../_images/hdro-0010_GI.png" style="width: 600px;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Fig. 4.2.2.2 </span><span class="caption-text">General Information (GI) tab with placeholder values as no structure is being analyzed in this example.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
-</figcaption>
+<p>For the OpenSees generator the following model script, <a class="reference external" href="https://github.com/NHERI-SimCenter/HydroUQ/blob/master/Examples/hdro-0010/src/Frame.tcl">Frame.tcl</a> , is used:</p>
+<details open style="border:1px solid #ccc; border-radius:6px; background:#efefef; padding:0.5em; margin:0.5em 0;">
+<summary style="font-weight:bold; text-decoration:underline; cursor:pointer;">Click to expand the OpenSees input file used for this example</summary><div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="c"># Create ModelBuilder (with two-dimensions and 3 DOF/node)</span>
+<span class="linenos">  2</span>
+<span class="linenos">  3</span><span class="nv">model</span><span class="w"> </span>basic<span class="w"> </span><span class="o">-</span>ndm<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span>ndf<span class="w"> </span><span class="mi">3</span>
+<span class="linenos">  4</span>
+<span class="linenos">  5</span><span class="k">set</span><span class="w"> </span>width<span class="w">    </span><span class="mi">360</span>
+<span class="linenos">  6</span><span class="k">set</span><span class="w"> </span>height<span class="w">   </span><span class="mi">144</span>
+<span class="linenos">  7</span>
+<span class="linenos">  8</span><span class="nv">node</span><span class="w">  </span><span class="mi">1</span><span class="w">       </span><span class="mf">0.0</span><span class="w">     </span><span class="mf">0.0</span><span class="w"> </span>
+<span class="linenos">  9</span>node<span class="w">  </span><span class="mi">2</span><span class="w">    </span><span class="nv">$width</span><span class="w">     </span><span class="mf">0.0</span><span class="w"> </span>
+<span class="linenos"> 10</span>node<span class="w">  </span><span class="mi">3</span><span class="w">       </span><span class="mf">0.0</span><span class="w"> </span><span class="nv">$height</span>
+<span class="linenos"> 11</span><span class="nv">node</span><span class="w">  </span><span class="mi">4</span><span class="w">    </span><span class="nv">$width</span><span class="w"> </span><span class="nv">$height</span>
+<span class="linenos"> 12</span>
+<span class="linenos"> 13</span><span class="nv">fix</span><span class="w">   </span><span class="mi">1</span><span class="w">     </span><span class="mi">1</span><span class="w">    </span><span class="mi">1</span><span class="w">    </span><span class="mi">1</span>
+<span class="linenos"> 14</span><span class="nv">fix</span><span class="w">   </span><span class="mi">2</span><span class="w">     </span><span class="mi">1</span><span class="w">    </span><span class="mi">1</span><span class="w">    </span><span class="mi">1</span>
+<span class="linenos"> 15</span>
+<span class="linenos"> 16</span><span class="c"># Concrete ( Youngs Modulus, Yield Strength, and Compressive Strength)</span>
+<span class="linenos"> 17</span><span class="nv">pset</span><span class="w"> </span>fc<span class="w"> </span><span class="mf">6.0</span>
+<span class="linenos"> 18</span><span class="nv">pset</span><span class="w"> </span>fy<span class="w"> </span><span class="mf">60.0</span>
+<span class="linenos"> 19</span><span class="nv">pset</span><span class="w"> </span>E<span class="w"> </span><span class="mf">30000.0</span>
+<span class="linenos"> 20</span><span class="nv">uniaxialMaterial</span><span class="w"> </span>Concrete01<span class="w">  </span><span class="mi">1</span><span class="w">  </span><span class="o">-</span><span class="nv">$fc</span><span class="w">  </span><span class="o">-</span><span class="mf">0.004</span><span class="w">   </span><span class="o">-</span><span class="mf">5.0</span><span class="w">     </span><span class="o">-</span><span class="mf">0.014</span>
+<span class="linenos"> 21</span><span class="nv">uniaxialMaterial</span><span class="w"> </span>Concrete01<span class="w">  </span><span class="mi">2</span><span class="w">  </span><span class="o">-</span><span class="mf">5.0</span><span class="w">   </span><span class="o">-</span><span class="mf">0.002</span><span class="w">   </span><span class="mf">0.0</span><span class="w">     </span><span class="o">-</span><span class="mf">0.006</span>
+<span class="linenos"> 22</span>
+<span class="linenos"> 23</span><span class="c"># STEEL</span>
+<span class="linenos"> 24</span><span class="nv">uniaxialMaterial</span><span class="w"> </span>Steel01<span class="w">  </span><span class="mi">3</span><span class="w">  </span><span class="nv">$fy</span><span class="w"> </span><span class="nv">$E</span><span class="w"> </span><span class="mf">0.01</span>
+<span class="linenos"> 25</span>
+<span class="linenos"> 26</span><span class="k">set</span><span class="w"> </span>colWidth<span class="w"> </span><span class="mi">15</span>
+<span class="linenos"> 27</span><span class="k">set</span><span class="w"> </span>colDepth<span class="w"> </span><span class="mi">24</span><span class="w"> </span>
+<span class="linenos"> 28</span>set<span class="w"> </span>cover<span class="w">  </span><span class="mf">1.5</span>
+<span class="linenos"> 29</span><span class="k">set</span><span class="w"> </span>As<span class="w">    </span><span class="mf">0.60</span><span class="k">;</span><span class="w">     </span><span class="c"># area of no. 7 bars</span>
+<span class="linenos"> 30</span><span class="k">set</span><span class="w"> </span>y1<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$colDepth</span><span class="o">/</span><span class="mf">2.0</span><span class="k">]</span>
+<span class="linenos"> 31</span><span class="k">set</span><span class="w"> </span>z1<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$colWidth</span><span class="o">/</span><span class="mf">2.0</span><span class="k">]</span>
+<span class="linenos"> 32</span>
+<span class="linenos"> 33</span><span class="nv">section</span><span class="w"> </span>Fiber<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">{</span>
+<span class="linenos"> 34</span>
+<span class="linenos"> 35</span><span class="w">    </span><span class="c"># Create the concrete core fibers</span>
+<span class="linenos"> 36</span><span class="w">    </span><span class="nv">patch</span><span class="w"> </span>rect<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$cover-$y1</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$cover-$z1</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$y1-$cover</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$z1-$cover</span><span class="k">]</span>
+<span class="linenos"> 37</span>
+<span class="linenos"> 38</span><span class="w">    </span><span class="c"># Create the concrete cover fibers (top, bottom, left, right)</span>
+<span class="linenos"> 39</span><span class="w">    </span><span class="nv">patch</span><span class="w"> </span>rect<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="k">[expr</span><span class="w"> </span><span class="o">-</span><span class="nv">$y1</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$z1-$cover</span><span class="k">]</span><span class="w"> </span><span class="nv">$y1</span><span class="w"> </span><span class="nv">$z1</span>
+<span class="linenos"> 40</span><span class="w">    </span><span class="nv">patch</span><span class="w"> </span>rect<span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="k">[expr</span><span class="w"> </span><span class="o">-</span><span class="nv">$y1</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="o">-</span><span class="nv">$z1</span><span class="k">]</span><span class="w"> </span><span class="nv">$y1</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$cover-$z1</span><span class="k">]</span>
+<span class="linenos"> 41</span><span class="w">    </span><span class="nv">patch</span><span class="w"> </span>rect<span class="w"> </span><span class="mi">2</span><span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="k">[expr</span><span class="w"> </span><span class="o">-</span><span class="nv">$y1</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$cover-$z1</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$cover-$y1</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$z1-$cover</span><span class="k">]</span>
+<span class="linenos"> 42</span><span class="w">    </span><span class="nv">patch</span><span class="w"> </span>rect<span class="w"> </span><span class="mi">2</span><span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$y1-$cover</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$cover-$z1</span><span class="k">]</span><span class="w"> </span><span class="nv">$y1</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$z1-$cover</span><span class="k">]</span>
+<span class="linenos"> 43</span>
+<span class="linenos"> 44</span><span class="w">    </span><span class="c"># Create the reinforcing fibers (left, middle, right)</span>
+<span class="linenos"> 45</span><span class="w">    </span><span class="nv">layer</span><span class="w"> </span>straight<span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nv">$As</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$y1-$cover</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$z1-$cover</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$y1-$cover</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$cover-$z1</span><span class="k">]</span>
+<span class="linenos"> 46</span><span class="w">    </span><span class="nv">layer</span><span class="w"> </span>straight<span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="nv">$As</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$z1-$cover</span><span class="k">]</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$cover-$z1</span><span class="k">]</span>
+<span class="linenos"> 47</span><span class="w">    </span><span class="nv">layer</span><span class="w"> </span>straight<span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nv">$As</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$cover-$y1</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$z1-$cover</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$cover-$y1</span><span class="k">]</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$cover-$z1</span><span class="k">]</span>
+<span class="linenos"> 48</span>
+<span class="linenos"> 49</span><span class="k">}</span><span class="w">    </span>
+<span class="linenos"> 50</span>
+<span class="linenos"> 51</span>
+<span class="linenos"> 52</span><span class="err">#</span><span class="w"> </span>Define<span class="w"> </span>column<span class="w"> </span>elements
+<span class="linenos"> 53</span><span class="c"># ----------------------</span>
+<span class="linenos"> 54</span>
+<span class="linenos"> 55</span><span class="c"># Geometry of column elements</span>
+<span class="linenos"> 56</span><span class="c">#                tag </span>
+<span class="linenos"> 57</span>
+<span class="linenos"> 58</span><span class="nv">geomTransf</span><span class="w"> </span>Corotational<span class="w"> </span><span class="mi">1</span><span class="w">  </span>
+<span class="linenos"> 59</span>
+<span class="linenos"> 60</span><span class="err">#</span><span class="w"> </span>Number<span class="w"> </span>of<span class="w"> </span>integration<span class="w"> </span>points<span class="w"> </span>along<span class="w"> </span>length<span class="w"> </span>of<span class="w"> </span>element
+<span class="linenos"> 61</span><span class="k">set</span><span class="w"> </span>np<span class="w"> </span><span class="mi">5</span>
+<span class="linenos"> 62</span>
+<span class="linenos"> 63</span><span class="c"># Create the coulumns using Beam-column elements</span>
+<span class="linenos"> 64</span><span class="c">#               e            tag ndI ndJ nsecs secID transfTag</span>
+<span class="linenos"> 65</span><span class="k">set</span><span class="w"> </span>eleType<span class="w"> </span>dispBeamColumn
+<span class="linenos"> 66</span><span class="nv">element</span><span class="w"> </span><span class="nv">$eleType</span><span class="w">  </span><span class="mi">1</span><span class="w">   </span><span class="mi">1</span><span class="w">   </span><span class="mi">3</span><span class="w">   </span><span class="nv">$np</span><span class="w">    </span><span class="mi">1</span><span class="w">       </span><span class="mi">1</span><span class="w"> </span>
+<span class="linenos"> 67</span>element<span class="w"> </span><span class="nv">$eleType</span><span class="w">  </span><span class="mi">2</span><span class="w">   </span><span class="mi">2</span><span class="w">   </span><span class="mi">4</span><span class="w">   </span><span class="nv">$np</span><span class="w">    </span><span class="mi">1</span><span class="w">       </span><span class="mi">1</span><span class="w"> </span>
+<span class="linenos"> 68</span>
+<span class="linenos"> 69</span><span class="err">#</span><span class="w"> </span>Define<span class="w"> </span>beam<span class="w"> </span>elment
+<span class="linenos"> 70</span><span class="c"># -----------------------------</span>
+<span class="linenos"> 71</span>
+<span class="linenos"> 72</span><span class="c"># Geometry of column elements</span>
+<span class="linenos"> 73</span><span class="c">#                tag </span>
+<span class="linenos"> 74</span><span class="nv">geomTransf</span><span class="w"> </span>Linear<span class="w"> </span><span class="mi">2</span><span class="w">  </span>
+<span class="linenos"> 75</span>
+<span class="linenos"> 76</span><span class="err">#</span><span class="w"> </span>Create<span class="w"> </span>the<span class="w"> </span>beam<span class="w"> </span>element
+<span class="linenos"> 77</span><span class="c">#                          tag ndI ndJ     A       E    Iz   transfTag</span>
+<span class="linenos"> 78</span><span class="nv">element</span><span class="w"> </span>elasticBeamColumn<span class="w">   </span><span class="mi">3</span><span class="w">   </span><span class="mi">3</span><span class="w">   </span><span class="mi">4</span><span class="w">    </span><span class="mi">360</span><span class="w">    </span><span class="mi">4030</span><span class="w">  </span><span class="mi">8640</span><span class="w">    </span><span class="mi">2</span>
+<span class="linenos"> 79</span>
+<span class="linenos"> 80</span><span class="c"># Define gravity loads</span>
+<span class="linenos"> 81</span><span class="c"># --------------------</span>
+<span class="linenos"> 82</span>
+<span class="linenos"> 83</span><span class="c"># Set a parameter for the axial load</span>
+<span class="linenos"> 84</span><span class="k">set</span><span class="w"> </span>P<span class="w"> </span><span class="mi">180</span><span class="k">;</span><span class="w">                </span><span class="c"># 10% of axial capacity of columns</span>
+<span class="linenos"> 85</span>
+<span class="linenos"> 86</span><span class="c"># Create a Plain load pattern with a Linear TimeSeries</span>
+<span class="linenos"> 87</span><span class="nv">pattern</span><span class="w"> </span>Plain<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="s2">&quot;Linear&quot;</span><span class="w"> </span><span class="k">{</span>
+<span class="linenos"> 88</span>
+<span class="linenos"> 89</span><span class="w">        </span><span class="c"># Create nodal loads at nodes 3 &amp; 4</span>
+<span class="linenos"> 90</span><span class="w">	</span><span class="c">#    nd    FX          FY  MZ </span>
+<span class="linenos"> 91</span><span class="w">	</span><span class="nb">load</span><span class="w">  </span><span class="mi">3</span><span class="w">   </span><span class="mf">0.0</span><span class="w">  </span><span class="k">[expr</span><span class="w"> </span><span class="o">-</span><span class="nv">$P</span><span class="k">]</span><span class="w"> </span><span class="mf">0.0</span>
+<span class="linenos"> 92</span><span class="w">	</span><span class="nb">load</span><span class="w">  </span><span class="mi">4</span><span class="w">   </span><span class="mf">0.0</span><span class="w">  </span><span class="k">[expr</span><span class="w"> </span><span class="o">-</span><span class="nv">$P</span><span class="k">]</span><span class="w"> </span><span class="mf">0.0</span>
+<span class="linenos"> 93</span><span class="k">}</span>
+<span class="linenos"> 94</span>
+<span class="linenos"> 95</span><span class="c"># ------------------------------</span>
+<span class="linenos"> 96</span><span class="c"># Start of analysis generation</span>
+<span class="linenos"> 97</span><span class="c"># ------------------------------</span>
+<span class="linenos"> 98</span>
+<span class="linenos"> 99</span><span class="c"># Create the system of equation, a sparse solver with partial pivoting</span>
+<span class="linenos">100</span><span class="nv">system</span><span class="w"> </span>ProfileSPD
+<span class="linenos">101</span>
+<span class="linenos">102</span><span class="c"># Create the constraint handler, the transformation method</span>
+<span class="linenos">103</span><span class="nv">constraints</span><span class="w"> </span>Transformation
+<span class="linenos">104</span>
+<span class="linenos">105</span><span class="c"># Create the DOF numberer, the reverse Cuthill-McKee algorithm</span>
+<span class="linenos">106</span><span class="nv">numberer</span><span class="w"> </span>RCM
+<span class="linenos">107</span>
+<span class="linenos">108</span><span class="c"># Create the convergence test, the norm of the residual with a tolerance of </span>
+<span class="linenos">109</span><span class="c"># 1e-12 and a max number of iterations of 10</span>
+<span class="linenos">110</span><span class="nv">test</span><span class="w"> </span>NormDispIncr<span class="w"> </span><span class="mf">1.0</span>e-12<span class="w">  </span><span class="mi">10</span><span class="w"> </span><span class="mi">3</span>
+<span class="linenos">111</span>
+<span class="linenos">112</span><span class="c"># Create the solution algorithm, a Newton-Raphson algorithm</span>
+<span class="linenos">113</span><span class="nv">algorithm</span><span class="w"> </span>Newton
+<span class="linenos">114</span>
+<span class="linenos">115</span><span class="c"># Create the integration scheme, the LoadControl scheme using steps of 0.1 </span>
+<span class="linenos">116</span><span class="nv">integrator</span><span class="w"> </span>LoadControl<span class="w"> </span><span class="mf">0.1</span>
+<span class="linenos">117</span>
+<span class="linenos">118</span><span class="c"># Create the analysis object</span>
+<span class="linenos">119</span><span class="nv">analysis</span><span class="w"> </span>Static
+<span class="linenos">120</span>
+<span class="linenos">121</span><span class="c"># ------------------------------</span>
+<span class="linenos">122</span><span class="c"># End of analysis generation</span>
+<span class="linenos">123</span><span class="c"># ------------------------------</span>
+<span class="linenos">124</span>
+<span class="linenos">125</span><span class="c"># perform the gravity load analysis, requires 10 steps to reach the load level</span>
+<span class="linenos">126</span><span class="nv">analyze</span><span class="w"> </span><span class="mi">10</span>
+<span class="linenos">127</span>
+<span class="linenos">128</span><span class="nv">loadConst</span><span class="w"> </span><span class="o">-</span>time<span class="w"> </span><span class="mf">0.0</span>
+<span class="linenos">129</span>
+<span class="linenos">130</span><span class="c"># ----------------------------------------------------</span>
+<span class="linenos">131</span><span class="c"># End of Model Generation &amp; Initial Gravity Analysis</span>
+<span class="linenos">132</span><span class="c"># ----------------------------------------------------</span>
+<span class="linenos">133</span>
+<span class="linenos">134</span>
+<span class="linenos">135</span><span class="c"># ----------------------------------------------------</span>
+<span class="linenos">136</span><span class="c"># Start of additional modelling for dynamic loads</span>
+<span class="linenos">137</span><span class="c"># ----------------------------------------------------</span>
+<span class="linenos">138</span>
+<span class="linenos">139</span><span class="c"># Define nodal mass in terms of axial load on columns</span>
+<span class="linenos">140</span><span class="k">set</span><span class="w"> </span>g<span class="w"> </span><span class="mf">386.4</span>
+<span class="linenos">141</span><span class="k">set</span><span class="w"> </span>m<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="nv">$P</span><span class="o">/</span><span class="nv">$g</span><span class="k">];</span><span class="w">       </span><span class="c"># expr command to evaluate an expression</span>
+<span class="linenos">142</span>
+<span class="linenos">143</span><span class="c">#    tag   MX   MY   RZ</span>
+<span class="linenos">144</span><span class="nv">mass</span><span class="w">  </span><span class="mi">3</span><span class="w">    </span><span class="nv">$m</span><span class="w">   </span><span class="nv">$m</span><span class="w">    </span><span class="mi">0</span>
+<span class="linenos">145</span><span class="nv">mass</span><span class="w">  </span><span class="mi">4</span><span class="w">    </span><span class="nv">$m</span><span class="w">   </span><span class="nv">$m</span><span class="w">    </span><span class="mi">0</span>
+</pre></div>
+</div>
+</details><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The first lines containing <code class="docutils literal notranslate"><span class="pre">pset</span></code> in an OpenSees tcl file will be read by the application when the file is selected. The application will autopopulate the random variables in the <strong>RV</strong>  panel with these same variable names.</p>
+</div>
+<figure class="align-center">
+<img alt="SIM panel referencing an OpenSees model file (Frame.tcl) with fields for material properties set as variable names fc, fy, and E." src="../../../../../_images/hdro-0010_SIM.png" />
 </figure>
-<p>The general information tab, <code class="docutils literal notranslate"><span class="pre">GI</span></code>, is left unmodified as in this example we are not looking at a structure, just a wave maker. Note that this example can be extrapolated to include structural analysis due to the produced wave’s loading.</p>
-<figure class="align-center" id="id5">
-<a class="reference internal image-reference" href="../../../../../_images/hdro-0010_SIM.png"><img alt="../../../../../_images/hdro-0010_SIM.png" src="../../../../../_images/hdro-0010_SIM.png" style="width: 600px;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Fig. 4.2.2.3 </span><span class="caption-text">Structural Information Model tab (SIM) set to a placeholder structure, as this example does not require a structre.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
-</figcaption>
+<p>These variable names (<code class="docutils literal notranslate"><span class="pre">fc</span></code>, <code class="docutils literal notranslate"><span class="pre">fy</span></code>, <code class="docutils literal notranslate"><span class="pre">E</span></code>) are <strong>recognized</strong> in <code class="docutils literal notranslate"><span class="pre">Frame.tcl</span></code> due to use of the <cite>pset</cite> command instead of <cite>set</cite>. This is so that <strong>RV</strong> picks them up automatically. You can try adding new <strong>RV</strong> parameters in the same way.</p>
+<p><strong>Uncertain properties</strong> (treated as RVs; see Step 7):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fc</span></code>: mean <code class="docutils literal notranslate"><span class="pre">6</span></code>, stdev <code class="docutils literal notranslate"><span class="pre">0.06</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fy</span></code>: mean <code class="docutils literal notranslate"><span class="pre">60</span></code>, stdev <code class="docutils literal notranslate"><span class="pre">0.6</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">E</span></code>: mean <code class="docutils literal notranslate"><span class="pre">30000</span></code>, stdev <code class="docutils literal notranslate"><span class="pre">300</span></code></p></li>
+</ul>
+</section>
+<section id="step-4-evt">
+<h3><span class="section-number">4.2.2.4. </span>Step 4: EVT<a class="headerlink" href="#step-4-evt" title="Link to this heading"></a></h3>
+<p><strong>Load Generator</strong>: <strong>Taichi Event - 2D PBFD piston wave maker</strong> (local, real-time capable).</p>
+<p>Typical configuration (adjust to your scenario):</p>
+<ul class="simple">
+<li><p><strong>Domain</strong>: width/height, particle spacing, boundary conditions (rigid walls at left/bottom; moving wall at right).</p></li>
+<li><p><strong>Piston motion</strong>: stroke amplitude, frequency (or velocity profile), phase start/stop.</p></li>
+<li><p><strong>PBFD numerics</strong>: solver iterations per step, CFL-safe time step, density/stiffness tuning.</p></li>
+<li><p><strong>Export</strong>: per-step force/pressure sampling at the left wall; choose sampling grid/resolution and output rate.</p></li>
+</ul>
+<p>If desired, you can promote piston parameters (e.g., amplitude/frequency) to RVs in future studies; here we keep them <strong>deterministic</strong> to focus on structural uncertainty.</p>
+<figure class="align-center">
+<img alt="EVT panel showing Taichi piston event settings (domain, piston motion, PBFD parameters, and export options)." src="../../../../../_images/hdro-0010_EVT.png" />
 </figure>
-<p>The simulation tab, <code class="docutils literal notranslate"><span class="pre">SIM</span></code>, is not neccesary either, due to no structure being used, however it must be filled in regardless.</p>
-<figure class="align-center" id="id6">
-<a class="reference internal image-reference" href="../../../../../_images/hdro-0010_EVT.png"><img alt="../../../../../_images/hdro-0010_EVT.png" src="../../../../../_images/hdro-0010_EVT.png" style="width: 600px;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Fig. 4.2.2.4 </span><span class="caption-text">Event tab (EVT) set to the TaichiEvent module for high-performance numerical simulations. Specifically, it is set to run a fluid simulation of a linear piston wave-maker generating breaking waves, similar to the OSU LWF.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
-</figcaption>
+<p>You will run, and may edit to implement hydrodynamic uncertainty, the following Taichi Lang Python script for position-based fluid dynamics, <a class="reference external" href="https://github.com/NHERI-SimCenter/HydroUQ/blob/master/Examples/hdro-0010/src/pbf2d.py">pbf2d.py</a>:</p>
+<details open style="border:1px solid #ccc; border-radius:6px; background:#efefef; padding:0.5em; margin:0.5em 0;">
+<summary style="font-weight:bold; text-decoration:underline; cursor:pointer;">Click to expand the Python script used for this example</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="c1"># Macklin, M. and Müller, M., 2013. Position based fluids. ACM Transactions on Graphics (TOG), 32(4), p.104.</span>
+<span class="linenos">  2</span><span class="c1"># Taichi implementation by Ye Kuang (k-ye)</span>
+<span class="linenos">  3</span><span class="c1"># Modifications for HydroUQ by Justin Bonus</span>
+<span class="linenos">  4</span>
+<span class="linenos">  5</span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="linenos">  6</span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="linenos">  7</span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="linenos">  8</span>
+<span class="linenos">  9</span><span class="kn">import</span><span class="w"> </span><span class="nn">taichi</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ti</span>
+<span class="linenos"> 10</span>
+<span class="linenos"> 11</span><span class="n">ti</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">arch</span><span class="o">=</span><span class="n">ti</span><span class="o">.</span><span class="n">gpu</span><span class="p">)</span>
+<span class="linenos"> 12</span>
+<span class="linenos"> 13</span><span class="n">screen_res</span> <span class="o">=</span> <span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="linenos"> 14</span><span class="n">screen_to_world_ratio</span> <span class="o">=</span> <span class="mf">10.0</span>
+<span class="linenos"> 15</span><span class="n">boundary</span> <span class="o">=</span> <span class="p">(</span>
+<span class="linenos"> 16</span>    <span class="n">screen_res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">screen_to_world_ratio</span><span class="p">,</span>
+<span class="linenos"> 17</span>    <span class="n">screen_res</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">screen_to_world_ratio</span><span class="p">,</span>
+<span class="linenos"> 18</span><span class="p">)</span>
+<span class="linenos"> 19</span><span class="n">cell_size</span> <span class="o">=</span> <span class="mf">2.51</span>
+<span class="linenos"> 20</span><span class="n">cell_recpr</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">cell_size</span>
+<span class="linenos"> 21</span>
+<span class="linenos"> 22</span>
+<span class="linenos"> 23</span><span class="k">def</span><span class="w"> </span><span class="nf">round_up</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+<span class="linenos"> 24</span>    <span class="k">return</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">f</span> <span class="o">*</span> <span class="n">cell_recpr</span> <span class="o">/</span> <span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">s</span>
+<span class="linenos"> 25</span>
+<span class="linenos"> 26</span>
+<span class="linenos"> 27</span><span class="n">grid_size</span> <span class="o">=</span> <span class="p">(</span><span class="n">round_up</span><span class="p">(</span><span class="n">boundary</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">),</span> <span class="n">round_up</span><span class="p">(</span><span class="n">boundary</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">))</span>
+<span class="linenos"> 28</span>
+<span class="linenos"> 29</span><span class="n">dim</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos"> 30</span><span class="n">max_frames</span> <span class="o">=</span> <span class="mi">1800</span>
+<span class="linenos"> 31</span><span class="n">bg_color</span> <span class="o">=</span> <span class="mh">0x112F41</span>
+<span class="linenos"> 32</span><span class="n">particle_color</span> <span class="o">=</span> <span class="mh">0x068587</span>
+<span class="linenos"> 33</span><span class="n">boundary_color</span> <span class="o">=</span> <span class="mh">0xEBACA2</span>
+<span class="linenos"> 34</span><span class="n">num_particles_x</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="linenos"> 35</span><span class="n">num_particles</span> <span class="o">=</span> <span class="n">num_particles_x</span> <span class="o">*</span> <span class="mi">20</span>
+<span class="linenos"> 36</span><span class="n">max_num_particles_per_cell</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="linenos"> 37</span><span class="n">max_num_neighbors</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="linenos"> 38</span><span class="n">time_delta</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="mf">20.0</span>
+<span class="linenos"> 39</span><span class="n">epsilon</span> <span class="o">=</span> <span class="mf">1e-5</span>
+<span class="linenos"> 40</span><span class="n">particle_radius</span> <span class="o">=</span> <span class="mf">3.0</span>
+<span class="linenos"> 41</span><span class="n">particle_radius_in_world</span> <span class="o">=</span> <span class="n">particle_radius</span> <span class="o">/</span> <span class="n">screen_to_world_ratio</span>
+<span class="linenos"> 42</span>
+<span class="linenos"> 43</span><span class="c1"># PBF params</span>
+<span class="linenos"> 44</span><span class="n">h_</span> <span class="o">=</span> <span class="mf">1.1</span>
+<span class="linenos"> 45</span><span class="n">mass</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="linenos"> 46</span><span class="n">rho0</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="linenos"> 47</span><span class="n">lambda_epsilon</span> <span class="o">=</span> <span class="mf">100.0</span>
+<span class="linenos"> 48</span><span class="n">pbf_num_iters</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="linenos"> 49</span><span class="n">corr_deltaQ_coeff</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="linenos"> 50</span><span class="n">corrK</span> <span class="o">=</span> <span class="mf">0.001</span>
+<span class="linenos"> 51</span><span class="c1"># Need ti.pow()</span>
+<span class="linenos"> 52</span><span class="c1"># corrN = 4.0</span>
+<span class="linenos"> 53</span><span class="n">neighbor_radius</span> <span class="o">=</span> <span class="n">h_</span> <span class="o">*</span> <span class="mf">1.05</span>
+<span class="linenos"> 54</span>
+<span class="linenos"> 55</span><span class="n">poly6_factor</span> <span class="o">=</span> <span class="mf">315.0</span> <span class="o">/</span> <span class="mf">64.0</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+<span class="linenos"> 56</span><span class="n">spiky_grad_factor</span> <span class="o">=</span> <span class="o">-</span><span class="mf">45.0</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+<span class="linenos"> 57</span>
+<span class="linenos"> 58</span><span class="n">old_positions</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">Vector</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+<span class="linenos"> 59</span><span class="n">positions</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">Vector</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+<span class="linenos"> 60</span><span class="n">velocities</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">Vector</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+<span class="linenos"> 61</span><span class="n">grid_num_particles</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="linenos"> 62</span><span class="n">grid2particles</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="linenos"> 63</span><span class="n">particle_num_neighbors</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="linenos"> 64</span><span class="n">particle_neighbors</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="linenos"> 65</span><span class="n">lambdas</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="linenos"> 66</span><span class="n">position_deltas</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">Vector</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+<span class="linenos"> 67</span><span class="c1"># 0: x-pos, 1: timestep in sin()</span>
+<span class="linenos"> 68</span><span class="n">board_states</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">Vector</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+<span class="linenos"> 69</span><span class="n">wall_force</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">Vector</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">())</span>
+<span class="linenos"> 70</span>
+<span class="linenos"> 71</span><span class="n">ti</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">dense</span><span class="p">(</span><span class="n">ti</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">num_particles</span><span class="p">)</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">old_positions</span><span class="p">,</span> <span class="n">positions</span><span class="p">,</span> <span class="n">velocities</span><span class="p">)</span>
+<span class="linenos"> 72</span><span class="n">grid_snode</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">dense</span><span class="p">(</span><span class="n">ti</span><span class="o">.</span><span class="n">ij</span><span class="p">,</span> <span class="n">grid_size</span><span class="p">)</span>
+<span class="linenos"> 73</span><span class="n">grid_snode</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">grid_num_particles</span><span class="p">)</span>
+<span class="linenos"> 74</span><span class="n">grid_snode</span><span class="o">.</span><span class="n">dense</span><span class="p">(</span><span class="n">ti</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="n">max_num_particles_per_cell</span><span class="p">)</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">grid2particles</span><span class="p">)</span>
+<span class="linenos"> 75</span><span class="n">nb_node</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">dense</span><span class="p">(</span><span class="n">ti</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">num_particles</span><span class="p">)</span>
+<span class="linenos"> 76</span><span class="n">nb_node</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">particle_num_neighbors</span><span class="p">)</span>
+<span class="linenos"> 77</span><span class="n">nb_node</span><span class="o">.</span><span class="n">dense</span><span class="p">(</span><span class="n">ti</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">max_num_neighbors</span><span class="p">)</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">particle_neighbors</span><span class="p">)</span>
+<span class="linenos"> 78</span><span class="n">ti</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">dense</span><span class="p">(</span><span class="n">ti</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">num_particles</span><span class="p">)</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">lambdas</span><span class="p">,</span> <span class="n">position_deltas</span><span class="p">)</span>
+<span class="linenos"> 79</span><span class="n">ti</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">board_states</span><span class="p">)</span>
+<span class="linenos"> 80</span>
+<span class="linenos"> 81</span>
+<span class="linenos"> 82</span><span class="nd">@ti</span><span class="o">.</span><span class="n">func</span>
+<span class="linenos"> 83</span><span class="k">def</span><span class="w"> </span><span class="nf">poly6_value</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+<span class="linenos"> 84</span>    <span class="n">result</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="linenos"> 85</span>    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">s</span> <span class="ow">and</span> <span class="n">s</span> <span class="o">&lt;</span> <span class="n">h</span><span class="p">:</span>
+<span class="linenos"> 86</span>        <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">h</span> <span class="o">*</span> <span class="n">h</span> <span class="o">-</span> <span class="n">s</span> <span class="o">*</span> <span class="n">s</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">h</span> <span class="o">*</span> <span class="n">h</span> <span class="o">*</span> <span class="n">h</span><span class="p">)</span>
+<span class="linenos"> 87</span>        <span class="n">result</span> <span class="o">=</span> <span class="n">poly6_factor</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+<span class="linenos"> 88</span>    <span class="k">return</span> <span class="n">result</span>
+<span class="linenos"> 89</span>
+<span class="linenos"> 90</span>
+<span class="linenos"> 91</span><span class="nd">@ti</span><span class="o">.</span><span class="n">func</span>
+<span class="linenos"> 92</span><span class="k">def</span><span class="w"> </span><span class="nf">spiky_gradient</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+<span class="linenos"> 93</span>    <span class="n">result</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">Vector</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
+<span class="linenos"> 94</span>    <span class="n">r_len</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span>
+<span class="linenos"> 95</span>    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">r_len</span> <span class="ow">and</span> <span class="n">r_len</span> <span class="o">&lt;</span> <span class="n">h</span><span class="p">:</span>
+<span class="linenos"> 96</span>        <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">h</span> <span class="o">-</span> <span class="n">r_len</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">h</span> <span class="o">*</span> <span class="n">h</span> <span class="o">*</span> <span class="n">h</span><span class="p">)</span>
+<span class="linenos"> 97</span>        <span class="n">g_factor</span> <span class="o">=</span> <span class="n">spiky_grad_factor</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+<span class="linenos"> 98</span>        <span class="n">result</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">g_factor</span> <span class="o">/</span> <span class="n">r_len</span>
+<span class="linenos"> 99</span>    <span class="k">return</span> <span class="n">result</span>
+<span class="linenos">100</span>
+<span class="linenos">101</span>
+<span class="linenos">102</span><span class="nd">@ti</span><span class="o">.</span><span class="n">func</span>
+<span class="linenos">103</span><span class="k">def</span><span class="w"> </span><span class="nf">compute_scorr</span><span class="p">(</span><span class="n">pos_ji</span><span class="p">):</span>
+<span class="linenos">104</span>    <span class="c1"># Eq (13)</span>
+<span class="linenos">105</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">poly6_value</span><span class="p">(</span><span class="n">pos_ji</span><span class="o">.</span><span class="n">norm</span><span class="p">(),</span> <span class="n">h_</span><span class="p">)</span> <span class="o">/</span> <span class="n">poly6_value</span><span class="p">(</span><span class="n">corr_deltaQ_coeff</span> <span class="o">*</span> <span class="n">h_</span><span class="p">,</span> <span class="n">h_</span><span class="p">)</span>
+<span class="linenos">106</span>    <span class="c1"># pow(x, 4)</span>
+<span class="linenos">107</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+<span class="linenos">108</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+<span class="linenos">109</span>    <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="n">corrK</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span>
+<span class="linenos">110</span>
+<span class="linenos">111</span>
+<span class="linenos">112</span><span class="nd">@ti</span><span class="o">.</span><span class="n">func</span>
+<span class="linenos">113</span><span class="k">def</span><span class="w"> </span><span class="nf">get_cell</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>
+<span class="linenos">114</span>    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">pos</span> <span class="o">*</span> <span class="n">cell_recpr</span><span class="p">)</span>
+<span class="linenos">115</span>
+<span class="linenos">116</span>
+<span class="linenos">117</span><span class="nd">@ti</span><span class="o">.</span><span class="n">func</span>
+<span class="linenos">118</span><span class="k">def</span><span class="w"> </span><span class="nf">is_in_grid</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+<span class="linenos">119</span>    <span class="c1"># @c: Vector(i32)</span>
+<span class="linenos">120</span>    <span class="k">return</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">grid_size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">and</span> <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">grid_size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="linenos">121</span>
+<span class="linenos">122</span>
+<span class="linenos">123</span><span class="nd">@ti</span><span class="o">.</span><span class="n">func</span>
+<span class="linenos">124</span><span class="k">def</span><span class="w"> </span><span class="nf">confine_position_to_boundary</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+<span class="linenos">125</span>    <span class="n">bmin</span> <span class="o">=</span> <span class="n">particle_radius_in_world</span>
+<span class="linenos">126</span>    <span class="n">bmax</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">Vector</span><span class="p">([</span><span class="n">board_states</span><span class="p">[</span><span class="kc">None</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">boundary</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span> <span class="o">-</span> <span class="n">particle_radius_in_world</span>
+<span class="linenos">127</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ti</span><span class="o">.</span><span class="n">static</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">dim</span><span class="p">)):</span>
+<span class="linenos">128</span>        <span class="k">if</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">bmin</span><span class="p">:</span>
+<span class="linenos">129</span>            <span class="n">diff</span> <span class="o">=</span> <span class="n">bmin</span> <span class="o">-</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="linenos">130</span>            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos">131</span>                <span class="n">ti</span><span class="o">.</span><span class="n">atomic_add</span><span class="p">(</span><span class="n">wall_force</span><span class="p">[</span><span class="kc">None</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="mf">1000.0</span> <span class="o">*</span> <span class="n">diff</span> <span class="o">/</span> <span class="n">time_delta</span><span class="p">)</span>
+<span class="linenos">132</span>            <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">bmin</span> <span class="o">+</span> <span class="n">epsilon</span> <span class="o">*</span> <span class="n">ti</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+<span class="linenos">133</span>        <span class="k">elif</span> <span class="n">bmax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+<span class="linenos">134</span>            <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">bmax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">epsilon</span> <span class="o">*</span> <span class="n">ti</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+<span class="linenos">135</span>    <span class="k">return</span> <span class="n">p</span>
+<span class="linenos">136</span>
+<span class="linenos">137</span>
+<span class="linenos">138</span><span class="nd">@ti</span><span class="o">.</span><span class="n">kernel</span>
+<span class="linenos">139</span><span class="k">def</span><span class="w"> </span><span class="nf">move_board</span><span class="p">():</span>
+<span class="linenos">140</span>    <span class="c1"># probably more accurate to exert force on particles according to hooke&#39;s law.</span>
+<span class="linenos">141</span>    <span class="n">b</span> <span class="o">=</span> <span class="n">board_states</span><span class="p">[</span><span class="kc">None</span><span class="p">]</span>
+<span class="linenos">142</span>    <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="mf">1.0</span>
+<span class="linenos">143</span>    <span class="n">period</span> <span class="o">=</span> <span class="mi">90</span>
+<span class="linenos">144</span>    <span class="n">vel_strength</span> <span class="o">=</span> <span class="mf">8.0</span>
+<span class="linenos">145</span>    <span class="k">if</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">period</span><span class="p">:</span>
+<span class="linenos">146</span>        <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">147</span>    <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="o">-</span><span class="n">ti</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">period</span><span class="p">)</span> <span class="o">*</span> <span class="n">vel_strength</span> <span class="o">*</span> <span class="n">time_delta</span>
+<span class="linenos">148</span>    <span class="n">board_states</span><span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span>
+<span class="linenos">149</span>
+<span class="linenos">150</span>
+<span class="linenos">151</span><span class="nd">@ti</span><span class="o">.</span><span class="n">kernel</span>
+<span class="linenos">152</span><span class="k">def</span><span class="w"> </span><span class="nf">prologue</span><span class="p">():</span>
+<span class="linenos">153</span>    <span class="n">wall_force</span><span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">Vector</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>  <span class="c1"># ← Clear previous step force</span>
+<span class="linenos">154</span>    <span class="c1"># save old positions</span>
+<span class="linenos">155</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">positions</span><span class="p">:</span>
+<span class="linenos">156</span>        <span class="n">old_positions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="linenos">157</span>    <span class="c1"># apply gravity within boundary</span>
+<span class="linenos">158</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">positions</span><span class="p">:</span>
+<span class="linenos">159</span>        <span class="n">g</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">Vector</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">9.8</span><span class="p">])</span>
+<span class="linenos">160</span>        <span class="n">pos</span><span class="p">,</span> <span class="n">vel</span> <span class="o">=</span> <span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">velocities</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="linenos">161</span>        <span class="n">vel</span> <span class="o">+=</span> <span class="n">g</span> <span class="o">*</span> <span class="n">time_delta</span>
+<span class="linenos">162</span>        <span class="n">pos</span> <span class="o">+=</span> <span class="n">vel</span> <span class="o">*</span> <span class="n">time_delta</span>
+<span class="linenos">163</span>        <span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">confine_position_to_boundary</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+<span class="linenos">164</span>
+<span class="linenos">165</span>    <span class="c1"># clear neighbor lookup table</span>
+<span class="linenos">166</span>    <span class="k">for</span> <span class="n">I</span> <span class="ow">in</span> <span class="n">ti</span><span class="o">.</span><span class="n">grouped</span><span class="p">(</span><span class="n">grid_num_particles</span><span class="p">):</span>
+<span class="linenos">167</span>        <span class="n">grid_num_particles</span><span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">168</span>    <span class="k">for</span> <span class="n">I</span> <span class="ow">in</span> <span class="n">ti</span><span class="o">.</span><span class="n">grouped</span><span class="p">(</span><span class="n">particle_neighbors</span><span class="p">):</span>
+<span class="linenos">169</span>        <span class="n">particle_neighbors</span><span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="linenos">170</span>
+<span class="linenos">171</span>    <span class="c1"># update grid</span>
+<span class="linenos">172</span>    <span class="k">for</span> <span class="n">p_i</span> <span class="ow">in</span> <span class="n">positions</span><span class="p">:</span>
+<span class="linenos">173</span>        <span class="n">cell</span> <span class="o">=</span> <span class="n">get_cell</span><span class="p">(</span><span class="n">positions</span><span class="p">[</span><span class="n">p_i</span><span class="p">])</span>
+<span class="linenos">174</span>        <span class="c1"># ti.Vector doesn&#39;t seem to support unpacking yet</span>
+<span class="linenos">175</span>        <span class="c1"># but we can directly use int Vectors as indices</span>
+<span class="linenos">176</span>        <span class="n">offs</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">atomic_add</span><span class="p">(</span><span class="n">grid_num_particles</span><span class="p">[</span><span class="n">cell</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos">177</span>        <span class="n">grid2particles</span><span class="p">[</span><span class="n">cell</span><span class="p">,</span> <span class="n">offs</span><span class="p">]</span> <span class="o">=</span> <span class="n">p_i</span>
+<span class="linenos">178</span>    <span class="c1"># find particle neighbors</span>
+<span class="linenos">179</span>    <span class="k">for</span> <span class="n">p_i</span> <span class="ow">in</span> <span class="n">positions</span><span class="p">:</span>
+<span class="linenos">180</span>        <span class="n">pos_i</span> <span class="o">=</span> <span class="n">positions</span><span class="p">[</span><span class="n">p_i</span><span class="p">]</span>
+<span class="linenos">181</span>        <span class="n">cell</span> <span class="o">=</span> <span class="n">get_cell</span><span class="p">(</span><span class="n">pos_i</span><span class="p">)</span>
+<span class="linenos">182</span>        <span class="n">nb_i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">183</span>        <span class="k">for</span> <span class="n">offs</span> <span class="ow">in</span> <span class="n">ti</span><span class="o">.</span><span class="n">static</span><span class="p">(</span><span class="n">ti</span><span class="o">.</span><span class="n">grouped</span><span class="p">(</span><span class="n">ti</span><span class="o">.</span><span class="n">ndrange</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))):</span>
+<span class="linenos">184</span>            <span class="n">cell_to_check</span> <span class="o">=</span> <span class="n">cell</span> <span class="o">+</span> <span class="n">offs</span>
+<span class="linenos">185</span>            <span class="k">if</span> <span class="n">is_in_grid</span><span class="p">(</span><span class="n">cell_to_check</span><span class="p">):</span>
+<span class="linenos">186</span>                <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">grid_num_particles</span><span class="p">[</span><span class="n">cell_to_check</span><span class="p">]):</span>
+<span class="linenos">187</span>                    <span class="n">p_j</span> <span class="o">=</span> <span class="n">grid2particles</span><span class="p">[</span><span class="n">cell_to_check</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+<span class="linenos">188</span>                    <span class="k">if</span> <span class="n">nb_i</span> <span class="o">&lt;</span> <span class="n">max_num_neighbors</span> <span class="ow">and</span> <span class="n">p_j</span> <span class="o">!=</span> <span class="n">p_i</span> <span class="ow">and</span> <span class="p">(</span><span class="n">pos_i</span> <span class="o">-</span> <span class="n">positions</span><span class="p">[</span><span class="n">p_j</span><span class="p">])</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">neighbor_radius</span><span class="p">:</span>
+<span class="linenos">189</span>                        <span class="n">particle_neighbors</span><span class="p">[</span><span class="n">p_i</span><span class="p">,</span> <span class="n">nb_i</span><span class="p">]</span> <span class="o">=</span> <span class="n">p_j</span>
+<span class="linenos">190</span>                        <span class="n">nb_i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="linenos">191</span>        <span class="n">particle_num_neighbors</span><span class="p">[</span><span class="n">p_i</span><span class="p">]</span> <span class="o">=</span> <span class="n">nb_i</span>
+<span class="linenos">192</span>
+<span class="linenos">193</span>
+<span class="linenos">194</span><span class="nd">@ti</span><span class="o">.</span><span class="n">kernel</span>
+<span class="linenos">195</span><span class="k">def</span><span class="w"> </span><span class="nf">substep</span><span class="p">():</span>
+<span class="linenos">196</span>    <span class="c1"># compute lambdas</span>
+<span class="linenos">197</span>    <span class="c1"># Eq (8) ~ (11)</span>
+<span class="linenos">198</span>    <span class="k">for</span> <span class="n">p_i</span> <span class="ow">in</span> <span class="n">positions</span><span class="p">:</span>
+<span class="linenos">199</span>        <span class="n">pos_i</span> <span class="o">=</span> <span class="n">positions</span><span class="p">[</span><span class="n">p_i</span><span class="p">]</span>
+<span class="linenos">200</span>
+<span class="linenos">201</span>        <span class="n">grad_i</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">Vector</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
+<span class="linenos">202</span>        <span class="n">sum_gradient_sqr</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="linenos">203</span>        <span class="n">density_constraint</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="linenos">204</span>
+<span class="linenos">205</span>        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">particle_num_neighbors</span><span class="p">[</span><span class="n">p_i</span><span class="p">]):</span>
+<span class="linenos">206</span>            <span class="n">p_j</span> <span class="o">=</span> <span class="n">particle_neighbors</span><span class="p">[</span><span class="n">p_i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+<span class="linenos">207</span>            <span class="k">if</span> <span class="n">p_j</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos">208</span>                <span class="k">break</span>
+<span class="linenos">209</span>            <span class="n">pos_ji</span> <span class="o">=</span> <span class="n">pos_i</span> <span class="o">-</span> <span class="n">positions</span><span class="p">[</span><span class="n">p_j</span><span class="p">]</span>
+<span class="linenos">210</span>            <span class="n">grad_j</span> <span class="o">=</span> <span class="n">spiky_gradient</span><span class="p">(</span><span class="n">pos_ji</span><span class="p">,</span> <span class="n">h_</span><span class="p">)</span>
+<span class="linenos">211</span>            <span class="n">grad_i</span> <span class="o">+=</span> <span class="n">grad_j</span>
+<span class="linenos">212</span>            <span class="n">sum_gradient_sqr</span> <span class="o">+=</span> <span class="n">grad_j</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">grad_j</span><span class="p">)</span>
+<span class="linenos">213</span>            <span class="c1"># Eq(2)</span>
+<span class="linenos">214</span>            <span class="n">density_constraint</span> <span class="o">+=</span> <span class="n">poly6_value</span><span class="p">(</span><span class="n">pos_ji</span><span class="o">.</span><span class="n">norm</span><span class="p">(),</span> <span class="n">h_</span><span class="p">)</span>
+<span class="linenos">215</span>
+<span class="linenos">216</span>        <span class="c1"># Eq(1)</span>
+<span class="linenos">217</span>        <span class="n">density_constraint</span> <span class="o">=</span> <span class="p">(</span><span class="n">mass</span> <span class="o">*</span> <span class="n">density_constraint</span> <span class="o">/</span> <span class="n">rho0</span><span class="p">)</span> <span class="o">-</span> <span class="mf">1.0</span>
+<span class="linenos">218</span>
+<span class="linenos">219</span>        <span class="n">sum_gradient_sqr</span> <span class="o">+=</span> <span class="n">grad_i</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">grad_i</span><span class="p">)</span>
+<span class="linenos">220</span>        <span class="n">lambdas</span><span class="p">[</span><span class="n">p_i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">density_constraint</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">sum_gradient_sqr</span> <span class="o">+</span> <span class="n">lambda_epsilon</span><span class="p">)</span>
+<span class="linenos">221</span>    <span class="c1"># compute position deltas</span>
+<span class="linenos">222</span>    <span class="c1"># Eq(12), (14)</span>
+<span class="linenos">223</span>    <span class="k">for</span> <span class="n">p_i</span> <span class="ow">in</span> <span class="n">positions</span><span class="p">:</span>
+<span class="linenos">224</span>        <span class="n">pos_i</span> <span class="o">=</span> <span class="n">positions</span><span class="p">[</span><span class="n">p_i</span><span class="p">]</span>
+<span class="linenos">225</span>        <span class="n">lambda_i</span> <span class="o">=</span> <span class="n">lambdas</span><span class="p">[</span><span class="n">p_i</span><span class="p">]</span>
+<span class="linenos">226</span>
+<span class="linenos">227</span>        <span class="n">pos_delta_i</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">Vector</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
+<span class="linenos">228</span>        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">particle_num_neighbors</span><span class="p">[</span><span class="n">p_i</span><span class="p">]):</span>
+<span class="linenos">229</span>            <span class="n">p_j</span> <span class="o">=</span> <span class="n">particle_neighbors</span><span class="p">[</span><span class="n">p_i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+<span class="linenos">230</span>            <span class="k">if</span> <span class="n">p_j</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos">231</span>                <span class="k">break</span>
+<span class="linenos">232</span>            <span class="n">lambda_j</span> <span class="o">=</span> <span class="n">lambdas</span><span class="p">[</span><span class="n">p_j</span><span class="p">]</span>
+<span class="linenos">233</span>            <span class="n">pos_ji</span> <span class="o">=</span> <span class="n">pos_i</span> <span class="o">-</span> <span class="n">positions</span><span class="p">[</span><span class="n">p_j</span><span class="p">]</span>
+<span class="linenos">234</span>            <span class="n">scorr_ij</span> <span class="o">=</span> <span class="n">compute_scorr</span><span class="p">(</span><span class="n">pos_ji</span><span class="p">)</span>
+<span class="linenos">235</span>            <span class="n">pos_delta_i</span> <span class="o">+=</span> <span class="p">(</span><span class="n">lambda_i</span> <span class="o">+</span> <span class="n">lambda_j</span> <span class="o">+</span> <span class="n">scorr_ij</span><span class="p">)</span> <span class="o">*</span> <span class="n">spiky_gradient</span><span class="p">(</span><span class="n">pos_ji</span><span class="p">,</span> <span class="n">h_</span><span class="p">)</span>
+<span class="linenos">236</span>
+<span class="linenos">237</span>        <span class="n">pos_delta_i</span> <span class="o">/=</span> <span class="n">rho0</span>
+<span class="linenos">238</span>        <span class="n">position_deltas</span><span class="p">[</span><span class="n">p_i</span><span class="p">]</span> <span class="o">=</span> <span class="n">pos_delta_i</span>
+<span class="linenos">239</span>    <span class="c1"># apply position deltas</span>
+<span class="linenos">240</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">positions</span><span class="p">:</span>
+<span class="linenos">241</span>        <span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">position_deltas</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="linenos">242</span>
+<span class="linenos">243</span>
+<span class="linenos">244</span><span class="nd">@ti</span><span class="o">.</span><span class="n">kernel</span>
+<span class="linenos">245</span><span class="k">def</span><span class="w"> </span><span class="nf">epilogue</span><span class="p">():</span>
+<span class="linenos">246</span>    <span class="c1"># confine to boundary</span>
+<span class="linenos">247</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">positions</span><span class="p">:</span>
+<span class="linenos">248</span>        <span class="n">pos</span> <span class="o">=</span> <span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="linenos">249</span>        <span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">confine_position_to_boundary</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+<span class="linenos">250</span>    <span class="c1"># update velocities</span>
+<span class="linenos">251</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">positions</span><span class="p">:</span>
+<span class="linenos">252</span>        <span class="n">velocities</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">old_positions</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">/</span> <span class="n">time_delta</span>
+<span class="linenos">253</span>    <span class="c1"># no vorticity/xsph because we cannot do cross product in 2D...</span>
+<span class="linenos">254</span>
+<span class="linenos">255</span>
+<span class="linenos">256</span><span class="k">def</span><span class="w"> </span><span class="nf">run_pbf</span><span class="p">():</span>
+<span class="linenos">257</span>    <span class="n">prologue</span><span class="p">()</span>
+<span class="linenos">258</span>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pbf_num_iters</span><span class="p">):</span>
+<span class="linenos">259</span>        <span class="n">substep</span><span class="p">()</span>
+<span class="linenos">260</span>    <span class="n">epilogue</span><span class="p">()</span>
+<span class="linenos">261</span>
+<span class="linenos">262</span>
+<span class="linenos">263</span><span class="k">def</span><span class="w"> </span><span class="nf">render</span><span class="p">(</span><span class="n">gui</span><span class="p">):</span>
+<span class="linenos">264</span>    <span class="n">gui</span><span class="o">.</span><span class="n">clear</span><span class="p">(</span><span class="n">bg_color</span><span class="p">)</span>
+<span class="linenos">265</span>    <span class="n">pos_np</span> <span class="o">=</span> <span class="n">positions</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<span class="linenos">266</span>    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dim</span><span class="p">):</span>
+<span class="linenos">267</span>        <span class="n">pos_np</span><span class="p">[:,</span> <span class="n">j</span><span class="p">]</span> <span class="o">*=</span> <span class="n">screen_to_world_ratio</span> <span class="o">/</span> <span class="n">screen_res</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+<span class="linenos">268</span>    <span class="n">gui</span><span class="o">.</span><span class="n">circles</span><span class="p">(</span><span class="n">pos_np</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">particle_radius</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">particle_color</span><span class="p">)</span>
+<span class="linenos">269</span>    <span class="n">gui</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span>
+<span class="linenos">270</span>        <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+<span class="linenos">271</span>        <span class="p">(</span><span class="n">board_states</span><span class="p">[</span><span class="kc">None</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">boundary</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">),</span>
+<span class="linenos">272</span>        <span class="n">radius</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>
+<span class="linenos">273</span>        <span class="n">color</span><span class="o">=</span><span class="n">boundary_color</span><span class="p">,</span>
+<span class="linenos">274</span>    <span class="p">)</span>
+<span class="linenos">275</span>    <span class="n">gui</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="linenos">276</span>
+<span class="linenos">277</span>
+<span class="linenos">278</span><span class="nd">@ti</span><span class="o">.</span><span class="n">kernel</span>
+<span class="linenos">279</span><span class="k">def</span><span class="w"> </span><span class="nf">init_particles</span><span class="p">():</span>
+<span class="linenos">280</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_particles</span><span class="p">):</span>
+<span class="linenos">281</span>        <span class="n">delta</span> <span class="o">=</span> <span class="n">h_</span> <span class="o">*</span> <span class="mf">0.8</span>
+<span class="linenos">282</span>        <span class="n">offs</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">Vector</span><span class="p">([(</span><span class="n">boundary</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">delta</span> <span class="o">*</span> <span class="n">num_particles_x</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">boundary</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.02</span><span class="p">])</span>
+<span class="linenos">283</span>        <span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">Vector</span><span class="p">([</span><span class="n">i</span> <span class="o">%</span> <span class="n">num_particles_x</span><span class="p">,</span> <span class="n">i</span> <span class="o">//</span> <span class="n">num_particles_x</span><span class="p">])</span> <span class="o">*</span> <span class="n">delta</span> <span class="o">+</span> <span class="n">offs</span>
+<span class="linenos">284</span>        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">ti</span><span class="o">.</span><span class="n">static</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">dim</span><span class="p">)):</span>
+<span class="linenos">285</span>            <span class="n">velocities</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">ti</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span>
+<span class="linenos">286</span>    <span class="n">board_states</span><span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">Vector</span><span class="p">([</span><span class="n">boundary</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">epsilon</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0</span><span class="p">])</span>
+<span class="linenos">287</span>
+<span class="linenos">288</span>
+<span class="linenos">289</span><span class="k">def</span><span class="w"> </span><span class="nf">print_stats</span><span class="p">():</span>
+<span class="linenos">290</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PBF stats:&quot;</span><span class="p">)</span>
+<span class="linenos">291</span>    <span class="n">num</span> <span class="o">=</span> <span class="n">grid_num_particles</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<span class="linenos">292</span>    <span class="n">avg</span><span class="p">,</span> <span class="n">max_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">num</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="linenos">293</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  #particles per cell: avg=</span><span class="si">{</span><span class="n">avg</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> max=</span><span class="si">{</span><span class="n">max_</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">294</span>    <span class="n">num</span> <span class="o">=</span> <span class="n">particle_num_neighbors</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<span class="linenos">295</span>    <span class="n">avg</span><span class="p">,</span> <span class="n">max_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">num</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="linenos">296</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  #neighbors per particle: avg=</span><span class="si">{</span><span class="n">avg</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> max=</span><span class="si">{</span><span class="n">max_</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">297</span>
+<span class="linenos">298</span>
+<span class="linenos">299</span><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="linenos">300</span>    <span class="n">init_particles</span><span class="p">()</span>
+<span class="linenos">301</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;boundary=</span><span class="si">{</span><span class="n">boundary</span><span class="si">}</span><span class="s2"> grid=</span><span class="si">{</span><span class="n">grid_size</span><span class="si">}</span><span class="s2"> cell_size=</span><span class="si">{</span><span class="n">cell_size</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">302</span>    <span class="n">gui</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">GUI</span><span class="p">(</span><span class="s2">&quot;PBF2D&quot;</span><span class="p">,</span> <span class="n">screen_res</span><span class="p">)</span>
+<span class="linenos">303</span>
+<span class="linenos">304</span>    <span class="c1"># Prepare force tracking</span>
+<span class="linenos">305</span>    <span class="n">force_values</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos">306</span>    <span class="n">time_values</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos">307</span>
+<span class="linenos">308</span>    <span class="c1"># Output file</span>
+<span class="linenos">309</span>    <span class="n">force_filename</span> <span class="o">=</span> <span class="s2">&quot;forces.evt&quot;</span>
+<span class="linenos">310</span>    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">force_filename</span><span class="p">):</span>
+<span class="linenos">311</span>        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">force_filename</span><span class="p">)</span>  <span class="c1"># clean if it exists</span>
+<span class="linenos">312</span>
+<span class="linenos">313</span>    <span class="k">while</span> <span class="n">gui</span><span class="o">.</span><span class="n">running</span> <span class="ow">and</span> <span class="n">gui</span><span class="o">.</span><span class="n">frame</span> <span class="o">&lt;</span> <span class="n">max_frames</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">gui</span><span class="o">.</span><span class="n">get_event</span><span class="p">(</span><span class="n">gui</span><span class="o">.</span><span class="n">ESCAPE</span><span class="p">):</span>
+<span class="linenos">314</span>        <span class="n">move_board</span><span class="p">()</span>
+<span class="linenos">315</span>        <span class="n">run_pbf</span><span class="p">()</span>
+<span class="linenos">316</span>
+<span class="linenos">317</span>        <span class="c1"># Record time and force</span>
+<span class="linenos">318</span>        <span class="n">current_time</span> <span class="o">=</span> <span class="n">gui</span><span class="o">.</span><span class="n">frame</span> <span class="o">*</span> <span class="n">time_delta</span>
+<span class="linenos">319</span>        <span class="n">time_values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_time</span><span class="p">)</span>
+<span class="linenos">320</span>        <span class="n">fx</span> <span class="o">=</span> <span class="n">wall_force</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()[</span><span class="kc">None</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># x-component of the wall force</span>
+<span class="linenos">321</span>        <span class="n">force_values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fx</span><span class="p">)</span>
+<span class="linenos">322</span>
+<span class="linenos">323</span>        <span class="k">if</span> <span class="n">gui</span><span class="o">.</span><span class="n">frame</span> <span class="o">%</span> <span class="mi">20</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="linenos">324</span>            <span class="n">print_stats</span><span class="p">()</span>
+<span class="linenos">325</span>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Left wall force:&quot;</span><span class="p">,</span> <span class="n">fx</span><span class="p">)</span>
+<span class="linenos">326</span>
+<span class="linenos">327</span>        <span class="n">render</span><span class="p">(</span><span class="n">gui</span><span class="p">)</span>
+<span class="linenos">328</span>
+<span class="linenos">329</span>    <span class="c1"># Write to file at end</span>
+<span class="linenos">330</span>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">force_filename</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="linenos">331</span>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;0.0&quot;</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">force_values</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">332</span>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">fval</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">fval</span> <span class="ow">in</span> <span class="n">force_values</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">333</span>
+<span class="linenos">334</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="linenos">335</span>    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</details></section>
+<section id="step-5-fem">
+<h3><span class="section-number">4.2.2.5. </span>Step 5: FEM<a class="headerlink" href="#step-5-fem" title="Link to this heading"></a></h3>
+<p><strong>Solver</strong>: OpenSees dynamic analysis. Check:</p>
+<ul class="simple">
+<li><p>Integration step compatible with PBFD export interval (or use interpolation).</p></li>
+<li><p>Appropriate algorithm/convergence tolerances for expected nonlinearity.</p></li>
+<li><p>Damping model as needed (e.g., Rayleigh).</p></li>
+</ul>
+<figure class="align-center">
+<img alt="FEM panel with integration, algorithm, solver, and damping choices." src="../../../../../_images/hdro-0010_FEM.png" />
 </figure>
-<p>Opening the event tab, <code class="docutils literal notranslate"><span class="pre">EVT</span></code>, set the event to be TaichiEvent. Set the workflow script to be TaichiEvent.py and the simulation script to be pbf2d.py, found at applications/createEVENT/TaichiEvent/.</p>
-<figure class="align-center" id="id7">
-<a class="reference internal image-reference" href="../../../../../_images/hdro-0010_EDP.png"><img alt="../../../../../_images/hdro-0010_EDP.png" src="../../../../../_images/hdro-0010_EDP.png" style="width: 600px;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Fig. 4.2.2.5 </span><span class="caption-text">Engineering Demand Parameters tab (EDP).</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
-</figcaption>
+</section>
+<section id="step-6-edp">
+<h3><span class="section-number">4.2.2.6. </span>Step 6: EDP<a class="headerlink" href="#step-6-edp" title="Link to this heading"></a></h3>
+<p>Select <strong>Engineering Demand Parameters (EDPs)</strong> to summarize response:</p>
+<ul class="simple">
+<li><p>Peak Floor Acceleration (PFA)</p></li>
+<li><p>Root Mean Square Acceleration (RMSA)</p></li>
+<li><p>Peak Floor Displacement (PFD)</p></li>
+<li><p>Peak Interstory Drift (PID)</p></li>
+</ul>
+<figure class="align-center">
+<img alt="EDP panel with standard selections enabled." src="../../../../../_images/hdro-0010_EDP.png" />
 </figure>
-<p>As we are not looking at a structure, the <code class="docutils literal notranslate"><span class="pre">EDP</span></code> tab is not necessary. However, note that in coastal engineering intensity measures such as wave height, velocity, and momentum flux are often taken to be EDPs. It is possible in the SimCenter workflow to implement such IMs as custom EDPs if you wish to extrapolate this example for structural analysis.</p>
+</section>
+<section id="step-7-rv">
+<h3><span class="section-number">4.2.2.7. </span>Step 7: RV<a class="headerlink" href="#step-7-rv" title="Link to this heading"></a></h3>
+<p>Define distributions for the structural RVs:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fc</span></code>: <strong>Normal</strong> (mean <code class="docutils literal notranslate"><span class="pre">6</span></code>, stdev <code class="docutils literal notranslate"><span class="pre">0.06</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fy</span></code>: <strong>Normal</strong> (mean <code class="docutils literal notranslate"><span class="pre">60</span></code>, stdev <code class="docutils literal notranslate"><span class="pre">0.6</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">E</span></code>:  <strong>Normal</strong> (mean <code class="docutils literal notranslate"><span class="pre">30000</span></code>, stdev <code class="docutils literal notranslate"><span class="pre">300</span></code>)</p></li>
+</ul>
+<figure class="align-center">
+<img alt="RV panel listing fc, fy, and E with Normal distributions and parameters." src="../../../../../_images/hdro-0010_RV.png" />
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not leave distributions as <strong>constant</strong> when using the Dakota UQ engine unless the variable is intentionally deterministic for this study.</p>
+</div>
+</section>
 </section>
 <section id="simulation">
 <span id="hdro-0010-simulation"></span><h2><span class="section-number">4.2.3. </span>Simulation<a class="headerlink" href="#simulation" title="Link to this heading"></a></h2>
+<p>This workflow is intended for <strong>local execution</strong> to leverage real-time/near-real-time Taichi PBFD on <strong>CPU or GPU</strong>. Click <strong>RUN</strong>. When complete, the <strong>RES</strong> panel opens.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Keep recorder counts, output frequency, and sample size reasonable. Excessive I/O (high-rate PBFD exports or too many recorders) can dominate runtime and disk usage.</p>
+</div>
 <p>We assume most modern computers will be able to run 1 - 10 of these simulations (set by samples in the <code class="docutils literal notranslate"><span class="pre">UQ</span></code> tab) in parallel in real-time (60 frames-per-second) or near real-time. A pop-up GUI(s) should appear once the <code class="docutils literal notranslate"><span class="pre">RUN</span></code> button is clicked at the bottom of the HydroUQ desktop app. The <code class="docutils literal notranslate"><span class="pre">taichi</span></code> PyPi will be automatically installed if your system does not currently have it. The backend graphics library is automatically swapped out by Taichi to meet your systems capabilities, though there are some edge-cases which you may contact NHERI SimCenter developers for assistance on.</p>
 </section>
 <section id="analysis">
 <span id="hdro-0010-analysis"></span><h2><span class="section-number">4.2.4. </span>Analysis<a class="headerlink" href="#analysis" title="Link to this heading"></a></h2>
-<p>No further analysis is performed in this simple demonstration of the Taichi Lang framework within HydroUQ. As Taichi Lang is a powerful language for numerical simulation, it can be extrapolated to run essentially any form of simulation with subsequent analysis. Contact the NHERI SimCenter developer team for assistance in doing so if desired.</p>
+<p>Returning to our primary HydroUQ workflow, which concerns uncertainty in structural response, we may now view the final results in the <strong>RES</strong> tab. Clicking <code class="docutils literal notranslate"><span class="pre">Summary</span></code> on the top-bar, a statistical summary of results is shown below:</p>
+<figure class="align-center">
+<img alt="Results summary from Forward UQ runs under piston-generated waves." src="../../../../../_images/hdro-0010_RES_Summary.png" />
+</figure>
+<p>Clicking <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Values</span></code> on the top-bar shows detailed histograms, cumulative distribution functions, and scatter plots relating the dependent and independent variables:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the <strong>Data Values</strong> tab, left- and right-click column headers to change plot axes; selecting a single column with both clicks displays frequency and CDF plots.</p>
+</div>
+<figure class="align-center">
+<img alt="Results scatter-plot from Forward UQ runs under piston-generated waves." src="../../../../../_images/hdro-0010_RES_Scatter.png" />
+</figure>
+<figure class="align-center">
+<img alt="Histogram view and tabular outputs for key response measures." src="../../../../../_images/hdro-0010_RES_Histogram.png" />
+</figure>
+<figure class="align-center">
+<img alt="CDF view and tabular outputs for key response measures." src="../../../../../_images/hdro-0010_RES_Cumulative.png" />
+</figure>
+<p>For more advanced analysis, export results as a CSV file by clicking <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">Table</span></code> on the upper-right of the application window. This will save the independent and dependent variable data. I.e., the <strong>Random Variables</strong> you defined and the <strong>Engineering Demand Parameters</strong> determined from the structural response per each simulation.</p>
+<p>To save your simulation configuration with results included, click <code class="docutils literal notranslate"><span class="pre">File</span></code> / <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">As</span></code> and specify a location for the HydroUQ JSON input file to be recorded to. You may then reload the file at a later time by clicking <code class="docutils literal notranslate"><span class="pre">File</span></code> / <code class="docutils literal notranslate"><span class="pre">Open</span></code>. You may also send it to others by email or place it in an online repository for research reproducibility. This example’s input file is viewable at <a class="reference internal" href="#hdro-0010-reproducibility"><span class="std std-ref">Reproducibility</span></a>.</p>
+<p>To directly share your simulation job and results in HydroUQ with other DesignSafe users, click <code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">from</span> <span class="pre">DesignSafe</span></code>. Then, navigate to the row with your job and right-click it. Select <code class="docutils literal notranslate"><span class="pre">Share</span> <span class="pre">Job</span></code>. You may then enter the DesignSafe username or usernames (comma-separated) to share with.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Sharing a job requires that the job was initially ran with an <code class="docutils literal notranslate"><span class="pre">Archive</span> <span class="pre">System</span> <span class="pre">ID</span></code> (listed in the <code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">from</span> <span class="pre">DesignSafe</span></code> table’s columns) that is <strong>not</strong> <code class="docutils literal notranslate"><span class="pre">designsafe.storage.default</span></code>. Any other <code class="docutils literal notranslate"><span class="pre">Archive</span> <span class="pre">System</span> <span class="pre">ID</span></code> allows for sharing with DesignSafe <strong>members on the associated project</strong>. See <a class="reference internal" href="../../../usage/desktop/jobs.html#lbl-jobs"><span class="std std-ref">Jobs</span></a> for more details.</p>
+</div>
+</section>
+<section id="conclusions">
+<span id="hdro-0010-conclusions"></span><h2><span class="section-number">4.2.5. </span>Conclusions<a class="headerlink" href="#conclusions" title="Link to this heading"></a></h2>
+<p>This example demonstrates that <strong>real-time physics simulations</strong> can be run in a modular HydroUQ workflow to determine physics-based, statistical demands on <strong>uncertain structures</strong>. Feel free to explore using <strong>Taichi Lang</strong> to simulate other scenarios and numerical methods (e.g., <strong>Smoothed Particle Hydrodynamics</strong>, <strong>Material Point Method</strong>, <strong>Finite Volume Method</strong>).</p>
 </section>
 <section id="references">
-<span id="hdro-0010-references"></span><h2><span class="section-number">4.2.5. </span>References<a class="headerlink" href="#references" title="Link to this heading"></a></h2>
+<span id="hdro-0010-references"></span><h2><span class="section-number">4.2.6. </span>References<a class="headerlink" href="#references" title="Link to this heading"></a></h2>
 <div role="list" class="citation-list">
 <div class="citation" id="hu2019" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">Hu2019</a><span class="fn-bracket">]</span></span>
@@ -240,6 +853,200 @@
 </div>
 </div>
 </section>
+<section id="reproducibility">
+<span id="hdro-0010-reproducibility"></span><h2><span class="section-number">4.2.7. </span>Reproducibility<a class="headerlink" href="#reproducibility" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Random seed(s): <code class="docutils literal notranslate"><span class="pre">1</span></code> (UQ/event), if reproducibility is desired</p></li>
+<li><p>Model file: <code class="docutils literal notranslate"><span class="pre">Frame.tcl</span></code></p></li>
+<li><p>App version: HydroUQ v4.2.0 (or current)</p></li>
+<li><p>System: Local Mac, Linux, or Windows with CPU/GPU Taichi support</p></li>
+<li><p>Input: The HydroUQ forward sampling input file is as follows: <a class="reference external" href="https://github.com/NHERI-SimCenter/HydroUQ/blob/master/Examples/hdro-0010/src/input.json">input.json</a> , is used:</p></li>
+</ul>
+<details style="border:1px solid #ccc; border-radius:6px; background:#efefef; padding:0.5em; margin:0.5em 0;">
+<summary style="font-weight:bold; text-decoration:underline; cursor:pointer;">Click to expand the HydroUQ input file used for this example</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="p">{</span>
+<span class="linenos">  2</span><span class="w">    </span><span class="nt">&quot;Applications&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">  3</span><span class="w">        </span><span class="nt">&quot;EDP&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">  4</span><span class="w">            </span><span class="nt">&quot;Application&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;StandardEDP&quot;</span><span class="p">,</span>
+<span class="linenos">  5</span><span class="w">            </span><span class="nt">&quot;ApplicationData&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">  6</span><span class="w">            </span><span class="p">}</span>
+<span class="linenos">  7</span><span class="w">        </span><span class="p">},</span>
+<span class="linenos">  8</span><span class="w">        </span><span class="nt">&quot;Events&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">  9</span><span class="w">            </span><span class="p">{</span>
+<span class="linenos"> 10</span><span class="w">                </span><span class="nt">&quot;Application&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TaichiEvent&quot;</span><span class="p">,</span>
+<span class="linenos"> 11</span><span class="w">                </span><span class="nt">&quot;ApplicationData&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 12</span><span class="w">                </span><span class="p">},</span>
+<span class="linenos"> 13</span><span class="w">                </span><span class="nt">&quot;EventClassification&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hydro&quot;</span>
+<span class="linenos"> 14</span><span class="w">            </span><span class="p">}</span>
+<span class="linenos"> 15</span><span class="w">        </span><span class="p">],</span>
+<span class="linenos"> 16</span><span class="w">        </span><span class="nt">&quot;Modeling&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 17</span><span class="w">            </span><span class="nt">&quot;Application&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OpenSeesInput&quot;</span><span class="p">,</span>
+<span class="linenos"> 18</span><span class="w">            </span><span class="nt">&quot;ApplicationData&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 19</span><span class="w">                </span><span class="nt">&quot;fileName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Frame.tcl&quot;</span><span class="p">,</span>
+<span class="linenos"> 20</span><span class="w">                </span><span class="nt">&quot;filePath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{Current_Dir}/.&quot;</span>
+<span class="linenos"> 21</span><span class="w">            </span><span class="p">}</span>
+<span class="linenos"> 22</span><span class="w">        </span><span class="p">},</span>
+<span class="linenos"> 23</span><span class="w">        </span><span class="nt">&quot;Simulation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 24</span><span class="w">            </span><span class="nt">&quot;Application&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OpenSees-Simulation&quot;</span><span class="p">,</span>
+<span class="linenos"> 25</span><span class="w">            </span><span class="nt">&quot;ApplicationData&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 26</span><span class="w">            </span><span class="p">}</span>
+<span class="linenos"> 27</span><span class="w">        </span><span class="p">},</span>
+<span class="linenos"> 28</span><span class="w">        </span><span class="nt">&quot;UQ&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 29</span><span class="w">            </span><span class="nt">&quot;Application&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Dakota-UQ&quot;</span><span class="p">,</span>
+<span class="linenos"> 30</span><span class="w">            </span><span class="nt">&quot;ApplicationData&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 31</span><span class="w">            </span><span class="p">}</span>
+<span class="linenos"> 32</span><span class="w">        </span><span class="p">}</span>
+<span class="linenos"> 33</span><span class="w">    </span><span class="p">},</span>
+<span class="linenos"> 34</span><span class="w">    </span><span class="nt">&quot;DefaultValues&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 35</span><span class="w">        </span><span class="nt">&quot;driverFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;driver&quot;</span><span class="p">,</span>
+<span class="linenos"> 36</span><span class="w">        </span><span class="nt">&quot;edpFiles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos"> 37</span><span class="w">            </span><span class="s2">&quot;EDP.json&quot;</span>
+<span class="linenos"> 38</span><span class="w">        </span><span class="p">],</span>
+<span class="linenos"> 39</span><span class="w">        </span><span class="nt">&quot;filenameAIM&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AIM.json&quot;</span><span class="p">,</span>
+<span class="linenos"> 40</span><span class="w">        </span><span class="nt">&quot;filenameDL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BIM.json&quot;</span><span class="p">,</span>
+<span class="linenos"> 41</span><span class="w">        </span><span class="nt">&quot;filenameEDP&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EDP.json&quot;</span><span class="p">,</span>
+<span class="linenos"> 42</span><span class="w">        </span><span class="nt">&quot;filenameEVENT&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EVENT.json&quot;</span><span class="p">,</span>
+<span class="linenos"> 43</span><span class="w">        </span><span class="nt">&quot;filenameSAM&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SAM.json&quot;</span><span class="p">,</span>
+<span class="linenos"> 44</span><span class="w">        </span><span class="nt">&quot;filenameSIM&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SIM.json&quot;</span><span class="p">,</span>
+<span class="linenos"> 45</span><span class="w">        </span><span class="nt">&quot;rvFiles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos"> 46</span><span class="w">            </span><span class="s2">&quot;AIM.json&quot;</span><span class="p">,</span>
+<span class="linenos"> 47</span><span class="w">            </span><span class="s2">&quot;SAM.json&quot;</span><span class="p">,</span>
+<span class="linenos"> 48</span><span class="w">            </span><span class="s2">&quot;EVENT.json&quot;</span><span class="p">,</span>
+<span class="linenos"> 49</span><span class="w">            </span><span class="s2">&quot;SIM.json&quot;</span>
+<span class="linenos"> 50</span><span class="w">        </span><span class="p">],</span>
+<span class="linenos"> 51</span><span class="w">        </span><span class="nt">&quot;workflowInput&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;scInput.json&quot;</span><span class="p">,</span>
+<span class="linenos"> 52</span><span class="w">        </span><span class="nt">&quot;workflowOutput&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EDP.json&quot;</span>
+<span class="linenos"> 53</span><span class="w">    </span><span class="p">},</span>
+<span class="linenos"> 54</span><span class="w">    </span><span class="nt">&quot;EDP&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 55</span><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;StandardEDP&quot;</span>
+<span class="linenos"> 56</span><span class="w">    </span><span class="p">},</span>
+<span class="linenos"> 57</span><span class="w">    </span><span class="nt">&quot;Events&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos"> 58</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos"> 59</span><span class="w">            </span><span class="nt">&quot;Application&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TaichiEvent&quot;</span><span class="p">,</span>
+<span class="linenos"> 60</span><span class="w">            </span><span class="nt">&quot;EventClassification&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hydro&quot;</span><span class="p">,</span>
+<span class="linenos"> 61</span><span class="w">            </span><span class="nt">&quot;basicPyScript&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TaichiEvent.py&quot;</span><span class="p">,</span>
+<span class="linenos"> 62</span><span class="w">            </span><span class="nt">&quot;basicPyScriptPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{Current_Dir}/.&quot;</span><span class="p">,</span>
+<span class="linenos"> 63</span><span class="w">            </span><span class="nt">&quot;interfaceSurface&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pbf2d.py&quot;</span><span class="p">,</span>
+<span class="linenos"> 64</span><span class="w">            </span><span class="nt">&quot;interfaceSurfacePath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{Current_Dir}/.&quot;</span>
+<span class="linenos"> 65</span><span class="w">        </span><span class="p">}</span>
+<span class="linenos"> 66</span><span class="w">    </span><span class="p">],</span>
+<span class="linenos"> 67</span><span class="w">    </span><span class="nt">&quot;GeneralInformation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 68</span><span class="w">        </span><span class="nt">&quot;NumberOfStories&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos"> 69</span><span class="w">        </span><span class="nt">&quot;PlanArea&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">129600</span><span class="p">,</span>
+<span class="linenos"> 70</span><span class="w">        </span><span class="nt">&quot;StructureType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RM1&quot;</span><span class="p">,</span>
+<span class="linenos"> 71</span><span class="w">        </span><span class="nt">&quot;YearBuilt&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1990</span><span class="p">,</span>
+<span class="linenos"> 72</span><span class="w">        </span><span class="nt">&quot;depth&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">360</span><span class="p">,</span>
+<span class="linenos"> 73</span><span class="w">        </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">576</span><span class="p">,</span>
+<span class="linenos"> 74</span><span class="w">        </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 75</span><span class="w">            </span><span class="nt">&quot;latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">37.8715</span><span class="p">,</span>
+<span class="linenos"> 76</span><span class="w">            </span><span class="nt">&quot;longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-122.273</span>
+<span class="linenos"> 77</span><span class="w">        </span><span class="p">},</span>
+<span class="linenos"> 78</span><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos"> 79</span><span class="w">        </span><span class="nt">&quot;planArea&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">129600</span><span class="p">,</span>
+<span class="linenos"> 80</span><span class="w">        </span><span class="nt">&quot;stories&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos"> 81</span><span class="w">        </span><span class="nt">&quot;units&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 82</span><span class="w">            </span><span class="nt">&quot;force&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;kips&quot;</span><span class="p">,</span>
+<span class="linenos"> 83</span><span class="w">            </span><span class="nt">&quot;length&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;in&quot;</span><span class="p">,</span>
+<span class="linenos"> 84</span><span class="w">            </span><span class="nt">&quot;temperature&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C&quot;</span><span class="p">,</span>
+<span class="linenos"> 85</span><span class="w">            </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sec&quot;</span>
+<span class="linenos"> 86</span><span class="w">        </span><span class="p">},</span>
+<span class="linenos"> 87</span><span class="w">        </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">360</span>
+<span class="linenos"> 88</span><span class="w">    </span><span class="p">},</span>
+<span class="linenos"> 89</span><span class="w">    </span><span class="nt">&quot;Modeling&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 90</span><span class="w">        </span><span class="nt">&quot;centroidNodes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos"> 91</span><span class="w">            </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos"> 92</span><span class="w">            </span><span class="mi">3</span>
+<span class="linenos"> 93</span><span class="w">        </span><span class="p">],</span>
+<span class="linenos"> 94</span><span class="w">        </span><span class="nt">&quot;dampingRatio&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.02</span><span class="p">,</span>
+<span class="linenos"> 95</span><span class="w">        </span><span class="nt">&quot;ndf&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="linenos"> 96</span><span class="w">        </span><span class="nt">&quot;ndm&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="linenos"> 97</span><span class="w">        </span><span class="nt">&quot;randomVar&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos"> 98</span><span class="w">            </span><span class="p">{</span>
+<span class="linenos"> 99</span><span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fc&quot;</span><span class="p">,</span>
+<span class="linenos">100</span><span class="w">                </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RV.fc&quot;</span>
+<span class="linenos">101</span><span class="w">            </span><span class="p">},</span>
+<span class="linenos">102</span><span class="w">            </span><span class="p">{</span>
+<span class="linenos">103</span><span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fy&quot;</span><span class="p">,</span>
+<span class="linenos">104</span><span class="w">                </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RV.fy&quot;</span>
+<span class="linenos">105</span><span class="w">            </span><span class="p">},</span>
+<span class="linenos">106</span><span class="w">            </span><span class="p">{</span>
+<span class="linenos">107</span><span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;E&quot;</span><span class="p">,</span>
+<span class="linenos">108</span><span class="w">                </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RV.E&quot;</span>
+<span class="linenos">109</span><span class="w">            </span><span class="p">}</span>
+<span class="linenos">110</span><span class="w">        </span><span class="p">],</span>
+<span class="linenos">111</span><span class="w">        </span><span class="nt">&quot;responseNodes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">112</span><span class="w">            </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">113</span><span class="w">            </span><span class="mi">3</span>
+<span class="linenos">114</span><span class="w">        </span><span class="p">],</span>
+<span class="linenos">115</span><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OpenSeesInput&quot;</span>
+<span class="linenos">116</span><span class="w">    </span><span class="p">},</span>
+<span class="linenos">117</span><span class="w">    </span><span class="nt">&quot;Simulation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">118</span><span class="w">        </span><span class="nt">&quot;Application&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OpenSees-Simulation&quot;</span><span class="p">,</span>
+<span class="linenos">119</span><span class="w">        </span><span class="nt">&quot;algorithm&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Newton&quot;</span><span class="p">,</span>
+<span class="linenos">120</span><span class="w">        </span><span class="nt">&quot;analysis&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Transient -numSubLevels 2 -numSubSteps 10&quot;</span><span class="p">,</span>
+<span class="linenos">121</span><span class="w">        </span><span class="nt">&quot;convergenceTest&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NormUnbalance 1.0e-2 10&quot;</span><span class="p">,</span>
+<span class="linenos">122</span><span class="w">        </span><span class="nt">&quot;dampingModel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rayleigh Damping&quot;</span><span class="p">,</span>
+<span class="linenos">123</span><span class="w">        </span><span class="nt">&quot;firstMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">124</span><span class="w">        </span><span class="nt">&quot;integration&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Newmark 0.5 0.25&quot;</span><span class="p">,</span>
+<span class="linenos">125</span><span class="w">        </span><span class="nt">&quot;modalRayleighTangentRatio&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">126</span><span class="w">        </span><span class="nt">&quot;numModesModal&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span>
+<span class="linenos">127</span><span class="w">        </span><span class="nt">&quot;rayleighTangent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Initial&quot;</span><span class="p">,</span>
+<span class="linenos">128</span><span class="w">        </span><span class="nt">&quot;secondMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span>
+<span class="linenos">129</span><span class="w">        </span><span class="nt">&quot;solver&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Umfpack&quot;</span>
+<span class="linenos">130</span><span class="w">    </span><span class="p">},</span>
+<span class="linenos">131</span><span class="w">    </span><span class="nt">&quot;UQ&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">132</span><span class="w">        </span><span class="nt">&quot;samplingMethodData&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">133</span><span class="w">            </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LHS&quot;</span><span class="p">,</span>
+<span class="linenos">134</span><span class="w">            </span><span class="nt">&quot;samples&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="linenos">135</span><span class="w">            </span><span class="nt">&quot;seed&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="linenos">136</span><span class="w">        </span><span class="p">},</span>
+<span class="linenos">137</span><span class="w">        </span><span class="nt">&quot;parallelExecution&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="linenos">138</span><span class="w">        </span><span class="nt">&quot;saveWorkDir&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="linenos">139</span><span class="w">        </span><span class="nt">&quot;uqType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Forward Propagation&quot;</span><span class="p">,</span>
+<span class="linenos">140</span><span class="w">        </span><span class="nt">&quot;uqEngine&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Dakota&quot;</span>
+<span class="linenos">141</span><span class="w">    </span><span class="p">},</span>
+<span class="linenos">142</span><span class="w">    </span><span class="nt">&quot;localAppDir&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/home/justinbonus/SimCenter/HydroUQ/build&quot;</span><span class="p">,</span>
+<span class="linenos">143</span><span class="w">    </span><span class="nt">&quot;randomVariables&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">144</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos">145</span><span class="w">            </span><span class="nt">&quot;distribution&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Normal&quot;</span><span class="p">,</span>
+<span class="linenos">146</span><span class="w">            </span><span class="nt">&quot;inputType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Parameters&quot;</span><span class="p">,</span>
+<span class="linenos">147</span><span class="w">            </span><span class="nt">&quot;mean&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<span class="linenos">148</span><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fc&quot;</span><span class="p">,</span>
+<span class="linenos">149</span><span class="w">            </span><span class="nt">&quot;refCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">150</span><span class="w">            </span><span class="nt">&quot;stdDev&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span>
+<span class="linenos">151</span><span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RV.fc&quot;</span><span class="p">,</span>
+<span class="linenos">152</span><span class="w">            </span><span class="nt">&quot;variableClass&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Uncertain&quot;</span>
+<span class="linenos">153</span><span class="w">        </span><span class="p">},</span>
+<span class="linenos">154</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos">155</span><span class="w">            </span><span class="nt">&quot;distribution&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Normal&quot;</span><span class="p">,</span>
+<span class="linenos">156</span><span class="w">            </span><span class="nt">&quot;inputType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Parameters&quot;</span><span class="p">,</span>
+<span class="linenos">157</span><span class="w">            </span><span class="nt">&quot;mean&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span>
+<span class="linenos">158</span><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fy&quot;</span><span class="p">,</span>
+<span class="linenos">159</span><span class="w">            </span><span class="nt">&quot;refCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">160</span><span class="w">            </span><span class="nt">&quot;stdDev&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="linenos">161</span><span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RV.fy&quot;</span><span class="p">,</span>
+<span class="linenos">162</span><span class="w">            </span><span class="nt">&quot;variableClass&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Uncertain&quot;</span>
+<span class="linenos">163</span><span class="w">        </span><span class="p">},</span>
+<span class="linenos">164</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos">165</span><span class="w">            </span><span class="nt">&quot;distribution&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Normal&quot;</span><span class="p">,</span>
+<span class="linenos">166</span><span class="w">            </span><span class="nt">&quot;inputType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Parameters&quot;</span><span class="p">,</span>
+<span class="linenos">167</span><span class="w">            </span><span class="nt">&quot;mean&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30000</span><span class="p">,</span>
+<span class="linenos">168</span><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;E&quot;</span><span class="p">,</span>
+<span class="linenos">169</span><span class="w">            </span><span class="nt">&quot;refCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">170</span><span class="w">            </span><span class="nt">&quot;stdDev&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span>
+<span class="linenos">171</span><span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RV.E&quot;</span><span class="p">,</span>
+<span class="linenos">172</span><span class="w">            </span><span class="nt">&quot;variableClass&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Uncertain&quot;</span>
+<span class="linenos">173</span><span class="w">        </span><span class="p">}</span>
+<span class="linenos">174</span><span class="w">    </span><span class="p">],</span>
+<span class="linenos">175</span><span class="w">    </span><span class="nt">&quot;remoteAppDir&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/home/justinbonus/SimCenter/HydroUQ/build&quot;</span><span class="p">,</span>
+<span class="linenos">176</span><span class="w">    </span><span class="nt">&quot;resultType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SimCenterUQResultsSampling&quot;</span><span class="p">,</span>
+<span class="linenos">177</span><span class="w">    </span><span class="nt">&quot;runType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;runningLocal&quot;</span><span class="p">,</span>
+<span class="linenos">178</span><span class="w">    </span><span class="nt">&quot;summary&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">179</span><span class="w">    </span><span class="p">],</span>
+<span class="linenos">180</span><span class="w">    </span><span class="nt">&quot;workingDir&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/home/justinbonus/Documents/HydroUQ/LocalWorkDir&quot;</span>
+<span class="linenos">181</span><span class="p">}</span>
+</pre></div>
+</div>
+</details></section>
 </section>
 
 

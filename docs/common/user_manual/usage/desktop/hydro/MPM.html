@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2.4.3. Material Point Method &mdash; Hydro-UQ  documentation</title>
+  <title>2.4.1. Material Point Method &mdash; Hydro-UQ  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=66b6668b" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
@@ -29,8 +29,8 @@
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.4.3.1. Settings" href="SettingsMPM.html" />
-    <link rel="prev" title="2.4.2. Coupled Digital Twin" href="coupled.html" />
+    <link rel="next" title="Settings" href="SettingsMPM.html" />
+    <link rel="prev" title="2.4. EVT: Hydro Events" href="EVT.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -83,37 +83,31 @@
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Running Application</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Interface</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../GI.html">2.2. GI: General Information</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.3. SIM: Structural Model</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="EVT.html">2.4. EVT: Hydro Events</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="general.html">2.4.1. General Event (Legacy)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="coupled.html">2.4.2. Coupled Digital Twin</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.3. Material Point Method</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="SettingsMPM.html">2.4.3.1. Settings</a></li>
-<li class="toctree-l4"><a class="reference internal" href="BodiesMPM.html">2.4.3.2. Bodies</a></li>
-<li class="toctree-l4"><a class="reference internal" href="BoundariesMPM.html">2.4.3.3. Boundaries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SensorsMPM.html">2.4.3.4. Sensors</a></li>
-<li class="toctree-l4"><a class="reference internal" href="OutputsMPM.html">2.4.3.5. Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">2. User Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tools.html">3. Tools</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.4.1. Material Point Method</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#basic-documentation">2.4.1.1. Basic Documentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="SettingsMPM.html">Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BodiesMPM.html">Bodies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BoundariesMPM.html">Boundaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SensorsMPM.html">Sensors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="OutputsMPM.html">Outputs</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="celeris/index.html">2.4.4. CelerisAi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#detailed-documentation">2.4.1.2. Detailed Documentation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../response/EDP.html">2.6. EDP: Demand Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.7. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resHydro.html">2.8. RES: Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="celeris/index.html">2.4.2. CelerisAi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpenSeesTool.html">3.1. OpenSees&#64;DesignSafe Tool</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tools.html">3. Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bestpractices.html">5. Best Practices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">7. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="helpvideo.html">9. Video Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs.html">5. Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bestpractices.html">6. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">7. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">8. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">9. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helpvideo.html">10. Video Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -148,7 +142,7 @@
       <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../usage.html"><span class="section-number">2. </span>User Interface</a></li>
           <li class="breadcrumb-item"><a href="EVT.html"><span class="section-number">2.4. </span>EVT: Hydro Events</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">2.4.3. </span>Material Point Method</li>
+      <li class="breadcrumb-item active"><span class="section-number">2.4.1. </span>Material Point Method</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../../_sources/common/user_manual/usage/desktop/hydro/MPM.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -159,31 +153,43 @@
            <div itemprop="articleBody">
              
   <section id="material-point-method">
-<span id="lblevt-mpm"></span><h1><span class="section-number">2.4.3. </span>Material Point Method<a class="headerlink" href="#material-point-method" title="Link to this heading"></a></h1>
-<p>The <code class="docutils literal notranslate"><span class="pre">MPM</span></code> event option is used to set the flow parameters related to the water-borne hazard event. This can either be a coupling between the shallow-water and MPM solver or using the ClaymoreUW MPM solver alone. The steps of the setup process for the event have been kept nearly similar to that often used in the Finite Element Method to make it easier for researchers from structural engineering background to easily use this application. This includes <code class="docutils literal notranslate"><span class="pre">SettingsMPM</span></code> &gt;&gt; <code class="docutils literal notranslate"><span class="pre">BodiesMPM</span></code> &gt;&gt; <code class="docutils literal notranslate"><span class="pre">BoundariesMPM</span></code> &gt;&gt; <code class="docutils literal notranslate"><span class="pre">SensorsMPM</span></code> &gt;&gt; <code class="docutils literal notranslate"><span class="pre">OutputsMPM</span></code>. Figure <code class="xref std std-numref docutils literal notranslate"><span class="pre">HydroSteps_MPM</span></code> shows the steps as selectable tab-pages in the GUI.</p>
+<span id="lblevt-mpm"></span><h1><span class="section-number">2.4.1. </span>Material Point Method<a class="headerlink" href="#material-point-method" title="Link to this heading"></a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">MPM</span></code> event option is used to set the parameters related to the water-borne hazard event using the ClaymoreUW Material Point Method solver. This module, in essence, serves the sole purpose of determining a loading time-series due to the hydrodynamic event. As a side-effect, it also produces information rich numerical simulation files for more advanced analysis extraneous to the minimum requirements of the SimCenter workflow.</p>
 <figure class="align-center" id="id1">
-<span id="evtsettings-mpm"></span><img alt="../../../../../_images/HydroSteps_MPM.png" src="../../../../../_images/HydroSteps_MPM.png" />
+<img alt="../../../../../_images/HydroUQ_MPM_3DViewPort_OSULWF_2024.04.252.gif" src="../../../../../_images/HydroUQ_MPM_3DViewPort_OSULWF_2024.04.252.gif" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.4.3.1 </span><span class="caption-text">The steps involved in setup of the <code class="docutils literal notranslate"><span class="pre">Hydro</span></code> event</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 2.4.1.1 </span><span class="caption-text">The Hydro-UQ app user interface, with the EVT panel selected. The numerical solver shown is the MPM solver.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p>Each of the above steps in the setup process is documented in detail in respective sections below:</p>
+<p>The steps of the setup process for the event have been kept similar to that often used in the Finite Element Method’s many software iterations to make it easier for researchers from common engineering backgrounds to easily use this application. This includes the primary categories of <code class="docutils literal notranslate"><span class="pre">Settings</span></code> &gt;&gt; <code class="docutils literal notranslate"><span class="pre">Bodies</span></code> &gt;&gt; <code class="docutils literal notranslate"><span class="pre">Boundaries</span></code> &gt;&gt; <code class="docutils literal notranslate"><span class="pre">Sensors</span></code> &gt;&gt; <code class="docutils literal notranslate"><span class="pre">Outputs</span></code>. Figure <code class="xref std std-numref docutils literal notranslate"><span class="pre">HydroSteps_MPM</span></code> shows the steps as selectable tab-pages in the GUI.</p>
+<figure class="align-center" id="id2">
+<span id="evtsettings-mpm"></span><img alt="../../../../../_images/HydroSteps_MPM.png" src="../../../../../_images/HydroSteps_MPM.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.4.1.2 </span><span class="caption-text">The steps involved in setup of the <code class="docutils literal notranslate"><span class="pre">Hydro</span></code> event</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="basic-documentation">
+<h2><span class="section-number">2.4.1.1. </span>Basic Documentation<a class="headerlink" href="#basic-documentation" title="Link to this heading"></a></h2>
+<p>Each of the above steps in the setup process is documented in basic detail in respective sections below:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="SettingsMPM.html">2.4.3.1. Settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BodiesMPM.html">2.4.3.2. Bodies</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="BodiesMPM.html#material">Material</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BodiesMPM.html#geometries">Geometries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BodiesMPM.html#algorithm">Algorithm</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BodiesMPM.html#partitions">Partitions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BodiesMPM.html#debris">Debris</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="BoundariesMPM.html">2.4.3.3. Boundaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SensorsMPM.html">2.4.3.4. Sensors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="OutputsMPM.html">2.4.3.5. Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SettingsMPM.html">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BodiesMPM.html">Bodies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BoundariesMPM.html">Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SensorsMPM.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OutputsMPM.html">Outputs</a></li>
 </ul>
 </div>
+</section>
+<section id="detailed-documentation">
+<h2><span class="section-number">2.4.1.2. </span>Detailed Documentation<a class="headerlink" href="#detailed-documentation" title="Link to this heading"></a></h2>
+<p>For a highly-detailed break-down of each parameter and the underlying concepts behind the ClaymoreUW schema / JSON file input configuration, please download the full ClaymoreUW documentation at: <a class="reference download internal" download="" href="../../../../../_downloads/0e18aee144f35977e5ee4f7bc03a248f/ClaymoreUW_UserGuide.pdf"><code class="xref download docutils literal notranslate"><span class="pre">ClaymoreUW</span> <span class="pre">User-Guide</span></code></a></p>
+<p>You may also view the embedded documentation below on supporting browsers:</p>
+<iframe
+  src="ClaymoreUW_UserGuide.pdf#view=FitH"
+  style="width:100%; height:700px; border:1px solid #ddd;"
+  loading="lazy">
+</iframe></section>
 </section>
 
 

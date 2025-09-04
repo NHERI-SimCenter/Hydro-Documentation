@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>6.1. Startup Issues &mdash; Hydro-UQ  documentation</title>
+  <title>Startup Issues &mdash; Hydro-UQ  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=66b6668b" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
@@ -29,8 +29,6 @@
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="6.2. Issues While Running" href="troubleshootingRunning.html" />
-    <link rel="prev" title="6. Troubleshooting" href="troubleshooting.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -81,20 +79,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Running Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/usage.html">2. User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/hydro/tools.html">3. Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/hydro/bestpractices.html">5. Best Practices</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="troubleshooting.html">6. Troubleshooting</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6.1. Startup Issues</a></li>
-<li class="toctree-l2"><a class="reference internal" href="troubleshootingRunning.html">6.2. Issues While Running</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../../reqments/HydroUQ.html">7. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/hydro/helpvideo.html">9. Video Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/jobs.html">5. Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/hydro/bestpractices.html">6. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">7. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reqments/HydroUQ.html">8. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">9. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/hydro/helpvideo.html">10. Video Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -127,8 +122,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="troubleshooting.html"><span class="section-number">6. </span>Troubleshooting</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">6.1. </span>Startup Issues</li>
+      <li class="breadcrumb-item active">Startup Issues</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../_sources/common/user_manual/troubleshooting/desktop/troubleshootingStartup.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -139,13 +133,13 @@
            <div itemprop="articleBody">
              
   <section id="startup-issues">
-<span id="lbltroubleshootingstartup"></span><h1><span class="section-number">6.1. </span>Startup Issues<a class="headerlink" href="#startup-issues" title="Link to this heading"></a></h1>
-<p>When initiating any SimCenter desktop application on Windows, you may encounter an error indicating a missing Visual C/C++ runtime library, as depicted in <a class="reference internal" href="#figmissingcrt-hydrouq"><span class="std std-numref">Fig. 6.1.4</span></a>. This issue arises due to the absence of necessary runtime components that the application depends on for execution.</p>
+<span id="lbltroubleshootingstartup"></span><h1>Startup Issues<a class="headerlink" href="#startup-issues" title="Link to this heading"></a></h1>
+<p>When initiating any SimCenter desktop application on Windows, you may encounter an error indicating a missing Visual C/C++ runtime library, as depicted in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figMissingCRT-HydroUQ</span></code>. This issue arises due to the absence of necessary runtime components that the application depends on for execution.</p>
 <p>To resolve this, install the Visual C/C++ redistributable package by executing <strong>vc_redist.x64.exe</strong>, which is provided within the application’s installation directory. This step ensures that all required runtime libraries are available, allowing the application to start without errors.</p>
 <figure class="align-center" id="id5">
 <span id="figmissingcrt-hydrouq"></span><img alt="../../../../_images/MissingCRT.png" src="../../../../_images/MissingCRT.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 6.1.4 </span><span class="caption-text">Error message indicating a missing Visual C/C++ runtime library.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+<p><span class="caption-text">Error message indicating a missing Visual C/C++ runtime library.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>

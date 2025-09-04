@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2.4.3.2. Bodies &mdash; Hydro-UQ  documentation</title>
+  <title>Bodies &mdash; Hydro-UQ  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=66b6668b" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
@@ -29,8 +29,8 @@
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.4.3.3. Boundaries" href="BoundariesMPM.html" />
-    <link rel="prev" title="2.4.3.1. Settings" href="SettingsMPM.html" />
+    <link rel="next" title="Boundaries" href="BoundariesMPM.html" />
+    <link rel="prev" title="Settings" href="SettingsMPM.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -85,29 +85,29 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Running Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">2. User Interface</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="tools.html">3. Tools</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="tools.html#material-point-method">3.1. Material Point Method</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="SettingsMPM.html">2.4.3.1. Settings</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.3.2. Bodies</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#material">Material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#geometries">Geometries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#algorithm">Algorithm</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#partitions">Partitions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#debris">Debris</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="MPM.html">2.4.1. Material Point Method</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="MPM.html#basic-documentation">2.4.1.1. Basic Documentation</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="SettingsMPM.html">Settings</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Bodies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BoundariesMPM.html">Boundaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SensorsMPM.html">Sensors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="OutputsMPM.html">Outputs</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="BoundariesMPM.html">2.4.3.3. Boundaries</a></li>
-<li class="toctree-l3"><a class="reference internal" href="SensorsMPM.html">2.4.3.4. Sensors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="OutputsMPM.html">2.4.3.5. Outputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MPM.html#detailed-documentation">2.4.1.2. Detailed Documentation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="celeris/index.html">2.4.2. CelerisAi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpenSeesTool.html">3.1. OpenSees&#64;DesignSafe Tool</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bestpractices.html">5. Best Practices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">7. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="helpvideo.html">9. Video Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs.html">5. Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bestpractices.html">6. Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">7. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/HydroUQ.html">8. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">9. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helpvideo.html">10. Video Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -142,8 +142,8 @@
       <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../usage.html"><span class="section-number">2. </span>User Interface</a></li>
           <li class="breadcrumb-item"><a href="EVT.html"><span class="section-number">2.4. </span>EVT: Hydro Events</a></li>
-          <li class="breadcrumb-item"><a href="MPM.html"><span class="section-number">2.4.3. </span>Material Point Method</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">2.4.3.2. </span>Bodies</li>
+          <li class="breadcrumb-item"><a href="MPM.html"><span class="section-number">2.4.1. </span>Material Point Method</a></li>
+      <li class="breadcrumb-item active">Bodies</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../../_sources/common/user_manual/usage/desktop/hydro/BodiesMPM.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -154,21 +154,26 @@
            <div itemprop="articleBody">
              
   <section id="bodies">
-<span id="lbl-bodiesmpm"></span><h1><span class="section-number">2.4.3.2. </span>Bodies<a class="headerlink" href="#bodies" title="Link to this heading"></a></h1>
-<p>Bodies are any physical object that is not represented as a boundary condition. They can be water, debris, structures, etc., but not, for instance, a boundary condition like a moving velocity boundary condition.</p>
+<span id="lbl-bodiesmpm"></span><h1>Bodies<a class="headerlink" href="#bodies" title="Link to this heading"></a></h1>
+<p>Bodies are any physical object that is not represented as a boundary condition.
+They can be water, debris, structures, etc., but not, for instance, a moving
+velocity boundary condition.</p>
 <p>This section discusses the setup of bodies in the model.</p>
-<nav class="contents local" id="table-of-contents">
-<p class="topic-title">Table of Contents</p>
+<nav class="contents local" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#material" id="id1">Material</a></p></li>
 <li><p><a class="reference internal" href="#geometries" id="id2">Geometries</a></p></li>
 <li><p><a class="reference internal" href="#algorithm" id="id3">Algorithm</a></p></li>
 <li><p><a class="reference internal" href="#partitions" id="id4">Partitions</a></p></li>
-<li><p><a class="reference internal" href="#debris" id="id5">Debris</a></p></li>
 </ul>
 </nav>
 <section id="material">
 <span id="lbl-materialmpm"></span><h2>Material<a class="headerlink" href="#material" title="Link to this heading"></a></h2>
+<p>The material panel is where you set parameters related to the material properties / constitutive law of the bodies in the simulation.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/GUI_Bodies_Fluid_Material5.png"><img alt="HydroUQ material panel." src="../../../../../_images/GUI_Bodies_Fluid_Material5.png" style="width: 600px;" />
+</a>
+</figure>
 <p>Water, plastic, concrete, sand, steel, clay, rubber, etc. are some of the material presets that can be used to define the bodies. Constitutive laws are selected based on the material preset with appropriate initial values for the material properties. Constitutive laws are used to define the material behavior under different loading conditions. Options include:</p>
 <ol class="arabic simple">
 <li><p><strong>Isotropic Fluid with Viscous Shear Stress / J-Fluid:</strong> This is used to define a basic Newtonian fluid. The material properties include density, bulk modulus, derivative of the bulk modulus with respect to pressure, and dynamic viscosity.</p></li>
@@ -187,19 +192,115 @@
 </section>
 <section id="geometries">
 <span id="lbl-geometriesmpm"></span><h2>Geometries<a class="headerlink" href="#geometries" title="Link to this heading"></a></h2>
-<p>There are four aspects related to the definition of geometry, namely geometry of the ocean floor or wave flume, buildings or specimens, floating bodies, and shallow water to CFD interface. This section discusses the setup of all aspects of geometry.</p>
+<p><strong>Geometries</strong> is a collection of geometry tabs which you can <strong>add</strong> and <strong>delete</strong>
+using the corresponding buttons.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/GUI_Bodies_Fluid_Geometry6.png"><img alt="HydroUQ geometries panel." src="../../../../../_images/GUI_Bodies_Fluid_Geometry6.png" style="width: 600px;" />
+</a>
+</figure>
+<p>Each geometry is defined by an <strong>object</strong>
+(e.g., <em>box</em>, <em>sphere</em>, …) and object-specific parameters for <strong>position</strong> and
+<strong>size</strong>. When defining each geometry, you also select an <strong>operation</strong> that
+<strong>composes it in order</strong> with the previously listed geometry tabs:</p>
+<ul class="simple">
+<li><p><strong>Add</strong> — union with the current aggregate</p></li>
+<li><p><strong>Subtract</strong> — remove this shape from the aggregate</p></li>
+<li><p><strong>Intersection</strong> — keep only the overlap with the aggregate</p></li>
+<li><p><strong>Difference</strong> — boolean difference (variant of subtract, if provided)</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use small, simple primitives first, then refine with additional tabs. The
+final geometry is the <strong>ordered composition</strong> of all rows in the list.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If two tabs produce unexpected results, check their <strong>order</strong>, <strong>coordinate
+frames</strong>, and <strong>dimensions</strong>. Composition is <strong>order-dependent</strong>.</p>
+</div>
 </section>
 <section id="algorithm">
 <span id="lbl-algorithmmpm"></span><h2>Algorithm<a class="headerlink" href="#algorithm" title="Link to this heading"></a></h2>
-<p>The algorithm tab is used to define the algorithmic parameters for the body.</p>
+<p>This advanced panel selects the numerical options used to simulate the material
+body.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/GUI_Bodies_Fluid_Algorithm5.png"><img alt="HydroUQ algorithm panel." src="../../../../../_images/GUI_Bodies_Fluid_Algorithm5.png" style="width: 600px;" />
+</a>
+</figure>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26.0%" />
+<col style="width: 58.0%" />
+<col style="width: 16.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Setting</p></th>
+<th class="head"><p>What it does</p></th>
+<th class="head"><p>Guidance</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>F-Bar Antilocking</strong></p></td>
+<td><p>Relieves <strong>volumetric locking</strong> artifacts in MPM to improve near-incompressible
+behavior and stress accuracy.</p></td>
+<td><p>Enable for materials prone to locking; verify stability.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ASFLIP</strong></p></td>
+<td><p><strong>Affine Separable FLIP</strong> advection scheme that reduces grid–particle transfer
+null-space errors, typically lowering artificial damping and improving
+debris–debris contact behavior.</p></td>
+<td><p>Often beneficial for highly dynamic flows.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>PPC (Particles-Per-Cell)</strong></p></td>
+<td><p>Sets the <strong>number of particles</strong> sampled per grid cell at body creation.</p></td>
+<td><p>Higher PPC → better resolution but higher cost.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>These options target expert users. Changing them can materially affect
+<strong>stability</strong>, <strong>accuracy</strong>, and <strong>performance</strong>. Prefer defaults unless you
+have validation data or a clear need.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you increase <strong>PPC</strong>, consider refining the <strong>grid-cell size</strong> and revisiting
+<strong>time-step</strong> limits (CFL) to maintain stability and accuracy.</p>
+</div>
 </section>
 <section id="partitions">
 <span id="lbl-partitionsmpm"></span><h2>Partitions<a class="headerlink" href="#partitions" title="Link to this heading"></a></h2>
-<p>The partitions tab is used to distribute a body across the available hardware partitions, e.g. a Graphics Processing Unit or supercomputer node, for parallel computation.</p>
-</section>
-<section id="debris">
-<span id="lbl-debrismpm"></span><h2>Debris<a class="headerlink" href="#debris" title="Link to this heading"></a></h2>
-<p>Currently, HydroUQ only supports floating bodies in the Material Point Method Event. This may expand to include OpenFOAM in an upcoming versions of HydroUQ app.</p>
+<p>This is an advanced configuration used to <strong>distribute a body</strong> across available
+hardware partitions (e.g., GPUs or compute nodes) for parallel computation.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/GUI_Bodies_Fluid_Partitions5.png"><img alt="HydroUQ partitions panel." src="../../../../../_images/GUI_Bodies_Fluid_Partitions5.png" style="width: 600px;" />
+</a>
+</figure>
+<ul class="simple">
+<li><p>Define a <strong>set of partitions</strong>; each partition is assigned a <strong>Model ID</strong> and a
+<strong>GPU/Device ID</strong>, allowing multiple bodies per device if desired.</p></li>
+<li><p>Each partition specifies a <strong>spatial domain</strong> that constrains where particles
+for this body may be generated or migrated.</p></li>
+<li><p>The <strong>union</strong> of all partitions should reconstruct the <strong>full body</strong> without
+gaps; optional overlaps can improve load transitions (if supported).</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Misaligned or disjoint domains can cause missing particles or load imbalance.
+Verify that partitions <strong>cover the full body</strong> and align with the global grid.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Partition optimization can significantly improve <strong>load balancing</strong> and
+<strong>throughput</strong>. Start with a single partition per device, inspect utilization,
+then refine domains to equalize work across devices.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Major changes here are recommended only for users familiar with the target
+cluster’s hardware and scheduling behavior.</p>
+</div>
 </section>
 </section>
 
